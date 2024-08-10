@@ -1,5 +1,16 @@
 {
   "HomePage": {
-    "title": "Hello world!"
+    "title": "Hello World!"
+  },
+  "NotFoundPage": {
+    "title": "Page not found"
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "text": "All rights reserved"
   }
 }
