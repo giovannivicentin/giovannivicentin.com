@@ -1,33 +1,65 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Check, Globe } from 'lucide-react';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { ChangeEvent, useTransition } from 'react';
+import { useTransition } from 'react';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const localActive = useLocale();
 
-  const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const nextLocale = e.target.value;
+  const onSelectChange = (nextLocale: string) => {
     startTransition(() => {
       router.replace(`/${nextLocale}`);
     });
   };
+
   return (
-    <label className='border-2 rounded'>
-      <p className='sr-only'>change language</p>
-      <select
-        defaultValue={localActive}
-        className='bg-transparent py-2'
-        onChange={onSelectChange}
-        disabled={isPending}
-      >
-        <option value='en'>English</option>
-        <option value='br'>Português</option>
-        <option value="es">Español</option>
-      </select>
-    </label>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="icon">
+          <Globe className="w-5 h-5" />
+          <label className='sr-only'>Select a language</label>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem
+          onClick={() => onSelectChange('en')}
+          className="flex items-center gap-2"
+        >
+          <span className="text-sm font-medium">English</span>
+          {localActive === 'en' && (
+            <Check className="ml-auto h-4 w-4" />
+          )}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => onSelectChange('es')}
+          className="flex items-center gap-2"
+        >
+          <span className="text-sm font-medium">Español</span>
+          {localActive === 'es' && (
+            <Check className="ml-auto h-4 w-4" />
+          )}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => onSelectChange('br')}
+          className="flex items-center gap-2"
+        >
+          <span className="text-sm font-medium">Português</span>
+          {localActive === 'br' && (
+            <Check className="ml-auto h-4 w-4" />
+          )}
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
