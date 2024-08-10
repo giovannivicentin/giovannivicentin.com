@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: ReactNode;
+  children: ReactNode
 }>) {
-  return children;
+  return children
 }
