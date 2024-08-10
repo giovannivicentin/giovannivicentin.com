@@ -15,12 +15,19 @@ interface RootLayoutProps {
   params: { locale: string };
 }
 
+const langMap: Record<string, string> = {
+  en: 'en-US',
+  br: 'pt-BR',
+  es: 'es-ES',
+};
+
 export default function RootLayout({
   children,
   params: { locale },
 }: Readonly<RootLayoutProps>) {
+  const selectedLang = langMap[locale]
   return (
-    <html lang={locale}>
+    <html lang={selectedLang}>
       <body className={inter.className}>
         <div className="flex flex-col min-h-screen max-w-4xl mx-auto">
           <header></header>
