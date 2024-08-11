@@ -1,6 +1,7 @@
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import type { Metadata } from 'next'
+import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
 import './globals.css'
@@ -29,13 +30,20 @@ export default function RootLayout({
 }: Readonly<RootLayoutProps>) {
   const selectedLang = langMap[locale]
   return (
-    <html lang={selectedLang}>
+    <html lang={selectedLang} suppressHydrationWarning>
       <body className={inter.className}>
-        <div className="mx-auto flex min-h-screen flex-col">
-          <Header />
-          <div className="mt-20 flex-grow">{children}</div>
-          <Footer />
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="mx-auto flex min-h-screen flex-col">
+            <Header />
+            <div className="mt-20 flex-grow">{children}</div>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
