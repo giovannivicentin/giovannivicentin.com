@@ -9,13 +9,20 @@ export function Footer() {
       <div className="container flex items-center justify-between">
         &copy; {currentYear} Giovanni Vicentin. All rights reserved.
         <div className="flex items-center gap-4">
-          <Link href="/">
+          <Link
+            href="https://github.com/giovannivicentin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile of Giovanni Vicentin"
+          >
             <span className="sr-only">GitHub Link</span>
             <Github className="h-5 w-5" />
           </Link>
           <Link
-            href="/"
-            className="text-sm font-medium underline-offset-4 hover:underline"
+            href="https://www.linkedin.com/in/giovannivicentin/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile of Giovanni Vicentin"
           >
             <LinkedinIcon className="h-5 w-5" />
             <span className="sr-only">LinkedIn Link</span>
