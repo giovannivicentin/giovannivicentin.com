@@ -6,7 +6,7 @@ export function Footer() {
 
   return (
     <footer className="bg-muted py-6 text-center text-sm text-muted-foreground">
-      <div className="container flex items-center justify-between">
+      <div className="flex items-center justify-between px-4 md:px-6">
         &copy; {currentYear} Giovanni Vicentin. All rights reserved.
         <div className="flex items-center gap-4">
           <Link
@@ -16,7 +16,7 @@ export function Footer() {
             aria-label="GitHub Profile of Giovanni Vicentin"
           >
             <span className="sr-only">GitHub Link</span>
-            <Github className="h-5 w-5" />
+            <Github className="h-5 w-5 text-primary hover:text-muted-foreground" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/giovannivicentin/"
@@ -24,7 +24,7 @@ export function Footer() {
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile of Giovanni Vicentin"
           >
-            <LinkedinIcon className="h-5 w-5" />
+            <LinkedinIcon className="h-5 w-5 text-primary hover:text-muted-foreground" />
             <span className="sr-only">LinkedIn Link</span>
           </Link>
         </div>
