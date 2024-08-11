@@ -1,4 +1,4 @@
-import LocalSwitcher from './local-switcher'
+import { LocalSwitcher } from './local-switcher'
 
 export function Header() {
   return (
