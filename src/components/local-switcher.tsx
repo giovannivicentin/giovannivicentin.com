@@ -12,7 +12,7 @@ import { useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import { useTransition } from 'react'
 
-export default function LocalSwitcher() {
+export function LocalSwitcher() {
   const [isPending, startTransition] = useTransition()
   const router = useRouter()
   const localActive = useLocale()
