@@ -1,3 +1,5 @@
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
@@ -29,10 +31,10 @@ export default function RootLayout({
   return (
     <html lang={selectedLang}>
       <body className={inter.className}>
-        <div className="mx-auto flex min-h-screen max-w-4xl flex-col">
-          <header></header>
+        <div className="mx-auto flex min-h-screen flex-col">
+          <Header />
           <div className="mt-20 flex-grow">{children}</div>
-          <footer></footer>
+          <Footer />
         </div>
       </body>
     </html>
