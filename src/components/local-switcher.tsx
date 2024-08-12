@@ -27,7 +27,7 @@ export function LocalSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button disabled={isPending} variant="ghost" size="icon">
-          <Globe className="h-5 w-5" />
+          <Globe className="h-6 w-6 md:h-5 md:w-5" />
           <label className="sr-only">Select a language</label>
         </Button>
       </DropdownMenuTrigger>

@@ -24,30 +24,30 @@ export function ModeToggle() {
 
   const displayIcon = () => {
     if (!mounted) {
-      return <Loader className="h-5 w-5 animate-spin" />
+      return <Loader className="h-6 w-6 animate-spin md:h-5 md:w-5" />
     }
 
     if (theme === 'system') {
       return resolvedTheme === 'dark' ? (
         <>
-          <Sun className="h-5 w-5 text-primary" />
+          <Sun className="h-6 w-6 text-primary md:h-5 md:w-5" />
           <span className="sr-only">Sun Icon</span>
         </>
       ) : (
         <>
-          <Moon className="h-5 w-5 text-primary" />
+          <Moon className="h-6 w-6 text-primary md:h-5 md:w-5" />
           <span className="sr-only">Moon Icon</span>
         </>
       )
     }
     return theme === 'dark' ? (
       <>
-        <Sun className="h-5 w-5 text-primary" />
+        <Sun className="h-6 w-6 text-primary md:h-5 md:w-5" />
         <span className="sr-only">Sun Icon</span>
       </>
     ) : (
       <>
-        <Moon className="h-5 w-5 text-primary" />
+        <Moon className="h-6 w-6 text-primary md:h-5 md:w-5" />
         <span className="sr-only">Moon Icon</span>
       </>
     )

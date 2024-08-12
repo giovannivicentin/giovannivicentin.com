@@ -32,7 +32,7 @@ export function Navbar() {
                       alt="GitHub icon"
                       width={15}
                       height={15}
-                      className="h-5 w-5 invert dark:invert-0"
+                      className="h-6 w-6 invert dark:invert-0 md:h-5 md:w-5"
                     />
                     GitHub
                   </Link>
@@ -50,7 +50,7 @@ export function Navbar() {
                       alt="LinkedIn icon"
                       width={15}
                       height={15}
-                      className="h-5 w-5 dark:invert"
+                      className="h-6 w-6 dark:invert md:h-5 md:w-5"
                     />
                     LinkedIn
                   </Link>
@@ -69,7 +69,7 @@ export function Navbar() {
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
+              <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
           <SheetContent className="flex flex-col items-center justify-start gap-8 pt-20 text-xl">
@@ -82,7 +82,7 @@ export function Navbar() {
                 height={20}
                 width={20}
                 alt="code icon"
-                className="h-5 w-5 dark:invert"
+                className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
               Projects
             </Link>
@@ -95,7 +95,7 @@ export function Navbar() {
                 height={20}
                 width={20}
                 alt="contact icon"
-                className="h-5 w-5 dark:invert"
+                className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
               Contact
             </Link>
@@ -108,7 +108,7 @@ export function Navbar() {
                 height={20}
                 width={20}
                 alt="resume icon"
-                className="h-5 w-5 dark:invert"
+                className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
               Resume
             </Link>
