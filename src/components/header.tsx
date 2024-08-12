@@ -2,6 +2,7 @@ import { Briefcase } from 'lucide-react'
 import Link from 'next/link'
 import { LocalSwitcher } from './local-switcher'
 import { ModeToggle } from './mode-toggle'
+import { Navbar } from './navbar'
 
 export function Header() {
   return (
@@ -12,15 +13,8 @@ export function Header() {
           Giovanni Vicentin
         </span>
       </Link>
-
       <div className="flex items-center">
-        <nav>
-          <ul className="mr-2 flex items-center gap-4">
-            <li className="cursor-pointer hover:underline">Projects</li>
-            <li className="cursor-pointer hover:underline">Contact</li>
-            <li className="cursor-pointer hover:underline">Resume</li>
-          </ul>
-        </nav>
+        <Navbar />
         <ModeToggle />
         <LocalSwitcher />
       </div>
