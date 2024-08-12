@@ -25,7 +25,7 @@ export function Navbar() {
                     alt="GitHub icon"
                     width={16}
                     height={16}
-                    className="h-4 w-4 invert dark:invert-0"
+                    className="h-5 w-5 invert dark:invert-0"
                   />
                   GitHub
                 </Link>
@@ -43,7 +43,7 @@ export function Navbar() {
                     alt="LinkedIn icon"
                     width={16}
                     height={16}
-                    className="h-4 w-4 dark:invert"
+                    className="h-5 w-5 dark:invert"
                   />
                   LinkedIn
                 </Link>
@@ -51,7 +51,8 @@ export function Navbar() {
             </HoverCardContent>
           </HoverCard>
         </li>
-        <li className="cursor-pointer hover:underline">Resume</li>
+        <li className="cursor-pointer hover:underline">
+            <Link href="/resume/giovanni-vicentin-resume.pdf">Resume</Link></li>
       </ul>
     </nav>
   )
