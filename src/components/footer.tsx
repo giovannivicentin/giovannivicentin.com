@@ -19,7 +19,7 @@ export function Footer() {
             <Button
               variant="ghost"
               size="icon"
-              className="bg-muted hover:bg-neutral-200"
+              className="bg-muted hover:bg-neutral-200 dark:hover:bg-neutral-700"
             >
               <Image
                 src="/icons/github.svg"
@@ -40,7 +40,7 @@ export function Footer() {
             <Button
               variant="ghost"
               size="icon"
-              className="bg-muted hover:bg-neutral-200"
+              className="bg-muted hover:bg-neutral-200 dark:hover:bg-neutral-700"
             >
               <Image
                 src="/icons/linkedin.svg"
