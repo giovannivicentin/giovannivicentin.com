@@ -1,6 +1,7 @@
 {
   "HomePage": {
-    "title": "Olá Mundo!"
+    "title": "Olá, eu sou Giovanni Vicentin",
+    "description": "I'm a software engineer with a passion for building beautiful and functional web applications. I have experience in a variety of technologies, including React, Node.js, and MongoDB."
   },
   "NotFoundPage": {
     "title": "Página não encontrada"
