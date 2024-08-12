@@ -29,15 +29,27 @@ export function ModeToggle() {
 
     if (theme === 'system') {
       return resolvedTheme === 'dark' ? (
-        <Sun className="h-5 w-5 text-primary" />
+        <>
+          <Sun className="h-5 w-5 text-primary" />
+          <span className="sr-only">Sun Icon</span>
+        </>
       ) : (
-        <Moon className="h-5 w-5 text-primary" />
+        <>
+          <Moon className="h-5 w-5 text-primary" />
+          <span className="sr-only">Moon Icon</span>
+        </>
       )
     }
     return theme === 'dark' ? (
-      <Sun className="h-5 w-5 text-primary" />
+      <>
+        <Sun className="h-5 w-5 text-primary" />
+        <span className="sr-only">Sun Icon</span>
+      </>
     ) : (
-      <Moon className="h-5 w-5 text-primary" />
+      <>
+        <Moon className="h-5 w-5 text-primary" />
+        <span className="sr-only">Moon Icon</span>
+      </>
     )
   }
 
