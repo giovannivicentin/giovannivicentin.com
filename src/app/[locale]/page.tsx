@@ -13,8 +13,8 @@ const merriweather = Merriweather({
 export default function Home() {
   const t = useTranslations('HomePage')
   return (
-    <main className="container flex flex-col items-center justify-between">
-      <div className="mb-20 flex w-full flex-col items-center justify-between gap-8 px-4 md:flex-row md:gap-0 md:px-6">
+    <main className="flex flex-col items-center justify-between">
+      <div className="container mb-32 mt-16 flex w-full flex-col items-center justify-between gap-8 px-4 md:mb-52 md:mt-24 md:flex-row md:gap-0 md:px-6">
         <div className="space-y-4">
           <h1
             className={`${merriweather.variable} font-serif text-4xl font-bold`}
