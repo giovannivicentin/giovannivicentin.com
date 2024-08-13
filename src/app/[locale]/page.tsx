@@ -1,6 +1,14 @@
 import { Button } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
+import { Merriweather } from 'next/font/google'
 import Image from 'next/image'
+
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-merriweather',
+})
 
 export default function Home() {
   const t = useTranslations('HomePage')
@@ -8,7 +16,11 @@ export default function Home() {
     <main className="container flex flex-col items-center justify-between">
       <div className="mb-20 flex w-full flex-col items-center justify-between gap-8 px-4 md:flex-row md:gap-0 md:px-6">
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold">{t('title')}</h1>
+          <h1
+            className={`${merriweather.variable} font-serif text-4xl font-bold`}
+          >
+            {t('title')}
+          </h1>
           <p className="max-w-md">{t('description')}</p>
           <div className="flex items-center gap-4">
             <Button>Contact Me</Button>
