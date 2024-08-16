@@ -25,7 +25,7 @@ export function Project({
   href,
 }: ProjectProps) {
   return (
-    <Card className="mx-auto max-w-lg">
+    <Card className="mx-auto h-full max-w-[28rem]">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
