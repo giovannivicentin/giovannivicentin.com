@@ -1,3 +1,4 @@
+import { Project } from '@/components/project'
 import { Button } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
 import { Merriweather } from 'next/font/google'
@@ -12,6 +13,8 @@ const merriweather = Merriweather({
 
 export default function Home() {
   const t = useTranslations('HomePage')
+  const p = useTranslations('ProjectSection')
+  const projects = ['frankMetalicas', 'tecnojund'] as const
   return (
     <main className="flex flex-col items-center justify-between">
       <div className="container mb-32 mt-16 flex w-full flex-col items-center justify-between gap-8 px-4 md:mb-52 md:mt-24 md:flex-row md:gap-0 md:px-6">
@@ -36,6 +39,18 @@ export default function Home() {
           className="rounded-full object-cover md:h-96 md:w-96"
           style={{ aspectRatio: '384/384', objectFit: 'cover' }}
         />
+      </div>
+      <div className="grid w-full grid-cols-1 gap-8 bg-muted p-8 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => (
+          <Project
+            key={project}
+            title={p(`${project}.title`)}
+            description={p(`${project}.description`)}
+            imgSrc={p(`${project}.imgSrc`)}
+            imgAlt={p(`${project}.imgAlt`)}
+            href={p(`${project}.href`)}
+          />
+        ))}
       </div>
     </main>
   )
