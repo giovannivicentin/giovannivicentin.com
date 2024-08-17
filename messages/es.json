@@ -1,17 +1,33 @@
 {
   "HomePage": {
-    "title": "Hola, soy Giovanni Vicentin",
+    "title": "Hello, I'm Giovanni Vicentin",
     "description": "I'm a software engineer with a passion for building beautiful and functional web applications. I have experience in a variety of technologies, including React, Node.js, and MongoDB."
   },
   "NotFoundPage": {
-    "title": "Página não encontrada"
+    "title": "Page not found"
   },
   "Navigation": {
-    "home": "Inicio",
-    "about": "Sobre",
-    "contact": "Contato"
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "ProjectSection": {
+    "frankMetalicas": {
+      "title": "Frank Metálicas",
+      "description": "Description of project 1",
+      "imgSrc": "/projects/fk-metalicas.png",
+      "imgAlt": "Project 1",
+      "href": "https://www.example.com"
+    },
+    "tecnojund": {
+      "title": "Tecnojund",
+      "description": "Description of project 2",
+      "imgSrc": "/projects/tecnojund.png",
+      "imgAlt": "Project 2",
+      "href": "https://www.example.com"
+    }
   },
   "Footer": {
-    "text": "Todos os direitos reservados"
+    "text": "All rights reserved"
   }
 }
