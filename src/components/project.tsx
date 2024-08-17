@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Button } from './ui/button'
 import {
   Card,
   CardContent,
@@ -40,13 +41,21 @@ export function Project({
           style={{ aspectRatio: '400/225', objectFit: 'cover' }}
         />
       </CardContent>
-      <CardFooter>
-        <Link
-          href={href}
-          className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+      <CardFooter className="flex justify-between">
+        <Button
+          variant="outline"
+          className="px-4 py-2 text-sm shadow-sm transition-colors"
         >
-          View Project
-        </Link>
+          <Link href={href}>View Projects</Link>
+        </Button>
+
+        <Image
+          src="/icons/github.svg"
+          height={20}
+          width={20}
+          className="h-5 w-5 dark:invert"
+          alt="Github icon"
+        />
       </CardFooter>
     </Card>
   )

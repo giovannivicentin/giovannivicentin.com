@@ -25,6 +25,13 @@
       "imgSrc": "/projects/tecnojund.png",
       "imgAlt": "Project 2",
       "href": "https://www.example.com"
+    },
+    "megazord": {
+      "title": "Sistema de Gestão",
+      "description": "Description of project 3",
+      "imgSrc": "/projects/tecnojund.png",
+      "imgAlt": "Project 3",
+      "href": "https://www.example.com"
     }
   },
   "Footer": {
