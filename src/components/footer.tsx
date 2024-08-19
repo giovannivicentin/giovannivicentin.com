@@ -11,27 +11,6 @@ export function Footer() {
         &copy; {currentYear} Giovanni Vicentin. All rights reserved.
         <div className="flex items-center">
           <Link
-            href="https://github.com/giovannivicentin"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub Profile of Giovanni Vicentin"
-          >
-            <Button
-              variant="ghost"
-              size="icon"
-              className="bg-muted hover:bg-neutral-200 dark:hover:bg-neutral-700"
-            >
-              <Image
-                src="/icons/github.svg"
-                height={20}
-                width={20}
-                alt="GitHub Icon"
-                className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
-              />
-              <span className="sr-only">GitHub Link</span>
-            </Button>
-          </Link>
-          <Link
             href="https://www.linkedin.com/in/giovannivicentin/"
             target="_blank"
             rel="noopener noreferrer"
@@ -50,6 +29,27 @@ export function Footer() {
                 className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
               />
               <span className="sr-only">LinkedIn Link</span>
+            </Button>
+          </Link>
+          <Link
+            href="https://github.com/giovannivicentin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile of Giovanni Vicentin"
+          >
+            <Button
+              variant="ghost"
+              size="icon"
+              className="bg-muted hover:bg-neutral-200 dark:hover:bg-neutral-700"
+            >
+              <Image
+                src="/icons/github.svg"
+                height={20}
+                width={20}
+                alt="GitHub Icon"
+                className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
+              />
+              <span className="sr-only">GitHub Link</span>
             </Button>
           </Link>
         </div>
