@@ -41,7 +41,7 @@ export default function Home() {
           className="-z-10 rounded-full dark:grayscale md:h-96 md:w-96"
         />
       </div>
-      <section className="grid w-full grid-cols-1 gap-8 bg-neutral-900 p-8 dark:bg-muted sm:grid-cols-2 lg:grid-cols-3">
+      <section className="grid w-full grid-cols-1 gap-8 bg-muted p-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <Project
             key={project}
