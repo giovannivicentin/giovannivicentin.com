@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         </div>
         <Image
-          src="/profile/sass.png"
+          src="/profile/image.png"
           alt="@giovannivicentin"
           width={1600}
           height={1600}
