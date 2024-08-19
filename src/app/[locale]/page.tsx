@@ -19,10 +19,10 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center justify-between">
-      <div className="container mb-32 mt-16 flex w-full flex-col items-center justify-between gap-8 px-4 md:mb-52 md:mt-24 md:flex-row md:gap-0 md:px-6">
+      <div className="mb-32 mt-16 flex w-full flex-col items-center justify-between gap-8 px-4 md:mb-52 md:mt-24 md:flex-row md:gap-0 md:px-12">
         <div className="space-y-4">
           <h1
-            className={`${merriweather.variable} font-serif text-4xl font-bold`}
+            className={`${merriweather.variable} font-serif text-4xl font-bold md:text-5xl`}
           >
             {t('title')}
           </h1>
@@ -33,16 +33,15 @@ export default function Home() {
           </div>
         </div>
         <Image
-          src="/profile/profile.png"
+          src="/profile/sass.png"
           alt="@giovannivicentin"
-          width={384}
-          height={384}
+          width={1600}
+          height={1600}
           priority
-          className="rounded-full object-cover md:h-96 md:w-96"
-          style={{ aspectRatio: '384/384', objectFit: 'cover' }}
+          className="-z-10 rounded-full dark:grayscale md:h-96 md:w-96"
         />
       </div>
-      <section className="grid w-full grid-cols-1 gap-8 bg-muted p-8 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="grid w-full grid-cols-1 gap-8 bg-neutral-900 p-8 dark:bg-muted sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <Project
             key={project}
