@@ -26,7 +26,7 @@ export default function Home() {
           >
             {t('title')}
           </h1>
-          <p className="max-w-md">{t('description')}</p>
+          <p className="max-w-md md:max-w-xl">{t('description')}</p>
           <div className="flex items-center gap-4">
             <Button>Contact Me</Button>
             <Button variant="outline">View Projects</Button>
