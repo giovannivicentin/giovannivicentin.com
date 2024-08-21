@@ -47,7 +47,7 @@ export default function RootLayout({
             className={`${inter.variable} mx-auto flex min-h-screen flex-col font-sans`}
           >
             <Header />
-            <div className="mt-20 flex-grow">{children}</div>
+            <div className="-z-10 mt-20 flex-grow">{children}</div>
             <Footer />
           </div>
         </ThemeProvider>
