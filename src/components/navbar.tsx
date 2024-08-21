@@ -11,7 +11,7 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from './ui/hover-card'
 
 export function Navbar() {
   return (
-    <nav className="z-10">
+    <nav className="z-50">
       <div className="hidden items-center justify-between md:flex">
         <ul className="mr-2 items-center gap-4 md:flex">
           <li className="cursor-pointer hover:underline">Projects</li>

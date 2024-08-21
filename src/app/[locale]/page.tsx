@@ -53,6 +53,27 @@ export default function Home() {
           />
         ))}
       </section>
+      <section className="w-full bg-background px-4 py-8 md:px-12">
+        <h2
+          className={`${merriweather.variable} font-serif text-3xl font-bold md:text-4xl`}
+        >
+          Skills & Technologies
+        </h2>
+      </section>
+      <section className="w-full bg-muted px-4 py-8 md:px-12">
+        <h2
+          className={`${merriweather.variable} font-serif text-3xl font-bold md:text-4xl`}
+        >
+          Work Experience
+        </h2>
+      </section>
+      <section className="w-full bg-background px-4 py-8 md:px-12">
+        <h2
+          className={`${merriweather.variable} font-serif text-3xl font-bold md:text-4xl`}
+        >
+          Get in touch
+        </h2>
+      </section>
     </main>
   )
 }

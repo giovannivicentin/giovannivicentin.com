@@ -42,7 +42,7 @@ export function Project({
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button variant="outline" className="px-4 py-2 text-sm shadow-sm">
-          <Link href={href}>View Projects</Link>
+          <Link href={href}>View More</Link>
         </Button>
         <div className="flex items-center gap-4">
           <Image
@@ -56,7 +56,7 @@ export function Project({
             src="/icons/github.svg"
             height={20}
             width={20}
-            className="h-5 w-5 dark:invert"
+            className="z-10 h-5 w-5 dark:invert"
             alt="Github icon"
           />
         </div>
