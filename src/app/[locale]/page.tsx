@@ -1,4 +1,5 @@
 import { Project } from '@/components/project'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
 import { Merriweather } from 'next/font/google'
@@ -55,10 +56,52 @@ export default function Home() {
       </section>
       <section className="w-full bg-background px-4 py-8 md:px-12">
         <h2
-          className={`${merriweather.variable} font-serif text-3xl font-bold md:text-4xl`}
+          className={`${merriweather.variable} text-center font-serif text-3xl font-bold md:text-start md:text-4xl`}
         >
           Skills & Technologies
         </h2>
+        <div className="mt-8 flex max-w-7xl flex-wrap items-center justify-center gap-2 px-3 md:justify-start md:px-0">
+          {[
+            'JavaScript',
+            'TypeScript',
+            'GraphQL',
+            'Node.js',
+            'React',
+            'Next.js',
+            'SQL',
+            'VTEX IO',
+            'React Native',
+            'Python',
+            'Jest',
+            'Vitest',
+            'Scrum',
+            'Git',
+            'Docker',
+            'Kubernetes',
+            'Bitbucket',
+            'Vite',
+            'Google Analytics',
+            'Axios',
+            'Sass',
+            'Tailwind',
+            'Zod',
+            'Styled-Components',
+            'Shadcn/ui',
+            'Radix UI',
+            'Postgres',
+            'MySQL',
+            'MongoDB',
+            'SQLite',
+          ].map((skill) => (
+            <Badge
+              key={skill}
+              variant="secondary"
+              className="px-3 py-1 text-lg"
+            >
+              {skill}
+            </Badge>
+          ))}
+        </div>
       </section>
       <section className="w-full bg-muted px-4 py-8 md:px-12">
         <h2
