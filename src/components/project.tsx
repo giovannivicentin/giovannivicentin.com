@@ -26,7 +26,7 @@ export function Project({
   href,
 }: ProjectProps) {
   return (
-    <Card className="mx-auto h-full max-w-[28rem] shadow-lg">
+    <Card className="relative mx-auto h-full max-w-[28rem] shadow-lg">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
@@ -44,7 +44,7 @@ export function Project({
         <Button variant="outline" className="px-4 py-2 text-sm shadow-sm">
           <Link href={href}>View More</Link>
         </Button>
-        <div className="flex items-center gap-4">
+        <div className="relative flex items-center gap-4">
           <Image
             src="/icons/link.svg"
             height={20}
@@ -56,7 +56,7 @@ export function Project({
             src="/icons/github.svg"
             height={20}
             width={20}
-            className="z-10 h-5 w-5 dark:invert"
+            className="h-5 w-5 dark:invert"
             alt="Github icon"
           />
         </div>
