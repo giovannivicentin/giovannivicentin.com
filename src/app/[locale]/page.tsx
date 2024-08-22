@@ -1,7 +1,8 @@
+import { ContactForm } from '@/components/contactForm'
 import { Project } from '@/components/project'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { BriefcaseIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Merriweather } from 'next/font/google'
@@ -60,7 +61,7 @@ export default function Home() {
           width={1600}
           height={1600}
           priority
-          className="-z-10 rounded-full dark:grayscale md:h-96 md:w-96"
+          className="rounded-full dark:grayscale md:h-96 md:w-96"
         />
       </div>
       <section className="grid w-full grid-cols-1 gap-8 bg-muted p-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -170,11 +171,32 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full bg-background px-4 py-8 md:px-12">
-        <h2
-          className={`${merriweather.variable} font-serif text-3xl font-bold md:text-4xl`}
-        >
-          Get in touch
-        </h2>
+        <div className="grid gap-8 md:grid-cols-2">
+          <div>
+            <h2
+              className={`${merriweather.variable} font-serif text-3xl font-bold md:text-4xl`}
+            >
+              Get in Touch
+            </h2>
+            <p className="text-muted-foreground">
+              I&rsquo;d love to hear from you! Feel free to reach out with any
+              questions or inquiries.
+            </p>
+            <ContactForm />
+          </div>
+          <div className="flex flex-col gap-4">
+            <Card className="shadow-sm">
+              <CardHeader>
+                <CardTitle>E-mail</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  giovannifvicentin@gmail.com
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </section>
     </main>
   )
