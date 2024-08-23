@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Menu } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 import { LocalSwitcher } from './local-switcher'
 import { ModeToggle } from './mode-toggle'
 import {
@@ -15,6 +16,15 @@ import {
 } from './ui/dropdown-menu'
 
 export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleContactClick = () => {
+    setIsOpen(false)
+    ;(document.getElementById('contact') as HTMLElement)?.scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <nav>
       <div className="hidden items-center justify-between md:flex">
@@ -73,7 +83,7 @@ export function Navbar() {
         <LocalSwitcher />
       </div>
       <div className="flex items-center justify-end md:hidden">
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
@@ -95,6 +105,7 @@ export function Navbar() {
             </Link>
             <Link
               href="#contact"
+              onClick={handleContactClick}
               className="flex items-center gap-2 hover:underline"
             >
               <Image
