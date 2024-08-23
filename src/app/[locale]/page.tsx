@@ -73,6 +73,9 @@ export default function Home() {
             imgSrc={p(`${project}.imgSrc`)}
             imgAlt={p(`${project}.imgAlt`)}
             href={p(`${project}.href`)}
+            github={p(`${project}.github`)}
+            expandedDescription={p(`${project}.expandedDescription`)}
+            videoPath={p(`${project}.videoPath`)}
           />
         ))}
       </section>
