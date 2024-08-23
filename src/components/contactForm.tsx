@@ -89,7 +89,7 @@ export function ContactForm() {
         />
 
         <Button type="submit" className="justify-center">
-          Finalizar inscrição
+          Send
         </Button>
       </form>
     </FormProvider>
