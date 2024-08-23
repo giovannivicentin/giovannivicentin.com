@@ -66,7 +66,7 @@ export default function Home() {
       </div>
       <section
         id="projects"
-        className="grid w-full grid-cols-1 gap-8 bg-muted p-8 sm:grid-cols-2 lg:grid-cols-3"
+        className="grid w-full grid-cols-1 gap-8 bg-muted p-8 py-12 sm:grid-cols-2 lg:grid-cols-3"
       >
         {projects.map((project) => (
           <Project
@@ -84,7 +84,7 @@ export default function Home() {
       </section>
       <section
         id="skills"
-        className="flex w-full flex-col items-center justify-center space-y-8 bg-background px-4 py-8 md:px-12"
+        className="flex w-full flex-col items-center justify-center space-y-8 bg-background px-4 py-12 md:px-12"
       >
         <h2
           className={`${merriweather.variable} text-center font-serif text-3xl font-bold md:text-4xl`}
@@ -136,7 +136,7 @@ export default function Home() {
       </section>
       <section
         id="experience"
-        className="flex w-full flex-col space-y-8 bg-muted px-4 py-8 md:px-12"
+        className="flex w-full flex-col space-y-8 bg-muted px-4 py-12 md:px-12"
       >
         <h2
           className={`${merriweather.variable} text-center font-serif text-3xl font-bold md:text-4xl`}
@@ -179,7 +179,10 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section id="contact" className="w-full bg-background px-4 py-8 md:px-12">
+      <section
+        id="contact"
+        className="w-full bg-background px-4 py-12 md:px-12"
+      >
         <div className="grid gap-8 md:grid-cols-2">
           <div>
             <h2
