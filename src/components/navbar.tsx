@@ -18,18 +18,32 @@ import {
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleContactClick = () => {
+  const handleClick = (sectionId: string) => {
     setIsOpen(false)
-    ;(document.getElementById('contact') as HTMLElement)?.scrollIntoView({
-      behavior: 'smooth',
-    })
+    const section = document.getElementById(sectionId)
+    const offset = 80
+    if (section) {
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.scrollY
+      const offsetPosition = sectionPosition - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
+    }
   }
 
   return (
     <nav>
       <div className="hidden items-center justify-between md:flex">
         <ul className="mr-2 items-center gap-4 md:flex">
-          <li className="cursor-pointer hover:underline">Projects</li>
+          <li
+            className="cursor-pointer hover:underline"
+            onClick={() => handleClick('projects')}
+          >
+            Projects
+          </li>
           <li className="cursor-pointer hover:underline">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -90,9 +104,9 @@ export function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent className="flex flex-col items-center justify-start gap-8 pt-20 text-xl">
-            <Link
-              href="/projects"
-              className="flex items-center gap-2 hover:underline"
+            <a
+              onClick={() => handleClick('projects')}
+              className="flex cursor-pointer items-center gap-2 hover:underline"
             >
               <Image
                 src="/icons/code.svg"
@@ -102,11 +116,10 @@ export function Navbar() {
                 className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
               Projects
-            </Link>
-            <Link
-              href="#contact"
-              onClick={handleContactClick}
-              className="flex items-center gap-2 hover:underline"
+            </a>
+            <a
+              onClick={() => handleClick('contact')}
+              className="flex cursor-pointer items-center gap-2 hover:underline"
             >
               <Image
                 src="/icons/contact.svg"
@@ -116,7 +129,7 @@ export function Navbar() {
                 className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
               Contact
-            </Link>
+            </a>
             <Link
               href="/resume/giovanni-vicentin-resume.pdf"
               className="flex items-center gap-2 hover:underline"
