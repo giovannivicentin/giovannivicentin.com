@@ -17,21 +17,30 @@
       "description": "Description of project 1",
       "imgSrc": "/projects/fk-metalicas.png",
       "imgAlt": "Project 1",
-      "href": "https://www.example.com"
+      "href": "https://www.example.com",
+      "github": "/",
+      "expandedDescription": "Description of project 1",
+      "videoPath": "/videos/fk-metalicas.mp4"
     },
     "tecnojund": {
       "title": "Tecnojund",
       "description": "Description of project 2",
       "imgSrc": "/projects/tecnojund.png",
       "imgAlt": "Project 2",
-      "href": "https://www.example.com"
+      "href": "https://www.example.com",
+      "github": "/",
+      "expandedDescription": "Description of project 1",
+      "videoPath": "/videos/fk-metalicas.mp4"
     },
     "megazord": {
       "title": "Sistema de Gestão",
       "description": "Description of project 3",
       "imgSrc": "/projects/tecnojund.png",
       "imgAlt": "Project 3",
-      "href": "https://www.example.com"
+      "href": "https://www.example.com",
+      "github": "/",
+      "expandedDescription": "Description of project 1",
+      "videoPath": "/videos/fk-metalicas.mp4"
     }
   },
   "Footer": {
