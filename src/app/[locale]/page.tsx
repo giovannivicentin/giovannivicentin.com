@@ -64,7 +64,10 @@ export default function Home() {
           className="rounded-full dark:grayscale md:h-96 md:w-96"
         />
       </div>
-      <section className="grid w-full grid-cols-1 gap-8 bg-muted p-8 sm:grid-cols-2 lg:grid-cols-3">
+      <section
+        id="projects"
+        className="grid w-full grid-cols-1 gap-8 bg-muted p-8 sm:grid-cols-2 lg:grid-cols-3"
+      >
         {projects.map((project) => (
           <Project
             key={project}
@@ -79,7 +82,10 @@ export default function Home() {
           />
         ))}
       </section>
-      <section className="flex w-full flex-col items-center justify-center space-y-8 bg-background px-4 py-8 md:px-12">
+      <section
+        id="skills"
+        className="flex w-full flex-col items-center justify-center space-y-8 bg-background px-4 py-8 md:px-12"
+      >
         <h2
           className={`${merriweather.variable} text-center font-serif text-3xl font-bold md:text-4xl`}
         >

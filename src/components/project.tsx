@@ -53,7 +53,7 @@ export function Project({
             width="400"
             height="225"
             alt={imgAlt}
-            className="aspect-video rounded-md border border-neutral-300 object-cover shadow-sm hover:cursor-pointer dark:border-neutral-800 dark:grayscale hover:dark:grayscale-0"
+            className="aspect-video rounded-md border border-neutral-300 object-cover shadow-sm hover:animate-pulse hover:cursor-pointer dark:border-neutral-800 dark:grayscale dark:hover:animate-none hover:dark:grayscale-0"
           />
         </Link>
       </CardContent>
