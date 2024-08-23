@@ -173,7 +173,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="w-full bg-background px-4 py-8 md:px-12">
+      <section id="contact" className="w-full bg-background px-4 py-8 md:px-12">
         <div className="grid gap-8 md:grid-cols-2">
           <div>
             <h2

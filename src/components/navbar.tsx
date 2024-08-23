@@ -94,7 +94,7 @@ export function Navbar() {
               Projects
             </Link>
             <Link
-              href="/projects"
+              href="#contact"
               className="flex items-center gap-2 hover:underline"
             >
               <Image
