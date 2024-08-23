@@ -7,7 +7,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { LocalSwitcher } from './local-switcher'
 import { ModeToggle } from './mode-toggle'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from './ui/hover-card'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu'
 
 export function Navbar() {
   return (
@@ -16,34 +21,36 @@ export function Navbar() {
         <ul className="mr-2 items-center gap-4 md:flex">
           <li className="cursor-pointer hover:underline">Projects</li>
           <li className="cursor-pointer hover:underline">
-            <HoverCard>
-              <HoverCardTrigger>Contact</HoverCardTrigger>
-              <HoverCardContent className="flex flex-col gap-2">
-                <Button variant="default">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <p>Contact</p>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="flex flex-col gap-2">
+                <DropdownMenuItem asChild>
                   <Link
                     href="https://github.com/giovannivicentin"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub Profile of Giovanni Vicentin"
-                    className="flex items-center gap-2 font-semibold"
+                    className="group flex cursor-pointer items-center justify-center gap-2 bg-primary px-10 py-2 font-semibold text-primary-foreground hover:bg-primary/90"
                   >
                     <Image
                       src="/icons/github.svg"
                       alt="GitHub icon"
                       width={15}
                       height={15}
-                      className="h-6 w-6 invert dark:invert-0 md:h-5 md:w-5"
+                      className="h-6 w-6 invert dark:invert-0 group-hover:dark:invert md:h-5 md:w-5"
                     />
                     GitHub
                   </Link>
-                </Button>
-                <Button variant="outline">
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
                   <Link
                     href="https://www.linkedin.com/in/giovannivicentin/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn Profile of Giovanni Vicentin"
-                    className="flex items-center gap-2 font-semibold"
+                    className="flex cursor-pointer items-center gap-2 border border-input bg-background px-10 py-2 font-semibold hover:bg-accent hover:text-accent-foreground"
                   >
                     <Image
                       src="/icons/linkedin.svg"
@@ -54,9 +61,9 @@ export function Navbar() {
                     />
                     LinkedIn
                   </Link>
-                </Button>
-              </HoverCardContent>
-            </HoverCard>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </li>
           <li className="cursor-pointer hover:underline">
             <Link href="/resume/giovanni-vicentin-resume.pdf">Resume</Link>
