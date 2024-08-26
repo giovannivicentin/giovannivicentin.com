@@ -41,13 +41,14 @@ export function Navbar() {
           <li
             className="cursor-pointer hover:underline"
             onClick={() => handleClick('projects')}
+            tabIndex={0}
           >
             Projects
           </li>
           <li className="cursor-pointer hover:underline">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <p>Contact</p>
+                <p tabIndex={0}>Contact</p>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="flex flex-col gap-2">
                 <DropdownMenuItem asChild>
@@ -63,7 +64,7 @@ export function Navbar() {
                       alt="GitHub icon"
                       width={15}
                       height={15}
-                      className="h-6 w-6 invert dark:invert-0 group-hover:dark:invert md:h-5 md:w-5"
+                      className="h-6 w-6 invert group-hover:invert-0 dark:invert-0 group-hover:dark:invert md:h-5 md:w-5"
                     />
                     GitHub
                   </Link>
