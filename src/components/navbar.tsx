@@ -105,9 +105,12 @@ export function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent className="flex flex-col items-center justify-start gap-8 pt-20 text-xl">
-            <a
+            <Link
               onClick={() => handleClick('projects')}
+              href={'#projects'}
+              scroll={false}
               className="flex cursor-pointer items-center gap-2 hover:underline"
+              tabIndex={0}
             >
               <Image
                 src="/icons/code.svg"
@@ -117,10 +120,13 @@ export function Navbar() {
                 className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
               Projects
-            </a>
-            <a
+            </Link>
+            <Link
               onClick={() => handleClick('contact')}
+              href={'#contact'}
+              scroll={false}
               className="flex cursor-pointer items-center gap-2 hover:underline"
+              tabIndex={0}
             >
               <Image
                 src="/icons/contact.svg"
@@ -130,7 +136,7 @@ export function Navbar() {
                 className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
               Contact
-            </a>
+            </Link>
             <Link
               href="/resume/giovanni-vicentin-resume.pdf"
               className="flex items-center gap-2 hover:underline"
