@@ -7,9 +7,11 @@
     "title": "Page not found"
   },
   "Navigation": {
-    "home": "Home",
-    "about": "About",
-    "contact": "Contact"
+    "projects": "Projects",
+    "contact": "Contact",
+    "resume": "Resume",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
   },
   "ProjectSection": {
     "frankMetalicas": {
