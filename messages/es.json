@@ -12,11 +12,28 @@
     "title": "Page not found"
   },
   "Navigation": {
-    "projects": "Projects",
-    "contact": "Contact",
-    "resume": "Resume",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "resume": "Currículo",
     "github": "GitHub",
     "linkedin": "LinkedIn"
+  },
+  "workExperience": {
+    "title": "Work Experience",
+    "sams": {
+      "title": "Software Engineer",
+      "company": "Sam's Club",
+      "period": "2024 - Present",
+      "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
+      "description": "Led development of scalable web applications, improving performance by 40%."
+    },
+    "talst": {
+      "title": "Software Engineer",
+      "company": "Talst Contabilidade",
+      "period": "2022 - 2024",
+      "stack": ["NestJS", "Node.js", "React", "Python", "MySQL", "..."],
+      "description": "Developed and maintained multiple client-facing applications."
+    }
   },
   "ProjectSection": {
     "frankMetalicas": {
