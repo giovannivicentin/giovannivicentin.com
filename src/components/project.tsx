@@ -47,15 +47,54 @@ export function Project({
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <Link href={href}>
-          <Image
-            src={imgSrc}
-            width="400"
-            height="225"
-            alt={imgAlt}
-            className="aspect-video rounded-md border border-neutral-300 object-cover shadow-sm hover:animate-pulse hover:cursor-pointer dark:border-neutral-700 dark:grayscale dark:hover:animate-none hover:dark:grayscale-0"
-          />
-        </Link>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Image
+              src={imgSrc}
+              width="400"
+              height="225"
+              alt={imgAlt}
+              className="aspect-video rounded-md border border-neutral-300 object-cover shadow-sm hover:animate-pulse hover:cursor-pointer dark:border-neutral-700 dark:grayscale dark:hover:animate-none hover:dark:grayscale-0"
+            />
+          </DialogTrigger>
+          <DialogContent className="min-w-fit lg:min-w-[50rem]">
+            <DialogHeader>
+              <DialogTitle>{title}</DialogTitle>
+              <DialogDescription>
+                {expandedDescription || description}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex w-full flex-col items-center space-y-4">
+              <Video path={videoPath} photo={imgSrc} />
+              <div className="flex items-center justify-center gap-4">
+                <Link href={href}>
+                  <Button variant="ghost" size="icon">
+                    <Image
+                      src="/icons/link.svg"
+                      height={20}
+                      width={20}
+                      alt="External Link Icon"
+                      className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
+                    />
+                    <span className="sr-only">External Link</span>
+                  </Button>
+                </Link>
+                <Link href={github}>
+                  <Button variant="ghost" size="icon">
+                    <Image
+                      src="/icons/github.svg"
+                      height={20}
+                      width={20}
+                      alt="GitHub Icon"
+                      className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
+                    />
+                    <span className="sr-only">GitHub Link</span>
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       </CardContent>
       <CardFooter className="flex justify-between">
         <Dialog>
