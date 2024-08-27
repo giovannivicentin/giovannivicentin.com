@@ -6,8 +6,6 @@ import { Menu } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { LocalSwitcher } from './local-switcher'
-import { ModeToggle } from './mode-toggle'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +13,23 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu'
 
-export function Navbar() {
+interface NavbarProps {
+  projects: string
+  contact: string
+  github: string
+  linkedin: string
+  resume: string
+  children: React.ReactNode
+}
+
+export function Navbar({
+  projects,
+  contact,
+  github,
+  linkedin,
+  resume,
+  children,
+}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleClick = (sectionId: string) => {
@@ -43,12 +57,12 @@ export function Navbar() {
             onClick={() => handleClick('projects')}
             tabIndex={0}
           >
-            Projects
+            {projects}
           </li>
           <li className="cursor-pointer hover:underline">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <p tabIndex={0}>Contact</p>
+                <p tabIndex={0}>{contact}</p>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="flex flex-col gap-2">
                 <DropdownMenuItem asChild>
@@ -66,7 +80,7 @@ export function Navbar() {
                       height={15}
                       className="h-6 w-6 invert group-hover:invert-0 dark:invert-0 group-hover:dark:invert md:h-5 md:w-5"
                     />
-                    GitHub
+                    {github}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
@@ -84,18 +98,17 @@ export function Navbar() {
                       height={15}
                       className="h-6 w-6 dark:invert md:h-5 md:w-5"
                     />
-                    LinkedIn
+                    {linkedin}
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </li>
           <li className="cursor-pointer hover:underline">
-            <Link href="/resume/giovanni-vicentin-resume.pdf">Resume</Link>
+            <Link href="/resume/giovanni-vicentin-resume.pdf">{resume}</Link>
           </li>
         </ul>
-        <ModeToggle />
-        <LocalSwitcher />
+        {children}
       </div>
       <div className="flex items-center justify-end md:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -119,7 +132,7 @@ export function Navbar() {
                 alt="code icon"
                 className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
-              Projects
+              {projects}
             </Link>
             <Link
               onClick={() => handleClick('contact')}
@@ -135,7 +148,7 @@ export function Navbar() {
                 alt="contact icon"
                 className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
-              Contact
+              {contact}
             </Link>
             <Link
               href="/resume/giovanni-vicentin-resume.pdf"
@@ -148,12 +161,9 @@ export function Navbar() {
                 alt="resume icon"
                 className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
-              Resume
+              {resume}
             </Link>
-            <div className="flex gap-1">
-              <ModeToggle />
-              <LocalSwitcher />
-            </div>
+            <div className="flex gap-1">{children}</div>
           </SheetContent>
         </Sheet>
       </div>
