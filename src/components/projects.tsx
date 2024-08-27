@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl'
 import { Project } from './project'
 
 export function Projects() {
-  const p = useTranslations('ProjectSection')
+  const t = useTranslations('ProjectSection')
 
   const projects = ['frankMetalicas', 'tecnojund', 'megazord'] as const
   return (
@@ -13,14 +13,14 @@ export function Projects() {
       {projects.map((project) => (
         <Project
           key={project}
-          title={p(`${project}.title`)}
-          description={p(`${project}.description`)}
-          imgSrc={p(`${project}.imgSrc`)}
-          imgAlt={p(`${project}.imgAlt`)}
-          href={p(`${project}.href`)}
-          github={p(`${project}.github`)}
-          expandedDescription={p(`${project}.expandedDescription`)}
-          videoPath={p(`${project}.videoPath`)}
+          title={t(`${project}.title`)}
+          description={t(`${project}.description`)}
+          imgSrc={t(`${project}.imgSrc`)}
+          imgAlt={t(`${project}.imgAlt`)}
+          href={t(`${project}.href`)}
+          github={t(`${project}.github`)}
+          expandedDescription={t(`${project}.expandedDescription`)}
+          videoPath={t(`${project}.videoPath`)}
         />
       ))}
     </section>
