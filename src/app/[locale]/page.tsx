@@ -1,6 +1,7 @@
 import { ContactForm } from '@/components/contactForm'
 import Presentation from '@/components/presentation'
-import { Project } from '@/components/project'
+import { Projects } from '@/components/projects'
+
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { BriefcaseIcon } from 'lucide-react'
@@ -35,9 +36,6 @@ const workExperience = [
 
 export default function Home() {
   const t = useTranslations('HomePage')
-  const p = useTranslations('ProjectSection')
-
-  const projects = ['frankMetalicas', 'tecnojund', 'megazord'] as const
 
   return (
     <main className="flex flex-col items-center justify-between">
@@ -47,24 +45,7 @@ export default function Home() {
         contactMe={t('contactMe')}
         viewProjects={t('viewProjects')}
       />
-      <section
-        id="projects"
-        className="grid w-full grid-cols-1 gap-8 bg-muted p-8 py-12 sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {projects.map((project) => (
-          <Project
-            key={project}
-            title={p(`${project}.title`)}
-            description={p(`${project}.description`)}
-            imgSrc={p(`${project}.imgSrc`)}
-            imgAlt={p(`${project}.imgAlt`)}
-            href={p(`${project}.href`)}
-            github={p(`${project}.github`)}
-            expandedDescription={p(`${project}.expandedDescription`)}
-            videoPath={p(`${project}.videoPath`)}
-          />
-        ))}
-      </section>
+      <Projects />
       <section
         id="skills"
         className="flex w-full flex-col items-center justify-center space-y-8 bg-background px-4 py-12 md:px-12"
