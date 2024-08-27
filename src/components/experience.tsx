@@ -1,26 +1,11 @@
 import { BriefcaseIcon } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { Merriweather } from 'next/font/google'
 import { Badge } from './ui/badge'
 import { Card, CardContent } from './ui/card'
 
-const workExperience = [
-  {
-    title: 'Software Engineer',
-    company: "Sam's Club",
-    period: '2024 - Present',
-    stack: ['React', 'Node.js', 'GraphQL', 'GCP', 'VTEX IO', '...'],
-    description:
-      'Led development of scalable web applications, improving performance by 40%.',
-  },
-  {
-    title: 'Software Developer',
-    company: 'Talst Contabilidade',
-    period: '2022 - 2024',
-    stack: ['NestJS', 'Node.js', 'React', 'Python', 'MySQL', '...'],
-    description:
-      'Developed and maintained multiple client-facing applications.',
-  },
-]
+const experiences = ['sams', 'talst'] as const
+const stacks = ['0', '1', '2', '3', '4', '5']
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -30,6 +15,8 @@ const merriweather = Merriweather({
 })
 
 export function Experience() {
+  const t = useTranslations('workExperience')
+
   return (
     <section
       id="experience"
@@ -38,12 +25,12 @@ export function Experience() {
       <h2
         className={`${merriweather.variable} text-center font-serif text-3xl font-bold md:text-4xl`}
       >
-        Work Experience
+        {t('title')}
       </h2>
       <div className="space-y-8">
-        {workExperience.map((job, index) => (
+        {experiences.map((experience) => (
           <Card
-            key={index}
+            key={experience}
             className="border shadow-sm dark:border-neutral-700"
           >
             <CardContent className="p-6">
@@ -52,20 +39,22 @@ export function Experience() {
                 <div className="flex-1">
                   <div className="mb-2 flex items-start justify-between">
                     <div>
-                      <h3 className="text-xl font-bold">{job.title}</h3>
-                      <p>{job.company}</p>
+                      <h3 className="text-xl font-bold">
+                        {t(`${experience}.title`)}
+                      </h3>
+                      <p> {t(`${experience}.company`)}</p>
                     </div>
                     <span className="text-sm text-muted-foreground">
-                      {job.period}
+                      {t(`${experience}.period`)}
                     </span>
                   </div>
                   <p className="mb-4 text-muted-foreground">
-                    {job.description}
+                    {t(`${experience}.description`)}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {job.stack.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary">
-                        {tech}
+                    {stacks.map((stack) => (
+                      <Badge key={stack} variant="secondary">
+                        {t(`${experience}.stack.${stack}`)}
                       </Badge>
                     ))}
                   </div>
