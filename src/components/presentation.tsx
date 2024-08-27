@@ -41,7 +41,10 @@ const Presentation: React.FC<PresentationProps> = ({
   }, [])
 
   return (
-    <div className="mb-32 mt-16 flex w-full flex-col items-center justify-between gap-8 px-4 md:mb-52 md:mt-24 md:flex-row md:gap-0 md:px-12">
+    <section
+      id="presentation"
+      className="mb-32 mt-16 flex w-full flex-col items-center justify-between gap-8 px-4 md:mb-52 md:mt-24 md:flex-row md:gap-0 md:px-12"
+    >
       <div className="space-y-4">
         <h1
           className={`${merriweather.variable} font-serif text-4xl font-bold md:text-5xl`}
@@ -69,7 +72,7 @@ const Presentation: React.FC<PresentationProps> = ({
         priority
         className="rounded-full dark:grayscale md:h-96 md:w-96"
       />
-    </div>
+    </section>
   )
 }
 
