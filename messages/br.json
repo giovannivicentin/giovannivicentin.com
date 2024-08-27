@@ -5,6 +5,9 @@
     "contactMe": "Contact me",
     "viewProjects": "View projects"
   },
+  "skills": {
+    "title": "Skills & Technologies"
+  },
   "NotFoundPage": {
     "title": "Page not found"
   },
