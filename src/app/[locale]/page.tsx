@@ -1,12 +1,11 @@
 import { ContactForm } from '@/components/contactForm'
+import Presentation from '@/components/presentation'
 import { Project } from '@/components/project'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { BriefcaseIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Merriweather } from 'next/font/google'
-import Image from 'next/image'
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -42,28 +41,12 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center justify-between">
-      <div className="mb-32 mt-16 flex w-full flex-col items-center justify-between gap-8 px-4 md:mb-52 md:mt-24 md:flex-row md:gap-0 md:px-12">
-        <div className="space-y-4">
-          <h1
-            className={`${merriweather.variable} font-serif text-4xl font-bold md:text-5xl`}
-          >
-            {t('title')}
-          </h1>
-          <p className="max-w-md md:max-w-xl">{t('description')}</p>
-          <div className="flex items-center gap-4">
-            <Button>Contact Me</Button>
-            <Button variant="outline">View Projects</Button>
-          </div>
-        </div>
-        <Image
-          src="/profile/image.png"
-          alt="@giovannivicentin"
-          width={1600}
-          height={1600}
-          priority
-          className="rounded-full dark:grayscale md:h-96 md:w-96"
-        />
-      </div>
+      <Presentation
+        title={t('title')}
+        description={t('description')}
+        contactMe={t('contactMe')}
+        viewProjects={t('viewProjects')}
+      />
       <section
         id="projects"
         className="grid w-full grid-cols-1 gap-8 bg-muted p-8 py-12 sm:grid-cols-2 lg:grid-cols-3"
