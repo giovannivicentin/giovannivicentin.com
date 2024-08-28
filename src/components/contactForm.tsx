@@ -9,13 +9,37 @@ import { FormControl, FormField, FormItem, FormMessage } from './ui/form'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 
-export function ContactForm() {
+interface ContactFormProps {
+  validationSubject: string
+  validationMessage: string
+  validationEmail: string
+  submitSuccess: string
+  submitError: string
+  submitDescriptionError: string
+  unknownError: string
+  placeholderSubject: string
+  placeholderEmail: string
+  placeholderMessage: string
+  submitButton: string
+}
+
+export function ContactForm({
+  validationSubject,
+  validationEmail,
+  validationMessage,
+  submitSuccess,
+  submitError,
+  submitDescriptionError,
+  unknownError,
+  placeholderSubject,
+  placeholderEmail,
+  placeholderMessage,
+  submitButton,
+}: ContactFormProps) {
   const formSchema = z.object({
-    subject: z
-      .string()
-      .min(2, { message: 'O assunto deve ter pelo menos 2 caracteres.' }),
-    email: z.string().email({ message: 'Por favor, insira um email válido.' }),
-    message: z.string().min(1, { message: 'A mensagem é obrigatória.' }),
+    subject: z.string().min(2, { message: validationSubject }),
+    email: z.string().email({ message: validationEmail }),
+    message: z.string().min(1, { message: validationMessage }),
   })
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -42,17 +66,16 @@ export function ContactForm() {
       if (response.status === 200) {
         form.reset()
         toast({
-          description: 'Sent successfully!',
+          description: submitSuccess,
         })
       } else {
-        throw new Error(`Falha ao enviar o e-mail: Status ${response.status}`)
+        throw new Error(`${response.status}`)
       }
     } catch (error) {
-      console.error('Erro ao enviar o formulário:', error)
-      const errorMessage =
-        error instanceof Error ? error.message : 'Unknown error'
+      console.error(submitError, error)
+      const errorMessage = error instanceof Error ? error.message : unknownError
       toast({
-        description: `Erro ao enviar o e-mail: ${errorMessage}`,
+        description: `${submitDescriptionError} ${errorMessage}`,
       })
     }
   }
@@ -69,7 +92,7 @@ export function ContactForm() {
                 <Input
                   {...field}
                   type="text"
-                  placeholder="Assunto"
+                  placeholder={placeholderSubject}
                   className="w-full"
                 />
               </FormControl>
@@ -88,7 +111,7 @@ export function ContactForm() {
                 <Input
                   {...field}
                   type="email"
-                  placeholder="user@domain.com"
+                  placeholder={placeholderEmail}
                   className="w-full"
                 />
               </FormControl>
@@ -106,7 +129,7 @@ export function ContactForm() {
               <FormControl>
                 <Textarea
                   {...field}
-                  placeholder="Mensagem"
+                  placeholder={placeholderMessage}
                   className="w-full"
                 />
               </FormControl>
@@ -118,7 +141,7 @@ export function ContactForm() {
         />
 
         <Button type="submit" className="justify-center">
-          Enviar
+          {submitButton}
         </Button>
       </form>
     </FormProvider>
