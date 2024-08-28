@@ -11,7 +11,7 @@ const merriweather = Merriweather({
 })
 
 export function Contact() {
-  // const t = useTranslations('ContactSection')
+  const t = useTranslations('ContactSection')
   const f = useTranslations('ContactForm')
 
   return (
@@ -21,12 +21,9 @@ export function Contact() {
           <h2
             className={`${merriweather.variable} font-serif text-3xl font-bold md:text-4xl`}
           >
-            Get in Touch
+            {t('title')}
           </h2>
-          <p className="text-muted-foreground">
-            I&rsquo;d love to hear from you! Feel free to reach out with any
-            questions or inquiries.
-          </p>
+          <p className="text-muted-foreground">{t('description')}</p>
           <ContactForm
             validationSubject={f('validationSubject')}
             validationEmail={f('validationEmail')}
@@ -44,12 +41,10 @@ export function Contact() {
         <div className="flex flex-col gap-4">
           <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle>E-mail</CardTitle>
+              <CardTitle>{t('email')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">
-                giovannifvicentin@gmail.com
-              </p>
+              <p className="text-muted-foreground">{t('myEmail')}</p>
             </CardContent>
           </Card>
         </div>
