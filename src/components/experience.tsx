@@ -42,18 +42,24 @@ export function Experience() {
                       <h3 className="font-sans text-xl font-semibold">
                         {t(`${experience}.title`)}
                       </h3>
-                      <p> {t(`${experience}.company`)}</p>
+                      <p className="text-pretty text-base font-semibold text-primary/85">
+                        {t(`${experience}.company`)}
+                      </p>
                     </div>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-base font-medium text-muted-foreground">
                       {t(`${experience}.period`)}
                     </span>
                   </div>
-                  <p className="mb-4 text-muted-foreground">
+                  <p className="mb-4 font-sans font-medium text-muted-foreground md:text-lg">
                     {t(`${experience}.description`)}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {stacks.map((stack) => (
-                      <Badge key={stack} variant="secondary">
+                      <Badge
+                        key={stack}
+                        variant="secondary"
+                        className="text-sm md:text-base"
+                      >
                         {t(`${experience}.stack.${stack}`)}
                       </Badge>
                     ))}
