@@ -1,5 +1,6 @@
 'use client'
 
+import { useToast } from '@/components/ui/use-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -12,9 +13,9 @@ export function ContactForm() {
   const formSchema = z.object({
     subject: z
       .string()
-      .min(2, { message: 'O nome deve ter pelo menos 2 caracteres.' }),
+      .min(2, { message: 'O assunto deve ter pelo menos 2 caracteres.' }),
     email: z.string().email({ message: 'Por favor, insira um email válido.' }),
-    message: z.string(),
+    message: z.string().min(1, { message: 'A mensagem é obrigatória.' }),
   })
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -26,10 +27,34 @@ export function ContactForm() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // resend logic here
-    // ✅ This will be type-safe and validated.
-    console.log(values)
+  const { toast } = useToast()
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
+
+      if (response.status === 200) {
+        form.reset()
+        toast({
+          description: 'Sent successfully!',
+        })
+      } else {
+        throw new Error(`Falha ao enviar o e-mail: Status ${response.status}`)
+      }
+    } catch (error) {
+      console.error('Erro ao enviar o formulário:', error)
+      const errorMessage =
+        error instanceof Error ? error.message : 'Unknown error'
+      toast({
+        description: `Erro ao enviar o e-mail: ${errorMessage}`,
+      })
+    }
   }
 
   return (
@@ -44,7 +69,7 @@ export function ContactForm() {
                 <Input
                   {...field}
                   type="text"
-                  placeholder="Subject"
+                  placeholder="Assunto"
                   className="w-full"
                 />
               </FormControl>
@@ -79,7 +104,11 @@ export function ContactForm() {
           render={({ field, fieldState }) => (
             <FormItem>
               <FormControl>
-                <Textarea {...field} placeholder="message" className="w-full" />
+                <Textarea
+                  {...field}
+                  placeholder="Mensagem"
+                  className="w-full"
+                />
               </FormControl>
               {fieldState.error && (
                 <FormMessage>{fieldState.error.message}</FormMessage>
@@ -89,7 +118,7 @@ export function ContactForm() {
         />
 
         <Button type="submit" className="justify-center">
-          Send
+          Enviar
         </Button>
       </form>
     </FormProvider>
