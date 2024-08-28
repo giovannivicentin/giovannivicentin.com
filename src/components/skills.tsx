@@ -18,7 +18,7 @@ export function Skills() {
       className="flex w-full flex-col items-center justify-center space-y-8 bg-background px-4 py-12 md:px-12"
     >
       <h2
-        className={`${merriweather.variable} md:font-4xl text-center font-serif text-3xl font-semibold`}
+        className={`${merriweather.variable} text-center font-serif text-3xl font-semibold md:text-4xl`}
       >
         {t('title')}
       </h2>
