@@ -67,6 +67,12 @@
       "videoPath": "/videos/fk-metalicas.mp4"
     }
   },
+  "ContactSection": {
+    "title": "Get in Touch",
+    "description": "I&rsquo;d love to hear from you! Feel free to reach out with any questions or inquiries.",
+    "email": "E-mail",
+    "myEmail": "giovannifvicentin@gmail.com"
+  },
   "ContactForm": {
     "validationSubject": "Subject must be at least 2 characters.",
     "validationMessage": "Message is required.",
