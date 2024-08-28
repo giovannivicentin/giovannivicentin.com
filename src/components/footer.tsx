@@ -8,7 +8,9 @@ export function Footer() {
   return (
     <footer className="bg-muted py-6 text-center text-sm text-muted-foreground">
       <div className="flex items-center justify-between px-4 md:px-6">
-        &copy; {currentYear} Giovanni Vicentin. All rights reserved.
+        <p className="text-sm font-normal">
+          &copy; {currentYear} Giovanni Vicentin. All rights reserved.
+        </p>
         <div className="flex items-center">
           <Link
             href="https://www.linkedin.com/in/giovannivicentin/"
