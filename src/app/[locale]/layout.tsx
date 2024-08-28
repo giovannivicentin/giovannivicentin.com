@@ -1,5 +1,6 @@
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
+import { Toaster } from '@/components/ui/toaster'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
@@ -48,6 +49,7 @@ export default function RootLayout({
           >
             <Header />
             <div className="mt-20 flex-grow">{children}</div>
+            <Toaster />
             <Footer />
           </div>
         </ThemeProvider>
