@@ -23,7 +23,9 @@ export function Contact() {
           >
             {t('title')}
           </h2>
-          <p className="text-muted-foreground">{t('description')}</p>
+          <p className="font-sans text-base font-medium text-muted-foreground md:text-lg">
+            {t('description')}
+          </p>
           <ContactForm
             validationSubject={f('validationSubject')}
             validationEmail={f('validationEmail')}
@@ -44,7 +46,9 @@ export function Contact() {
               <CardTitle>{t('email')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">{t('myEmail')}</p>
+              <p className="font-sans text-base font-medium text-muted-foreground md:text-lg">
+                {t('myEmail')}
+              </p>
             </CardContent>
           </Card>
         </div>
