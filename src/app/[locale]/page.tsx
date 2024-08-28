@@ -6,7 +6,7 @@ import { Skills } from '@/components/skills'
 import { useTranslations } from 'next-intl'
 
 export default function Home() {
-  const t = useTranslations('HomePage')
+  const t = useTranslations('Presentation')
 
   return (
     <main className="flex flex-col items-center justify-between">
