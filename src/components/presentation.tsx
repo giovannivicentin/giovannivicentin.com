@@ -51,16 +51,18 @@ const Presentation: React.FC<PresentationProps> = ({
         >
           {title}
         </h1>
-        <p className="max-w-md md:max-w-xl">{description}</p>
+        <p className="max-w-md font-medium md:max-w-xl md:text-lg">
+          {description}
+        </p>
         <div className="flex items-center gap-4">
           <Button
-            className="text-center font-semibold"
+            className="text-center text-base font-semibold"
             onClick={() => handleSmoothScroll('#contact')}
           >
             {contactMe}
           </Button>
           <Button
-            className="text-center font-semibold"
+            className="text-center text-base font-semibold"
             variant="outline"
             onClick={() => handleSmoothScroll('#projects')}
           >
