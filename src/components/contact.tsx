@@ -19,7 +19,7 @@ export function Contact() {
       <div className="grid gap-8 md:grid-cols-2">
         <div>
           <h2
-            className={`${merriweather.variable} font-serif text-3xl font-bold md:text-4xl`}
+            className={`${merriweather.variable} md:font-4xl font-serif text-3xl font-semibold`}
           >
             {t('title')}
           </h2>
