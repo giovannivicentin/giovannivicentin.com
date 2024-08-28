@@ -19,11 +19,11 @@ export function Contact() {
       <div className="grid gap-8 md:grid-cols-2">
         <div>
           <h2
-            className={`${merriweather.variable} md:font-4xl font-serif text-3xl font-semibold`}
+            className={`${merriweather.variable} font-serif text-3xl font-semibold md:text-4xl`}
           >
             {t('title')}
           </h2>
-          <p className="font-sans text-base font-medium text-muted-foreground md:text-lg">
+          <p className="mt-1 font-sans text-base font-medium text-muted-foreground md:text-lg">
             {t('description')}
           </p>
           <ContactForm
@@ -43,7 +43,7 @@ export function Contact() {
         <div className="flex flex-col gap-4">
           <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle className="md:font-4xl font-sans text-3xl font-semibold">
+              <CardTitle className="font-sans text-3xl font-semibold md:text-4xl">
                 {t('email')}
               </CardTitle>
             </CardHeader>
