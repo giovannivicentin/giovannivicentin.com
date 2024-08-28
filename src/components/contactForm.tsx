@@ -140,7 +140,7 @@ export function ContactForm({
           )}
         />
 
-        <Button type="submit" className="justify-center">
+        <Button type="submit" className="text-center font-semibold">
           {submitButton}
         </Button>
       </form>

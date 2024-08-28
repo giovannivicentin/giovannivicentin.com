@@ -99,7 +99,10 @@ export function Project({
       <CardFooter className="flex justify-between">
         <Dialog>
           <DialogTrigger asChild>
-            <Button variant="outline" className="px-4 py-2 text-sm shadow-sm">
+            <Button
+              variant="outline"
+              className="px-4 py-2 text-center font-semibold shadow-sm"
+            >
               View More
             </Button>
           </DialogTrigger>
