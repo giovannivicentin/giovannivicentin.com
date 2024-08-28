@@ -67,6 +67,19 @@
       "videoPath": "/videos/fk-metalicas.mp4"
     }
   },
+  "ContactForm": {
+    "validationSubject": "Subject must be at least 2 characters.",
+    "validationMessage": "Message is required.",
+    "validationEmail": "Please enter a valid email address.",
+    "submitSuccess": "Form submitted successfully!",
+    "submitError": "Failed to submit form.",
+    "submitDescriptionError": "There was an error",
+    "unknownError": "An unknown error occurred.",
+    "placeholderSubject": "Enter subject",
+    "placeholderEmail": "Enter your email",
+    "placeholderMessage": "Enter your message",
+    "submitButton": "Send"
+  },
   "Footer": {
     "text": "All rights reserved"
   }
