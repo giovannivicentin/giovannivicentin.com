@@ -43,7 +43,9 @@ export function Contact() {
         <div className="flex flex-col gap-4">
           <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle>{t('email')}</CardTitle>
+              <CardTitle className="md:font-4xl font-sans text-3xl font-semibold">
+                {t('email')}
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="font-sans text-base font-medium text-muted-foreground md:text-lg">
