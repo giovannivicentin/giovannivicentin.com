@@ -23,7 +23,7 @@ export function Experience() {
       className="flex w-full flex-col space-y-8 bg-muted px-4 py-12 md:px-12"
     >
       <h2
-        className={`${merriweather.variable} text-center font-serif text-3xl font-bold md:text-4xl`}
+        className={`${merriweather.variable} md:font-4xl text-center font-serif text-3xl font-semibold`}
       >
         {t('title')}
       </h2>
@@ -39,7 +39,7 @@ export function Experience() {
                 <div className="flex-1">
                   <div className="mb-2 flex items-start justify-between">
                     <div>
-                      <h3 className="text-xl font-bold">
+                      <h3 className="font-sans text-xl font-semibold">
                         {t(`${experience}.title`)}
                       </h3>
                       <p> {t(`${experience}.company`)}</p>
