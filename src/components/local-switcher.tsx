@@ -36,21 +36,21 @@ export function LocalSwitcher() {
           onClick={() => onSelectChange('en')}
           className="flex items-center gap-2"
         >
-          <span className="text-sm font-medium">English</span>
+          <span className="text-base font-medium">English</span>
           {localActive === 'en' && <Check className="ml-auto h-4 w-4" />}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => onSelectChange('es')}
           className="flex items-center gap-2"
         >
-          <span className="text-sm font-medium">Español</span>
+          <span className="text-base font-medium">Español</span>
           {localActive === 'es' && <Check className="ml-auto h-4 w-4" />}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => onSelectChange('br')}
           className="flex items-center gap-2"
         >
-          <span className="text-sm font-medium">Português</span>
+          <span className="text-base font-medium">Português</span>
           {localActive === 'br' && <Check className="ml-auto h-4 w-4" />}
         </DropdownMenuItem>
       </DropdownMenuContent>
