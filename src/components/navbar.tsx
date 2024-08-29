@@ -116,7 +116,14 @@ export function Navbar({
             </DropdownMenu>
           </li>
           <li className="cursor-pointer hover:underline">
-            <Link href="/resume/giovanni-vicentin-resume.pdf">{resume}</Link>
+            <Link
+              prefetch={true}
+              target="_blank"
+              rel="noopener noreferrer"
+              href="/resume/giovanni-vicentin-resume.pdf"
+            >
+              {resume}
+            </Link>
           </li>
         </ul>
         {children}
