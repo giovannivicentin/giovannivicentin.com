@@ -15,7 +15,7 @@ export function Header() {
         className="flex items-center gap-2 rounded-md p-1 hover:bg-neutral-100 dark:hover:bg-transparent hover:dark:brightness-75"
       >
         <Image
-          src="/logos/white-icon.svg"
+          src="/images/logos/white-icon.svg"
           alt="Logo of Giovanni Vicentin"
           width={24}
           height={24}

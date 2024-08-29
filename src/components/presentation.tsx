@@ -71,7 +71,7 @@ const Presentation: React.FC<PresentationProps> = ({
         </div>
       </div>
       <Image
-        src="/profile/image.png"
+        src="/images/profile/image.png"
         alt="@giovannivicentin"
         width={1600}
         height={1600}

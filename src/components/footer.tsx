@@ -24,7 +24,7 @@ export function Footer() {
               className="bg-muted hover:bg-neutral-200 dark:hover:bg-neutral-700"
             >
               <Image
-                src="/icons/linkedin.svg"
+                src="/images/icons/linkedin.svg"
                 height={20}
                 width={20}
                 alt="LinkedIn Icon"
@@ -45,7 +45,7 @@ export function Footer() {
               className="bg-muted hover:bg-neutral-200 dark:hover:bg-neutral-700"
             >
               <Image
-                src="/icons/github.svg"
+                src="/images/icons/github.svg"
                 height={20}
                 width={20}
                 alt="GitHub Icon"

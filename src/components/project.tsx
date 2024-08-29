@@ -74,7 +74,7 @@ export function Project({
                 <Link href={href}>
                   <Button variant="ghost" size="icon">
                     <Image
-                      src="/icons/link.svg"
+                      src="/images/icons/link.svg"
                       height={20}
                       width={20}
                       alt="External Link Icon"
@@ -86,7 +86,7 @@ export function Project({
                 <Link href={github}>
                   <Button variant="ghost" size="icon">
                     <Image
-                      src="/icons/github.svg"
+                      src="/images/icons/github.svg"
                       height={20}
                       width={20}
                       alt="GitHub Icon"
@@ -125,7 +125,7 @@ export function Project({
                 <Link href={href}>
                   <Button variant="ghost" size="icon">
                     <Image
-                      src="/icons/link.svg"
+                      src="/images/icons/link.svg"
                       height={20}
                       width={20}
                       alt="External Link Icon"
@@ -137,7 +137,7 @@ export function Project({
                 <Link href={github}>
                   <Button variant="ghost" size="icon">
                     <Image
-                      src="/icons/github.svg"
+                      src="/images/icons/github.svg"
                       height={20}
                       width={20}
                       alt="GitHub Icon"
@@ -158,7 +158,7 @@ export function Project({
               className="hover:bg-neutral-100 dark:hover:bg-neutral-700"
             >
               <Image
-                src="/icons/link.svg"
+                src="/images/icons/link.svg"
                 height={20}
                 width={20}
                 alt="External Link Icon"
@@ -174,7 +174,7 @@ export function Project({
               className="hover:bg-neutral-100 hover:shadow-sm dark:hover:bg-neutral-700"
             >
               <Image
-                src="/icons/github.svg"
+                src="/images/icons/github.svg"
                 height={20}
                 width={20}
                 alt="GitHub Icon"

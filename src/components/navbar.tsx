@@ -2,7 +2,6 @@
 
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Menu } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -74,7 +73,7 @@ export function Navbar({
                     className="group flex cursor-pointer items-center justify-center gap-2 bg-primary px-10 py-2 font-semibold text-primary-foreground hover:bg-primary/90"
                   >
                     <Image
-                      src="/icons/github.svg"
+                      src="/images/icons/github.svg"
                       alt="GitHub icon"
                       width={15}
                       height={15}
@@ -92,7 +91,7 @@ export function Navbar({
                     className="flex cursor-pointer items-center gap-2 border border-input bg-background px-10 py-2 font-semibold hover:bg-accent hover:text-accent-foreground"
                   >
                     <Image
-                      src="/icons/linkedin.svg"
+                      src="/images/icons/linkedin.svg"
                       alt="LinkedIn icon"
                       width={15}
                       height={15}
@@ -114,7 +113,13 @@ export function Navbar({
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
-              <Menu className="h-6 w-6" />
+              <Image
+                src="/images/icons/menu.svg"
+                alt="hamburguer menu icon"
+                width={24}
+                height={24}
+                className="h-6 w-6 dark:invert"
+              />
             </Button>
           </SheetTrigger>
           <SheetContent className="flex flex-col items-center justify-start gap-8 pt-20 text-xl font-medium">
@@ -126,7 +131,7 @@ export function Navbar({
               tabIndex={0}
             >
               <Image
-                src="/icons/code.svg"
+                src="/images/icons/code.svg"
                 height={20}
                 width={20}
                 alt="code icon"
@@ -142,7 +147,7 @@ export function Navbar({
               tabIndex={0}
             >
               <Image
-                src="/icons/contact.svg"
+                src="/images/icons/contact.svg"
                 height={20}
                 width={20}
                 alt="contact icon"
@@ -155,7 +160,7 @@ export function Navbar({
               className="flex items-center gap-2 hover:underline"
             >
               <Image
-                src="/icons/resume.svg"
+                src="/images/icons/resume.svg"
                 height={20}
                 width={20}
                 alt="resume icon"
