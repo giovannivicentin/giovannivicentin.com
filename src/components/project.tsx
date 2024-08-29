@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from './ui/button'
@@ -40,6 +41,7 @@ export function Project({
   videoPath,
   expandedDescription,
 }: ProjectProps) {
+  const t = useTranslations('ProjectComponent')
   return (
     <Card className="relative mx-auto h-full max-w-[28rem] border shadow-sm hover:shadow dark:border-neutral-700 hover:dark:shadow-md">
       <CardHeader>
@@ -77,10 +79,10 @@ export function Project({
                       src="/images/icons/link.svg"
                       height={20}
                       width={20}
-                      alt="External Link Icon"
+                      alt={t('linkIcon')}
                       className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
                     />
-                    <span className="sr-only">External Link</span>
+                    <span className="sr-only">{t('externalLink')}</span>
                   </Button>
                 </Link>
                 <Link href={github}>
@@ -89,10 +91,10 @@ export function Project({
                       src="/images/icons/github.svg"
                       height={20}
                       width={20}
-                      alt="GitHub Icon"
+                      alt={t('githubIcon')}
                       className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
                     />
-                    <span className="sr-only">GitHub Link</span>
+                    <span className="sr-only">{t('githubLink')}</span>
                   </Button>
                 </Link>
               </div>
@@ -107,7 +109,7 @@ export function Project({
               variant="outline"
               className="px-4 py-2 text-center font-semibold shadow-sm"
             >
-              View More
+              {t('viewMore')}
             </Button>
           </DialogTrigger>
           <DialogContent className="min-w-fit lg:min-w-[50rem]">
@@ -131,7 +133,7 @@ export function Project({
                       alt="External Link Icon"
                       className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
                     />
-                    <span className="sr-only">External Link</span>
+                    <span className="sr-only">{t('externalLink')}</span>
                   </Button>
                 </Link>
                 <Link href={github}>
@@ -143,7 +145,7 @@ export function Project({
                       alt="GitHub Icon"
                       className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
                     />
-                    <span className="sr-only">GitHub Link</span>
+                    <span className="sr-only">{t('githubLink')}</span>
                   </Button>
                 </Link>
               </div>
@@ -161,10 +163,10 @@ export function Project({
                 src="/images/icons/link.svg"
                 height={20}
                 width={20}
-                alt="External Link Icon"
+                alt={t('linkIcon')}
                 className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
               />
-              <span className="sr-only">External Link</span>
+              <span className="sr-only">{t('externalLink')}</span>
             </Button>
           </Link>
           <Link href={github}>
@@ -177,10 +179,10 @@ export function Project({
                 src="/images/icons/github.svg"
                 height={20}
                 width={20}
-                alt="GitHub Icon"
+                alt={t('githubIcon')}
                 className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
               />
-              <span className="sr-only">GitHub Link</span>
+              <span className="sr-only">{t('githubLink')}</span>
             </Button>
           </Link>
         </div>

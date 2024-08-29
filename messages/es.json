@@ -38,6 +38,13 @@
       "description": "Developed and maintained multiple client-facing applications."
     }
   },
+  "ProjectComponent": {
+    "externalLink": "External link",
+    "githubLink": "GitHub link",
+    "viewMore": "View more",
+    "githubIcon": "GitHub icon",
+    "linkIcon": "External link icon"
+  },
   "ProjectSection": {
     "frankMetalicas": {
       "title": "Frank Metálicas",
