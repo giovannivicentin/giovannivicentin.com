@@ -1,15 +1,17 @@
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from './ui/button'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const t = useTranslations('Footer')
 
   return (
     <footer className="bg-muted py-6 text-center text-sm text-muted-foreground">
       <div className="flex items-center justify-between px-4 md:px-6">
         <p className="text-sm font-normal">
-          &copy; {currentYear} Giovanni Vicentin. All rights reserved.
+          &copy; {currentYear} Giovanni Vicentin. {t('rightsReserved')}
         </p>
         <div className="flex items-center">
           <Link
@@ -27,10 +29,10 @@ export function Footer() {
                 src="/images/icons/linkedin.svg"
                 height={20}
                 width={20}
-                alt="LinkedIn Icon"
+                alt={t('linkedinIcon')}
                 className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
               />
-              <span className="sr-only">LinkedIn Link</span>
+              <span className="sr-only">{t('spanLinkedin')}</span>
             </Button>
           </Link>
           <Link
@@ -48,10 +50,10 @@ export function Footer() {
                 src="/images/icons/github.svg"
                 height={20}
                 width={20}
-                alt="GitHub Icon"
+                alt={t('githubIcon')}
                 className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
               />
-              <span className="sr-only">GitHub Link</span>
+              <span className="sr-only">{t('spanGithub')}</span>
             </Button>
           </Link>
         </div>

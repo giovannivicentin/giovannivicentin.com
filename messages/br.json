@@ -87,6 +87,10 @@
     "submitButton": "Send"
   },
   "Footer": {
-    "text": "All rights reserved"
+    "rightReserved": "All rights reserved.",
+    "linkedinIcon": "LinkedIn icon",
+    "githubIcon": "GitHub icon",
+    "spanLinkedin": "LinkedIn Link",
+    "spanGithub": "GitHub Link"
   }
 }
