@@ -34,7 +34,7 @@
       "company": "Sam's Club",
       "period": "2024 - Presente",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
-      "description": "Mejoró los sistemas de registro de Sam's Club, incrementando significativamente el compromiso de los miembros y el rendimiento de la plataforma con soluciones innovadoras y optimizaciones."
+      "description": "Recreó el sistema de registro de Sam’s Club, creó APIs para gestionar datos de usuarios y optimizó la plataforma, elevando la base de miembros, el compromiso y el rendimiento del sitio."
     },
     "talst": {
       "title": "Ingeniero de Software",
