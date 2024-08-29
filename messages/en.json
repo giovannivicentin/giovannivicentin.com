@@ -1,18 +1,18 @@
 {
   "Presentation": {
-    "title": "Hello, I'm Giovanni Vicentin",
-    "description": "I'm a software engineer with a passion for building beautiful and functional web applications. I have experience in a variety of technologies, including React, Node.js, and MongoDB.",
-    "contactMe": "Contact me",
-    "viewProjects": "View projects"
+    "title": "Hello, I’m Giovanni Vicentin",
+    "description": "I am a software engineer driven by the purpose of helping people and a passion for developing software. I have extensive experience with various technologies, with a primary focus on React, Next.js, Node.js, Nest.js, and the entire JavaScript stack.",
+    "contactMe": "Contact Me",
+    "viewProjects": "View Projects"
   },
   "skills": {
     "title": "Skills & Technologies"
   },
   "NotFoundPage": {
-    "title": "Page not found"
+    "title": "Page Not Found"
   },
   "Header": {
-    "logoAlt": "Logo of Giovanni Vicentin"
+    "logoAlt": "Giovanni Vicentin's Logo"
   },
   "Navigation": {
     "projects": "Projects",
@@ -20,15 +20,15 @@
     "resume": "Resume",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "githubIcon": "GitHub icon",
-    "linkedinIcon": "LinkedIn icon",
-    "menuIcon": "Menu icon",
-    "codeIcon": "Code icon",
-    "contactIcon": "Contact icon",
-    "resumeIcon": "Resume icon"
+    "githubIcon": "GitHub Icon",
+    "linkedinIcon": "LinkedIn Icon",
+    "menuIcon": "Menu Icon",
+    "codeIcon": "Code Icon",
+    "contactIcon": "Contact Icon",
+    "resumeIcon": "Resume Icon"
   },
   "workExperience": {
-    "title": "Work Experience",
+    "title": "Professional Experience",
     "sams": {
       "title": "Software Engineer",
       "company": "Sam's Club",
@@ -45,11 +45,11 @@
     }
   },
   "ProjectComponent": {
-    "externalLink": "External link",
-    "githubLink": "GitHub link",
-    "viewMore": "View more",
-    "githubIcon": "GitHub icon",
-    "linkIcon": "External link icon"
+    "externalLink": "External Link to the Project",
+    "githubLink": "External Link to GitHub",
+    "viewMore": "View More",
+    "githubIcon": "GitHub Icon",
+    "linkIcon": "External Link Icon"
   },
   "ProjectSection": {
     "frankMetalicas": {
@@ -69,47 +69,47 @@
       "imgAlt": "Project 2",
       "href": "https://www.example.com",
       "github": "/",
-      "expandedDescription": "Description of project 1",
-      "videoPath": "/videos/projects/fk-metalicas.mp4"
+      "expandedDescription": "Description of project 2",
+      "videoPath": "/videos/projects/tecnojund.mp4"
     },
     "megazord": {
-      "title": "Sistema de Gestão",
+      "title": "Management System",
       "description": "Description of project 3",
       "imgSrc": "/images/projects/tecnojund.png",
       "imgAlt": "Project 3",
       "href": "https://www.example.com",
       "github": "/",
-      "expandedDescription": "Description of project 1",
+      "expandedDescription": "Description of project 3",
       "videoPath": "/videos/projects/fk-metalicas.mp4"
     }
   },
   "ContactSection": {
     "title": "Get in Touch",
-    "description": "I'd love to hear from you! Feel free to reach out with any questions or inquiries.",
-    "email": "E-mail",
+    "description": "I’d love to hear from you! Feel free to reach out with any questions or inquiries.",
+    "email": "Email",
     "myEmail": "giovannifvicentin@gmail.com"
   },
   "ContactForm": {
-    "validationSubject": "Subject must be at least 2 characters.",
+    "validationSubject": "The subject must have at least 2 characters.",
     "validationMessage": "Message is required.",
     "validationEmail": "Please enter a valid email address.",
     "submitSuccess": "Form submitted successfully!",
-    "submitError": "Failed to submit form.",
-    "submitDescriptionError": "There was an error",
+    "submitError": "Failed to submit the form.",
+    "submitDescriptionError": "An error occurred",
     "unknownError": "An unknown error occurred.",
-    "placeholderSubject": "Enter subject",
-    "placeholderEmail": "Enter your email",
-    "placeholderMessage": "Enter your message",
+    "placeholderSubject": "Enter the subject here.",
+    "placeholderEmail": "user@domain.com",
+    "placeholderMessage": "Enter your message here.",
     "submitButton": "Send"
   },
   "VideoComponent": {
-    "fallbackAlt": "Fallback image when video cannot be played",
+    "fallbackAlt": "Fallback image when the video cannot be played",
     "videoNotSupported": "Your browser does not support the video tag."
   },
   "Footer": {
     "rightsReserved": "All rights reserved.",
-    "linkedinIcon": "LinkedIn icon",
-    "githubIcon": "GitHub icon",
+    "linkedinIcon": "LinkedIn Icon",
+    "githubIcon": "GitHub Icon",
     "spanLinkedin": "LinkedIn Link",
     "spanGithub": "GitHub Link"
   }

@@ -1,43 +1,43 @@
 {
   "Presentation": {
-    "title": "Hello, I'm Giovanni Vicentin",
-    "description": "I'm a software engineer with a passion for building beautiful and functional web applications. I have experience in a variety of technologies, including React, Node.js, and MongoDB.",
-    "contactMe": "Contact me",
-    "viewProjects": "View projects"
+    "title": "Olá, sou o Giovanni Vicentin",
+    "description": "Sou um engenheiro de software movido pelo propósito de ajudar pessoas e pela paixão por desenvolver software. Possuo ampla experiência em diversas tecnologias, com foco principal em React, Next.js, Node.js, Nest.js e em toda a stack JavaScript.",
+    "contactMe": "Contate-me",
+    "viewProjects": "Ver Projetos"
   },
   "skills": {
-    "title": "Skills & Technologies"
+    "title": "Habilidades & Tecnologias"
   },
   "NotFoundPage": {
-    "title": "Page not found"
+    "title": "Página não encontrada"
   },
   "Header": {
-    "logoAlt": "Logo of Giovanni Vicentin"
+    "logoAlt": "Logo do Giovanni Vicentin"
   },
   "Navigation": {
-    "projects": "Projects",
-    "contact": "Contact",
-    "resume": "Resume",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "resume": "Currículo",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "githubIcon": "GitHub icon",
-    "linkedinIcon": "LinkedIn icon",
-    "menuIcon": "Menu icon",
-    "codeIcon": "Code icon",
-    "contactIcon": "Contact icon",
-    "resumeIcon": "Resume icon"
+    "githubIcon": "Ícone GitHub",
+    "linkedinIcon": "Ícone LinkedIn",
+    "menuIcon": "Ícone Menu",
+    "codeIcon": "Ícone Code",
+    "contactIcon": "Ícone Contato",
+    "resumeIcon": "Ícone Currículo"
   },
   "workExperience": {
-    "title": "Work Experience",
+    "title": "Experiência Profissional",
     "sams": {
-      "title": "Software Engineer",
+      "title": "Desenvolvedor de Software",
       "company": "Sam's Club",
-      "period": "2024 - Present",
+      "period": "2024 - Presente",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
       "description": "Led development of scalable web applications, improving performance by 40%."
     },
     "talst": {
-      "title": "Software Engineer",
+      "title": "Desenvolvedor de Software",
       "company": "Talst Contabilidade",
       "period": "2022 - 2024",
       "stack": ["NestJS", "Node.js", "React", "Python", "MySQL", "..."],
@@ -45,11 +45,11 @@
     }
   },
   "ProjectComponent": {
-    "externalLink": "External link",
-    "githubLink": "GitHub link",
-    "viewMore": "View more",
-    "githubIcon": "GitHub icon",
-    "linkIcon": "External link icon"
+    "externalLink": "Link Externo para o projeto",
+    "githubLink": "Link Externo para o GitHub",
+    "viewMore": "Ver mais",
+    "githubIcon": "Ícone GitHub",
+    "linkIcon": "Ícone Link Externo"
   },
   "ProjectSection": {
     "frankMetalicas": {
@@ -84,33 +84,33 @@
     }
   },
   "ContactSection": {
-    "title": "Get in Touch",
-    "description": "I'd love to hear from you! Feel free to reach out with any questions or inquiries.",
+    "title": "Entre em contato",
+    "description": "Adoraria ouvir você! Sinta-se à vontade para entrar em contato com qualquer pergunta ou dúvida.",
     "email": "E-mail",
     "myEmail": "giovannifvicentin@gmail.com"
   },
   "ContactForm": {
-    "validationSubject": "Subject must be at least 2 characters.",
-    "validationMessage": "Message is required.",
-    "validationEmail": "Please enter a valid email address.",
-    "submitSuccess": "Form submitted successfully!",
-    "submitError": "Failed to submit form.",
-    "submitDescriptionError": "There was an error",
-    "unknownError": "An unknown error occurred.",
-    "placeholderSubject": "Enter subject",
-    "placeholderEmail": "Enter your email",
-    "placeholderMessage": "Enter your message",
-    "submitButton": "Send"
+    "validationSubject": "O assunto deve ter pelo menos 2 caracteres.",
+    "validationMessage": "Mensagem é obrigatória.",
+    "validationEmail": "Por favor, insira um endereço de e-mail válido.",
+    "submitSuccess": "Formulário enviado com sucesso!",
+    "submitError": "Falha ao enviar o formulário.",
+    "submitDescriptionError": "Ocorreu um erro",
+    "unknownError": "Ocorreu um erro desconhecido.",
+    "placeholderSubject": "Escreva o assunto aqui.",
+    "placeholderEmail": "usuario@dominio.com",
+    "placeholderMessage": "Escreva sua mensagem aqui.",
+    "submitButton": "Enviar"
   },
   "VideoComponent": {
-    "fallbackAlt": "Fallback image when video cannot be played",
-    "videoNotSupported": "Your browser does not support the video tag."
+    "fallbackAlt": "Imagem de substituição quando o vídeo não pode ser reproduzido",
+    "videoNotSupported": "Seu navegador não suporta a tag de vídeo."
   },
   "Footer": {
-    "rightsReserved": "All rights reserved.",
-    "linkedinIcon": "LinkedIn icon",
-    "githubIcon": "GitHub icon",
-    "spanLinkedin": "LinkedIn Link",
-    "spanGithub": "GitHub Link"
+    "rightsReserved": "Todos os direitos reservados.",
+    "linkedinIcon": "Ícone do LinkedIn",
+    "githubIcon": "Ícone do GitHub",
+    "spanLinkedin": "Link do LinkedIn",
+    "spanGithub": "Link do GitHub"
   }
 }

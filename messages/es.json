@@ -1,116 +1,116 @@
 {
   "Presentation": {
-    "title": "Hello, I'm Giovanni Vicentin",
-    "description": "I'm a software engineer with a passion for building beautiful and functional web applications. I have experience in a variety of technologies, including React, Node.js, and MongoDB.",
-    "contactMe": "Contact me",
-    "viewProjects": "View projects"
+    "title": "Hola, soy Giovanni Vicentin",
+    "description": "Soy un ingeniero de software motivado por el propósito de ayudar a las personas y por la pasión de desarrollar software. Tengo una amplia experiencia en diversas tecnologías, con un enfoque principal en React, Next.js, Node.js, Nest.js y en toda la stack de JavaScript.",
+    "contactMe": "Contáctame",
+    "viewProjects": "Ver Proyectos"
   },
   "skills": {
-    "title": "Skills & Technologies"
+    "title": "Habilidades & Tecnologías"
   },
   "NotFoundPage": {
-    "title": "Page not found"
+    "title": "Página no encontrada"
   },
   "Header": {
-    "logoAlt": "Logo of Giovanni Vicentin"
+    "logoAlt": "Logo de Giovanni Vicentin"
   },
   "Navigation": {
-    "projects": "Projects",
-    "contact": "Contact",
-    "resume": "Resume",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "resume": "Currículum",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "githubIcon": "GitHub icon",
-    "linkedinIcon": "LinkedIn icon",
-    "menuIcon": "Menu icon",
-    "codeIcon": "Code icon",
-    "contactIcon": "Contact icon",
-    "resumeIcon": "Resume icon"
+    "githubIcon": "Icono de GitHub",
+    "linkedinIcon": "Icono de LinkedIn",
+    "menuIcon": "Icono de Menú",
+    "codeIcon": "Icono de Código",
+    "contactIcon": "Icono de Contacto",
+    "resumeIcon": "Icono de Currículum"
   },
   "workExperience": {
-    "title": "Work Experience",
+    "title": "Experiencia Profesional",
     "sams": {
-      "title": "Software Engineer",
+      "title": "Ingeniero de Software",
       "company": "Sam's Club",
-      "period": "2024 - Present",
+      "period": "2024 - Presente",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
-      "description": "Led development of scalable web applications, improving performance by 40%."
+      "description": "Lideré el desarrollo de aplicaciones web escalables, mejorando el rendimiento en un 40%."
     },
     "talst": {
-      "title": "Software Engineer",
-      "company": "Talst Contabilidade",
+      "title": "Ingeniero de Software",
+      "company": "Talst Contabilidad",
       "period": "2022 - 2024",
       "stack": ["NestJS", "Node.js", "React", "Python", "MySQL", "..."],
-      "description": "Developed and maintained multiple client-facing applications."
+      "description": "Desarrollé y mantuve múltiples aplicaciones orientadas al cliente."
     }
   },
   "ProjectComponent": {
-    "externalLink": "External link",
-    "githubLink": "GitHub link",
-    "viewMore": "View more",
-    "githubIcon": "GitHub icon",
-    "linkIcon": "External link icon"
+    "externalLink": "Enlace Externo al proyecto",
+    "githubLink": "Enlace Externo a GitHub",
+    "viewMore": "Ver más",
+    "githubIcon": "Icono de GitHub",
+    "linkIcon": "Icono de Enlace Externo"
   },
   "ProjectSection": {
     "frankMetalicas": {
       "title": "Frank Metálicas",
-      "description": "Description of project 1",
+      "description": "Descripción del proyecto 1",
       "imgSrc": "/images/projects/fk-metalicas.png",
-      "imgAlt": "Project 1",
+      "imgAlt": "Proyecto 1",
       "href": "https://www.example.com",
       "github": "/",
-      "expandedDescription": "Description of project 1",
+      "expandedDescription": "Descripción del proyecto 1",
       "videoPath": "/videos/projects/fk-metalicas.mp4"
     },
     "tecnojund": {
       "title": "Tecnojund",
-      "description": "Description of project 2",
+      "description": "Descripción del proyecto 2",
       "imgSrc": "/images/projects/tecnojund.png",
-      "imgAlt": "Project 2",
+      "imgAlt": "Proyecto 2",
       "href": "https://www.example.com",
       "github": "/",
-      "expandedDescription": "Description of project 1",
+      "expandedDescription": "Descripción del proyecto 1",
       "videoPath": "/videos/projects/fk-metalicas.mp4"
     },
     "megazord": {
-      "title": "Sistema de Gestão",
-      "description": "Description of project 3",
+      "title": "Sistema de Gestión",
+      "description": "Descripción del proyecto 3",
       "imgSrc": "/images/projects/tecnojund.png",
-      "imgAlt": "Project 3",
+      "imgAlt": "Proyecto 3",
       "href": "https://www.example.com",
       "github": "/",
-      "expandedDescription": "Description of project 1",
+      "expandedDescription": "Descripción del proyecto 1",
       "videoPath": "/videos/projects/fk-metalicas.mp4"
     }
   },
   "ContactSection": {
-    "title": "Get in Touch",
-    "description": "I'd love to hear from you! Feel free to reach out with any questions or inquiries.",
-    "email": "E-mail",
+    "title": "Ponte en contacto",
+    "description": "¡Me encantaría saber de ti! No dudes en ponerte en contacto con cualquier pregunta o duda.",
+    "email": "Correo electrónico",
     "myEmail": "giovannifvicentin@gmail.com"
   },
   "ContactForm": {
-    "validationSubject": "Subject must be at least 2 characters.",
-    "validationMessage": "Message is required.",
-    "validationEmail": "Please enter a valid email address.",
-    "submitSuccess": "Form submitted successfully!",
-    "submitError": "Failed to submit form.",
-    "submitDescriptionError": "There was an error",
-    "unknownError": "An unknown error occurred.",
-    "placeholderSubject": "Enter subject",
-    "placeholderEmail": "Enter your email",
-    "placeholderMessage": "Enter your message",
-    "submitButton": "Send"
+    "validationSubject": "El asunto debe tener al menos 2 caracteres.",
+    "validationMessage": "El mensaje es obligatorio.",
+    "validationEmail": "Por favor, ingresa una dirección de correo electrónico válida.",
+    "submitSuccess": "¡Formulario enviado con éxito!",
+    "submitError": "Error al enviar el formulario.",
+    "submitDescriptionError": "Ocurrió un error",
+    "unknownError": "Ocurrió un error desconocido.",
+    "placeholderSubject": "Escribe el asunto aquí.",
+    "placeholderEmail": "usuario@dominio.com",
+    "placeholderMessage": "Escribe tu mensaje aquí.",
+    "submitButton": "Enviar"
   },
   "VideoComponent": {
-    "fallbackAlt": "Fallback image when video cannot be played",
-    "videoNotSupported": "Your browser does not support the video tag."
+    "fallbackAlt": "Imagen de sustitución cuando el video no puede reproducirse",
+    "videoNotSupported": "Tu navegador no soporta la etiqueta de video."
   },
   "Footer": {
-    "rightsReserved": "All rights reserved.",
-    "linkedinIcon": "LinkedIn icon",
-    "githubIcon": "GitHub icon",
-    "spanLinkedin": "LinkedIn Link",
-    "spanGithub": "GitHub Link"
+    "rightsReserved": "Todos los derechos reservados.",
+    "linkedinIcon": "Icono de LinkedIn",
+    "githubIcon": "Icono de GitHub",
+    "spanLinkedin": "Enlace de LinkedIn",
+    "spanGithub": "Enlace de GitHub"
   }
 }
