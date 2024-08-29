@@ -34,14 +34,14 @@
       "company": "Sam's Club",
       "period": "2024 - Presente",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
-      "description": "Lideré el desarrollo de aplicaciones web escalables, mejorando el rendimiento en un 40%."
+      "description": "Mejoró los sistemas de registro de Sam's Club, incrementando significativamente el compromiso de los miembros y el rendimiento de la plataforma con soluciones innovadoras y optimizaciones."
     },
     "talst": {
       "title": "Ingeniero de Software",
       "company": "Talst Contabilidad",
       "period": "2022 - 2024",
       "stack": ["NestJS", "Node.js", "React", "Python", "MySQL", "..."],
-      "description": "Desarrollé y mantuve múltiples aplicaciones orientadas al cliente."
+      "description": "Optimizó el desarrollo de software elevando la eficiencia de los sistemas, automatizando procesos y mejorando los indicadores de rendimiento en varios proyectos."
     }
   },
   "ProjectComponent": {

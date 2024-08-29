@@ -1,6 +1,6 @@
 {
   "Presentation": {
-    "title": "Hello, I’m Giovanni Vicentin",
+    "title": "Hello, I'm Giovanni Vicentin",
     "description": "I am a software engineer driven by the purpose of helping people and a passion for developing software. I have extensive experience with various technologies, with a primary focus on React, Next.js, Node.js, Nest.js, and the entire JavaScript stack.",
     "contactMe": "Contact Me",
     "viewProjects": "View Projects"
@@ -34,14 +34,14 @@
       "company": "Sam's Club",
       "period": "2024 - Present",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
-      "description": "Led development of scalable web applications, improving performance by 40%."
+      "description": "Enhanced Sam's Club registration systems, significantly improving membership engagement and platform performance with innovative solutions and optimizations."
     },
     "talst": {
       "title": "Software Engineer",
       "company": "Talst Contabilidade",
       "period": "2022 - 2024",
       "stack": ["NestJS", "Node.js", "React", "Python", "MySQL", "..."],
-      "description": "Developed and maintained multiple client-facing applications."
+      "description": "Improved software development by enhancing system efficiencies, automating processes, and boosting performance metrics in various projects."
     }
   },
   "ProjectComponent": {
@@ -85,7 +85,7 @@
   },
   "ContactSection": {
     "title": "Get in Touch",
-    "description": "I’d love to hear from you! Feel free to reach out with any questions or inquiries.",
+    "description": "I'd love to hear from you! Feel free to reach out with any questions or inquiries.",
     "email": "Email",
     "myEmail": "giovannifvicentin@gmail.com"
   },

@@ -30,18 +30,18 @@
   "workExperience": {
     "title": "Experiência Profissional",
     "sams": {
-      "title": "Desenvolvedor de Software",
+      "title": "Engenheiro de Software",
       "company": "Sam's Club",
-      "period": "2024 - Presente",
+      "period": "2024 - Atual",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
-      "description": "Led development of scalable web applications, improving performance by 40%."
+      "description": "Aprimorou os sistemas de registro do Sam's Club, melhorando significativamente o engajamento dos membros e o desempenho da plataforma com soluções inovadoras e otimizações."
     },
     "talst": {
-      "title": "Desenvolvedor de Software",
+      "title": "Engenheiro de Software",
       "company": "Talst Contabilidade",
       "period": "2022 - 2024",
       "stack": ["NestJS", "Node.js", "React", "Python", "MySQL", "..."],
-      "description": "Developed and maintained multiple client-facing applications."
+      "description": "Melhorou o desenvolvimento de software ao aprimorar a eficiência dos sistemas, automatizar processos e aumentar os indicadores de desempenho em diversos projetos."
     }
   },
   "ProjectComponent": {
