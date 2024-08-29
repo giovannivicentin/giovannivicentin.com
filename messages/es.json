@@ -11,6 +11,9 @@
   "NotFoundPage": {
     "title": "Page not found"
   },
+  "Header": {
+    "logoAlt": "Logo of Giovanni Vicentin"
+  },
   "Navigation": {
     "projects": "Projetos",
     "contact": "Contato",
@@ -87,7 +90,7 @@
     "submitButton": "Send"
   },
   "Footer": {
-    "rightReserved": "All rights reserved.",
+    "rightsReserved": "All rights reserved.",
     "linkedinIcon": "LinkedIn icon",
     "githubIcon": "GitHub icon",
     "spanLinkedin": "LinkedIn Link",

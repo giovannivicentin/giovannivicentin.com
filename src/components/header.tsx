@@ -6,6 +6,7 @@ import { ModeToggle } from './mode-toggle'
 import { Navbar } from './navbar'
 
 export function Header() {
+  const h = useTranslations('Header')
   const t = useTranslations('Navigation')
 
   return (
@@ -16,7 +17,7 @@ export function Header() {
       >
         <Image
           src="/images/logos/white-icon.svg"
-          alt="Logo of Giovanni Vicentin"
+          alt={h('logoAlt')}
           width={24}
           height={24}
           className="h-6 w-6 text-primary invert dark:invert-0"
