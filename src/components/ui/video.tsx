@@ -7,7 +7,7 @@ export function Video({ path, photo }: { path: string; photo: string }) {
       height="1080"
       controls
       preload="none"
-      className="aspect-video w-full"
+      className="aspect-video w-full rounded-md border dark:border-neutral-700"
     >
       <source src={path} type="video/mp4" />
       <Image
