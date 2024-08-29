@@ -18,6 +18,12 @@ interface NavbarProps {
   github: string
   linkedin: string
   resume: string
+  githubIcon: string
+  linkedinIcon: string
+  menuIcon: string
+  codeIcon: string
+  contactIcon: string
+  resumeIcon: string
   children: React.ReactNode
 }
 
@@ -27,6 +33,12 @@ export function Navbar({
   github,
   linkedin,
   resume,
+  githubIcon,
+  linkedinIcon,
+  menuIcon,
+  codeIcon,
+  contactIcon,
+  resumeIcon,
   children,
 }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
@@ -74,7 +86,7 @@ export function Navbar({
                   >
                     <Image
                       src="/images/icons/github.svg"
-                      alt="GitHub icon"
+                      alt={githubIcon}
                       width={15}
                       height={15}
                       className="h-6 w-6 invert group-hover:invert-0 dark:invert-0 group-hover:dark:invert md:h-5 md:w-5"
@@ -92,7 +104,7 @@ export function Navbar({
                   >
                     <Image
                       src="/images/icons/linkedin.svg"
-                      alt="LinkedIn icon"
+                      alt={linkedinIcon}
                       width={15}
                       height={15}
                       className="h-6 w-6 dark:invert md:h-5 md:w-5"
@@ -115,7 +127,7 @@ export function Navbar({
             <Button variant="ghost" size="icon">
               <Image
                 src="/images/icons/menu.svg"
-                alt="hamburguer menu icon"
+                alt={menuIcon}
                 width={24}
                 height={24}
                 className="h-6 w-6 dark:invert"
@@ -134,7 +146,7 @@ export function Navbar({
                 src="/images/icons/code.svg"
                 height={20}
                 width={20}
-                alt="code icon"
+                alt={codeIcon}
                 className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
               {projects}
@@ -150,7 +162,7 @@ export function Navbar({
                 src="/images/icons/contact.svg"
                 height={20}
                 width={20}
-                alt="contact icon"
+                alt={contactIcon}
                 className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
               {contact}
@@ -163,7 +175,7 @@ export function Navbar({
                 src="/images/icons/resume.svg"
                 height={20}
                 width={20}
-                alt="resume icon"
+                alt={resumeIcon}
                 className="h-6 w-6 dark:invert md:h-5 md:w-5"
               />
               {resume}

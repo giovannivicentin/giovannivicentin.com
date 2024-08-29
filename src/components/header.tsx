@@ -32,6 +32,12 @@ export function Header() {
         github={t('github')}
         linkedin={t('linkedin')}
         resume={t('resume')}
+        githubIcon={t('githubIcon')}
+        linkedinIcon={t('linkedinIcon')}
+        menuIcon={t('menuIcon')}
+        codeIcon={t('codeIcon')}
+        contactIcon={t('contactIcon')}
+        resumeIcon={t('resumeIcon')}
       >
         <ModeToggle />
         <LocalSwitcher />

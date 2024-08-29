@@ -130,7 +130,7 @@ export function Project({
                       src="/images/icons/link.svg"
                       height={20}
                       width={20}
-                      alt="External Link Icon"
+                      alt={t('linkIcon')}
                       className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
                     />
                     <span className="sr-only">{t('externalLink')}</span>
@@ -142,7 +142,7 @@ export function Project({
                       src="/images/icons/github.svg"
                       height={20}
                       width={20}
-                      alt="GitHub Icon"
+                      alt={t('githubIcon')}
                       className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
                     />
                     <span className="sr-only">{t('githubLink')}</span>

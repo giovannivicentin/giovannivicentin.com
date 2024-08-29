@@ -15,11 +15,17 @@
     "logoAlt": "Logo of Giovanni Vicentin"
   },
   "Navigation": {
-    "projects": "Projetos",
-    "contact": "Contato",
-    "resume": "Currículo",
+    "projects": "Projects",
+    "contact": "Contact",
+    "resume": "Resume",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "githubIcon": "GitHub icon",
+    "linkedinIcon": "LinkedIn icon",
+    "menuIcon": "Menu icon",
+    "codeIcon": "Code icon",
+    "contactIcon": "Contact icon",
+    "resumeIcon": "Resume icon"
   },
   "workExperience": {
     "title": "Work Experience",
