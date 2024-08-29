@@ -49,7 +49,7 @@ export function Navbar({
   }
 
   return (
-    <nav>
+    <nav className="text-lg font-medium">
       <div className="hidden items-center justify-between md:flex">
         <ul className="mr-2 items-center gap-4 md:flex">
           <li
@@ -110,14 +110,14 @@ export function Navbar({
         </ul>
         {children}
       </div>
-      <div className="flex items-center justify-end md:hidden">
+      <div className="flex items-center justify-end text-lg font-medium md:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent className="flex flex-col items-center justify-start gap-8 pt-20 text-xl">
+          <SheetContent className="flex flex-col items-center justify-start gap-8 pt-20 text-xl font-medium">
             <Link
               onClick={() => handleClick('projects')}
               href={'#projects'}
