@@ -50,7 +50,7 @@ export function Experience() {
                       {t(`${experience}.period`)}
                     </span>
                   </div>
-                  <p className="mb-4 font-sans font-medium text-muted-foreground md:text-lg">
+                  <p className="mb-4 max-w-7xl font-sans font-medium text-muted-foreground md:text-lg">
                     {t(`${experience}.description`)}
                   </p>
                   <div className="flex flex-wrap gap-2">
