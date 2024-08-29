@@ -43,8 +43,10 @@ export function Project({
   return (
     <Card className="relative mx-auto h-full max-w-[28rem] border shadow-sm hover:shadow dark:border-neutral-700 hover:dark:shadow-md">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardTitle className="text-2xl font-semibold">{title}</CardTitle>
+        <CardDescription className="text-base font-medium">
+          {description}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <Dialog>
@@ -59,8 +61,10 @@ export function Project({
           </DialogTrigger>
           <DialogContent className="min-w-fit lg:min-w-[50rem]">
             <DialogHeader>
-              <DialogTitle>{title}</DialogTitle>
-              <DialogDescription>
+              <DialogTitle className="md:font-4xl text-3xl font-semibold">
+                {title}
+              </DialogTitle>
+              <DialogDescription className="text-base font-medium md:text-lg">
                 {expandedDescription || description}
               </DialogDescription>
             </DialogHeader>
@@ -108,8 +112,10 @@ export function Project({
           </DialogTrigger>
           <DialogContent className="min-w-fit lg:min-w-[50rem]">
             <DialogHeader>
-              <DialogTitle>{title}</DialogTitle>
-              <DialogDescription>
+              <DialogTitle className="md:font-4xl text-3xl font-semibold">
+                {title}
+              </DialogTitle>
+              <DialogDescription className="text-base font-medium md:text-lg">
                 {expandedDescription || description}
               </DialogDescription>
             </DialogHeader>
