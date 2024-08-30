@@ -43,7 +43,7 @@ const Presentation: React.FC<PresentationProps> = ({
   return (
     <section
       id="presentation"
-      className="mb-32 mt-16 flex w-full flex-col items-center justify-between gap-8 px-4 md:mb-52 md:mt-24 md:flex-row md:gap-0 md:px-12"
+      className="mb-32 mt-16 flex w-full flex-col items-center justify-between gap-8 px-4 md:mb-64 md:mt-24 md:flex-row md:gap-0 md:px-12"
     >
       <div className="space-y-4">
         <h1
