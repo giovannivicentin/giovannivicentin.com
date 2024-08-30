@@ -34,7 +34,7 @@
       "company": "Sam's Club",
       "period": "2024 - Presente",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
-      "description": "Recreó el sistema de registro de Sam’s Club, creó APIs para gestionar datos de usuarios y optimizó la plataforma, elevando la base de miembros, el compromiso y el rendimiento del sitio."
+      "description": "Recreó el sistema de registro de Sam's Club, creó APIs para gestionar datos de usuarios y optimizó la plataforma, elevando la base de miembros, el compromiso y el rendimiento del sitio."
     },
     "talst": {
       "title": "Ingeniero de Software",
@@ -54,33 +54,33 @@
   "ProjectSection": {
     "frankMetalicas": {
       "title": "Frank Metálicas",
-      "description": "Descripción del proyecto 1",
+      "description": "Desarrollo de un sitio web para Frank Metálicas, con enfoque en presencia digital y optimización de SEO.",
       "imgSrc": "/images/projects/fk-metalicas.png",
-      "imgAlt": "Proyecto 1",
-      "href": "https://www.example.com",
-      "github": "/",
-      "expandedDescription": "Descripción del proyecto 1",
+      "imgAlt": "Vista previa del proyecto Frank Metálicas",
+      "href": "https://frankmetalicas.com",
+      "github": "https://github.com/giovannivicentin/fk_metalicas",
+      "expandedDescription": "Desarrollé un sitio web para Frank Metálicas con el objetivo de establecer una presencia digital robusta, facilitando la presentación de productos y servicios, la exhibición de proyectos realizados y el contacto con clientes. Utilizando tecnologías como Next.js, React, Tailwind CSS, Shadcn/UI, Node.js, Zod y React Hook Form, optimicé el sitio para motores de búsqueda, aumentando la visibilidad de la empresa en Google. Como resultado, hubo un aumento significativo en las consultas de contacto y la empresa ganó prominencia en las búsquedas en línea.",
       "videoPath": "/videos/projects/fk-metalicas.mp4"
     },
     "tecnojund": {
       "title": "Tecnojund",
-      "description": "Descripción del proyecto 2",
+      "description": "Reformulación completa del sitio web de Tecnojund para la conversión de leads en la página “/tickets”.",
       "imgSrc": "/images/projects/tecnojund.png",
-      "imgAlt": "Proyecto 2",
-      "href": "https://www.example.com",
-      "github": "/",
-      "expandedDescription": "Descripción del proyecto 1",
-      "videoPath": "/videos/projects/fk-metalicas.mp4"
+      "imgAlt": "Vista previa del proyecto Tecnojund",
+      "href": "https://www.tecnojund.com.br",
+      "github": "https://github.com/giovannivicentin/tecnojund",
+      "expandedDescription": "Rehice el sitio web de Tecnojund desde cero con el objetivo de modernizar la marca, mejorar la experiencia del usuario y aumentar la conversión de leads. El principal desafío era la falta de un formulario eficiente para la apertura de tickets de servicio con envío de correo electrónico. Ahora, el sitio incluye una página /tickets que satisface esta necesidad. Como resultado, ha habido un aumento significativo en el tráfico orgánico, la generación de leads y el cierre de nuevos contratos.",
+      "videoPath": "/videos/projects/tecnojund.mp4"
     },
-    "megazord": {
-      "title": "Sistema de Gestión",
-      "description": "Descripción del proyecto 3",
-      "imgSrc": "/images/projects/tecnojund.png",
-      "imgAlt": "Proyecto 3",
-      "href": "https://www.example.com",
+    "betterFit": {
+      "title": "BetterFit",
+      "description": "Próximamente: Una Experiencia de Fitness Revolucionaria",
+      "imgSrc": "/images/projects/comming-soon.png",
+      "imgAlt": "Imagen teaser de la aplicación BetterFit",
+      "href": "/",
       "github": "/",
-      "expandedDescription": "Descripción del proyecto 1",
-      "videoPath": "/videos/projects/fk-metalicas.mp4"
+      "expandedDescription": "Próximamente: Una Experiencia de Fitness Revolucionaria",
+      "videoPath": "/videos/projects/coming-soon.mp4"
     }
   },
   "ContactSection": {
