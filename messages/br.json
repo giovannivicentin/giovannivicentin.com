@@ -34,7 +34,7 @@
       "company": "Sam's Club",
       "period": "2024 - Atual",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
-      "description": "Recriou o o sistema de registro do Sam's Club, criou APIs para gerenciar dados de usuários e otimizou a plataforma, elevando a base de membros, o engajamento e o desempenho do site."
+      "description": "Recriou o sistema de registro do Sam's Club, criou APIs para gerenciar dados de usuários e otimizou a plataforma, elevando a base de membros, o engajamento e o desempenho do site."
     },
     "talst": {
       "title": "Engenheiro de Software",
@@ -75,7 +75,7 @@
     "betterFit": {
       "title": "BetterFit",
       "description": "Em Breve: Uma Experiência de Fitness Revolucionária",
-      "imgSrc": "/images/projects/comming-soon.png",
+      "imgSrc": "/images/projects/coming-soon.png",
       "imgAlt": "Imagem teaser do aplicativo BetterFit",
       "href": "/",
       "github": "/",

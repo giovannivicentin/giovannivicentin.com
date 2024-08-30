@@ -17,7 +17,7 @@
   "Navigation": {
     "projects": "Proyectos",
     "contact": "Contacto",
-    "resume": "Currículum",
+    "resume": "Resumé",
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "githubIcon": "Icono de GitHub",
@@ -25,7 +25,7 @@
     "menuIcon": "Icono de Menú",
     "codeIcon": "Icono de Código",
     "contactIcon": "Icono de Contacto",
-    "resumeIcon": "Icono de Currículum"
+    "resumeIcon": "Icono de Resumé"
   },
   "workExperience": {
     "title": "Experiencia Profesional",
@@ -75,7 +75,7 @@
     "betterFit": {
       "title": "BetterFit",
       "description": "Próximamente: Una Experiencia de Fitness Revolucionaria",
-      "imgSrc": "/images/projects/comming-soon.png",
+      "imgSrc": "/images/projects/coming-soon.png",
       "imgAlt": "Imagen teaser de la aplicación BetterFit",
       "href": "/",
       "github": "/",
