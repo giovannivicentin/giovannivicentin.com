@@ -12,7 +12,7 @@
     "title": "Page Not Found"
   },
   "Header": {
-    "logoAlt": "Giovanni Vicentin's Logo"
+    "logoAlt": "Logo of Giovanni Vicentin"
   },
   "Navigation": {
     "projects": "Projects",
@@ -56,7 +56,7 @@
       "title": "Frank Metálicas",
       "description": "Development of a website for Frank Metálicas, focusing on digital presence and SEO optimization.",
       "imgSrc": "/images/projects/fk-metalicas.png",
-      "imgAlt": "Frank Metálicas project preview",
+      "imgAlt": "Frank Metálicas Project Preview",
       "href": "https://frankmetalicas.com",
       "github": "https://github.com/giovannivicentin/fk_metalicas",
       "expandedDescription": "I developed a website for Frank Metálicas with the goal of establishing a robust digital presence, making it easier to showcase products and services, display completed projects, and connect with clients. Using technologies like Next.js, React, Tailwind CSS, Shadcn/UI, Node.js, Zod, and React Hook Form, I optimized the website for search engines, boosting the company’s visibility on Google. As a result, there was a significant increase in contact inquiries and the company gained prominence in online searches.",
@@ -66,7 +66,7 @@
       "title": "Tecnojund",
       "description": "Complete overhaul of the Tecnojund website for lead conversion in the “/chamados” page.",
       "imgSrc": "/images/projects/tecnojund.png",
-      "imgAlt": "Tecnojund project preview",
+      "imgAlt": "Tecnojund Project Preview",
       "href": "https://www.tecnojund.com.br",
       "github": "https://github.com/giovannivicentin/tecnojund",
       "expandedDescription": "I rebuilt the Tecnojund website from scratch with the aim of modernizing the brand, enhancing user experience, and increasing lead conversion. The main challenge was the lack of an efficient form for opening service tickets with email submission. Now, the website includes a /tickets page that meets this need. As a result, there has been a significant increase in organic traffic, lead generation, and the closing of new contracts.",
