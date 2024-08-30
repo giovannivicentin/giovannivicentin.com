@@ -16,6 +16,7 @@ export default function Home() {
         contactMe={t('contactMe')}
         viewProjects={t('viewProjects')}
       />
+
       <Projects />
       <Skills />
       <Experience />
