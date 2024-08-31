@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="bg-muted py-6 text-center text-sm text-muted-foreground">
       <div className="flex items-center justify-between px-4 md:px-6">
-        <p className="text-sm font-normal">
+        <p className="text-sm font-normal text-primary">
           &copy; {currentYear} Giovanni Vicentin. {t('rightsReserved')}
         </p>
         <div className="flex items-center">
