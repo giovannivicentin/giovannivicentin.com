@@ -73,8 +73,8 @@ const Presentation: React.FC<PresentationProps> = ({
       <Image
         src="/images/profile/image.png"
         alt="@giovannivicentin"
-        width={1600}
-        height={1600}
+        width={512}
+        height={512}
         priority
         className="rounded-full dark:grayscale md:h-96 md:w-96"
       />

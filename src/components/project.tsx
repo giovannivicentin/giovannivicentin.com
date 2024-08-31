@@ -55,8 +55,8 @@ export function Project({
             <DialogTrigger asChild>
               <Image
                 src={imgSrc}
-                width="400"
-                height="225"
+                width="1920"
+                height="1080"
                 alt={imgAlt}
                 priority
                 className="aspect-video rounded-md border border-neutral-300 object-cover shadow-sm hover:animate-pulse hover:cursor-pointer dark:border-neutral-700 dark:grayscale dark:hover:animate-none hover:dark:grayscale-0"
