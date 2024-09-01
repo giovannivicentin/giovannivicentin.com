@@ -1,8 +1,9 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
+import dynamic from 'next/dynamic'
 import { Merriweather } from 'next/font/google'
-import Image from 'next/image'
 import { useCallback } from 'react'
 
 const merriweather = Merriweather({
@@ -10,6 +11,11 @@ const merriweather = Merriweather({
   weight: ['400', '700'],
   display: 'swap',
   variable: '--font-merriweather',
+})
+
+const DynamicImage = dynamic(() => import('next/image'), {
+  loading: () => <Skeleton className="h-96 w-96 rounded-full" />,
+  ssr: false,
 })
 
 interface PresentationProps {
@@ -70,14 +76,16 @@ const Presentation: React.FC<PresentationProps> = ({
           </Button>
         </div>
       </div>
-      <Image
-        src="/images/profile/image.png"
-        alt="@giovannivicentin"
-        width={512}
-        height={512}
-        priority
-        className="rounded-full dark:grayscale md:h-96 md:w-96"
-      />
+      <div className="relative h-96 w-96">
+        <DynamicImage
+          src="/images/profile/image.png"
+          alt="@giovannivicentin"
+          width={512}
+          height={512}
+          priority
+          className="rounded-full dark:grayscale md:h-96 md:w-96"
+        />
+      </div>
     </section>
   )
 }
