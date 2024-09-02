@@ -41,26 +41,29 @@ const Presentation: React.FC<PresentationProps> = ({
   }, [])
 
   return (
-    <section id="presentation" className="min-h-screen w-full pt-6 md:pt-12">
-      <div className="flex w-full flex-col items-center justify-between gap-8 px-4 md:flex-row md:gap-0 md:px-12">
+    <section
+      id="presentation"
+      className="min-h-screen w-full md:flex md:flex-col md:items-center md:justify-center md:pb-[30vh]"
+    >
+      <div className="flex w-full flex-col items-center justify-between gap-8 px-4 md:flex-row md:gap-0 md:px-12 3xl:justify-around">
         <div className="space-y-4">
           <h1
-            className={`${merriweather.variable} font-serif text-4xl font-bold md:text-5xl`}
+            className={`${merriweather.variable} font-serif text-4xl font-bold md:text-5xl 3xl:text-6xl 4xl:text-7xl`}
           >
             {title}
           </h1>
-          <p className="max-w-md font-medium md:max-w-xl md:text-lg">
+          <p className="max-w-md font-medium md:max-w-xl md:text-lg 3xl:text-xl 4xl:text-2xl">
             {description}
           </p>
           <div className="flex items-center gap-4">
             <Button
-              className="text-center text-base font-semibold"
+              className="text-center text-base font-semibold 3xl:text-lg 4xl:text-xl"
               onClick={() => handleSmoothScroll('#contact')}
             >
               {contactMe}
             </Button>
             <Button
-              className="text-center text-base font-semibold"
+              className="text-center text-base font-semibold 3xl:text-lg 4xl:text-xl"
               variant="outline"
               onClick={() => handleSmoothScroll('#projects')}
             >
