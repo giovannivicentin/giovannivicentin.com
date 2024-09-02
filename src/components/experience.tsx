@@ -20,10 +20,10 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="flex w-full flex-col space-y-8 bg-muted px-4 py-12 md:px-12"
+      className="flex min-h-[70vh] w-full flex-col justify-center space-y-8 bg-muted px-4 md:px-12 3xl:space-x-12"
     >
       <h2
-        className={`${merriweather.variable} text-center font-serif text-3xl font-semibold md:text-4xl`}
+        className={`${merriweather.variable} text-center font-serif text-3xl font-semibold md:text-4xl 3xl:text-5xl 4xl:text-6xl`}
       >
         {t('title')}
       </h2>
@@ -35,22 +35,22 @@ export function Experience() {
           >
             <CardContent className="p-6">
               <div className="flex items-start">
-                <BriefcaseIcon className="mr-4 mt-1 h-6 w-6" />
+                <BriefcaseIcon className="mr-4 mt-1 h-6 w-6 3xl:h-7 3xl:w-7 4xl:h-8 4xl:w-8" />
                 <div className="flex-1">
                   <div className="mb-2 flex items-start justify-between">
                     <div>
-                      <h4 className="font-sans text-xl font-semibold">
+                      <h4 className="font-sans text-xl font-semibold 3xl:text-xl 4xl:text-2xl">
                         {t(`${experience}.title`)}
                       </h4>
-                      <p className="text-pretty text-base font-semibold text-primary/85">
+                      <p className="text-pretty text-base font-semibold text-primary/85 3xl:text-lg 4xl:text-xl">
                         {t(`${experience}.company`)}
                       </p>
                     </div>
-                    <span className="text-base font-medium text-muted-foreground">
+                    <span className="text-sm font-medium text-muted-foreground md:text-base 3xl:text-lg 4xl:text-xl">
                       {t(`${experience}.period`)}
                     </span>
                   </div>
-                  <p className="mb-4 max-w-7xl font-sans font-medium text-muted-foreground md:text-lg">
+                  <p className="mb-4 max-w-7xl font-sans font-medium text-muted-foreground md:text-lg 3xl:text-xl 4xl:text-2xl">
                     {t(`${experience}.description`)}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -58,7 +58,7 @@ export function Experience() {
                       <Badge
                         key={stack}
                         variant="secondary"
-                        className="text-sm md:text-base"
+                        className="text-sm md:text-base 3xl:text-lg 4xl:text-xl"
                       >
                         {t(`${experience}.stack.${stack}`)}
                       </Badge>
