@@ -20,9 +20,9 @@ export function Header() {
           alt={h('logoAlt')}
           width={24}
           height={24}
-          className="h-6 w-6 text-primary invert dark:invert-0"
+          className="h-6 w-6 text-primary invert dark:invert-0 3xl:h-8 3xl:w-8"
         />
-        <span className="hidden text-lg font-semibold md:block">
+        <span className="hidden text-lg font-semibold md:block 3xl:text-xl 4xl:text-2xl">
           Giovanni Vicentin
         </span>
       </Link>
