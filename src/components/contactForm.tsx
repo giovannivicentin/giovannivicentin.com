@@ -93,7 +93,7 @@ export function ContactForm({
                   {...field}
                   type="text"
                   placeholder={placeholderSubject}
-                  className="w-full font-normal md:text-base"
+                  className="w-full font-normal md:text-base 3xl:text-lg 4xl:text-xl"
                 />
               </FormControl>
               {fieldState.error && (
@@ -130,7 +130,7 @@ export function ContactForm({
                 <Textarea
                   {...field}
                   placeholder={placeholderMessage}
-                  className="w-full font-normal md:text-base"
+                  className="w-full font-normal md:text-base 3xl:text-lg 4xl:text-xl"
                 />
               </FormControl>
               {fieldState.error && (
@@ -142,7 +142,7 @@ export function ContactForm({
 
         <Button
           type="submit"
-          className="text-center font-semibold md:text-base"
+          className="text-center font-semibold md:text-base 3xl:text-lg 4xl:text-xl"
         >
           {submitButton}
         </Button>

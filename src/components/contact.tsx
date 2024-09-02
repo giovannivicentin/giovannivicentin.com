@@ -15,15 +15,18 @@ export function Contact() {
   const f = useTranslations('ContactForm')
 
   return (
-    <section id="contact" className="w-full bg-background px-4 py-12 md:px-12">
+    <section
+      id="contact"
+      className="flex min-h-[50vh] w-full flex-col justify-center bg-background px-4 py-12 md:px-12"
+    >
       <div className="grid gap-8 md:grid-cols-2">
         <div>
           <h2
-            className={`${merriweather.variable} font-serif text-3xl font-semibold md:text-4xl`}
+            className={`${merriweather.variable} font-serif text-3xl font-semibold md:text-4xl 3xl:text-5xl 4xl:text-6xl`}
           >
             {t('title')}
           </h2>
-          <p className="mt-1 font-sans text-base font-medium text-muted-foreground md:text-lg">
+          <p className="mt-1 font-sans text-base font-medium text-muted-foreground md:text-lg 3xl:text-xl 4xl:text-2xl">
             {t('description')}
           </p>
           <ContactForm
@@ -43,12 +46,12 @@ export function Contact() {
         <div className="flex flex-col gap-4">
           <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle className="font-sans text-3xl font-semibold md:text-4xl">
+              <CardTitle className="font-sans text-3xl font-semibold md:text-4xl 3xl:text-5xl 4xl:text-6xl">
                 {t('email')}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="font-sans text-base font-medium text-muted-foreground md:text-lg">
+              <p className="font-sans text-base font-medium text-muted-foreground md:text-lg 3xl:text-xl 4xl:text-2xl">
                 {t('myEmail')}
               </p>
             </CardContent>
