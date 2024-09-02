@@ -42,10 +42,12 @@ export function Project({
 }: ProjectProps) {
   const t = useTranslations('ProjectComponent')
   return (
-    <Card className="relative mx-auto flex h-full max-w-[28rem] flex-col justify-between border shadow-sm hover:shadow dark:border-neutral-700 hover:dark:shadow-md">
+    <Card className="relative mx-auto flex h-full max-w-[30rem] flex-col justify-between border shadow-sm hover:shadow dark:border-neutral-700 hover:dark:shadow-md 3xl:max-w-[34rem] 4xl:max-w-[38rem]">
       <CardHeader>
-        <CardTitle className="text-2xl font-semibold">{title}</CardTitle>
-        <CardDescription className="text-base font-medium">
+        <CardTitle className="text-2xl font-semibold 3xl:text-3xl 4xl:text-4xl">
+          {title}
+        </CardTitle>
+        <CardDescription className="text-base font-medium 3xl:text-lg 4xl:text-xl">
           {description}
         </CardDescription>
       </CardHeader>
@@ -64,10 +66,10 @@ export function Project({
             </DialogTrigger>
             <DialogContent className="min-w-fit lg:min-w-[50rem]">
               <DialogHeader>
-                <DialogTitle className="md:font-4xl text-3xl font-semibold">
+                <DialogTitle className="text-3xl font-semibold md:text-4xl 3xl:text-5xl 4xl:text-6xl">
                   {title}
                 </DialogTitle>
-                <DialogDescription className="text-base font-medium md:text-lg">
+                <DialogDescription className="text-base font-medium md:text-lg 3xl:text-xl 4xl:text-2xl">
                   {expandedDescription || description}
                 </DialogDescription>
               </DialogHeader>
@@ -81,7 +83,7 @@ export function Project({
                         height={20}
                         width={20}
                         alt={t('linkIcon')}
-                        className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
+                        className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7"
                       />
                       <span className="sr-only">{t('externalLink')}</span>
                     </Button>
@@ -93,7 +95,7 @@ export function Project({
                         height={20}
                         width={20}
                         alt={t('githubIcon')}
-                        className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
+                        className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7"
                       />
                       <span className="sr-only">{t('githubLink')}</span>
                     </Button>
@@ -107,7 +109,7 @@ export function Project({
               <DialogTrigger asChild>
                 <Button
                   variant="outline"
-                  className="px-4 py-2 text-center font-semibold shadow-sm"
+                  className="px-4 py-2 text-center font-semibold shadow-sm 3xl:text-lg 4xl:text-xl"
                 >
                   {t('viewMore')}
                 </Button>
@@ -117,7 +119,7 @@ export function Project({
                   <DialogTitle className="md:font-4xl text-3xl font-semibold">
                     {title}
                   </DialogTitle>
-                  <DialogDescription className="text-base font-medium md:text-lg">
+                  <DialogDescription className="text-base font-medium md:text-lg 3xl:text-xl 4xl:text-2xl">
                     {expandedDescription || description}
                   </DialogDescription>
                 </DialogHeader>
@@ -131,7 +133,7 @@ export function Project({
                           height={20}
                           width={20}
                           alt={t('linkIcon')}
-                          className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
+                          className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7"
                         />
                         <span className="sr-only">{t('externalLink')}</span>
                       </Button>
@@ -147,7 +149,7 @@ export function Project({
                           height={20}
                           width={20}
                           alt={t('githubIcon')}
-                          className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
+                          className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7"
                         />
                         <span className="sr-only">{t('githubLink')}</span>
                       </Button>
@@ -168,7 +170,7 @@ export function Project({
                     height={20}
                     width={20}
                     alt={t('linkIcon')}
-                    className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
+                    className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7"
                   />
                   <span className="sr-only">{t('externalLink')}</span>
                 </Button>
@@ -184,7 +186,7 @@ export function Project({
                     height={20}
                     width={20}
                     alt={t('githubIcon')}
-                    className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert"
+                    className="h-5 w-5 text-primary hover:text-muted-foreground dark:invert 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7"
                   />
                   <span className="sr-only">{t('githubLink')}</span>
                 </Button>
