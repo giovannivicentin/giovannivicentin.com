@@ -17,7 +17,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="flex min-h-[50vh] w-full flex-col justify-center bg-background px-4 py-12 md:px-12"
+      className="flex min-h-[50vh] w-full flex-col justify-center bg-background px-4 py-8 md:px-12 md:py-0"
     >
       <div className="grid gap-8 md:grid-cols-2">
         <div>

@@ -8,7 +8,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="grid min-h-[50vh] w-full grid-cols-1 gap-8 bg-muted p-8 py-12 sm:grid-cols-2 lg:grid-cols-3"
+      className="grid min-h-[50vh] w-full grid-cols-1 gap-8 bg-muted p-8 py-8 sm:grid-cols-2 md:py-0 lg:grid-cols-3"
     >
       {projects.map((project) => (
         <Project

@@ -20,7 +20,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="flex min-h-[70vh] w-full flex-col justify-center space-y-8 bg-muted px-4 md:px-12 3xl:space-x-12"
+      className="flex min-h-[70vh] w-full flex-col justify-center space-y-8 bg-muted px-4 py-8 md:px-12 md:py-0 3xl:space-x-12"
     >
       <h2
         className={`${merriweather.variable} text-center font-serif text-3xl font-semibold md:text-4xl 3xl:text-5xl 4xl:text-6xl`}

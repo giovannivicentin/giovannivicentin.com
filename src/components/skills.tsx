@@ -15,7 +15,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="flex min-h-[40vh] w-full flex-col items-center justify-center space-y-8 bg-background px-4"
+      className="flex min-h-[40vh] w-full flex-col items-center justify-center space-y-8 bg-background px-4 py-8 md:py-0"
     >
       <h2
         className={`${merriweather.variable} text-center font-serif text-3xl font-semibold md:text-4xl 3xl:text-5xl 4xl:text-6xl`}
