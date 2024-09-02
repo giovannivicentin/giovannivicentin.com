@@ -25,31 +25,31 @@ export function ModeToggle() {
   const displayIcon = () => {
     if (!mounted) {
       return (
-        <Loader className="h-6 w-6 animate-spin md:h-5 md:w-5 3xl:h-7 3xl:w-7 4xl:h-8 4xl:w-8" />
+        <Loader className="h-6 w-6 animate-spin md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
       )
     }
 
     if (theme === 'system') {
       return resolvedTheme === 'dark' ? (
         <>
-          <Sun className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-7 3xl:w-7 4xl:h-8 4xl:w-8" />
+          <Sun className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
           <span className="sr-only">Sun Icon</span>
         </>
       ) : (
         <>
-          <Moon className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-7 3xl:w-7 4xl:h-8 4xl:w-8" />
+          <Moon className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
           <span className="sr-only">Moon Icon</span>
         </>
       )
     }
     return theme === 'dark' ? (
       <>
-        <Sun className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-7 3xl:w-7 4xl:h-8 4xl:w-8" />
+        <Sun className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
         <span className="sr-only">Sun Icon</span>
       </>
     ) : (
       <>
-        <Moon className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-7 3xl:w-7 4xl:h-8 4xl:w-8" />
+        <Moon className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
         <span className="sr-only">Moon Icon</span>
       </>
     )
