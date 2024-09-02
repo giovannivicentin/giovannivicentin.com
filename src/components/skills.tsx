@@ -15,10 +15,10 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="flex w-full flex-col items-center justify-center space-y-8 bg-background px-4 py-12 md:px-12"
+      className="flex min-h-[50vh] w-full flex-col items-center justify-center space-y-8 bg-background px-4"
     >
       <h2
-        className={`${merriweather.variable} text-center font-serif text-3xl font-semibold md:text-4xl`}
+        className={`${merriweather.variable} text-center font-serif text-3xl font-semibold md:text-4xl 3xl:text-5xl 4xl:text-6xl`}
       >
         {t('title')}
       </h2>
@@ -55,7 +55,11 @@ export function Skills() {
           'MongoDB',
           'SQLite',
         ].map((skill) => (
-          <Badge key={skill} variant="secondary" className="px-3 py-1 text-lg">
+          <Badge
+            key={skill}
+            variant="secondary"
+            className="px-3 py-1 text-lg 3xl:text-xl 4xl:text-2xl"
+          >
             {skill}
           </Badge>
         ))}
