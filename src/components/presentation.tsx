@@ -77,7 +77,7 @@ const Presentation: React.FC<PresentationProps> = ({
           width={512}
           height={512}
           priority
-          className="min-w-[12rem] rounded-full shadow-md dark:grayscale"
+          className="min-w-[12rem] rounded-full shadow-md dark:shadow-muted dark:grayscale"
         />
       </div>
     </section>
