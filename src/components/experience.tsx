@@ -39,9 +39,9 @@ export function Experience() {
                 <div className="flex-1">
                   <div className="mb-2 flex items-start justify-between">
                     <div>
-                      <h4 className="font-sans text-xl font-semibold 3xl:text-xl 4xl:text-2xl">
+                      <h2 className="font-sans text-xl font-semibold 3xl:text-xl 4xl:text-2xl">
                         {t(`${experience}.title`)}
-                      </h4>
+                      </h2>
                       <p className="text-pretty text-base font-semibold text-primary/85 3xl:text-lg 4xl:text-xl">
                         {t(`${experience}.company`)}
                       </p>
