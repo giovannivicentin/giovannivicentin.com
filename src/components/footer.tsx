@@ -13,12 +13,13 @@ export function Footer() {
         <p className="text-sm font-normal text-primary 3xl:text-base 4xl:text-lg">
           &copy; {currentYear} Giovanni Vicentin. {t('rightsReserved')}
         </p>
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
           <Link
             href="https://www.linkedin.com/in/giovannivicentin/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile of Giovanni Vicentin"
+            tabIndex={-1}
           >
             <Button
               variant="ghost"
@@ -40,6 +41,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile of Giovanni Vicentin"
+            tabIndex={-1}
           >
             <Button
               variant="ghost"
