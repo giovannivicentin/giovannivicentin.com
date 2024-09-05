@@ -76,7 +76,12 @@ export function Project({
               <div className="flex w-full flex-col items-center space-y-4">
                 <Video path={videoPath} photo={imgSrc} />
                 <div className="flex items-center justify-center gap-4">
-                  <Link href={href} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    tabIndex={-1}
+                  >
                     <Button variant="ghost" size="icon">
                       <Image
                         src="/images/icons/link.svg"
@@ -88,7 +93,12 @@ export function Project({
                       <span className="sr-only">{t('externalLink')}</span>
                     </Button>
                   </Link>
-                  <Link href={github} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    tabIndex={-1}
+                  >
                     <Button variant="ghost" size="icon">
                       <Image
                         src="/images/icons/github.svg"
@@ -126,7 +136,12 @@ export function Project({
                 <div className="flex w-full flex-col items-center space-y-4">
                   <Video path={videoPath} photo={imgSrc} />
                   <div className="flex items-center justify-center gap-4">
-                    <Link href={href} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      tabIndex={-1}
+                    >
                       <Button variant="ghost" size="icon">
                         <Image
                           src="/images/icons/link.svg"
@@ -142,6 +157,7 @@ export function Project({
                       href={github}
                       target="_blank"
                       rel="noopener noreferrer"
+                      tabIndex={-1}
                     >
                       <Button variant="ghost" size="icon">
                         <Image
@@ -159,7 +175,12 @@ export function Project({
               </DialogContent>
             </Dialog>
             <div className="flex">
-              <Link href={href} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={-1}
+              >
                 <Button
                   variant="ghost"
                   size="icon"
@@ -175,7 +196,12 @@ export function Project({
                   <span className="sr-only">{t('externalLink')}</span>
                 </Button>
               </Link>
-              <Link href={github} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={-1}
+              >
                 <Button
                   variant="ghost"
                   size="icon"
