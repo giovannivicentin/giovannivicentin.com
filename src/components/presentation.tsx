@@ -87,8 +87,6 @@ const Presentation: React.FC<PresentationProps> = ({
             className={`min-w-[12rem] rounded-full shadow-md transition-opacity duration-500 dark:shadow-muted dark:grayscale ${
               isImageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
-            blurDataURL="/images/profile/image-blur.png"
-            placeholder="blur"
             onLoadingComplete={() => setIsImageLoaded(true)}
           />
         </div>
