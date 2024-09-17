@@ -1,9 +1,10 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
 import { Merriweather } from 'next/font/google'
 import Image from 'next/image'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -25,6 +26,8 @@ const Presentation: React.FC<PresentationProps> = ({
   contactMe,
   viewProjects,
 }) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false)
+
   const handleSmoothScroll = useCallback((sectionId: string) => {
     const section = document.querySelector(sectionId)
     const offset = 80
@@ -71,17 +74,24 @@ const Presentation: React.FC<PresentationProps> = ({
             </Button>
           </div>
         </div>
-        <Image
-          src="/images/profile/original.png"
-          alt="@giovannivicentin"
-          loader={({ src }) => src}
-          width={512}
-          height={512}
-          priority
-          className="min-w-[12rem] rounded-full shadow-md dark:shadow-muted dark:grayscale"
-          blurDataURL="/images/profile/image-blur.png"
-          placeholder="blur"
-        />
+        <div className="relative min-w-[12rem]">
+          {!isImageLoaded && (
+            <Skeleton className="absolute inset-0 rounded-full" />
+          )}
+          <Image
+            src="/images/profile/original.png"
+            alt="@giovannivicentin"
+            width={512}
+            height={512}
+            priority
+            className={`min-w-[12rem] rounded-full shadow-md transition-opacity duration-500 dark:shadow-muted dark:grayscale ${
+              isImageLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            blurDataURL="/images/profile/image-blur.png"
+            placeholder="blur"
+            onLoadingComplete={() => setIsImageLoaded(true)}
+          />
+        </div>
       </div>
     </section>
   )
