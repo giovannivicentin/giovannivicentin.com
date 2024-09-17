@@ -72,12 +72,15 @@ const Presentation: React.FC<PresentationProps> = ({
           </div>
         </div>
         <Image
-          src="/images/profile/image.png"
+          src="/images/profile/original.png"
           alt="@giovannivicentin"
+          loader={({ src }) => src}
           width={512}
           height={512}
           priority
           className="min-w-[12rem] rounded-full shadow-md dark:shadow-muted dark:grayscale"
+          blurDataURL="/images/profile/image-blur.png"
+          placeholder="blur"
         />
       </div>
     </section>
