@@ -87,7 +87,7 @@ const Presentation: React.FC<PresentationProps> = ({
             className={`min-w-[12rem] rounded-full shadow-md transition-opacity duration-500 dark:shadow-muted dark:grayscale ${
               isImageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
-            onLoadingComplete={() => setIsImageLoaded(true)}
+            onLoad={() => setIsImageLoaded(true)}
           />
         </div>
       </div>
