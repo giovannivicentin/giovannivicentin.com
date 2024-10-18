@@ -79,7 +79,7 @@ const Presentation: React.FC<PresentationProps> = ({
             <Skeleton className="absolute inset-0 rounded-full" />
           )}
           <Image
-            src="/images/profile/original.png"
+            src="/images/profile/original.webp"
             alt="@giovannivicentin"
             width={512}
             height={512}
