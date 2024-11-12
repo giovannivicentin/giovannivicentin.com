@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# giovannivicentin.com
 
-## Getting Started
+### Welcome to the repository for my professional portfolio website, [giovannivicentin.com](https://giovannivicentin.com). This minimalist, sleek, and responsive portfolio showcases my work as a software engineer, featuring my projects, skills, and professional experiences.
 
-First, run the development server:
+![Portfolio Preview](public/images/projects/portfolio.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Internationalization**: Available in English (default), Spanish, and Portuguese.
+- **Dark/Light Mode**: Theme toggle to switch between dark and light modes.
+- **Responsive Design**: Optimized for all devices.
+- **Projects Showcase**: Each project is presented with descriptions, and clicking on a project displays a video preview for a more interactive experience.
+- **Interactive Components**: Custom components using Radix UI and React Hook Form for a dynamic experience.
+- **Send Email in Footer:** Contact me directly via email in the footer.
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+The project is built with modern, performant web technologies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: [Next.js](https://nextjs.org/) (v14)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) with custom animations from `tailwindcss-animate`
+- **Forms**: [React Hook Form](https://react-hook-form.com/) for efficient form management
+- **Validation**: [Zod](https://zod.dev/) for schema-based form validation
+- **UI Components**: Radix UI with Shadcn for accessible and flexible components
+- **Internationalization**: [next-intl](https://next-intl.vercel.app/) for handling multiple languages
+- **Image Processing**: [Sharp](https://sharp.pixelplumbing.com/) for optimized images
+- **Analytics**: Vercel Analytics and Speed Insights for performance monitoring
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Setup Instructions
 
-## Deploy on Vercel
+1. **Clone the repository**:
+	```bash
+	git clone https://github.com/giovannivicentin/giovannivicentin.com.git
+	cd giovannivicentin.com
+	```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2.	Install dependencies:
+	```bash
+	npm install
+	```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3.	Run in development mode:
+	```bash
+	npm run dev
+	```
+
+4.	Build for production:
+	```bash
+	npm run build
+	```
+
+5.	Start the production server:
+	```bash
+	npm start
+	```
+
+### Scripts in package.json:
+
+1. 	npm run dev: Starts the development server
+2. 	npm run build: Builds the project for production
+3. npm run start: Runs the production build
+4. npm run lint: Runs ESLint with automatic fixing
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+If you have any questions or would like to connect, feel free to reach out via [LinkedIn](https://www.linkedin.com/in/giovannivicentin/).
