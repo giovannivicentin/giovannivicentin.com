@@ -56,7 +56,18 @@ const Presentation: React.FC<PresentationProps> = ({
             {title}
           </h1>
           <p className="max-w-md font-medium md:max-w-xl md:text-lg 3xl:text-xl 4xl:text-2xl">
-            {description}
+            {description.split(/`([^`]+)`/g).map((chunk, i) =>
+              i % 2 ? (
+                <code
+                  key={i}
+                  className="rounded bg-muted p-1 font-mono text-xs md:text-sm"
+                >
+                  {chunk}
+                </code>
+              ) : (
+                chunk
+              ),
+            )}
           </p>
           <div className="flex items-center gap-4">
             <Button
