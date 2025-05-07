@@ -71,16 +71,6 @@
       "github": "https://github.com/giovannivicentin/tecnojund",
       "expandedDescription": "Refiz o site da Tecnojund do zero com o objetivo de modernizar a marca, melhorar a experiência do usuário e aumentar a conversão de leads. A principal dificuldade era a ausência de um formulário eficiente para abertura de chamados com envio de e-mail. Agora, o site possui a página /chamados que atende a essa necessidade. Como resultado, houve um aumento significativo no tráfego orgânico, na geração de leads e no fechamento de novos contratos.",
       "videoPath": "/videos/projects/tecnojund.mp4"
-    },
-    "betterFit": {
-      "title": "BetterFit",
-      "description": "Em Breve: Uma Experiência de Fitness Revolucionária",
-      "imgSrc": "/images/projects/coming-soon.png",
-      "imgAlt": "Imagem teaser do aplicativo BetterFit",
-      "href": "/",
-      "github": "/",
-      "expandedDescription": "Em Breve: Uma Experiência de Fitness Revolucionária",
-      "videoPath": "/videos/projects/coming-soon.mp4"
     }
   },
   "ContactSection": {
