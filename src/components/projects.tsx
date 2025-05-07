@@ -4,7 +4,7 @@ import { Project } from './project'
 export function Projects() {
   const t = useTranslations('ProjectSection')
 
-  const projects = ['frankMetalicas', 'tecnojund', 'betterFit'] as const
+  const projects = ['frankMetalicas', 'tecnojund'] as const
   return (
     <section
       id="projects"
