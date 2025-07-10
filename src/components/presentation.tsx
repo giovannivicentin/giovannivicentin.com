@@ -46,7 +46,7 @@ const Presentation: React.FC<PresentationProps> = ({
   return (
     <section
       id="presentation"
-      className="min-h-[calc(100vh-48px)] w-full py-8 md:flex md:min-h-[calc(100vh-56px)] md:flex-col md:items-center md:justify-center md:py-0 md:pb-[30vh]"
+      className="mt-8 flex min-h-[calc(100vh-64px)] items-center justify-center py-8 md:mt-0 md:min-h-[calc(100vh-72px)]"
     >
       <div className="flex w-full flex-col items-center justify-between gap-8 px-4 md:flex-row md:gap-4 md:px-12 3xl:justify-around">
         <div className="space-y-4">
@@ -85,7 +85,7 @@ const Presentation: React.FC<PresentationProps> = ({
             </Button>
           </div>
         </div>
-        <div className="relative min-w-[12rem]">
+        <div className="relative">
           {!isImageLoaded && (
             <Skeleton className="absolute inset-0 rounded-full" />
           )}
