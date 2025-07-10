@@ -9,7 +9,7 @@ export default function Home() {
   const t = useTranslations('Presentation')
 
   return (
-    <main className="flex flex-col items-center justify-between font-sans text-base">
+    <main className="font-sans text-base">
       <Presentation
         title={t('title')}
         description={t('description')}
