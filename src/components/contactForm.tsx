@@ -73,9 +73,7 @@ export function ContactForm({
       }
     } catch (error) {
       console.error(submitError, error)
-      const errorMessage = error instanceof Error
-        ? error.message
-        : unknownError
+      const errorMessage = error instanceof Error ? error.message : unknownError
       toast({
         description: `${submitDescriptionError} ${errorMessage}`,
       })

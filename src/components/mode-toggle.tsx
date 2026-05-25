@@ -30,33 +30,29 @@ export function ModeToggle() {
     }
 
     if (theme === 'system') {
-      return resolvedTheme === 'dark'
-        ? (
-          <>
-            <Sun className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
-            <span className="sr-only">Sun Icon</span>
-          </>
-          )
-        : (
-          <>
-            <Moon className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
-            <span className="sr-only">Moon Icon</span>
-          </>
-          )
-    }
-    return theme === 'dark'
-      ? (
+      return resolvedTheme === 'dark' ? (
         <>
           <Sun className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
           <span className="sr-only">Sun Icon</span>
         </>
-        )
-      : (
+      ) : (
         <>
           <Moon className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
           <span className="sr-only">Moon Icon</span>
         </>
-        )
+      )
+    }
+    return theme === 'dark' ? (
+      <>
+        <Sun className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
+        <span className="sr-only">Sun Icon</span>
+      </>
+    ) : (
+      <>
+        <Moon className="h-6 w-6 text-primary md:h-5 md:w-5 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7" />
+        <span className="sr-only">Moon Icon</span>
+      </>
+    )
   }
 
   return (

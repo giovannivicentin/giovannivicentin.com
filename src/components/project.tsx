@@ -57,11 +57,7 @@ export function Project({
         <div className="flex flex-col justify-between gap-4">
           <Dialog>
             <DialogTrigger asChild>
-              <span
-                role="button"
-                tabIndex={0}
-                className="block"
-              >
+              <span role="button" tabIndex={0} className="block">
                 <Image
                   src={imgSrc}
                   width="1920"

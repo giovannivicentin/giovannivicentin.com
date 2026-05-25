@@ -44,9 +44,7 @@ function getSystemTheme(): ResolvedTheme {
 function resolveTheme(theme: Theme, enableSystem: boolean): ResolvedTheme {
   if (theme === 'system' && enableSystem) return getSystemTheme()
 
-  return theme === 'dark'
-    ? 'dark'
-    : 'light'
+  return theme === 'dark' ? 'dark' : 'light'
 }
 
 export function ThemeProvider({
