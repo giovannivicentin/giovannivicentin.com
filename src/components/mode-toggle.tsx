@@ -1,9 +1,9 @@
 'use client'
 
 import { Loader, Moon, Sun } from 'lucide-react'
-import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
+import { useTheme } from './theme-provider'
 import { Button } from './ui/button'
 
 export function ModeToggle() {
