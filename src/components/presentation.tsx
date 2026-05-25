@@ -57,16 +57,18 @@ const Presentation: React.FC<PresentationProps> = ({
           </h1>
           <p className="max-w-md font-medium md:max-w-xl md:text-lg 3xl:text-xl 4xl:text-2xl">
             {description.split(/`([^`]+)`/g).map((chunk, i) =>
-              i % 2 ? (
-                <code
-                  key={i}
-                  className="rounded bg-muted p-1 font-mono text-xs md:text-sm"
-                >
-                  {chunk}
-                </code>
-              ) : (
-                chunk
-              ),
+              i % 2
+                ? (
+                  <code
+                    key={i}
+                    className="rounded bg-muted p-1 font-mono text-xs md:text-sm"
+                  >
+                    {chunk}
+                  </code>
+                  )
+                : (
+                    chunk
+                  ),
             )}
           </p>
           <div className="flex items-center gap-4">
@@ -96,7 +98,9 @@ const Presentation: React.FC<PresentationProps> = ({
             height={512}
             priority
             className={`min-w-[12rem] rounded-full shadow-md transition-opacity duration-500 dark:shadow-muted dark:grayscale ${
-              isImageLoaded ? 'opacity-100' : 'opacity-0'
+              isImageLoaded
+? 'opacity-100'
+: 'opacity-0'
             }`}
             onLoad={() => setIsImageLoaded(true)}
           />
