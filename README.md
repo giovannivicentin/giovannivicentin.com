@@ -4,8 +4,6 @@
 
 ![Portfolio Preview](public/images/projects/portfolio.png)
 
-
-
 ## Features
 
 - **Internationalization**: Available in English (default), Spanish, and Portuguese.
@@ -31,37 +29,42 @@ The project is built with modern, performant web technologies:
 ## Setup Instructions
 
 1. **Clone the repository**:
-	```bash
-	git clone https://github.com/giovannivicentin/giovannivicentin.com.git
-	cd giovannivicentin.com
-	```
 
-2.	Install dependencies:
-	```bash
-	npm install
-	```
+   ```bash
+   git clone https://github.com/giovannivicentin/giovannivicentin.com.git
+   cd giovannivicentin.com
+   ```
 
-3.	Run in development mode:
-	```bash
-	npm run dev
-	```
+2. Install dependencies:
 
-4.	Build for production:
-	```bash
-	npm run build
-	```
+   ```bash
+   npm install
+   ```
 
-5.	Start the production server:
-	```bash
-	npm start
-	```
+3. Run in development mode:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+
+   ```bash
+   npm run build
+   ```
+
+5. Start the production server:
+   ```bash
+   npm start
+   ```
 
 ### Scripts in package.json:
 
-1. 	npm run dev: Starts the development server
-2. 	npm run build: Builds the project for production
-3. npm run start: Runs the production build
-4. npm run lint: Runs ESLint with automatic fixing
+- `npm run dev`: Starts the development server
+- `npm run build`: Builds the project for production
+- `npm run start`: Runs the production build
+- `npm run format`: Formats the project with Prettier
+- `npm run lint`: Runs ESLint with automatic fixing
 
 ## License
 
