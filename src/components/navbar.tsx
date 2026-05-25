@@ -117,7 +117,7 @@ export function Navbar({
           </li>
           <li className="cursor-pointer hover:underline">
             <Link
-              prefetch={true}
+              prefetch
               target="_blank"
               rel="noopener noreferrer"
               href="/resume/giovanni-vicentin-resume.pdf"
@@ -144,7 +144,7 @@ export function Navbar({
           <SheetContent className="flex flex-col items-center justify-start gap-8 pt-20 text-xl font-medium">
             <Link
               onClick={() => handleClick('projects')}
-              href={'#projects'}
+              href="#projects"
               scroll={false}
               className="flex cursor-pointer items-center gap-2 hover:underline"
               tabIndex={0}
@@ -160,7 +160,7 @@ export function Navbar({
             </Link>
             <Link
               onClick={() => handleClick('contact')}
-              href={'#contact'}
+              href="#contact"
               scroll={false}
               className="flex cursor-pointer items-center gap-2 hover:underline"
               tabIndex={0}
