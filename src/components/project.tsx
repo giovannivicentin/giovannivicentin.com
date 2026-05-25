@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -55,14 +57,20 @@ export function Project({
         <div className="flex flex-col justify-between gap-4">
           <Dialog>
             <DialogTrigger asChild>
-              <Image
-                src={imgSrc}
-                width="1920"
-                height="1080"
-                alt={imgAlt}
-                priority
-                className="aspect-video rounded-md border border-neutral-300 object-cover shadow-sm hover:animate-pulse hover:cursor-pointer dark:border-neutral-700 dark:grayscale dark:hover:animate-none hover:dark:grayscale-0"
-              />
+              <span
+                role="button"
+                tabIndex={0}
+                className="block"
+              >
+                <Image
+                  src={imgSrc}
+                  width="1920"
+                  height="1080"
+                  alt={imgAlt}
+                  priority
+                  className="aspect-video rounded-md border border-neutral-300 object-cover shadow-sm hover:animate-pulse hover:cursor-pointer dark:border-neutral-700 dark:grayscale dark:hover:animate-none hover:dark:grayscale-0"
+                />
+              </span>
             </DialogTrigger>
             <DialogContent className="min-w-fit lg:min-w-[50rem]">
               <DialogHeader>
