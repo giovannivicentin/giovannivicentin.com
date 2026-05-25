@@ -1,10 +1,11 @@
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
+import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
-import { ThemeProvider } from 'next-themes'
+import { NextIntlClientProvider } from 'next-intl'
 import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
 import './globals.css'
@@ -159,23 +160,25 @@ export default async function RootLayout({
   return (
     <html lang={selectedLang} suppressHydrationWarning>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div
-            className={`${inter.variable} mx-auto flex min-h-screen flex-col font-sans`}
+        <NextIntlClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
           >
-            <Header />
-            <div className="mt-7 md:mt-[4.5rem]">{children}</div>
-            <Toaster />
-            <Footer />
-          </div>
-          <SpeedInsights />
-          <Analytics />
-        </ThemeProvider>
+            <div
+              className={`${inter.variable} mx-auto flex min-h-screen flex-col font-sans`}
+            >
+              <Header />
+              <div className="mt-7 md:mt-[4.5rem]">{children}</div>
+              <Toaster />
+              <Footer />
+            </div>
+            <SpeedInsights />
+            <Analytics />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   )
