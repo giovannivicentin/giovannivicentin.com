@@ -22,8 +22,8 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.427.0",
-    "next": "^14.2.12",
-    "next-intl": "^3.17.2",
+    "next": "^16.2.6",
+    "next-intl": "^4.12.0",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
@@ -35,16 +35,19 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@rocketseat/eslint-config": "^2.2.2",
+    "@rocketseat/eslint-config": "^3.0.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "14.2.5",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.6",
     "eslint-config-prettier": "^9.1.0",
-    "postcss": "^8",
+    "postcss": "^8.5.15",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2"
+  },
+  "overrides": {
+    "postcss": "^8.5.15"
   }
 }
