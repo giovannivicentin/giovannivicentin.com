@@ -140,7 +140,7 @@ export const viewport: Viewport = {
 
 interface RootLayoutProps {
   children: ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }
 
 const langMap: Record<string, string> = {
@@ -149,11 +149,13 @@ const langMap: Record<string, string> = {
   es: 'es-ES',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: Readonly<RootLayoutProps>) {
+  const { locale } = await params
   const selectedLang = langMap[locale]
+
   return (
     <html lang={selectedLang} suppressHydrationWarning>
       <body>
