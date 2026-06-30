@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   plugins: ['prettier-plugin-tailwindcss'],
   printWidth: 80,
   semi: false,
@@ -6,3 +6,5 @@ module.exports = {
   tailwindAttributes: ['myClassList'],
   trailingComma: 'all',
 }
+
+export default config
