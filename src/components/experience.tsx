@@ -20,10 +20,10 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="flex min-h-[70vh] w-full flex-col justify-center space-y-8 bg-muted px-4 py-8 md:px-12 md:py-0 3xl:space-x-12"
+      className="bg-muted 3xl:space-x-12 flex min-h-[70vh] w-full flex-col justify-center space-y-8 px-4 py-8 md:px-12 md:py-0"
     >
       <h2
-        className={`${merriweather.variable} text-center font-serif text-3xl font-semibold md:text-4xl 3xl:text-5xl 4xl:text-6xl`}
+        className={`${merriweather.variable} 3xl:text-5xl 4xl:text-6xl text-center font-serif text-3xl font-semibold md:text-4xl`}
       >
         {t('title')}
       </h2>
@@ -35,22 +35,22 @@ export function Experience() {
           >
             <CardContent className="p-6">
               <div className="flex items-start">
-                <BriefcaseIcon className="mr-4 mt-1 h-6 w-6 3xl:h-7 3xl:w-7 4xl:h-8 4xl:w-8" />
+                <BriefcaseIcon className="3xl:h-7 3xl:w-7 4xl:h-8 4xl:w-8 mt-1 mr-4 h-6 w-6" />
                 <div className="flex-1">
                   <div className="mb-2 flex items-start justify-between">
                     <div>
-                      <h2 className="font-sans text-xl font-semibold 3xl:text-xl 4xl:text-2xl">
+                      <h2 className="3xl:text-xl 4xl:text-2xl font-sans text-xl font-semibold">
                         {t(`${experience}.title`)}
                       </h2>
-                      <p className="text-pretty text-base font-semibold text-primary/85 3xl:text-lg 4xl:text-xl">
+                      <p className="text-primary/85 3xl:text-lg 4xl:text-xl text-base font-semibold text-pretty">
                         {t(`${experience}.company`)}
                       </p>
                     </div>
-                    <span className="text-sm font-medium text-muted-foreground md:text-base 3xl:text-lg 4xl:text-xl">
+                    <span className="text-muted-foreground 3xl:text-lg 4xl:text-xl text-sm font-medium md:text-base">
                       {t(`${experience}.period`)}
                     </span>
                   </div>
-                  <p className="mb-4 max-w-7xl font-sans font-medium text-muted-foreground md:text-lg 3xl:text-xl 4xl:text-2xl">
+                  <p className="text-muted-foreground 3xl:text-xl 4xl:text-2xl mb-4 max-w-7xl font-sans font-medium md:text-lg">
                     {t(`${experience}.description`)}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -58,7 +58,7 @@ export function Experience() {
                       <Badge
                         key={stack}
                         variant="secondary"
-                        className="text-sm md:text-base 3xl:text-lg 4xl:text-xl"
+                        className="3xl:text-lg 4xl:text-xl text-sm md:text-base"
                       >
                         {t(`${experience}.stack.${stack}`)}
                       </Badge>

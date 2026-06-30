@@ -10,7 +10,7 @@ export function Header() {
   const t = useTranslations('Navigation')
 
   return (
-    <header className="fixed z-40 flex w-full items-center justify-between bg-background/90 px-4 py-3 backdrop-blur-md md:px-6 md:py-4">
+    <header className="bg-background/90 fixed z-40 flex w-full items-center justify-between px-4 py-3 backdrop-blur-md md:px-6 md:py-4">
       <Link
         href="/"
         className="flex items-center gap-2 rounded-md p-1 hover:bg-neutral-100 dark:hover:bg-transparent hover:dark:brightness-75"
@@ -20,9 +20,9 @@ export function Header() {
           alt={h('logoAlt')}
           width={24}
           height={24}
-          className="h-6 w-6 text-primary invert dark:invert-0 3xl:h-8 3xl:w-8"
+          className="text-primary 3xl:h-8 3xl:w-8 h-6 w-6 invert dark:invert-0"
         />
-        <span className="hidden text-lg font-semibold md:block 3xl:text-xl 4xl:text-2xl">
+        <span className="3xl:text-xl 4xl:text-2xl hidden text-lg font-semibold md:block">
           Giovanni Vicentin
         </span>
       </Link>

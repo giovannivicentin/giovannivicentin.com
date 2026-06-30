@@ -73,9 +73,7 @@ export function ContactForm({
       }
     } catch (error) {
       console.error(submitError, error)
-      const errorMessage = error instanceof Error
-        ? error.message
-        : unknownError
+      const errorMessage = error instanceof Error ? error.message : unknownError
       toast({
         description: `${submitDescriptionError} ${errorMessage}`,
       })
@@ -95,7 +93,7 @@ export function ContactForm({
                   {...field}
                   type="text"
                   placeholder={placeholderSubject}
-                  className="w-full font-normal md:text-base 3xl:text-lg 4xl:text-xl"
+                  className="3xl:text-lg 4xl:text-xl w-full font-normal md:text-base"
                 />
               </FormControl>
               {fieldState.error && (
@@ -132,7 +130,7 @@ export function ContactForm({
                 <Textarea
                   {...field}
                   placeholder={placeholderMessage}
-                  className="w-full font-normal md:text-base 3xl:text-lg 4xl:text-xl"
+                  className="3xl:text-lg 4xl:text-xl w-full font-normal md:text-base"
                 />
               </FormControl>
               {fieldState.error && (
@@ -144,7 +142,7 @@ export function ContactForm({
 
         <Button
           type="submit"
-          className="text-center font-semibold md:text-base 3xl:text-lg 4xl:text-xl"
+          className="3xl:text-lg 4xl:text-xl text-center font-semibold md:text-base"
         >
           {submitButton}
         </Button>

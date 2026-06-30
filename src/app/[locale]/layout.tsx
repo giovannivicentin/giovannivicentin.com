@@ -10,6 +10,8 @@ import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
 import './globals.css'
 
+const siteUrl = new URL('https://giovannivicentin.com')
+
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
@@ -17,121 +19,122 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-export const metadata: Metadata = {
-  title: 'Giovanni Vicentin Portfolio - Software Engineer',
-  description:
-    'Explore the professional portfolio of Giovanni Vicentin. Discover his projects, skills, and career path.',
-  authors: { name: 'Giovanni Vicentin', url: 'https://giovannivicentin.com' },
-  generator: 'Next.js, React, Tailwind, Node, Vercel, Google Fonts',
-  metadataBase: new URL('https://giovannivicentin.com'),
-  creator: 'Giovanni Vicentin',
-  openGraph: {
-    type: 'website',
-    url: 'https://www.giovannivicentin.com',
-    title: 'Giovanni Vicentin Portfolio - Software Engineer',
+const localeMetadata = {
+  br: {
+    title: 'Giovanni Vicentin - Engenheiro de Software no Brasil',
     description:
-      'Explore the professional portfolio of Giovanni Vicentin. Discover his projects, skills, and career trajectory.',
-    siteName: 'Giovanni Vicentin Portfolio - Software Engineer',
-    images: [
-      {
-        url: '/images/projects/portfolio.png',
-      },
-    ],
+      'Portfólio de Giovanni Vicentin, engenheiro de software brasileiro especializado em Next.js, React, TypeScript, Node.js e experiências web rápidas.',
+    locale: 'pt_BR',
   },
-  robots: 'index, follow',
-  twitter: {
-    card: 'summary_large_image',
-    site: '@gibasvicentin',
-    creator: '@gibasvicentin',
+  en: {
     title: 'Giovanni Vicentin - Software Engineer',
     description:
-      'Explore the professional portfolio of Giovanni Vicentin. Discover his projects, skills, and career path.',
-    images: '/images/projects/portfolio.png',
+      'Portfolio of Giovanni Vicentin, a Brazilian software engineer focused on Next.js, React, TypeScript, Node.js, and fast web experiences.',
+    locale: 'en_US',
   },
-  category: 'Software Engineering',
-  keywords: [
-    'Giovanni Vicentin',
-    'portfolio',
-    'professional portfolio',
-    'software engineer',
-    'software developer',
-    'full stack developer',
-    'front-end developer',
-    'back-end developer',
-    'Next.js',
-    'React',
-    'Tailwind CSS',
-    'projects',
-    'Node.js',
-    'networking',
-    'JavaScript',
-    'Python',
-    'TypeScript',
-    'HTML',
-    'CSS',
-    'SASS',
-    'Docker',
-    'Java',
-    'Kubernetes',
-    'CI/CD',
-    'Git',
-    'GitHub',
-    'GitLab',
-    'Bitbucket',
-    'Jira',
-    'Confluence',
-    'Slack',
-    'Trello',
-    'VS Code',
-    'IntelliJ IDEA',
-    'PyCharm',
-    'WebStorm',
-    'Visual Studio',
-    'programming',
-    'coding',
-    'algorithms',
-    'data structures',
-    'computer science',
-    'software architecture',
-    'software development',
-    'software design',
-    'software testing',
-    'software deployment',
-    'software maintenance',
-    'software documentation',
-    'software development tools',
-    'software development frameworks',
-    'software development libraries',
-    'software development languages',
-    'software development technologies',
-    'web development',
-    'mobile app development',
-    'UI/UX design',
-    'cloud computing',
-    'AWS',
-    'Azure',
-    'Google Cloud',
-    'artificial intelligence',
-    'API development',
-    'agile methodology',
-    'freelance software developer',
-    'react developer',
-    'node.js developer',
-    'software engineer jobs',
-    'tech stack',
-    'GitHub portfolio',
-    'SQL developer',
-    'remote software developer',
-    'entry level software developer',
-    'software developer tools',
-    'open source projects',
-    'programming tutorials',
-    'software engineering principles',
-    'software development life cycle',
-    'Brazilian software developer',
-    'Brazilian software engineer',
-    'São Paulo software development',
-  ],
+  es: {
+    title: 'Giovanni Vicentin - Ingeniero de Software',
+    description:
+      'Portafolio de Giovanni Vicentin, ingeniero de software brasileño especializado en Next.js, React, TypeScript, Node.js y experiencias web rápidas.',
+    locale: 'es_ES',
+  },
+} satisfies Record<
+  string,
+  { title: string; description: string; locale: string }
+>
+
+type SupportedLocale = keyof typeof localeMetadata
+
+function isSupportedLocale(locale: string): locale is SupportedLocale {
+  return locale in localeMetadata
+}
+
+const keywords = [
+  'Giovanni Vicentin',
+  'engenheiro de software Brasil',
+  'desenvolvedor de software Brasil',
+  'desenvolvedor full stack Brasil',
+  'desenvolvedor Next.js Brasil',
+  'desenvolvedor React Brasil',
+  'desenvolvedor TypeScript Brasil',
+  'engenheiro de software São Paulo',
+  'portfólio desenvolvedor',
+  'software engineer Brazil',
+  'Brazilian software engineer',
+  'Next.js',
+  'React',
+  'TypeScript',
+  'Node.js',
+  'Tailwind CSS',
+  'Shadcn UI',
+  'JavaScript',
+  'Python',
+  'web development',
+]
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const selectedLocale = isSupportedLocale(locale) ? locale : 'br'
+  const selectedMetadata = localeMetadata[selectedLocale]
+  const canonicalPath = `/${selectedLocale}`
+
+  return {
+    title: selectedMetadata.title,
+    description: selectedMetadata.description,
+    authors: { name: 'Giovanni Vicentin', url: siteUrl },
+    creator: 'Giovanni Vicentin',
+    metadataBase: siteUrl,
+    alternates: {
+      canonical: canonicalPath,
+      languages: {
+        'pt-BR': '/br',
+        'en-US': '/en',
+        'es-ES': '/es',
+        'x-default': '/br',
+      },
+    },
+    openGraph: {
+      type: 'website',
+      url: canonicalPath,
+      title: selectedMetadata.title,
+      description: selectedMetadata.description,
+      siteName: 'Giovanni Vicentin',
+      locale: selectedMetadata.locale,
+      images: [
+        {
+          url: '/images/projects/portfolio.png',
+          width: 1200,
+          height: 630,
+          alt: selectedMetadata.title,
+        },
+      ],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@gibasvicentin',
+      creator: '@gibasvicentin',
+      title: selectedMetadata.title,
+      description: selectedMetadata.description,
+      images: ['/images/projects/portfolio.png'],
+    },
+    category: 'Software Engineering',
+    keywords,
+  }
 }
 
 export const viewport: Viewport = {
