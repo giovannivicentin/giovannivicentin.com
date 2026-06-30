@@ -15,10 +15,10 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="flex min-h-[40vh] w-full flex-col items-center justify-center space-y-8 bg-background px-4 py-8 md:py-0"
+      className="bg-background flex min-h-[40vh] w-full flex-col items-center justify-center space-y-8 px-4 py-8 md:py-0"
     >
       <h2
-        className={`${merriweather.variable} text-center font-serif text-3xl font-semibold md:text-4xl 3xl:text-5xl 4xl:text-6xl`}
+        className={`${merriweather.variable} 3xl:text-5xl 4xl:text-6xl text-center font-serif text-3xl font-semibold md:text-4xl`}
       >
         {t('title')}
       </h2>
@@ -58,7 +58,7 @@ export function Skills() {
           <Badge
             key={skill}
             variant="secondary"
-            className="px-3 py-1 text-lg 3xl:text-xl 4xl:text-2xl"
+            className="3xl:text-xl 4xl:text-2xl px-3 py-1 text-lg"
           >
             {skill}
           </Badge>

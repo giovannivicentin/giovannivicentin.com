@@ -60,7 +60,7 @@ export function Navbar({
   }
 
   return (
-    <nav className="text-lg font-medium 3xl:text-xl 4xl:text-2xl">
+    <nav className="3xl:text-xl 4xl:text-2xl text-lg font-medium">
       <div className="hidden items-center justify-between md:flex">
         <ul className="mr-2 items-center gap-4 md:flex">
           <li
@@ -82,14 +82,14 @@ export function Navbar({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub Profile of Giovanni Vicentin"
-                    className="group flex cursor-pointer items-center justify-center gap-2 bg-primary px-10 py-2 font-semibold text-primary-foreground hover:bg-primary/90 3xl:text-xl 4xl:text-2xl"
+                    className="group bg-primary text-primary-foreground hover:bg-primary/90 3xl:text-xl 4xl:text-2xl flex cursor-pointer items-center justify-center gap-2 px-10 py-2 font-semibold"
                   >
                     <Image
                       src="/images/icons/github.svg"
                       alt={githubIcon}
                       width={15}
                       height={15}
-                      className="h-6 w-6 invert group-hover:invert-0 dark:invert-0 group-hover:dark:invert md:h-5 md:w-5 3xl:h-7 3xl:w-7"
+                      className="3xl:h-7 3xl:w-7 h-6 w-6 invert group-hover:invert-0 md:h-5 md:w-5 dark:invert-0 group-hover:dark:invert"
                     />
                     {github}
                   </Link>
@@ -100,14 +100,14 @@ export function Navbar({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn Profile of Giovanni Vicentin"
-                    className="flex cursor-pointer items-center gap-2 border border-input bg-background px-10 py-2 font-semibold hover:bg-accent hover:text-accent-foreground 3xl:text-xl 4xl:text-2xl"
+                    className="border-input bg-background hover:bg-accent hover:text-accent-foreground 3xl:text-xl 4xl:text-2xl flex cursor-pointer items-center gap-2 border px-10 py-2 font-semibold"
                   >
                     <Image
                       src="/images/icons/linkedin.svg"
                       alt={linkedinIcon}
                       width={15}
                       height={15}
-                      className="h-6 w-6 dark:invert md:h-5 md:w-5 3xl:h-7 3xl:w-7"
+                      className="3xl:h-7 3xl:w-7 h-6 w-6 md:h-5 md:w-5 dark:invert"
                     />
                     {linkedin}
                   </Link>
@@ -154,7 +154,7 @@ export function Navbar({
                 height={20}
                 width={20}
                 alt={codeIcon}
-                className="h-6 w-6 dark:invert md:h-5 md:w-5"
+                className="h-6 w-6 md:h-5 md:w-5 dark:invert"
               />
               {projects}
             </Link>
@@ -170,7 +170,7 @@ export function Navbar({
                 height={20}
                 width={20}
                 alt={contactIcon}
-                className="h-6 w-6 dark:invert md:h-5 md:w-5"
+                className="h-6 w-6 md:h-5 md:w-5 dark:invert"
               />
               {contact}
             </Link>
@@ -183,7 +183,7 @@ export function Navbar({
                 height={20}
                 width={20}
                 alt={resumeIcon}
-                className="h-6 w-6 dark:invert md:h-5 md:w-5"
+                className="h-6 w-6 md:h-5 md:w-5 dark:invert"
               />
               {resume}
             </Link>
