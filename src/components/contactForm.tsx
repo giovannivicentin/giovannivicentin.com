@@ -1,8 +1,8 @@
 'use client'
 
-import { useToast } from '@/components/ui/use-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 import { z } from 'zod'
 import { Button } from './ui/button'
 import { FormControl, FormField, FormItem, FormMessage } from './ui/form'
@@ -51,8 +51,6 @@ export function ContactForm({
     },
   })
 
-  const { toast } = useToast()
-
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const response = await fetch('/api/send', {
@@ -65,18 +63,14 @@ export function ContactForm({
 
       if (response.status === 200) {
         form.reset()
-        toast({
-          description: submitSuccess,
-        })
+        toast.success(submitSuccess)
       } else {
         throw new Error(`${response.status}`)
       }
     } catch (error) {
       console.error(submitError, error)
       const errorMessage = error instanceof Error ? error.message : unknownError
-      toast({
-        description: `${submitDescriptionError} ${errorMessage}`,
-      })
+      toast.error(`${submitDescriptionError} ${errorMessage}`)
     }
   }
 
