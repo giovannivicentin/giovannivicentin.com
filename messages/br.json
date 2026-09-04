@@ -32,20 +32,30 @@
     "itau": {
       "title": "Engenheiro de Software",
       "company": "Itaú Unibanco · Tempo integral",
-      "period": "mar de 2026 - o momento · 7 meses",
-      "stack": ["WebView", "Backend", "SDD", "Agentes de IA", "Skills", "MCP"],
+      "period": "2026 - o momento",
+      "stack": [
+        "React",
+        "Next.js",
+        "Go",
+        "WebView",
+        "Backend",
+        "SDD",
+        "Agentes de IA",
+        "Skills",
+        "MCP"
+      ],
       "description": "Desenvolvo e dou suporte ao hub da tab bar do aplicativo Itaú. Implementei o cache local no backend e reconstruí do zero toda a jornada de frontend em WebView. Atualmente, modernizo a experiência visual para o relançamento do app e atuo como pioneiro em uma nova frente de desenvolvimento orientado por especificações (SDD), agentes de IA, skills e MCP."
     },
     "carrefour": {
       "title": "Engenheiro de Software",
       "company": "Grupo Carrefour Brasil · Tempo integral (Carrefour e Sam's Club)",
-      "period": "mar de 2024 - mar de 2026 · 2 anos 1 mês",
+      "period": "2024 - 2026",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
       "description": "Recriou o sistema de registro do Sam's Club, criou APIs para gerenciar dados de usuários e otimizou a plataforma, elevando a base de membros, o engajamento e o desempenho do site."
     },
     "talst": {
       "title": "Engenheiro de Software",
-      "company": "Talst Contabilidade",
+      "company": "Talst Contabilidade · Tempo integral",
       "period": "2022 - 2024",
       "stack": ["NestJS", "Node.js", "React", "Python", "MySQL", "..."],
       "description": "Desenvolveu software com foco em aumentar a eficiência dos sistemas, automatizar processos e elevar os indicadores de desempenho em vários projetos."
@@ -114,7 +124,10 @@
     "title": "Entre em contato",
     "description": "Adoraria ouvir você! Sinta-se à vontade para entrar em contato com qualquer pergunta ou dúvida.",
     "email": "E-mail",
-    "myEmail": "giovannifvicentin@gmail.com"
+    "myEmail": "giovannifvicentin@gmail.com",
+    "copyEmail": "Copiar e-mail",
+    "emailCopied": "Copiado!",
+    "copyError": "Tente novamente"
   },
   "ContactForm": {
     "validationSubject": "O assunto deve ter pelo menos 2 caracteres.",

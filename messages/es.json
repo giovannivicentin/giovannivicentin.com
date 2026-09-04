@@ -32,20 +32,30 @@
     "itau": {
       "title": "Ingeniero de Software",
       "company": "Itaú Unibanco · Jornada completa",
-      "period": "mar 2026 - actualidad · 7 meses",
-      "stack": ["WebView", "Backend", "SDD", "Agentes de IA", "Skills", "MCP"],
+      "period": "2026 - actualidad",
+      "stack": [
+        "React",
+        "Next.js",
+        "Go",
+        "WebView",
+        "Backend",
+        "SDD",
+        "Agentes de IA",
+        "Skills",
+        "MCP"
+      ],
       "description": "Desarrollo y doy soporte al hub de la barra de pestañas de la aplicación Itaú. Implementé el caché local en el backend y reconstruí desde cero toda la experiencia de frontend en WebView. Actualmente modernizo la experiencia visual para el relanzamiento de la app y participo como pionero en una nueva iniciativa de desarrollo orientado por especificaciones (SDD), agentes de IA, skills y MCP."
     },
     "carrefour": {
       "title": "Ingeniero de Software",
       "company": "Grupo Carrefour Brasil · Jornada completa (Carrefour y Sam's Club)",
-      "period": "mar 2024 - mar 2026 · 2 años 1 mes",
+      "period": "2024 - 2026",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
       "description": "Recreó el sistema de registro de Sam's Club, creó APIs para gestionar datos de usuarios y optimizó la plataforma, elevando la base de miembros, el compromiso y el rendimiento del sitio."
     },
     "talst": {
       "title": "Ingeniero de Software",
-      "company": "Talst Contabilidad",
+      "company": "Talst Contabilidad · Jornada completa",
       "period": "2022 - 2024",
       "stack": ["NestJS", "Node.js", "React", "Python", "MySQL", "..."],
       "description": "Desarrolló software con enfoque en aumentar la eficiencia de los sistemas, automatizar procesos y elevar los indicadores de rendimiento en varios proyectos."
@@ -114,7 +124,10 @@
     "title": "Ponte en contacto",
     "description": "¡Me encantaría saber de ti! No dudes en ponerte en contacto con cualquier pregunta o duda.",
     "email": "Correo electrónico",
-    "myEmail": "giovannifvicentin@gmail.com"
+    "myEmail": "giovannifvicentin@gmail.com",
+    "copyEmail": "Copiar correo",
+    "emailCopied": "¡Copiado!",
+    "copyError": "Inténtalo de nuevo"
   },
   "ContactForm": {
     "validationSubject": "El asunto debe tener al menos 2 caracteres.",

@@ -32,20 +32,30 @@
     "itau": {
       "title": "Software Engineer",
       "company": "Itaú Unibanco · Full-time",
-      "period": "Mar 2026 - Present · 7 months",
-      "stack": ["WebView", "Backend", "SDD", "AI Agents", "Skills", "MCP"],
+      "period": "2026 - Present",
+      "stack": [
+        "React",
+        "Next.js",
+        "Go",
+        "WebView",
+        "Backend",
+        "SDD",
+        "AI Agents",
+        "Skills",
+        "MCP"
+      ],
       "description": "Develop and support the Itaú app’s tab bar hub. Implemented local caching in the backend and rebuilt the complete frontend journey from scratch using WebView. Currently modernizing the visual experience for the app’s relaunch and pioneering a new engineering initiative focused on specification-driven development (SDD), AI agents, skills, and MCP."
     },
     "carrefour": {
       "title": "Software Engineer",
       "company": "Grupo Carrefour Brasil · Full-time (Carrefour and Sam's Club)",
-      "period": "Mar 2024 - Mar 2026 · 2 years 1 month",
+      "period": "2024 - 2026",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
       "description": "Revamped the Sam’s Club registration system, created APIs to manage user data, and optimized the platform, increasing the membership base, engagement, and site performance."
     },
     "talst": {
       "title": "Software Engineer",
-      "company": "Talst Contabilidade",
+      "company": "Talst Contabilidade · Full-time",
       "period": "2022 - 2024",
       "stack": ["NestJS", "Node.js", "React", "Python", "MySQL", "..."],
       "description": "Developed software focused on increasing system efficiency, automating processes, and enhancing performance metrics across various projects."
@@ -114,7 +124,10 @@
     "title": "Get in Touch",
     "description": "I'd love to hear from you! Feel free to reach out with any questions or inquiries.",
     "email": "E-mail",
-    "myEmail": "giovannifvicentin@gmail.com"
+    "myEmail": "giovannifvicentin@gmail.com",
+    "copyEmail": "Copy Email",
+    "emailCopied": "Copied!",
+    "copyError": "Try Again"
   },
   "ContactForm": {
     "validationSubject": "The subject must have at least 2 characters.",
