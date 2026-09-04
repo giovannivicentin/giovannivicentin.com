@@ -22,19 +22,11 @@ export function Contact() {
     >
       <div className="grid gap-8 md:grid-cols-2">
         <div>
-          <div className="flex items-start justify-between gap-4">
-            <h2
-              className={`${merriweather.variable} 3xl:text-5xl 4xl:text-6xl font-serif text-3xl font-semibold text-pretty md:text-4xl`}
-            >
-              {t('title')}
-            </h2>
-            <CopyEmailButton
-              email={t('myEmail')}
-              copyLabel={t('copyEmail')}
-              copiedLabel={t('emailCopied')}
-              errorLabel={t('copyError')}
-            />
-          </div>
+          <h2
+            className={`${merriweather.variable} 3xl:text-5xl 4xl:text-6xl font-serif text-3xl font-semibold text-pretty md:text-4xl`}
+          >
+            {t('title')}
+          </h2>
           <p className="text-muted-foreground 3xl:text-xl 4xl:text-2xl mt-1 font-sans text-base font-medium md:text-lg">
             {t('description')}
           </p>
@@ -55,9 +47,17 @@ export function Contact() {
         <div className="flex flex-col gap-4">
           <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle className="3xl:text-5xl 4xl:text-6xl font-sans text-3xl font-semibold md:text-4xl">
-                {t('email')}
-              </CardTitle>
+              <div className="flex items-start justify-between gap-4">
+                <CardTitle className="3xl:text-5xl 4xl:text-6xl font-sans text-3xl font-semibold md:text-4xl">
+                  {t('email')}
+                </CardTitle>
+                <CopyEmailButton
+                  email={t('myEmail')}
+                  copyLabel={t('copyEmail')}
+                  copiedLabel={t('emailCopied')}
+                  errorLabel={t('copyError')}
+                />
+              </div>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground 3xl:text-xl 4xl:text-2xl font-sans text-base font-medium md:text-lg">
