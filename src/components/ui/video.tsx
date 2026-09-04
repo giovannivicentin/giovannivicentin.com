@@ -3,6 +3,19 @@ import Image from 'next/image'
 
 export function Video({ path, photo }: { path: string; photo: string }) {
   const t = useTranslations('VideoComponent')
+
+  if (!path) {
+    return (
+      <Image
+        src={photo}
+        alt={t('fallbackAlt')}
+        width="1920"
+        height="1080"
+        className="aspect-video w-full rounded-md border object-cover dark:border-neutral-700"
+      />
+    )
+  }
+
   return (
     <video
       width="1920"
