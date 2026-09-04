@@ -174,7 +174,7 @@ export default async function RootLayout({
               className={`${inter.variable} mx-auto flex min-h-screen flex-col font-sans`}
             >
               <Header />
-              <div className="mt-7 md:mt-[4.5rem]">{children}</div>
+              <div className="mt-7 md:mt-18">{children}</div>
               <Toaster />
               <Footer />
             </div>
