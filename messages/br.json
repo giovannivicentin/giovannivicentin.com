@@ -29,10 +29,17 @@
   },
   "workExperience": {
     "title": "Experiência Profissional",
-    "sams": {
+    "itau": {
       "title": "Engenheiro de Software",
-      "company": "Sam's Club",
-      "period": "2024 - Atual",
+      "company": "Itaú Unibanco · Tempo integral",
+      "period": "mar de 2026 - o momento · 7 meses",
+      "stack": ["WebView", "Backend", "SDD", "Agentes de IA", "Skills", "MCP"],
+      "description": "Desenvolvo e dou suporte ao hub da tab bar do aplicativo Itaú. Implementei o cache local no backend e reconstruí do zero toda a jornada de frontend em WebView. Atualmente, modernizo a experiência visual para o relançamento do app e atuo como pioneiro em uma nova frente de desenvolvimento orientado por especificações (SDD), agentes de IA, skills e MCP."
+    },
+    "carrefour": {
+      "title": "Engenheiro de Software",
+      "company": "Grupo Carrefour Brasil · Tempo integral (Carrefour e Sam's Club)",
+      "period": "mar de 2024 - mar de 2026 · 2 anos 1 mês",
       "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
       "description": "Recriou o sistema de registro do Sam's Club, criou APIs para gerenciar dados de usuários e otimizou a plataforma, elevando a base de membros, o engajamento e o desempenho do site."
     },
