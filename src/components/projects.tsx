@@ -14,7 +14,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="bg-muted 3xl:py-12 grid min-h-[50vh] w-full grid-cols-1 gap-8 p-8 py-8 sm:grid-cols-2 lg:grid-cols-3"
+      className="bg-muted grid min-h-[50vh] w-full scroll-mt-20 grid-cols-1 gap-8 px-4 py-12 sm:grid-cols-2 sm:px-6 md:px-12 md:py-16 lg:grid-cols-3"
     >
       {projects.map((project) => (
         <Project

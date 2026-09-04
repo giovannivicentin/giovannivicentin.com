@@ -15,14 +15,14 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="bg-background flex min-h-[40vh] w-full flex-col items-center justify-center space-y-8 px-4 py-8 md:py-0"
+      className="bg-background flex min-h-[40vh] w-full scroll-mt-20 flex-col items-center justify-center gap-8 px-4 py-12 sm:px-6 md:px-12 md:py-16"
     >
       <h2
         className={`${merriweather.variable} 3xl:text-5xl 4xl:text-6xl text-center font-serif text-3xl font-semibold md:text-4xl`}
       >
         {t('title')}
       </h2>
-      <div className="flex max-w-6xl flex-wrap items-center justify-center gap-2 px-2">
+      <div className="flex max-w-6xl flex-wrap items-center justify-center gap-2">
         {[
           'JavaScript',
           'TypeScript',

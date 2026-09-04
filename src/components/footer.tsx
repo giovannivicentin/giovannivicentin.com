@@ -8,8 +8,8 @@ export function Footer() {
   const t = useTranslations('Footer')
 
   return (
-    <footer className="bg-muted text-muted-foreground py-6 text-center text-sm">
-      <div className="flex items-center justify-between px-4 md:px-6">
+    <footer className="bg-muted text-muted-foreground px-4 py-6 text-center text-sm sm:px-6 md:px-12">
+      <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
         <p className="text-primary 3xl:text-base 4xl:text-lg text-sm font-normal">
           &copy; {currentYear} Giovanni Vicentin. {t('rightsReserved')}
         </p>

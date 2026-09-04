@@ -43,10 +43,10 @@ const Presentation: React.FC<PresentationProps> = ({
   return (
     <section
       id="presentation"
-      className="mt-8 flex min-h-[calc(100vh-64px)] items-center justify-center py-8 md:mt-0 md:min-h-[calc(100vh-72px)]"
+      className="mt-8 flex min-h-[calc(100vh-64px)] scroll-mt-20 items-center justify-center px-4 py-12 sm:px-6 md:mt-0 md:py-16 lg:min-h-[calc(100vh-72px)] lg:px-12"
     >
-      <div className="3xl:justify-around flex w-full flex-col items-center justify-between gap-8 px-4 md:flex-row md:gap-4 md:px-12">
-        <div className="space-y-4">
+      <div className="3xl:justify-around flex w-full flex-col items-center justify-between gap-8 lg:flex-row lg:gap-12">
+        <div className="flex flex-col gap-4">
           <h1
             className={`${merriweather.variable} 3xl:text-6xl 4xl:text-7xl font-serif text-4xl font-bold md:text-5xl`}
           >
@@ -90,8 +90,8 @@ const Presentation: React.FC<PresentationProps> = ({
             height={512}
             preload
             fetchPriority="high"
-            sizes="(min-width: 768px) 512px, 192px"
-            className="dark:shadow-muted h-48 w-48 rounded-full object-cover shadow-md md:h-[512px] md:w-[512px] dark:grayscale"
+            sizes="(min-width: 1280px) 512px, (min-width: 1024px) 416px, (min-width: 768px) 320px, (min-width: 640px) 256px, 192px"
+            className="dark:shadow-muted size-48 rounded-full object-cover shadow-md sm:size-64 md:size-80 lg:size-[26rem] xl:size-[32rem] dark:grayscale"
           />
         </div>
       </div>
