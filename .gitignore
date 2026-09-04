@@ -131,3 +131,4 @@ dist
 
 #mac files
 .DS_Store
+next-env.d.ts

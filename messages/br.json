@@ -52,6 +52,46 @@
     "linkIcon": "Ícone Link Externo"
   },
   "ProjectSection": {
+    "bigO": {
+      "title": "Analisador Big O",
+      "description": "Analise instantaneamente a complexidade de algoritmos em JavaScript, Python e Java.",
+      "imgSrc": "/images/projects/big-o.png",
+      "imgAlt": "Prévia do projeto Analisador Big O",
+      "href": "https://big-o.giovannivicentin.com",
+      "github": "https://github.com/giovannivicentin/big-O",
+      "expandedDescription": "Uma ferramenta inteligente de análise estática que identifica a complexidade de tempo Big O em códigos JavaScript, Python e Java. Ela combina o editor Monaco com validação de sintaxe, explicações claras, sugestões de otimização e uma referência visual de complexidades. Seu pipeline personalizado converte o código em AST, normaliza uma representação intermediária, constrói um grafo de fluxo de controle e avalia heurísticamente loops, recursão, métodos nativos e padrões comuns de algoritmos.",
+      "videoPath": ""
+    },
+    "megazord": {
+      "title": "Megazord — The Woodie Flowers Box",
+      "description": "Uma coleção acessível de jogos e atividades práticas para aprender conceitos de STEAM.",
+      "imgSrc": "/images/projects/megazord.webp",
+      "imgAlt": "Prévia da plataforma educacional STEAM Megazord",
+      "href": "https://megazord-five.vercel.app",
+      "github": "https://github.com/giovannivicentin/megazord",
+      "expandedDescription": "Uma plataforma educacional em português inspirada em Woodie Flowers que apresenta conceitos de STEAM para crianças por meio de atividades práticas e divertidas. Construída com Next.js, React, TypeScript, Tailwind CSS e componentes acessíveis do Radix UI, reúne experiências interativas como damas, xadrez, jogo da velha, jogo da memória com a tabela periódica, ferramentas de desenho e quadro branco colaborativo.",
+      "videoPath": ""
+    },
+    "ebookToAudiobook": {
+      "title": "Ebook em Áudio",
+      "description": "Converta ebooks em PDF e EPUB para áudio com privacidade, direto no navegador.",
+      "imgSrc": "/images/projects/ebook-to-audiobook.png",
+      "imgAlt": "Prévia do aplicativo Ebook em Áudio",
+      "href": "https://ebook-to-audiobook-rho.vercel.app",
+      "github": "https://github.com/giovannivicentin/ebook-to-audiobook",
+      "expandedDescription": "Um companheiro de leitura no navegador que transforma arquivos PDF e EPUB em audiolivros usando as vozes disponíveis no próprio dispositivo. A experiência prioriza praticidade e privacidade: os livros são processados localmente, sem enviar seu conteúdo para um servidor, permitindo ouvir a biblioteca mantendo os arquivos sob controle do usuário.",
+      "videoPath": ""
+    },
+    "mindfulMinutes": {
+      "title": "Mindful Minutes",
+      "description": "Práticas guiadas de atenção plena para reduzir o estresse, melhorar o foco e criar consistência.",
+      "imgSrc": "/images/projects/mindful-minutes.png",
+      "imgAlt": "Prévia de uma prática de meditação do Mindful Minutes",
+      "href": "https://mindful-minutes-zeta.vercel.app",
+      "github": "https://github.com/giovannivicentin/mindful-minutes",
+      "expandedDescription": "Um aplicativo web progressivo focado em privacidade, com respiração guiada, meditação Tratak digital e relaxamento muscular progressivo. As sessões são personalizáveis e contam com análises de progresso, sequências, calendário de práticas e conquistas. O app funciona offline, armazena os dados localmente, oferece temas claro e escuro e está disponível em oito idiomas.",
+      "videoPath": ""
+    },
     "frankMetalicas": {
       "title": "Frank Metálicas",
       "description": "Desenvolvimento de site para Frank Metálicas com foco em presença digital e otimização de SEO.",
@@ -61,26 +101,6 @@
       "github": "https://github.com/giovannivicentin/fk_metalicas",
       "expandedDescription": "Desenvolvi um site para a Frank Metálicas com o objetivo de criar uma presença digital robusta, facilitando a apresentação de produtos e serviços, exibição de projetos realizados e contato com clientes. Utilizando tecnologias como Next.js, React, Tailwind CSS, Shadcn/UI, Node.js, Zod e React Hook Form, otimizei o site para motores de busca, aumentando a visibilidade da empresa no Google. Como resultado, houve um aumento significativo nos contatos recebidos e destaque da empresa nas buscas online.",
       "videoPath": "/videos/projects/fk-metalicas.mp4"
-    },
-    "tecnojund": {
-      "title": "Tecnojund",
-      "description": "Reformulação completa do site da Tecnojund para conversão de leads na página “/chamados”.",
-      "imgSrc": "/images/projects/tecnojund.png",
-      "imgAlt": "Prévia do projeto Tecnojund",
-      "href": "https://www.tecnojund.com.br",
-      "github": "https://github.com/giovannivicentin/tecnojund",
-      "expandedDescription": "Refiz o site da Tecnojund do zero com o objetivo de modernizar a marca, melhorar a experiência do usuário e aumentar a conversão de leads. A principal dificuldade era a ausência de um formulário eficiente para abertura de chamados com envio de e-mail. Agora, o site possui a página /chamados que atende a essa necessidade. Como resultado, houve um aumento significativo no tráfego orgânico, na geração de leads e no fechamento de novos contratos.",
-      "videoPath": "/videos/projects/tecnojund.mp4"
-    },
-    "betterFit": {
-      "title": "BetterFit",
-      "description": "Em Breve: Uma Experiência de Fitness Revolucionária",
-      "imgSrc": "/images/projects/coming-soon.png",
-      "imgAlt": "Imagem teaser do aplicativo BetterFit",
-      "href": "/",
-      "github": "/",
-      "expandedDescription": "Em Breve: Uma Experiência de Fitness Revolucionária",
-      "videoPath": "/videos/projects/coming-soon.mp4"
     }
   },
   "ContactSection": {

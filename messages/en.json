@@ -52,6 +52,46 @@
     "linkIcon": "External Link Icon"
   },
   "ProjectSection": {
+    "bigO": {
+      "title": "Big O Analyzer",
+      "description": "Analyze algorithm time complexity instantly in JavaScript, Python, and Java.",
+      "imgSrc": "/images/projects/big-o.png",
+      "imgAlt": "Big O Analyzer project preview",
+      "href": "https://big-o.giovannivicentin.com",
+      "github": "https://github.com/giovannivicentin/big-O",
+      "expandedDescription": "An intelligent static-analysis tool that detects Big O time complexity from JavaScript, Python, and Java source code. It combines a Monaco code editor with syntax validation, clear explanations, optimization suggestions, and a visual complexity reference. Its custom pipeline parses code into an AST, normalizes it into an intermediate representation, builds a control-flow graph, and heuristically evaluates loops, recursion, native methods, and common algorithm patterns.",
+      "videoPath": ""
+    },
+    "megazord": {
+      "title": "Megazord — The Woodie Flowers Box",
+      "description": "An accessible collection of games and hands-on activities for learning STEAM concepts.",
+      "imgSrc": "/images/projects/megazord.webp",
+      "imgAlt": "Megazord STEAM learning platform preview",
+      "href": "https://megazord-five.vercel.app",
+      "github": "https://github.com/giovannivicentin/megazord",
+      "expandedDescription": "A Portuguese-language educational platform inspired by Woodie Flowers that introduces children to STEAM through practical, playful activities. Built with Next.js, React, TypeScript, Tailwind CSS, and accessible Radix UI components, it brings together interactive experiences including checkers, chess, tic-tac-toe, a periodic-table memory game, drawing tools, and a collaborative whiteboard.",
+      "videoPath": ""
+    },
+    "ebookToAudiobook": {
+      "title": "Ebook to Audiobook",
+      "description": "Convert PDF and EPUB ebooks into audio privately, right in the browser.",
+      "imgSrc": "/images/projects/ebook-to-audiobook.png",
+      "imgAlt": "Ebook to Audiobook application preview",
+      "href": "https://ebook-to-audiobook-rho.vercel.app",
+      "github": "https://github.com/giovannivicentin/ebook-to-audiobook",
+      "expandedDescription": "A browser-based reading companion that turns PDF and EPUB files into audiobooks using voices available on the user's own device. The experience is designed for convenience and privacy: books are processed locally, without uploading their contents to a server, so users can listen to their library while keeping their files under their control.",
+      "videoPath": ""
+    },
+    "mindfulMinutes": {
+      "title": "Mindful Minutes",
+      "description": "Guided mindfulness practices for reducing stress, improving focus, and building consistency.",
+      "imgSrc": "/images/projects/mindful-minutes.png",
+      "imgAlt": "Mindful Minutes meditation practice preview",
+      "href": "https://mindful-minutes-zeta.vercel.app",
+      "github": "https://github.com/giovannivicentin/mindful-minutes",
+      "expandedDescription": "A privacy-first progressive web app for guided breathing, digital Tratak meditation, and progressive muscle relaxation. Sessions are customizable and supported by progress analytics, streaks, a practice calendar, and achievements. The app works offline, stores data locally, supports light and dark themes, and is localized in eight languages.",
+      "videoPath": ""
+    },
     "frankMetalicas": {
       "title": "Frank Metálicas",
       "description": "Development of a website for Frank Metálicas, focusing on digital presence and SEO optimization.",
@@ -61,26 +101,6 @@
       "github": "https://github.com/giovannivicentin/fk_metalicas",
       "expandedDescription": "I developed a website for Frank Metálicas with the goal of establishing a robust digital presence, making it easier to showcase products and services, display completed projects, and connect with clients. Using technologies like Next.js, React, Tailwind CSS, Shadcn/UI, Node.js, Zod, and React Hook Form, I optimized the website for search engines, boosting the company’s visibility on Google. As a result, there was a significant increase in contact inquiries and the company gained prominence in online searches.",
       "videoPath": "/videos/projects/fk-metalicas.mp4"
-    },
-    "tecnojund": {
-      "title": "Tecnojund",
-      "description": "Complete overhaul of the Tecnojund website for lead conversion in the “/chamados” page.",
-      "imgSrc": "/images/projects/tecnojund.png",
-      "imgAlt": "Tecnojund Project Preview",
-      "href": "https://www.tecnojund.com.br",
-      "github": "https://github.com/giovannivicentin/tecnojund",
-      "expandedDescription": "I rebuilt the Tecnojund website from scratch with the aim of modernizing the brand, enhancing user experience, and increasing lead conversion. The main challenge was the lack of an efficient form for opening service tickets with email submission. Now, the website includes a /tickets page that meets this need. As a result, there has been a significant increase in organic traffic, lead generation, and the closing of new contracts.",
-      "videoPath": "/videos/projects/tecnojund.mp4"
-    },
-    "betterFit": {
-      "title": "BetterFit",
-      "description": "Coming Soon: A Game-Changing Fitness Experience",
-      "imgSrc": "/images/projects/coming-soon.png",
-      "imgAlt": "Teaser image of BetterFit App",
-      "href": "/",
-      "github": "/",
-      "expandedDescription": "Coming Soon: A Game-Changing Fitness Experience",
-      "videoPath": "/videos/projects/coming-soon.mp4"
     }
   },
   "ContactSection": {
