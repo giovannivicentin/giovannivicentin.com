@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 import { Merriweather } from 'next/font/google'
 import { ContactForm } from './contactForm'
+import { CopyEmailButton } from './copy-email-button'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 
 const merriweather = Merriweather({
@@ -17,15 +18,23 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="bg-background flex min-h-[50vh] w-full flex-col justify-center px-4 py-8 md:px-12 md:py-0"
+      className="bg-background flex min-h-[50vh] w-full scroll-mt-20 flex-col justify-center px-4 py-12 sm:px-6 md:px-12 md:py-16"
     >
       <div className="grid gap-8 md:grid-cols-2">
         <div>
-          <h2
-            className={`${merriweather.variable} 3xl:text-5xl 4xl:text-6xl font-serif text-3xl font-semibold md:text-4xl`}
-          >
-            {t('title')}
-          </h2>
+          <div className="flex items-start justify-between gap-4">
+            <h2
+              className={`${merriweather.variable} 3xl:text-5xl 4xl:text-6xl font-serif text-3xl font-semibold text-pretty md:text-4xl`}
+            >
+              {t('title')}
+            </h2>
+            <CopyEmailButton
+              email={t('myEmail')}
+              copyLabel={t('copyEmail')}
+              copiedLabel={t('emailCopied')}
+              errorLabel={t('copyError')}
+            />
+          </div>
           <p className="text-muted-foreground 3xl:text-xl 4xl:text-2xl mt-1 font-sans text-base font-medium md:text-lg">
             {t('description')}
           </p>
