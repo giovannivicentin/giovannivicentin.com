@@ -69,6 +69,16 @@
     "linkIcon": "Ícone Link Externo"
   },
   "ProjectSection": {
+    "sorteiaFC": {
+      "title": "Sorteia FC",
+      "description": "Sorteie times, confrontos equilibrados e chaves de torneio para EA FC 26 e FC 25.",
+      "imgSrc": "/images/projects/sorteia-fc.png",
+      "imgAlt": "Prévia do sorteador de times Sorteia FC",
+      "href": "https://sorteiafc.giovannivicentin.com/",
+      "github": "https://github.com/giovannivicentin/fifa",
+      "expandedDescription": "Um sorteador gratuito e sem cadastro para organizar partidas de EA FC 26 e FC 25. Permite filtrar times masculinos e femininos por categoria e número de estrelas, criar confrontos equilibrados para partidas 1 contra 1 e gerar chaves completas de torneio para 3, 4 ou 8 jogadores.",
+      "videoPath": ""
+    },
     "bigO": {
       "title": "Analisador Big O",
       "description": "Analise instantaneamente a complexidade de algoritmos em JavaScript, Python e Java.",

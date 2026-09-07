@@ -69,6 +69,16 @@
     "linkIcon": "Icono de Enlace Externo"
   },
   "ProjectSection": {
+    "sorteiaFC": {
+      "title": "Sorteia FC",
+      "description": "Sortea equipos, enfrentamientos equilibrados y cuadros de torneo para EA FC 26 y FC 25.",
+      "imgSrc": "/images/projects/sorteia-fc.png",
+      "imgAlt": "Vista previa del sorteador de equipos Sorteia FC",
+      "href": "https://sorteiafc.giovannivicentin.com/",
+      "github": "https://github.com/giovannivicentin/fifa",
+      "expandedDescription": "Un sorteador gratuito y sin registro para organizar partidos de EA FC 26 y FC 25. Permite filtrar equipos masculinos y femeninos por categoría y número de estrellas, crear enfrentamientos equilibrados uno contra uno y generar cuadros completos de torneo para 3, 4 u 8 jugadores.",
+      "videoPath": ""
+    },
     "bigO": {
       "title": "Analizador Big O",
       "description": "Analiza al instante la complejidad de algoritmos en JavaScript, Python y Java.",
