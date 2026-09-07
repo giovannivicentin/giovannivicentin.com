@@ -11,7 +11,8 @@
     "format:check": "prettier . --check",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "profile:motion": "node scripts/profile-motion.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.1.23",
