@@ -69,6 +69,16 @@
     "linkIcon": "External Link Icon"
   },
   "ProjectSection": {
+    "sorteiaFC": {
+      "title": "Sorteia FC",
+      "description": "Draw teams, balanced matchups, and tournament brackets for EA FC 26 and FC 25.",
+      "imgSrc": "/images/projects/sorteia-fc.png",
+      "imgAlt": "Sorteia FC team randomizer preview",
+      "href": "https://sorteiafc.giovannivicentin.com/",
+      "github": "https://github.com/giovannivicentin/fifa",
+      "expandedDescription": "A free, no-sign-up randomizer for organizing EA FC 26 and FC 25 matches. It lets players filter men's and women's teams by category and star rating, create balanced one-on-one matchups, and generate complete tournament brackets for 3, 4, or 8 players.",
+      "videoPath": ""
+    },
     "bigO": {
       "title": "Big O Analyzer",
       "description": "Analyze algorithm time complexity instantly in JavaScript, Python, and Java.",
