@@ -1,166 +1,118 @@
 {
-  "Presentation": {
-    "title": "Olá, sou o Giovanni Vicentin",
-    "description": "Sou engenheiro de software e trabalho diariamente com `.tsx`, `.jsx`, `.ts`, `.js`, `.html` e `.py`, focado em criar experiências web acessíveis, rápidas e responsivas. Me importo com código legível, uma boa experiência do usuário e em fazer as coisas funcionarem bem em todos os aspectos. Estou sempre aprendendo — tanto como desenvolvedor quanto como pessoa — e sigo passo a passo, movido por paciência, curiosidade e consistência.",
-    "contactMe": "Contate-me",
-    "viewProjects": "Ver Projetos"
-  },
-  "skills": {
-    "title": "Habilidades & Tecnologias"
-  },
   "NotFoundPage": {
     "title": "Página não encontrada"
-  },
-  "Header": {
-    "logoAlt": "Logo do Giovanni Vicentin"
-  },
-  "Navigation": {
-    "projects": "Projetos",
-    "contact": "Contato",
-    "resume": "Currículo",
-    "github": "GitHub",
-    "linkedin": "LinkedIn",
-    "githubIcon": "Ícone GitHub",
-    "linkedinIcon": "Ícone LinkedIn",
-    "menuIcon": "Ícone Menu",
-    "codeIcon": "Ícone Code",
-    "contactIcon": "Ícone Contato",
-    "resumeIcon": "Ícone Currículo"
-  },
-  "workExperience": {
-    "title": "Experiência Profissional",
-    "itau": {
-      "title": "Engenheiro de Software",
-      "company": "Itaú Unibanco · Tempo integral",
-      "period": "2026 - o momento",
-      "stack": [
-        "React",
-        "Next.js",
-        "Go",
-        "WebView",
-        "Backend",
-        "SDD",
-        "Agentes de IA",
-        "Skills",
-        "MCP"
-      ],
-      "description": "Desenvolvo e dou suporte ao hub da tab bar do aplicativo Itaú. Implementei o cache local no backend e reconstruí do zero toda a jornada de frontend em WebView. Atualmente, modernizo a experiência visual para o relançamento do app e atuo como pioneiro em uma nova frente de desenvolvimento orientado por especificações (SDD), agentes de IA, skills e MCP."
-    },
-    "carrefour": {
-      "title": "Engenheiro de Software",
-      "company": "Grupo Carrefour Brasil · Tempo integral (Carrefour e Sam's Club)",
-      "period": "2024 - 2026",
-      "stack": ["React", "Node.js", "GraphQL", "GCP", "VTEX IO", "..."],
-      "description": "Recriou o sistema de registro do Sam's Club, criou APIs para gerenciar dados de usuários e otimizou a plataforma, elevando a base de membros, o engajamento e o desempenho do site."
-    },
-    "talst": {
-      "title": "Engenheiro de Software",
-      "company": "Talst Contabilidade · Tempo integral",
-      "period": "2022 - 2024",
-      "stack": ["NestJS", "Node.js", "React", "Python", "MySQL", "..."],
-      "description": "Desenvolveu software com foco em aumentar a eficiência dos sistemas, automatizar processos e elevar os indicadores de desempenho em vários projetos."
-    }
-  },
-  "ProjectComponent": {
-    "externalLink": "Link Externo para o projeto",
-    "githubLink": "Link Externo para o GitHub",
-    "viewMore": "Ver mais",
-    "githubIcon": "Ícone GitHub",
-    "linkIcon": "Ícone Link Externo"
   },
   "ProjectSection": {
     "sorteiaFC": {
       "title": "Sorteia FC",
       "description": "Sorteie times, confrontos equilibrados e chaves de torneio para EA FC 26 e FC 25.",
-      "imgSrc": "/images/projects/sorteia-fc.png",
-      "imgAlt": "Prévia do sorteador de times Sorteia FC",
-      "href": "https://sorteiafc.giovannivicentin.com/",
-      "github": "https://github.com/giovannivicentin/fifa",
-      "expandedDescription": "Um sorteador gratuito e sem cadastro para organizar partidas de EA FC 26 e FC 25. Permite filtrar times masculinos e femininos por categoria e número de estrelas, criar confrontos equilibrados para partidas 1 contra 1 e gerar chaves completas de torneio para 3, 4 ou 8 jogadores.",
-      "videoPath": ""
+      "imgAlt": "Prévia do sorteador de times Sorteia FC"
     },
     "bigO": {
       "title": "Analisador Big O",
       "description": "Analise instantaneamente a complexidade de algoritmos em JavaScript, Python e Java.",
-      "imgSrc": "/images/projects/big-o.png",
-      "imgAlt": "Prévia do projeto Analisador Big O",
-      "href": "https://big-o.giovannivicentin.com",
-      "github": "https://github.com/giovannivicentin/big-O",
-      "expandedDescription": "Uma ferramenta inteligente de análise estática que identifica a complexidade de tempo Big O em códigos JavaScript, Python e Java. Ela combina o editor Monaco com validação de sintaxe, explicações claras, sugestões de otimização e uma referência visual de complexidades. Seu pipeline personalizado converte o código em AST, normaliza uma representação intermediária, constrói um grafo de fluxo de controle e avalia heurísticamente loops, recursão, métodos nativos e padrões comuns de algoritmos.",
-      "videoPath": ""
+      "imgAlt": "Prévia do projeto Analisador Big O"
     },
     "megazord": {
       "title": "Megazord",
       "description": "Uma coleção acessível de jogos e atividades práticas para aprender conceitos de STEAM.",
-      "imgSrc": "/images/projects/megazord.webp",
-      "imgAlt": "Prévia da plataforma educacional STEAM Megazord",
-      "href": "https://megazord-five.vercel.app",
-      "github": "https://github.com/giovannivicentin/megazord",
-      "expandedDescription": "Uma plataforma educacional em português inspirada em Woodie Flowers que apresenta conceitos de STEAM para crianças por meio de atividades práticas e divertidas. Construída com Next.js, React, TypeScript, Tailwind CSS e componentes acessíveis do Radix UI, reúne experiências interativas como damas, xadrez, jogo da velha, jogo da memória com a tabela periódica, ferramentas de desenho e quadro branco colaborativo.",
-      "videoPath": ""
+      "imgAlt": "Prévia da plataforma educacional STEAM Megazord"
     },
     "ebookToAudiobook": {
       "title": "Ebook em Áudio",
       "description": "Converta ebooks em PDF e EPUB para áudio com privacidade, direto no navegador.",
-      "imgSrc": "/images/projects/ebook-to-audiobook.png",
-      "imgAlt": "Prévia do aplicativo Ebook em Áudio",
-      "href": "https://ebook-to-audiobook-rho.vercel.app",
-      "github": "https://github.com/giovannivicentin/ebook-to-audiobook",
-      "expandedDescription": "Um companheiro de leitura no navegador que transforma arquivos PDF e EPUB em audiolivros usando as vozes disponíveis no próprio dispositivo. A experiência prioriza praticidade e privacidade: os livros são processados localmente, sem enviar seu conteúdo para um servidor, permitindo ouvir a biblioteca mantendo os arquivos sob controle do usuário.",
-      "videoPath": ""
+      "imgAlt": "Prévia do aplicativo Ebook em Áudio"
     },
     "mindfulMinutes": {
       "title": "Mindful Minutes",
       "description": "Práticas guiadas de atenção plena para reduzir o estresse, melhorar o foco e criar consistência.",
-      "imgSrc": "/images/projects/mindful-minutes.png",
-      "imgAlt": "Prévia de uma prática de meditação do Mindful Minutes",
-      "href": "https://mindful-minutes-zeta.vercel.app",
-      "github": "https://github.com/giovannivicentin/mindful-minutes",
-      "expandedDescription": "Um aplicativo web progressivo focado em privacidade, com respiração guiada, meditação Tratak digital e relaxamento muscular progressivo. As sessões são personalizáveis e contam com análises de progresso, sequências, calendário de práticas e conquistas. O app funciona offline, armazena os dados localmente, oferece temas claro e escuro e está disponível em oito idiomas.",
-      "videoPath": ""
+      "imgAlt": "Prévia de uma prática de meditação do Mindful Minutes"
     },
     "frankMetalicas": {
       "title": "Frank Metálicas",
       "description": "Desenvolvimento de site para Frank Metálicas com foco em presença digital e otimização de SEO.",
-      "imgSrc": "/images/projects/fk-metalicas.png",
-      "imgAlt": "Prévia do projeto Frank Metálicas",
-      "href": "https://frankmetalicas.com",
-      "github": "https://github.com/giovannivicentin/fk_metalicas",
-      "expandedDescription": "Desenvolvi um site para a Frank Metálicas com o objetivo de criar uma presença digital robusta, facilitando a apresentação de produtos e serviços, exibição de projetos realizados e contato com clientes. Utilizando tecnologias como Next.js, React, Tailwind CSS, Shadcn/UI, Node.js, Zod e React Hook Form, otimizei o site para motores de busca, aumentando a visibilidade da empresa no Google. Como resultado, houve um aumento significativo nos contatos recebidos e destaque da empresa nas buscas online.",
-      "videoPath": "/videos/projects/fk-metalicas.mp4"
+      "imgAlt": "Prévia do projeto Frank Metálicas"
     }
-  },
-  "ContactSection": {
-    "title": "Entre em contato",
-    "description": "Adoraria ouvir você! Sinta-se à vontade para entrar em contato com qualquer pergunta ou dúvida.",
-    "email": "E-mail",
-    "myEmail": "giovannifvicentin@gmail.com",
-    "copyEmail": "Copiar e-mail",
-    "emailCopied": "Copiado!",
-    "copyError": "Tente novamente"
-  },
-  "ContactForm": {
-    "validationSubject": "O assunto deve ter pelo menos 2 caracteres.",
-    "validationMessage": "Mensagem é obrigatória.",
-    "validationEmail": "Por favor, insira um endereço de e-mail válido.",
-    "submitSuccess": "E-mail enviado com sucesso!",
-    "submitError": "Falha ao enviar o e-mail.",
-    "submitDescriptionError": "Ocorreu um erro",
-    "unknownError": "Ocorreu um erro desconhecido.",
-    "placeholderSubject": "Escreva o assunto aqui.",
-    "placeholderEmail": "usuario@dominio.com",
-    "placeholderMessage": "Escreva sua mensagem aqui.",
-    "submitButton": "Enviar"
   },
   "VideoComponent": {
     "fallbackAlt": "Imagem de substituição quando o vídeo não pode ser reproduzido",
     "videoNotSupported": "Seu navegador não suporta a tag de vídeo."
   },
-  "Footer": {
-    "rightsReserved": "Todos os direitos reservados.",
-    "linkedinIcon": "Ícone do LinkedIn",
-    "githubIcon": "Ícone do GitHub",
-    "spanLinkedin": "Link do LinkedIn",
-    "spanGithub": "Link do GitHub"
+  "Portfolio": {
+    "role": "Engenheiro de Software",
+    "headline": "Interfaces. APIs.",
+    "headlineMuted": "Software em produção.",
+    "intro": "Desenvolvo aplicações com React, Next.js e Node.js. Hoje no Itaú Unibanco, com experiência no Carrefour e Sam’s Club Brasil.",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato",
+    "viewExperience": "Ver experiência",
+    "resume": "Ver currículo",
+    "current": "Atual",
+    "based": "Brasil / Software para a web",
+    "skip": "Pular para o conteúdo",
+    "experienceTitle": "Engenharia em produção.",
+    "experienceIntro": "Jornadas de negócio, interfaces e integrações. Uma seleção do que construí em equipes de produto.",
+    "itauTitle": "De jornadas nativas a uma experiência em WebView.",
+    "itauContext": "Desenvolvimento e suporte ao hub da tab bar do aplicativo Itaú.",
+    "itauPoints": [
+      "Reconstruí a jornada de frontend em WebView, anteriormente mantida em repositórios Swift e Kotlin.",
+      "Implementei cache local no backend e atuo na modernização visual da experiência.",
+      "Contribuo para uma ferramenta interna orientada por especificações, com agentes de IA, skills e MCP."
+    ],
+    "carrefourTitle": "Cadastro de sócios, da interface aos endpoints.",
+    "carrefourContext": "Desenvolvimento de interfaces e integrações para Carrefour e Sam’s Club Brasil.",
+    "carrefourPoints": [
+      "Desenvolvi a jornada de cadastro de sócios do Sam’s Club: interface, endpoints Node.js e integração com o backend na plataforma VTEX.",
+      "Implementei automações para processos de recorrência de pagamentos.",
+      "Contribuí para a manutenção e evolução de interfaces React e APIs."
+    ],
+    "previous": "Anteriormente",
+    "talst": "Desenvolvimento de sistemas e automação de processos com React, Node.js, NestJS e Python.",
+    "projectsTitle": "Explore o código.",
+    "projectsIntro": "Projetos autorais para experimentar ideias, construir ferramentas e resolver problemas concretos.",
+    "otherProjects": "Outros projetos",
+    "openProject": "Abrir projeto",
+    "repository": "Ver repositório",
+    "aboutTitle": "Da interface à integração.",
+    "aboutBody": "Sou Giovanni Vicentin, engenheiro de software no Brasil. Trabalho no frontend e no backend, com foco em interfaces acessíveis, integrações e manutenção de aplicações em produção.",
+    "frontend": "Interfaces",
+    "backend": "APIs e dados",
+    "tooling": "Ferramentas",
+    "contactTitle": "Vamos conversar sobre engenharia.",
+    "contactBody": "Para oportunidades profissionais, entre em contato por email ou LinkedIn.",
+    "copy": "Copiar email",
+    "copied": "Email copiado",
+    "copyError": "Não foi possível copiar. Selecione o email abaixo.",
+    "send": "Enviar email",
+    "linkedin": "Abrir LinkedIn",
+    "commands": "Comandos",
+    "search": "Buscar uma página ou ação…",
+    "empty": "Nenhum comando encontrado.",
+    "navigation": "Navegação",
+    "career": "Carreira",
+    "code": "Código",
+    "language": "Idioma",
+    "home": "Início",
+    "close": "Fechar",
+    "commandHint": "para navegar",
+    "selectHint": "selecionar",
+    "closeHint": "fechar",
+    "built": "Interfaces claras. Código acessível.",
+    "projectDetails": {
+      "bigO": [
+        "Explore a complexidade dos seus algoritmos.",
+        "Análise estática heurística de JavaScript, Python e Java, com AST e fluxo de controle."
+      ],
+      "ebookToAudiobook": [
+        "Ouça PDFs e EPUBs no navegador.",
+        "Processamento local dos livros e síntese de voz disponível no dispositivo."
+      ],
+      "sorteiaFC": [
+        "Organize partidas e torneios de EA FC.",
+        "Filtros por categoria e estrelas, confrontos equilibrados e geração de chaves."
+      ]
+    }
   }
 }

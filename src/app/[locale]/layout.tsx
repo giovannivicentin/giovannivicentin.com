@@ -1,22 +1,24 @@
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
-import { ThemeProvider } from '@/components/theme-provider'
-import { Toaster } from '@/components/ui/sonner'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { Inter } from 'next/font/google'
+import { Geist, Geist_Mono } from 'next/font/google'
 import { ReactNode } from 'react'
 import './globals.css'
 
 const siteUrl = new URL('https://giovannivicentin.com')
 
-const inter = Inter({
+const geist = Geist({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-geist-sans',
+})
+const mono = Geist_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-geist-mono',
 })
 
 const localeMetadata = {
@@ -106,7 +108,7 @@ export async function generateMetadata({
       locale: selectedMetadata.locale,
       images: [
         {
-          url: '/images/projects/portfolio.png',
+          url: '/opengraph-image',
           width: 1200,
           height: 630,
           alt: selectedMetadata.title,
@@ -130,7 +132,7 @@ export async function generateMetadata({
       creator: '@gibasvicentin',
       title: selectedMetadata.title,
       description: selectedMetadata.description,
-      images: ['/images/projects/portfolio.png'],
+      images: ['/opengraph-image'],
     },
     category: 'Software Engineering',
     keywords,
@@ -161,27 +163,15 @@ export default async function RootLayout({
   const selectedLang = langMap[locale]
 
   return (
-    <html lang={selectedLang} suppressHydrationWarning>
-      <body>
+    <html lang={selectedLang} className="dark">
+      <body className={`${geist.variable} ${mono.variable}`}>
         <NextIntlClientProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div
-              className={`${inter.variable} mx-auto flex min-h-screen flex-col font-sans`}
-            >
-              <Header />
-              <div className="mt-7 md:mt-18">{children}</div>
-              <Toaster />
-              <Footer />
-            </div>
-            <SpeedInsights />
-            <Analytics />
-          </ThemeProvider>
+          <Header />
+          {children}
+          <Footer />
         </NextIntlClientProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )

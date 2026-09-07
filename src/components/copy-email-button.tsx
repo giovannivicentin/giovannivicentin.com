@@ -28,15 +28,14 @@ export function CopyEmailButton({
   )
 
   async function copyEmail() {
+    if (resetTimer.current) clearTimeout(resetTimer.current)
     try {
       await navigator.clipboard.writeText(email)
       setStatus('copied')
+      resetTimer.current = setTimeout(() => setStatus('idle'), 2000)
     } catch {
       setStatus('error')
     }
-
-    if (resetTimer.current) clearTimeout(resetTimer.current)
-    resetTimer.current = setTimeout(() => setStatus('idle'), 2000)
   }
 
   const label =
@@ -47,13 +46,21 @@ export function CopyEmailButton({
         : copyLabel
 
   return (
-    <Button type="button" variant="outline" size="sm" onClick={copyEmail}>
-      {status === 'copied' ? (
-        <CheckIcon data-icon="inline-start" aria-hidden="true" />
-      ) : (
-        <CopyIcon data-icon="inline-start" aria-hidden="true" />
-      )}
-      <span aria-live="polite">{label}</span>
-    </Button>
+    <div className="copy-control">
+      <Button type="button" onClick={copyEmail}>
+        {status === 'copied' ? (
+          <CheckIcon data-icon="inline-start" aria-hidden="true" />
+        ) : (
+          <CopyIcon data-icon="inline-start" aria-hidden="true" />
+        )}
+        <span>{status === 'error' ? copyLabel : label}</span>
+      </Button>
+      <span
+        role="status"
+        className={status === 'error' ? 'copy-error' : 'sr-only'}
+      >
+        {status === 'idle' ? '' : label}
+      </span>
+    </div>
   )
 }
