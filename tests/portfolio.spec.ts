@@ -79,6 +79,9 @@ for (const locale of ['br', 'en', 'es']) {
     page.on('pageerror', (error) => errors.push(error.message))
     await page.goto(`/${locale}`)
     await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1)
+    // Audit the readable resting state, not a frame halfway through the hero fade.
+    await expect(page.locator('html')).toHaveClass(/lenis/)
+    await expect(page.locator('.hero-baseline')).toHaveCSS('opacity', '1')
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
       .analyze()
