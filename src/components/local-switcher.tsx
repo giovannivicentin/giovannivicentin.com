@@ -3,10 +3,12 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import { useTransition } from 'react'
 import { locales } from '@/lib/portfolio'
+import { useScrollController } from './motion/experience-provider'
 export function LocalSwitcher() {
   const locale = useLocale()
   const t = useTranslations('Portfolio')
   const router = useRouter()
+  const scroll = useScrollController()
   const [pending, startTransition] = useTransition()
   return (
     <select
@@ -16,6 +18,7 @@ export function LocalSwitcher() {
       disabled={pending}
       onChange={(event) => {
         const next = event.target.value
+        scroll.cancel()
         startTransition(() =>
           router.replace(`/${next}${window.location.hash}`, { scroll: false }),
         )

@@ -1,5 +1,6 @@
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
+import { ExperienceProvider } from '@/components/motion/experience-provider'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
@@ -7,6 +8,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { ReactNode } from 'react'
 import './globals.css'
+import 'lenis/dist/lenis.css'
 
 const siteUrl = new URL('https://giovannivicentin.com')
 
@@ -166,9 +168,11 @@ export default async function RootLayout({
     <html lang={selectedLang} className="dark">
       <body className={`${geist.variable} ${mono.variable}`}>
         <NextIntlClientProvider>
-          <Header />
-          {children}
-          <Footer />
+          <ExperienceProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ExperienceProvider>
         </NextIntlClientProvider>
         <SpeedInsights />
         <Analytics />

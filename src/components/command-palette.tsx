@@ -18,17 +18,25 @@ import {
   CommandList,
 } from './ui/command'
 import { links, locales, projects, sections } from '@/lib/portfolio'
+import { useScrollController } from './motion/experience-provider'
 
 export function CommandPalette() {
   const t = useTranslations('Portfolio')
   const p = useTranslations('ProjectSection')
   const router = useRouter()
+  const scroll = useScrollController()
   const [open, setOpen] = useState(false)
   const [status, setStatus] = useState('')
   const [modifier, setModifier] = useState('Ctrl')
   const previousFocus = useRef<HTMLElement | null>(null)
   const destination = useRef<string | null>(null)
   const dialog = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (open) {
+      return scroll.lock()
+    }
+  }, [open, scroll])
 
   useEffect(() => {
     setModifier(/Mac|iPhone|iPad/.test(navigator.platform) ? '⌘' : 'Ctrl')
@@ -60,7 +68,6 @@ export function CommandPalette() {
 
   function navigate(id: string) {
     destination.current = id
-    window.history.pushState(null, '', `#${id}`)
     setOpen(false)
   }
   function external(href: string) {
@@ -100,6 +107,7 @@ export function CommandPalette() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
           ref={dialog}
+          data-lenis-prevent
           className="palette-content translate-y-0"
           onOpenAutoFocus={(event) => {
             event.preventDefault()
@@ -110,11 +118,7 @@ export function CommandPalette() {
           onCloseAutoFocus={(event) => {
             event.preventDefault()
             if (destination.current) {
-              const section = document.getElementById(destination.current)
-              section?.scrollIntoView({ behavior: 'instant' })
-              const heading = section?.querySelector<HTMLElement>('h1, h2')
-              heading?.setAttribute('tabindex', '-1')
-              heading?.focus({ preventScroll: true })
+              scroll.navigate(destination.current)
               destination.current = null
             } else previousFocus.current?.focus()
           }}
@@ -199,6 +203,7 @@ export function CommandPalette() {
                   <CommandItem
                     key={locale}
                     onSelect={() => {
+                      scroll.cancel()
                       router.replace(`/${locale}${window.location.hash}`, {
                         scroll: false,
                       })

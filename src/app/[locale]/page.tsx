@@ -12,15 +12,19 @@ import {
 } from '@/components/ui/card'
 import { CopyEmailButton } from '@/components/copy-email-button'
 import { Glow } from '@/components/glow'
+import { HeroEntrance } from '@/components/motion/hero-entrance'
+import { Magnetic } from '@/components/motion/magnetic'
+import { Reveal } from '@/components/motion/reveal'
+import { ScrollPreview } from '@/components/motion/scroll-preview'
 import { experiences, links, projects } from '@/lib/portfolio'
 
 export default function Home() {
   const t = useTranslations('Portfolio')
   const p = useTranslations('ProjectSection')
   return (
-    <main id="main" className="site-frame">
-      <section id="presentation" className="hero section-pad">
-        <div className="eyebrow">
+    <main id="main" className="site-frame" tabIndex={-1}>
+      <HeroEntrance>
+        <div className="eyebrow" data-hero-reveal>
           <span className="status-dot" />
           {t('role')}
           <span className="eyebrow-divider">/</span>
@@ -31,45 +35,51 @@ export default function Home() {
           <br />
           <span>{t('headlineMuted')}</span>
         </h1>
-        <p className="hero-intro">{t('intro')}</p>
-        <div className="hero-actions">
-          <Button asChild>
-            <a href="#experience">
-              {t('viewExperience')}
-              <ArrowDown data-icon="inline-end" />
-            </a>
-          </Button>
-          <Button asChild variant="outline">
-            <a href={links.resume} target="_blank" rel="noreferrer">
-              {t('resume')}
-              <ArrowUpRight data-icon="inline-end" />
-            </a>
-          </Button>
+        <p className="hero-intro" data-hero-reveal>
+          {t('intro')}
+        </p>
+        <div className="hero-actions" data-hero-reveal>
+          <Magnetic>
+            <Button asChild>
+              <a href="#experience">
+                {t('viewExperience')}
+                <ArrowDown data-icon="inline-end" />
+              </a>
+            </Button>
+          </Magnetic>
+          <Magnetic>
+            <Button asChild variant="outline">
+              <a href={links.resume} target="_blank" rel="noreferrer">
+                {t('resume')}
+                <ArrowUpRight data-icon="inline-end" />
+              </a>
+            </Button>
+          </Magnetic>
         </div>
-        <div className="hero-baseline">
+        <div className="hero-baseline" data-hero-reveal>
           <span>{t('based')}</span>
           <span>
             React <span aria-hidden="true">/</span> Next.js{' '}
             <span aria-hidden="true">/</span> Node.js
           </span>
         </div>
-      </section>
+      </HeroEntrance>
 
       <section
         id="experience"
         className="section-pad ruled-section"
         aria-labelledby="experience-title"
       >
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <p className="eyebrow">01 / {t('experience')}</p>
           <h2 id="experience-title" tabIndex={-1}>
             {t('experienceTitle')}
           </h2>
           <p>{t('experienceIntro')}</p>
-        </div>
+        </Reveal>
         <div className="experience-list">
           {experiences.map((job) => (
-            <article key={job.id} className="experience-row">
+            <Reveal as="article" key={job.id} className="experience-row">
               <div className="experience-meta">
                 <span className="company-mark" aria-hidden="true">
                   {job.id === 'itau' ? 'i' : 'c'}
@@ -95,16 +105,16 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-            </article>
+            </Reveal>
           ))}
-          <article className="previous-role">
+          <Reveal as="article" className="previous-role">
             <div>
               <span className="eyebrow">{t('previous')}</span>
               <h3>Talst Contabilidade</h3>
               <span className="mono">2022 — 2024</span>
             </div>
             <p>{t('talst')}</p>
-          </article>
+          </Reveal>
         </div>
       </section>
 
@@ -113,77 +123,81 @@ export default function Home() {
         className="section-pad ruled-section"
         aria-labelledby="projects-title"
       >
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <p className="eyebrow">02 / {t('projects')}</p>
           <h2 id="projects-title" tabIndex={-1}>
             {t('projectsTitle')}
           </h2>
           <p>{t('projectsIntro')}</p>
-        </div>
+        </Reveal>
         <div className="project-grid">
           {projects.slice(0, 3).map((project, index) => (
-            <Glow key={project.id}>
-              <Card className="project-card">
-                <CardHeader>
-                  <div className="project-number mono">
-                    0{index + 1}
-                    <ArrowUpRight aria-hidden="true" size={16} />
-                  </div>
-                  <CardTitle>
-                    <h3>{p(`${project.id}.title`)}</h3>
-                  </CardTitle>
-                  <CardDescription>
-                    {t(`projectDetails.${project.id}.0`)}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${t('openProject')}: ${p(`${project.id}.title`)}`}
-                    className="project-preview"
-                  >
-                    <Image
-                      src={project.image}
-                      alt={p(`${project.id}.imgAlt`)}
-                      width={960}
-                      height={540}
-                      sizes="(min-width: 1200px) 330px, (min-width: 1024px) 28vw, (min-width: 768px) 42vw, 88vw"
-                    />
-                  </a>
-                  <p className="project-approach">
-                    {t(`projectDetails.${project.id}.1`)}
-                  </p>
-                  <div className="stack-line">
-                    {project.stack.map((tech) => (
-                      <span key={tech}>{tech}</span>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <a href={project.demo} target="_blank" rel="noreferrer">
-                    {t('openProject')}
-                    <ArrowUpRight size={14} aria-hidden="true" />
-                  </a>
-                  <a
-                    href={project.repository}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${t('repository')}: ${p(`${project.id}.title`)}`}
-                  >
-                    <Code2 size={16} aria-hidden="true" />
-                    <span>{t('repository')}</span>
-                  </a>
-                </CardFooter>
-              </Card>
-            </Glow>
+            <Reveal key={project.id} delay={index * 0.07}>
+              <Glow>
+                <Card className="project-card">
+                  <CardHeader>
+                    <div className="project-number mono">
+                      0{index + 1}
+                      <ArrowUpRight aria-hidden="true" size={16} />
+                    </div>
+                    <CardTitle>
+                      <h3>{p(`${project.id}.title`)}</h3>
+                    </CardTitle>
+                    <CardDescription>
+                      {t(`projectDetails.${project.id}.0`)}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${t('openProject')}: ${p(`${project.id}.title`)}`}
+                      className="project-preview"
+                    >
+                      <ScrollPreview>
+                        <Image
+                          src={project.image}
+                          alt={p(`${project.id}.imgAlt`)}
+                          width={960}
+                          height={540}
+                          sizes="(min-width: 1200px) 330px, (min-width: 1024px) 28vw, (min-width: 768px) 42vw, 88vw"
+                        />
+                      </ScrollPreview>
+                    </a>
+                    <p className="project-approach">
+                      {t(`projectDetails.${project.id}.1`)}
+                    </p>
+                    <div className="stack-line">
+                      {project.stack.map((tech) => (
+                        <span key={tech}>{tech}</span>
+                      ))}
+                    </div>
+                  </CardContent>
+                  <CardFooter>
+                    <a href={project.demo} target="_blank" rel="noreferrer">
+                      {t('openProject')}
+                      <ArrowUpRight size={14} aria-hidden="true" />
+                    </a>
+                    <a
+                      href={project.repository}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${t('repository')}: ${p(`${project.id}.title`)}`}
+                    >
+                      <Code2 size={16} aria-hidden="true" />
+                      <span>{t('repository')}</span>
+                    </a>
+                  </CardFooter>
+                </Card>
+              </Glow>
+            </Reveal>
           ))}
         </div>
         <h3 className="other-title eyebrow">{t('otherProjects')}</h3>
         <div>
           {projects.slice(3).map((project) => (
-            <article key={project.id} className="compact-project">
+            <Reveal as="article" key={project.id} className="compact-project">
               <h4>{p(`${project.id}.title`)}</h4>
               <p>{p(`${project.id}.description`)}</p>
               <div>
@@ -204,7 +218,7 @@ export default function Home() {
                   <Code2 size={16} />
                 </a>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -214,13 +228,13 @@ export default function Home() {
         className="section-pad ruled-section"
         aria-labelledby="about-title"
       >
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <p className="eyebrow">03 / {t('about')}</p>
           <h2 id="about-title" tabIndex={-1}>
             {t('aboutTitle')}
           </h2>
-        </div>
-        <div className="about-grid">
+        </Reveal>
+        <Reveal className="about-grid">
           <div className="about-person">
             <Image
               src="/images/profile/original.webp"
@@ -243,7 +257,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section
@@ -251,33 +265,37 @@ export default function Home() {
         className="section-pad ruled-section contact-section"
         aria-labelledby="contact-title"
       >
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <p className="eyebrow">04 / {t('contact')}</p>
           <h2 id="contact-title" tabIndex={-1}>
             {t('contactTitle')}
           </h2>
           <p>{t('contactBody')}</p>
-        </div>
-        <div className="contact-actions">
-          <CopyEmailButton
-            email={links.email}
-            copyLabel={t('copy')}
-            copiedLabel={t('copied')}
-            errorLabel={t('copyError')}
-          />
-          <Button asChild variant="outline">
-            <a href={`mailto:${links.email}`}>
-              {t('send')}
-              <ArrowUpRight data-icon="inline-end" />
-            </a>
-          </Button>
+        </Reveal>
+        <Reveal className="contact-actions">
+          <Magnetic>
+            <CopyEmailButton
+              email={links.email}
+              copyLabel={t('copy')}
+              copiedLabel={t('copied')}
+              errorLabel={t('copyError')}
+            />
+          </Magnetic>
+          <Magnetic>
+            <Button asChild variant="outline">
+              <a href={`mailto:${links.email}`}>
+                {t('send')}
+                <ArrowUpRight data-icon="inline-end" />
+              </a>
+            </Button>
+          </Magnetic>
           <Button asChild variant="ghost">
             <a href={links.linkedin} target="_blank" rel="noreferrer">
               {t('linkedin')}
               <ArrowRight data-icon="inline-end" />
             </a>
           </Button>
-        </div>
+        </Reveal>
         <a className="email-address" href={`mailto:${links.email}`}>
           {links.email}
         </a>
