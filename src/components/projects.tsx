@@ -5,6 +5,7 @@ export function Projects() {
   const t = useTranslations('ProjectSection')
 
   const projects = [
+    'sorteiaFC',
     'bigO',
     'ebookToAudiobook',
     'mindfulMinutes',
