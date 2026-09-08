@@ -1,10 +1,23 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, type Page } from '@playwright/test'
+
+async function setLanguage(page: Page, locale: string) {
+  await page
+    .context()
+    .addCookies([
+      { name: 'NEXT_LOCALE', value: locale, url: 'http://127.0.0.1:3100' },
+    ])
+}
+
+test.beforeEach(async ({ page }) => {
+  await setLanguage(page, 'en')
+})
 import AxeBuilder from '@axe-core/playwright'
 
 test('keyboard commands, search, section focus and Escape restoration', async ({
   page,
 }) => {
-  await page.goto('/br')
+  await setLanguage(page, 'br')
+  await page.goto('/')
   const trigger = page.getByRole('button', { name: 'Comandos', exact: true })
   await trigger.focus()
   await page.keyboard.press('Control+k')
@@ -28,16 +41,19 @@ test('keyboard commands, search, section focus and Escape restoration', async ({
 })
 
 test('locale switch and palette preserve section', async ({ page }) => {
-  await page.goto('/br#projects')
+  await setLanguage(page, 'br')
+  await page.goto('/#projects')
   await page.getByRole('button', { name: 'Idioma', exact: true }).click()
   await page.getByRole('menuitemradio', { name: 'English' }).click()
-  await expect(page).toHaveURL('/en#projects')
+  await expect(page).toHaveURL('/#projects')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
     'Care in every interaction.',
   )
+  await page.reload()
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en-US')
   await page.getByRole('button', { name: 'Commands', exact: true }).click()
   await page.getByRole('option', { name: 'Español', exact: true }).click()
-  await expect(page).toHaveURL('/es#projects')
+  await expect(page).toHaveURL('/#projects')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
     'Cuidado en cada interacción.',
   )
@@ -51,7 +67,7 @@ test('copy success and denied permission keep contact usable', async ({
       value: { writeText: async () => {} },
     }),
   )
-  await page.goto('/en')
+  await page.goto('/')
   await page.getByRole('button', { name: 'Copy email', exact: true }).click()
   await expect(page.getByRole('status')).toHaveText('Email copied')
   await page.evaluate(() => {
@@ -76,7 +92,8 @@ for (const locale of ['br', 'en', 'es']) {
   test(`accessible page and responsive layout: ${locale}`, async ({ page }) => {
     const errors: string[] = []
     page.on('pageerror', (error) => errors.push(error.message))
-    await page.goto(`/${locale}`)
+    await setLanguage(page, locale)
+    await page.goto('/')
     await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1)
     await expect(page.locator('.project-card h3')).toHaveText(
       {
@@ -182,7 +199,7 @@ for (const locale of ['br', 'en', 'es']) {
 
 test('palette accessible with reduced motion', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
-  await page.goto('/en')
+  await page.goto('/')
   await page.getByRole('button', { name: 'Commands', exact: true }).click()
   const results = await new AxeBuilder({ page })
     .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
@@ -199,7 +216,8 @@ test('essential links and content work without JavaScript', async ({
 }) => {
   const context = await browser.newContext({ javaScriptEnabled: false })
   const page = await context.newPage()
-  await page.goto('http://127.0.0.1:3100/en')
+  await setLanguage(page, 'en')
+  await page.goto('http://127.0.0.1:3100/')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
     'Care in every interaction.',
   )
@@ -216,10 +234,11 @@ for (const [locale, title, back] of [
   ['es', 'Página no encontrada', 'Volver al portafolio'],
 ]) {
   test(`localized not-found page: ${locale}`, async ({ page }) => {
-    const response = await page.goto(`/${locale}/missing-page`)
+    await setLanguage(page, locale)
+    const response = await page.goto('/missing-page')
     expect(response?.status()).toBe(404)
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(title)
     await page.getByRole('link', { name: back }).click()
-    await expect(page).toHaveURL(`/${locale}`)
+    await expect(page).toHaveURL('/')
   })
 }

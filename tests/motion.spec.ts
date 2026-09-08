@@ -1,9 +1,21 @@
-import { test, expect, devices } from '@playwright/test'
+import { test, expect, devices, type Page } from '@playwright/test'
+
+async function setLanguage(page: Page, locale: string) {
+  await page
+    .context()
+    .addCookies([
+      { name: 'NEXT_LOCALE', value: locale, url: 'http://127.0.0.1:3100' },
+    ])
+}
+
+test.beforeEach(async ({ page }) => {
+  await setLanguage(page, 'en')
+})
 
 test('smooth anchors preserve focus, header clearance and history', async ({
   page,
 }) => {
-  await page.goto('/en')
+  await page.goto('/')
   await expect(page.locator('html')).toHaveClass(/lenis/)
   await page.locator('.hero-actions a[href="#experience"]').click()
   await expect(page).toHaveURL(/#experience$/)
@@ -39,7 +51,7 @@ test('smooth anchors preserve focus, header clearance and history', async ({
 test('palette locks background while its list scrolls and restores scrolling', async ({
   page,
 }) => {
-  await page.goto('/en')
+  await page.goto('/')
   await expect(page.locator('html')).toHaveClass(/lenis/)
   await page.getByRole('button', { name: 'Commands', exact: true }).click()
   await expect(page.locator('html')).toHaveClass(/lenis-stopped/)
@@ -70,7 +82,7 @@ test('palette locks background while its list scrolls and restores scrolling', a
 test('motion preference changes reset magnetism and spotlight without reloading', async ({
   page,
 }) => {
-  await page.goto('/en')
+  await page.goto('/')
   await expect(page.locator('html')).toHaveClass(/lenis/)
   const magnetic = page.locator('.hero-actions .magnetic-target').first()
   await expect(magnetic).toBeVisible()
@@ -116,7 +128,8 @@ test('touch keeps native scrolling and usable anchor navigation', async ({
 }) => {
   const context = await browser.newContext({ ...devices['Pixel 7'] })
   const page = await context.newPage()
-  await page.goto('http://127.0.0.1:3100/en')
+  await setLanguage(page, 'en')
+  await page.goto('http://127.0.0.1:3100/')
   await page.getByRole('button', { name: 'Commands', exact: true }).click()
   await expect(page.getByRole('dialog')).toBeVisible()
   await page.keyboard.press('Escape')
@@ -133,7 +146,8 @@ test('all revealed content is visible without JavaScript', async ({
 }) => {
   const context = await browser.newContext({ javaScriptEnabled: false })
   const page = await context.newPage()
-  await page.goto('http://127.0.0.1:3100/en')
+  await setLanguage(page, 'en')
+  await page.goto('http://127.0.0.1:3100/')
   const hidden = await page
     .locator('.motion-reveal, [data-hero-reveal], [data-hero-title], h1')
     .evaluateAll(
@@ -155,7 +169,7 @@ test('all revealed content is visible without JavaScript', async ({
 
 test('capture hero and reactive project cards', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/en')
+  await page.goto('/')
   await expect(page.locator('html')).toHaveClass(/lenis/)
   await expect(page.locator('.hero-baseline')).toHaveCSS('opacity', '1')
   await expect(page.locator('[data-hero-title]').last()).toHaveCSS(
@@ -180,7 +194,7 @@ test('capture hero and reactive project cards', async ({ page }) => {
 test('title uses a brief fade, blur and rise, settles, and does not replay', async ({
   page,
 }) => {
-  await page.goto('/en', { waitUntil: 'domcontentloaded' })
+  await page.goto('/', { waitUntil: 'domcontentloaded' })
   await page.waitForFunction(() => {
     const line = document.querySelector('[data-hero-title]')!
     return parseFloat(getComputedStyle(line).filter.replace('blur(', '')) > 0
@@ -242,7 +256,7 @@ test('title uses a brief fade, blur and rise, settles, and does not replay', asy
 test('changing to reduced motion during title entry finishes it immediately', async ({
   page,
 }) => {
-  await page.goto('/en', { waitUntil: 'domcontentloaded' })
+  await page.goto('/', { waitUntil: 'domcontentloaded' })
   await page.waitForFunction(() => {
     const line = document.querySelector('[data-hero-title]')!
     return parseFloat(getComputedStyle(line).filter.replace('blur(', '')) > 0.05
@@ -276,11 +290,11 @@ for (const scenario of ['reduced', 'anchor', 'slow', 'restored']) {
         await route.continue()
       })
     }
-    await page.goto(scenario === 'anchor' ? '/en#experience' : '/en')
+    await page.goto(scenario === 'anchor' ? '/#experience' : '/')
     if (scenario === 'restored') {
       await page.locator('.hero-actions a[href="#experience"]').click()
       // Remove the hash so only restored scroll prevents the entrance on reload.
-      await page.evaluate(() => history.replaceState(history.state, '', '/en'))
+      await page.evaluate(() => history.replaceState(history.state, '', '/'))
       await page.reload()
       await expect
         .poll(() => page.evaluate(() => window.scrollY))
@@ -301,7 +315,7 @@ for (const scenario of ['reduced', 'anchor', 'slow', 'restored']) {
 test('hero overlaps entrances and reveals actions within the first second', async ({
   page,
 }) => {
-  await page.goto('/en', { waitUntil: 'domcontentloaded' })
+  await page.goto('/', { waitUntil: 'domcontentloaded' })
   const overlap = await page.waitForFunction(() => {
     const intro = document.querySelector('.hero-intro')!
     const opacity = Number(getComputedStyle(intro).opacity)
@@ -349,7 +363,7 @@ test('hero overlaps entrances and reveals actions within the first second', asyn
 })
 
 test('keyboard focus completes every pending hero phase', async ({ page }) => {
-  await page.goto('/en', { waitUntil: 'domcontentloaded' })
+  await page.goto('/', { waitUntil: 'domcontentloaded' })
   await page.waitForFunction(
     () =>
       document.querySelector('[data-hero-title]')!.getAnimations().length > 0,
@@ -367,7 +381,7 @@ test('keyboard focus completes every pending hero phase', async ({ page }) => {
 test('company logos fill the strip, move gently and stop offscreen', async ({
   page,
 }) => {
-  await page.goto('/en')
+  await page.goto('/')
   const strip = page.locator('.company-marquee')
   const track = strip.locator('.company-marquee-track')
   await expect(strip).toHaveAttribute('data-motion', 'true')
@@ -402,7 +416,8 @@ test('company logos remain readable with reduced motion and without JavaScript',
       viewport: { width: 320, height: 900 },
     })
     const page = await context.newPage()
-    await page.goto('http://127.0.0.1:3100/en')
+    await setLanguage(page, 'en')
+    await page.goto('http://127.0.0.1:3100/')
     const strip = page.locator('.company-marquee')
     await strip.scrollIntoViewIfNeeded()
     await expect(strip.locator('.company-marquee-track')).toHaveCSS(
@@ -431,7 +446,7 @@ test('company logos remain readable with reduced motion and without JavaScript',
 test('changing motion preference makes the logo strip static immediately', async ({
   page,
 }) => {
-  await page.goto('/en')
+  await page.goto('/')
   const strip = page.locator('.company-marquee')
   await expect(strip).toHaveAttribute('data-motion', 'true')
   await page.emulateMedia({ reducedMotion: 'reduce' })
