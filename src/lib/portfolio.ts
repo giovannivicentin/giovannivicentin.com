@@ -1,3 +1,5 @@
+export const displayName = 'Giovanni Fernandes Vicentin'
+
 export const links = {
   email: 'giovannifvicentin@gmail.com',
   github: 'https://github.com/giovannivicentin',
@@ -44,17 +46,17 @@ export const projects: readonly ProjectData[] = [
     stack: ['React', 'TypeScript', 'PDF.js'],
   },
   {
-    id: 'sorteiaFC',
-    image: '/images/projects/sorteia-fc.png',
-    demo: 'https://sorteiafc.giovannivicentin.com/',
-    repository: 'https://github.com/giovannivicentin/fifa',
-    stack: [],
-  },
-  {
     id: 'mindfulMinutes',
     image: '/images/projects/mindful-minutes.png',
     demo: 'https://mindful-minutes-zeta.vercel.app',
     repository: 'https://github.com/giovannivicentin/mindful-minutes',
+    stack: [],
+  },
+  {
+    id: 'sorteiaFC',
+    image: '/images/projects/sorteia-fc.png',
+    demo: 'https://sorteiafc.giovannivicentin.com/',
+    repository: 'https://github.com/giovannivicentin/fifa',
     stack: [],
   },
   {

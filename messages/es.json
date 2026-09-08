@@ -1,48 +1,53 @@
 {
   "NotFoundPage": {
-    "title": "Página no encontrada"
+    "title": "Página no encontrada",
+    "description": "No hay una página del portafolio en esta dirección. Vuelve al inicio para conocer mi trabajo.",
+    "back": "Volver al portafolio"
   },
   "ProjectSection": {
     "sorteiaFC": {
       "title": "Sorteia FC",
-      "description": "Sortea equipos, enfrentamientos equilibrados y cuadros de torneo para EA FC 26 y FC 25.",
-      "imgAlt": "Vista previa del sorteador de equipos Sorteia FC"
+      "description": "Organiza partidos y torneos de EA FC 26 y FC 25. Sorteo de equipos con filtros por categoría y estrellas, enfrentamientos equilibrados y cuadros de torneo.",
+      "imgAlt": "Interfaz de Sorteia FC para sortear equipos y organizar partidos"
     },
     "bigO": {
       "title": "Analizador Big O",
-      "description": "Analiza al instante la complejidad de algoritmos en JavaScript, Python y Java.",
-      "imgAlt": "Vista previa del proyecto Analizador Big O"
+      "description": "Entiende cómo crece el coste de un algoritmo con su entrada.",
+      "imgAlt": "Interfaz del Analizador Big O para explorar la complejidad de algoritmos",
+      "approach": "Análisis estático heurístico de JavaScript, Python y Java, con árboles de sintaxis (AST) y flujo de control."
     },
     "megazord": {
       "title": "Megazord",
-      "description": "Una colección accesible de juegos y actividades prácticas para aprender conceptos STEAM.",
-      "imgAlt": "Vista previa de la plataforma educativa STEAM Megazord"
+      "description": "Explora conceptos STEAM de forma práctica. Reuní juegos y actividades en una plataforma educativa accesible.",
+      "imgAlt": "Plataforma Megazord con juegos y actividades STEAM"
     },
     "ebookToAudiobook": {
       "title": "Ebook a Audiolibro",
-      "description": "Convierte ebooks PDF y EPUB en audio de forma privada, directamente en el navegador.",
-      "imgAlt": "Vista previa de la aplicación Ebook a Audiolibro"
+      "description": "Escucha tus libros PDF y EPUB en el navegador.",
+      "imgAlt": "Interfaz de Ebook a Audiolibro para escuchar libros en el navegador",
+      "approach": "Procesamiento local de archivos y síntesis de voz del dispositivo, sin enviar los libros a un servidor."
     },
     "mindfulMinutes": {
       "title": "Mindful Minutes",
-      "description": "Prácticas guiadas de atención plena para reducir el estrés, mejorar el enfoque y crear constancia.",
-      "imgAlt": "Vista previa de una práctica de meditación de Mindful Minutes"
+      "description": "Dedica unos minutos a respirar y ejercitar la atención.",
+      "imgAlt": "Pantalla de prácticas de Mindful Minutes con respiración guiada, concentración visual y relajación muscular",
+      "approach": "Prácticas guiadas de respiración, concentración visual y relajación muscular, con instrucciones y animaciones en el navegador."
     },
     "frankMetalicas": {
       "title": "Frank Metálicas",
-      "description": "Desarrollo de un sitio web para Frank Metálicas, con enfoque en presencia digital y optimización de SEO.",
-      "imgAlt": "Vista previa del proyecto Frank Metálicas"
+      "description": "Dale a una empresa presencia en la web. Desarrollé el sitio de Frank Metálicas con atención a la presencia digital y la optimización para buscadores.",
+      "imgAlt": "Sitio corporativo de Frank Metálicas"
     }
   },
   "VideoComponent": {
     "fallbackAlt": "Imagen de sustitución cuando el video no puede reproducirse",
-    "videoNotSupported": "Tu navegador no soporta la etiqueta de video."
+    "videoNotSupported": "No se pudo reproducir el vídeo en este navegador."
   },
   "Portfolio": {
     "role": "Ingeniero de Software",
-    "headline": "Interfaces. APIs.",
-    "headlineMuted": "Software en producción.",
-    "intro": "Desarrollo aplicaciones con React, Next.js y Node.js. Actualmente en Itaú Unibanco, con experiencia en Carrefour y Sam’s Club Brasil.",
+    "headline": "De la interfaz al backend.",
+    "headlineMuted": "Software para desafíos reales.",
+    "intro": "Soy {name}, ingeniero de software con experiencia en frontend y backend. Actualmente desarrollo aplicaciones e integraciones en Itaú Unibanco, tras haber trabajado en Carrefour y Sam’s Club Brasil.",
     "experience": "Experiencia",
     "projects": "Proyectos",
     "about": "Sobre mí",
@@ -53,66 +58,52 @@
     "based": "Brasil / Software para la web",
     "skip": "Saltar al contenido",
     "experienceTitle": "Ingeniería en producción.",
-    "experienceIntro": "Procesos de negocio, interfaces e integraciones. Una selección de mis contribuciones en equipos de producto.",
-    "itauTitle": "De recorridos nativos a una experiencia en WebView.",
-    "itauContext": "Desarrollo y soporte del hub de la barra de pestañas de la aplicación Itaú.",
+    "experienceIntro": "Trabajo entre interfaces y backend en equipos de producto. Estas son algunas de mis contribuciones a aplicaciones en producción.",
+    "itauTitle": "Los flujos de la aplicación, ahora en WebView.",
+    "itauContext": "En Itaú Unibanco, desarrollo y doy soporte al hub de navegación de la aplicación, conectando la experiencia de uso con las integraciones de backend.",
     "itauPoints": [
-      "Reconstruí el recorrido de frontend en WebView, antes mantenido en repositorios Swift y Kotlin.",
-      "Implementé caché local en el backend y participo en la modernización visual de la experiencia.",
+      "Reconstruí en WebView un flujo de frontend que antes se mantenía en repositorios Swift y Kotlin.",
+      "Implementé caché local en el backend y participo en la modernización visual de esta experiencia.",
       "Contribuyo a una herramienta interna de desarrollo guiado por especificaciones, con agentes de IA, skills y MCP."
     ],
-    "carrefourTitle": "Registro de socios, de la interfaz a los endpoints.",
-    "carrefourContext": "Interfaces e integraciones para Carrefour y Sam’s Club Brasil.",
+    "carrefourTitle": "Del registro de socios a los pagos recurrentes.",
+    "carrefourContext": "En Carrefour y Sam’s Club Brasil, trabajé en interfaces e integraciones para el registro de socios y los procesos de pago.",
     "carrefourPoints": [
-      "Desarrollé el registro de socios de Sam’s Club: interfaz, endpoints Node.js e integración con el backend en VTEX.",
-      "Implementé automatizaciones para procesos de pagos recurrentes.",
-      "Contribuí al mantenimiento y desarrollo de interfaces React y APIs."
+      "Desarrollé el registro de socios de Sam’s Club, desde la interfaz hasta los endpoints Node.js y la integración con el backend en VTEX.",
+      "Implementé automatizaciones para apoyar los procesos de pagos recurrentes.",
+      "Contribuí al mantenimiento y la evolución de interfaces React y APIs."
     ],
-    "previous": "Anteriormente",
-    "talst": "Desarrollo de sistemas y automatización de procesos con React, Node.js, NestJS y Python.",
-    "projectsTitle": "Explora el código.",
-    "projectsIntro": "Proyectos propios para probar ideas, crear herramientas y resolver problemas concretos.",
+    "previous": "Experiencia anterior",
+    "talst": "En Talst Contabilidade, desarrollé sistemas y automaticé procesos con React, Node.js, NestJS y Python, aplicando el desarrollo web a las tareas diarias de la empresa.",
+    "projectsTitle": "Ideas convertidas en herramientas.",
+    "projectsIntro": "Proyectos que desarrollé para explorar problemas de programación, lectura y atención plena, junto con otras experiencias web. Puedes probar cada uno y consultar el código.",
     "otherProjects": "Otros proyectos",
     "openProject": "Abrir proyecto",
     "repository": "Ver repositorio",
-    "aboutTitle": "De la interfaz a la integración.",
-    "aboutBody": "Soy Giovanni Vicentin, ingeniero de software en Brasil. Trabajo en frontend y backend, con foco en interfaces accesibles, integraciones y mantenimiento de aplicaciones en producción.",
+    "aboutTitle": "Cuidar la experiencia y lo que la hace posible.",
+    "aboutBody": "Mi trabajo conecta lo que las personas usan con lo que hace funcionar una aplicación. Desarrollo interfaces accesibles, integro servicios y mantengo aplicaciones en producción. Me gusta trabajar entre estas áreas para entender el problema y construir una solución coherente.",
     "frontend": "Interfaces",
     "backend": "APIs y datos",
     "tooling": "Herramientas",
-    "contactTitle": "Hablemos de ingeniería.",
-    "contactBody": "Para oportunidades profesionales, contáctame por email o LinkedIn.",
+    "contactTitle": "Hablemos de oportunidades.",
+    "contactBody": "Si buscas a alguien para trabajar entre frontend y backend, ponte en contacto. Podemos conversar sobre el equipo, sus desafíos técnicos y cómo encaja mi experiencia en la oportunidad.",
     "copy": "Copiar email",
     "copied": "Email copiado",
     "copyError": "No se pudo copiar. Selecciona el email abajo.",
     "send": "Enviar email",
     "linkedin": "Abrir LinkedIn",
     "commands": "Comandos",
-    "search": "Buscar una página o acción…",
+    "search": "Buscar sección, enlace o acción…",
     "empty": "No se encontraron comandos.",
-    "navigation": "Navegación",
-    "career": "Carrera",
+    "navigation": "Secciones del portafolio",
+    "career": "Perfil profesional",
     "code": "Código",
     "language": "Idioma",
-    "home": "Inicio",
+    "home": "Presentación",
     "close": "Cerrar",
     "commandHint": "para navegar",
     "selectHint": "seleccionar",
     "closeHint": "cerrar",
-    "built": "Interfaces claras. Código accesible.",
-    "projectDetails": {
-      "bigO": [
-        "Explora la complejidad de tus algoritmos.",
-        "Análisis estático heurístico de JavaScript, Python y Java, con AST y flujo de control."
-      ],
-      "ebookToAudiobook": [
-        "Escucha PDFs y EPUBs en el navegador.",
-        "Procesamiento local de libros y síntesis de voz disponible en el dispositivo."
-      ],
-      "sorteiaFC": [
-        "Organiza partidos y torneos de EA FC.",
-        "Filtros por categoría y estrellas, enfrentamientos equilibrados y generación de llaves."
-      ]
-    }
+    "built": "Desarrollado por mí, de la interfaz al backend."
   }
 }

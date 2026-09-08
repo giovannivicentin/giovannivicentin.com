@@ -1,3 +1,4 @@
+import { displayName } from '@/lib/portfolio'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { ExperienceProvider } from '@/components/motion/experience-provider'
@@ -25,21 +26,18 @@ const mono = Geist_Mono({
 
 const localeMetadata = {
   br: {
-    title: 'Giovanni Vicentin - Engenheiro de Software no Brasil',
-    description:
-      'Portfólio de Giovanni Vicentin, engenheiro de software brasileiro especializado em Next.js, React, TypeScript, Node.js e experiências web rápidas.',
+    title: `${displayName} — Engenheiro de Software`,
+    description: `${displayName}: da interface ao backend, software para desafios reais. Engenheiro de software no Itaú Unibanco, com experiência no Carrefour e Sam’s Club Brasil.`,
     locale: 'pt_BR',
   },
   en: {
-    title: 'Giovanni Vicentin - Software Engineer',
-    description:
-      'Portfolio of Giovanni Vicentin, a Brazilian software engineer focused on Next.js, React, TypeScript, Node.js, and fast web experiences.',
+    title: `${displayName} — Software Engineer`,
+    description: `${displayName}: from interface to backend, software for real challenges. Software engineer at Itaú Unibanco, with experience at Carrefour and Sam’s Club Brazil.`,
     locale: 'en_US',
   },
   es: {
-    title: 'Giovanni Vicentin - Ingeniero de Software',
-    description:
-      'Portafolio de Giovanni Vicentin, ingeniero de software brasileño especializado en Next.js, React, TypeScript, Node.js y experiencias web rápidas.',
+    title: `${displayName} — Ingeniero de Software`,
+    description: `${displayName}: de la interfaz al backend, software para desafíos reales. Ingeniero de software en Itaú Unibanco, con experiencia en Carrefour y Sam’s Club Brasil.`,
     locale: 'es_ES',
   },
 } satisfies Record<
@@ -54,7 +52,7 @@ function isSupportedLocale(locale: string): locale is SupportedLocale {
 }
 
 const keywords = [
-  'Giovanni Vicentin',
+  displayName,
   'engenheiro de software Brasil',
   'desenvolvedor de software Brasil',
   'desenvolvedor full stack Brasil',
@@ -89,8 +87,8 @@ export async function generateMetadata({
   return {
     title: selectedMetadata.title,
     description: selectedMetadata.description,
-    authors: { name: 'Giovanni Vicentin', url: siteUrl },
-    creator: 'Giovanni Vicentin',
+    authors: { name: displayName, url: siteUrl },
+    creator: displayName,
     metadataBase: siteUrl,
     alternates: {
       canonical: canonicalPath,
@@ -106,7 +104,7 @@ export async function generateMetadata({
       url: canonicalPath,
       title: selectedMetadata.title,
       description: selectedMetadata.description,
-      siteName: 'Giovanni Vicentin',
+      siteName: displayName,
       locale: selectedMetadata.locale,
       images: [
         {

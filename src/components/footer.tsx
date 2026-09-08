@@ -1,11 +1,13 @@
 import { useTranslations } from 'next-intl'
-import { links } from '@/lib/portfolio'
+import { displayName, links } from '@/lib/portfolio'
 export function Footer() {
   const t = useTranslations('Portfolio')
   return (
     <footer className="site-frame site-footer">
       <div>
-        <span>© {new Date().getFullYear()} Giovanni Vicentin</span>
+        <span>
+          © {new Date().getFullYear()} {displayName}
+        </span>
         <p>{t('built')}</p>
       </div>
       <nav aria-label={t('career')}>

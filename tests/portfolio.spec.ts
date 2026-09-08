@@ -34,13 +34,13 @@ test('locale switch and palette preserve section', async ({ page }) => {
     .selectOption('en')
   await expect(page).toHaveURL('/en#projects')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
-    'Production software.',
+    'Software for real challenges.',
   )
   await page.getByRole('button', { name: 'Commands', exact: true }).click()
   await page.getByRole('option', { name: 'Español', exact: true }).click()
   await expect(page).toHaveURL('/es#projects')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
-    'Software en producción.',
+    'Software para desafíos reales.',
   )
 })
 
@@ -79,9 +79,45 @@ for (const locale of ['br', 'en', 'es']) {
     page.on('pageerror', (error) => errors.push(error.message))
     await page.goto(`/${locale}`)
     await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1)
+    await expect(page.locator('.project-card h3')).toHaveText(
+      {
+        br: ['Analisador Big O', 'Ebook em Áudio', 'Mindful Minutes'],
+        en: ['Big O Analyzer', 'Ebook to Audiobook', 'Mindful Minutes'],
+        es: ['Analizador Big O', 'Ebook a Audiolibro', 'Mindful Minutes'],
+      }[locale]!,
+    )
+    await expect(page.locator('.compact-project h4').first()).toHaveText(
+      'Sorteia FC',
+    )
+    await expect(page.locator('.project-preview').nth(2)).toHaveAttribute(
+      'href',
+      'https://mindful-minutes-zeta.vercel.app',
+    )
+
+    await expect(page.locator('.hero-intro')).toContainText(
+      'Giovanni Fernandes Vicentin',
+    )
+    await expect(page.locator('.about-identity figcaption')).toHaveText(
+      'Giovanni Fernandes Vicentin',
+    )
+    await expect(page.locator('#about img')).toHaveAttribute(
+      'alt',
+      'Giovanni Fernandes Vicentin',
+    )
+    await expect(page.locator('.site-footer')).toContainText(
+      'Giovanni Fernandes Vicentin',
+    )
+    await expect(page).toHaveTitle(/Giovanni Fernandes Vicentin/)
+    await expect(page.locator('meta[name="author"]')).toHaveAttribute(
+      'content',
+      'Giovanni Fernandes Vicentin',
+    )
     // Audit the readable resting state, not a frame halfway through the hero fade.
     await expect(page.locator('html')).toHaveClass(/lenis/)
     await expect(page.locator('.hero-baseline')).toHaveCSS('opacity', '1')
+    for (const line of await page.locator('[data-hero-title]').all()) {
+      await expect(line).toHaveCSS('filter', 'blur(0px)')
+    }
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
       .analyze()
@@ -93,6 +129,41 @@ for (const locale of ['br', 'en', 'es']) {
           () => document.documentElement.scrollWidth <= window.innerWidth,
         ),
       ).toBe(true)
+      const brand = page.locator('.brand-name')
+      await expect(brand).toBeVisible()
+      await expect(brand).toHaveText('Giovanni Fernandes Vicentin')
+      const brandBounds = await brand.boundingBox()
+      const controlsBounds = await page
+        .locator('.header-controls')
+        .boundingBox()
+      expect(brandBounds!.x + brandBounds!.width).toBeLessThanOrEqual(
+        controlsBounds!.x,
+      )
+      expect(brandBounds!.y + brandBounds!.height).toBeLessThanOrEqual(64)
+      if (width === 320 || width === 1440) {
+        await page.screenshot({
+          path: `test-results/${locale}-hero-${width}.png`,
+        })
+      }
+    }
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await expect(page.locator('html')).not.toHaveClass(/lenis/)
+    for (const section of ['experience', 'projects', 'about', 'contact']) {
+      const target = page.locator(`#${section}`)
+      await target.scrollIntoViewIfNeeded()
+      await expect(target.locator('.motion-reveal').first()).toHaveCSS(
+        'opacity',
+        '1',
+      )
+      for (const image of await target.locator('img').all()) {
+        await image.scrollIntoViewIfNeeded()
+        await image.evaluate((node: HTMLImageElement) => node.decode())
+      }
+      await page.evaluate(() => window.scrollTo(0, 0))
+      await target.screenshot({
+        style: '.site-header, .skip-link { visibility: hidden; }',
+        path: `test-results/${locale}-${section}.png`,
+      })
     }
     await page.locator('#about img').scrollIntoViewIfNeeded()
     await expect(page.locator('#about img')).toHaveJSProperty('complete', true)
@@ -131,7 +202,7 @@ test('essential links and content work without JavaScript', async ({
   const page = await context.newPage()
   await page.goto('http://127.0.0.1:3100/en')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
-    'Production software.',
+    'Software for real challenges.',
   )
   await expect(page.locator('a[href="#experience"]').first()).toBeVisible()
   await expect(
@@ -139,3 +210,17 @@ test('essential links and content work without JavaScript', async ({
   ).toBeVisible()
   await context.close()
 })
+
+for (const [locale, title, back] of [
+  ['br', 'Página não encontrada', 'Voltar ao portfólio'],
+  ['en', 'Page not found', 'Back to the portfolio'],
+  ['es', 'Página no encontrada', 'Volver al portafolio'],
+]) {
+  test(`localized not-found page: ${locale}`, async ({ page }) => {
+    const response = await page.goto(`/${locale}/missing-page`)
+    expect(response?.status()).toBe(404)
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(title)
+    await page.getByRole('link', { name: back }).click()
+    await expect(page).toHaveURL(`/${locale}`)
+  })
+}

@@ -16,7 +16,7 @@ import { HeroEntrance } from '@/components/motion/hero-entrance'
 import { Magnetic } from '@/components/motion/magnetic'
 import { Reveal } from '@/components/motion/reveal'
 import { ScrollPreview } from '@/components/motion/scroll-preview'
-import { experiences, links, projects } from '@/lib/portfolio'
+import { displayName, experiences, links, projects } from '@/lib/portfolio'
 
 export default function Home() {
   const t = useTranslations('Portfolio')
@@ -24,21 +24,20 @@ export default function Home() {
   return (
     <main id="main" className="site-frame" tabIndex={-1}>
       <HeroEntrance>
-        <div className="eyebrow" data-hero-reveal>
+        <div className="eyebrow" data-hero-reveal="before">
           <span className="status-dot" />
           {t('role')}
-          <span className="eyebrow-divider">/</span>
-          <span>Giovanni Vicentin</span>
         </div>
         <h1>
-          {t('headline')}
-          <br />
-          <span>{t('headlineMuted')}</span>
+          <span data-hero-title>{t('headline')}</span>{' '}
+          <span data-hero-title className="hero-title-gradient">
+            {t('headlineMuted')}
+          </span>
         </h1>
-        <p className="hero-intro" data-hero-reveal>
-          {t('intro')}
+        <p className="hero-intro" data-hero-reveal="after">
+          {t('intro', { name: displayName })}
         </p>
-        <div className="hero-actions" data-hero-reveal>
+        <div className="hero-actions" data-hero-reveal="after">
           <Magnetic>
             <Button asChild>
               <a href="#experience">
@@ -56,7 +55,7 @@ export default function Home() {
             </Button>
           </Magnetic>
         </div>
-        <div className="hero-baseline" data-hero-reveal>
+        <div className="hero-baseline" data-hero-reveal="after">
           <span>{t('based')}</span>
           <span>
             React <span aria-hidden="true">/</span> Next.js{' '}
@@ -144,7 +143,7 @@ export default function Home() {
                       <h3>{p(`${project.id}.title`)}</h3>
                     </CardTitle>
                     <CardDescription>
-                      {t(`projectDetails.${project.id}.0`)}
+                      {p(`${project.id}.description`)}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -166,7 +165,7 @@ export default function Home() {
                       </ScrollPreview>
                     </a>
                     <p className="project-approach">
-                      {t(`projectDetails.${project.id}.1`)}
+                      {p(`${project.id}.approach`)}
                     </p>
                     <div className="stack-line">
                       {project.stack.map((tech) => (
@@ -236,13 +235,16 @@ export default function Home() {
         </Reveal>
         <Reveal className="about-grid">
           <div className="about-person">
-            <Image
-              src="/images/profile/original.webp"
-              alt="Giovanni Vicentin"
-              width={112}
-              height={112}
-              sizes="112px"
-            />
+            <figure className="about-identity">
+              <Image
+                src="/images/profile/original.webp"
+                alt={displayName}
+                width={112}
+                height={112}
+                sizes="112px"
+              />
+              <figcaption>{displayName}</figcaption>
+            </figure>
             <p>{t('aboutBody')}</p>
           </div>
           <div id="skills" className="skill-list">

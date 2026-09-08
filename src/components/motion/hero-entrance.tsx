@@ -19,23 +19,55 @@ export function HeroEntrance({ children }: { children: ReactNode }) {
     if (performance.now() > 1500 || window.scrollY > 24 || location.hash) {
       return
     }
-    const nodes =
-      scope.current.querySelectorAll<HTMLElement>('[data-hero-reveal]')
-    const controls = animate(
-      nodes,
-      { opacity: [0, 1], y: [14, 0] },
+    const before = scope.current.querySelectorAll<HTMLElement>(
+      '[data-hero-reveal="before"]',
+    )
+    const after = scope.current.querySelectorAll<HTMLElement>(
+      '[data-hero-reveal="after"]',
+    )
+    const title =
+      scope.current.querySelectorAll<HTMLElement>('[data-hero-title]')
+    // Overlap short entrances to establish reading order without making users wait.
+    const beforeControls = animate(
+      before,
+      { opacity: [0, 1], y: [6, 0] },
       {
-        type: 'spring',
-        ...motionTiming.revealSpring,
-        delay: stagger(motionTiming.stagger),
+        duration: motionTiming.heroBefore.duration,
+        ease: motionTiming.revealEase,
+      },
+    )
+    const titleControls = animate(
+      title,
+      {
+        opacity: [0, 1],
+        filter: ['blur(6px)', 'blur(0px)'],
+        transform: ['translateY(8px)', 'translateY(0px)'],
+      },
+      {
+        duration: motionTiming.heroTitle.duration,
+        ease: motionTiming.revealEase,
+        delay: stagger(motionTiming.heroTitle.stagger, {
+          startDelay: motionTiming.heroTitle.delay,
+        }),
+      },
+    )
+    const afterControls = animate(
+      after,
+      { opacity: [0, 1], y: [8, 0] },
+      {
+        duration: motionTiming.heroAfter.duration,
+        ease: motionTiming.revealEase,
+        delay: stagger(motionTiming.heroAfter.stagger, {
+          startDelay: motionTiming.heroAfter.delay,
+        }),
       },
     )
     const finish = () => {
-      controls.stop()
-      nodes.forEach((node) => {
-        node.style.opacity = '1'
-        node.style.transform = 'none'
-      })
+      // Complete through Motion so its next render also uses the final values.
+      // stop() can commit an intermediate blur after a direct DOM style reset.
+      beforeControls.complete()
+      titleControls.complete()
+      afterControls.complete()
     }
     const element = scope.current
     element.addEventListener('focusin', finish)

@@ -1,5 +1,7 @@
 import { ImageResponse } from 'next/og'
-export const alt = 'Giovanni Vicentin — Software Engineer'
+import { displayName } from '@/lib/portfolio'
+import messages from '../../messages/en.json'
+export const alt = `${displayName} — Software Engineer`
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 export default function Image() {
@@ -18,27 +20,27 @@ export default function Image() {
       }}
     >
       <div style={{ display: 'flex', fontSize: 24, color: '#a3a3a3' }}>
-        Giovanni Vicentin / Software Engineer
+        {displayName} / {messages.Portfolio.role}
       </div>
       <div
         style={{
           display: 'flex',
-          fontSize: 76,
-          letterSpacing: -4,
-          marginTop: 76,
+          fontSize: 64,
+          letterSpacing: -3,
+          marginTop: 82,
         }}
       >
-        Interfaces. APIs.
+        {messages.Portfolio.headline}
       </div>
       <div
         style={{
           display: 'flex',
-          fontSize: 76,
-          letterSpacing: -4,
-          color: '#999',
+          fontSize: 64,
+          letterSpacing: -3,
+          color: '#d4d4d4',
         }}
       >
-        Production software.
+        {messages.Portfolio.headlineMuted}
       </div>
       <div
         style={{

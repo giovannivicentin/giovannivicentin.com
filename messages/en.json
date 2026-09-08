@@ -1,48 +1,53 @@
 {
   "NotFoundPage": {
-    "title": "Page Not Found"
+    "title": "Page not found",
+    "description": "There’s no portfolio page at this address. Return to the start to explore my work.",
+    "back": "Back to the portfolio"
   },
   "ProjectSection": {
     "sorteiaFC": {
       "title": "Sorteia FC",
-      "description": "Draw teams, balanced matchups, and tournament brackets for EA FC 26 and FC 25.",
-      "imgAlt": "Sorteia FC team randomizer preview"
+      "description": "Organize matches and tournaments for EA FC 26 and FC 25. Team draws with category and star-rating filters, balanced matchups, and tournament brackets.",
+      "imgAlt": "Sorteia FC interface for drawing teams and organizing matches"
     },
     "bigO": {
       "title": "Big O Analyzer",
-      "description": "Analyze algorithm time complexity instantly in JavaScript, Python, and Java.",
-      "imgAlt": "Big O Analyzer project preview"
+      "description": "Understand how an algorithm’s cost grows with its input.",
+      "imgAlt": "Big O Analyzer interface for exploring algorithm complexity",
+      "approach": "Heuristic static analysis of JavaScript, Python, and Java using abstract syntax trees (ASTs) and control flow."
     },
     "megazord": {
       "title": "Megazord",
-      "description": "An accessible collection of games and hands-on activities for learning STEAM concepts.",
-      "imgAlt": "Megazord STEAM learning platform preview"
+      "description": "Explore STEAM concepts through hands-on learning. I brought games and activities together in an accessible educational platform.",
+      "imgAlt": "Megazord platform with STEAM games and activities"
     },
     "ebookToAudiobook": {
       "title": "Ebook to Audiobook",
-      "description": "Convert PDF and EPUB ebooks into audio privately, right in the browser.",
-      "imgAlt": "Ebook to Audiobook application preview"
+      "description": "Listen to your PDF and EPUB books in the browser.",
+      "imgAlt": "Ebook to Audiobook interface for listening to books in the browser",
+      "approach": "Local file processing and device speech synthesis, without sending books to a server."
     },
     "mindfulMinutes": {
       "title": "Mindful Minutes",
-      "description": "Guided mindfulness practices for reducing stress, improving focus, and building consistency.",
-      "imgAlt": "Mindful Minutes meditation practice preview"
+      "description": "Take a few minutes to breathe and practice mindfulness.",
+      "imgAlt": "Mindful Minutes practice selection with guided breathing, visual focus, and muscle relaxation",
+      "approach": "Guided breathing, visual focus, and muscle relaxation practices with instructions and animations in the browser."
     },
     "frankMetalicas": {
       "title": "Frank Metálicas",
-      "description": "Development of a website for Frank Metálicas, focusing on digital presence and SEO optimization.",
-      "imgAlt": "Frank Metálicas Project Preview"
+      "description": "Give a company a presence on the web. I built the Frank Metálicas website with a focus on digital presence and search engine optimization.",
+      "imgAlt": "Frank Metálicas company website"
     }
   },
   "VideoComponent": {
     "fallbackAlt": "Fallback image when the video cannot be played",
-    "videoNotSupported": "Your browser does not support the video tag."
+    "videoNotSupported": "This browser couldn’t play the video."
   },
   "Portfolio": {
     "role": "Software Engineer",
-    "headline": "Interfaces. APIs.",
-    "headlineMuted": "Production software.",
-    "intro": "I build applications with React, Next.js, Node and Go. Currently at Itaú Unibanco. Previously at Carrefour and Sam’s Club Brazil.",
+    "headline": "From interface to backend.",
+    "headlineMuted": "Software for real challenges.",
+    "intro": "I’m {name}, a software engineer working across frontend and backend. At Itaú Unibanco, I build applications and integrations, drawing on experience at Carrefour and Sam’s Club Brazil.",
     "experience": "Experience",
     "projects": "Projects",
     "about": "About",
@@ -53,66 +58,52 @@
     "based": "Brazil / Software for the web",
     "skip": "Skip to content",
     "experienceTitle": "Engineering in production.",
-    "experienceIntro": "Business workflows, interfaces, and integrations. Selected contributions built with product teams.",
-    "itauTitle": "From native journeys to a WebView experience.",
-    "itauContext": "Development and support for the tab bar hub in the Itaú app.",
+    "experienceIntro": "I work across interfaces and backend systems in product teams. Here are some of my contributions to production applications.",
+    "itauTitle": "Bringing app workflows to WebView.",
+    "itauContext": "At Itaú Unibanco, I develop and support the app’s navigation hub, connecting the user experience to backend integrations.",
     "itauPoints": [
-      "Rebuilt the frontend journey in WebView, previously maintained in Swift and Kotlin repositories.",
-      "Implemented local backend caching and contribute to the visual modernization of the experience.",
-      "Contribute to an internal specification-driven development tool with AI agents, skills, and MCP."
+      "I rebuilt a frontend workflow in WebView that was previously maintained in Swift and Kotlin repositories.",
+      "I implemented local backend caching and contribute to the visual modernization of this experience.",
+      "I contribute to an internal tool for specification-driven development with AI agents, skills, and MCP."
     ],
-    "carrefourTitle": "Member registration, from UI to endpoints.",
-    "carrefourContext": "Interfaces and integrations for Carrefour and Sam’s Club Brazil.",
+    "carrefourTitle": "From member registration to recurring payments.",
+    "carrefourContext": "At Carrefour and Sam’s Club Brazil, I worked on interfaces and integrations for member registration and payment processes.",
     "carrefourPoints": [
-      "Built the Sam’s Club member registration journey: UI, Node.js endpoints, and backend integration on VTEX.",
-      "Implemented automation for recurring payment processes.",
-      "Contributed to the maintenance and development of React interfaces and APIs."
+      "I built the Sam’s Club member registration flow, from the interface to Node.js endpoints and backend integration on VTEX.",
+      "I implemented automation to support recurring payment processes.",
+      "I contributed to maintaining and improving React interfaces and APIs."
     ],
-    "previous": "Previously",
-    "talst": "Application development and process automation with React, Node.js, NestJS, and Python.",
-    "projectsTitle": "Explore the code.",
-    "projectsIntro": "Independent projects to test ideas, build tools, and solve concrete problems.",
+    "previous": "Earlier experience",
+    "talst": "At Talst Contabilidade, I built systems and automated processes with React, Node.js, NestJS, and Python, applying web development to the company’s day-to-day workflows.",
+    "projectsTitle": "Ideas turned into tools.",
+    "projectsIntro": "Projects I built to explore programming, reading, and mindfulness, alongside other web experiences. You can try each one and explore the source code.",
     "otherProjects": "More projects",
     "openProject": "Open project",
     "repository": "View repository",
-    "aboutTitle": "From interface to integration.",
-    "aboutBody": "I’m Giovanni Vicentin, a software engineer based in Brazil. I work across frontend and backend, focusing on accessible interfaces, integrations, and maintaining production applications.",
+    "aboutTitle": "Care for the experience and what powers it.",
+    "aboutBody": "My work connects what people use with what makes an application work. I build accessible interfaces, integrate services, and maintain production applications. I like working across these areas to understand the problem and build a cohesive solution.",
     "frontend": "Interfaces",
     "backend": "APIs & data",
     "tooling": "Tools",
-    "contactTitle": "Let’s talk engineering.",
-    "contactBody": "For professional opportunities, reach out by email or LinkedIn.",
+    "contactTitle": "Let’s talk about opportunities.",
+    "contactBody": "If you’re looking for someone to work across frontend and backend, get in touch. We can discuss your team, its technical challenges, and how my experience fits the opportunity.",
     "copy": "Copy email",
     "copied": "Email copied",
     "copyError": "Could not copy. Select the email below.",
     "send": "Send email",
     "linkedin": "Open LinkedIn",
     "commands": "Commands",
-    "search": "Find a page or action…",
+    "search": "Find a section, link, or action…",
     "empty": "No commands found.",
-    "navigation": "Navigation",
-    "career": "Career",
+    "navigation": "Portfolio sections",
+    "career": "Professional profile",
     "code": "Code",
     "language": "Language",
-    "home": "Home",
+    "home": "Introduction",
     "close": "Close",
     "commandHint": "to navigate",
     "selectHint": "select",
     "closeHint": "close",
-    "built": "Clear interfaces. Accessible code.",
-    "projectDetails": {
-      "bigO": [
-        "Explore the complexity of your algorithms.",
-        "Heuristic static analysis for JavaScript, Python, and Java, using ASTs and control flow."
-      ],
-      "ebookToAudiobook": [
-        "Listen to PDFs and EPUBs in your browser.",
-        "Local book processing and speech synthesis using voices available on your device."
-      ],
-      "sorteiaFC": [
-        "Organize EA FC matches and tournaments.",
-        "Filter by category and rating, create balanced matchups, and generate brackets."
-      ]
-    }
+    "built": "Built by me, from interface to backend."
   }
 }

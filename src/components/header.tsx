@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import { sections } from '@/lib/portfolio'
+import { displayName, sections } from '@/lib/portfolio'
 import { LocalSwitcher } from './local-switcher'
 import { CommandPalette } from './command-palette'
 
@@ -12,15 +12,11 @@ export function Header() {
       </a>
       <header className="site-header">
         <div className="header-inner">
-          <a
-            className="wordmark"
-            href="#presentation"
-            aria-label="Giovanni Vicentin"
-          >
+          <a className="wordmark" href="#presentation" aria-label={displayName}>
             <span className="brand-symbol" aria-hidden="true">
               gv<span>_</span>
             </span>
-            <span className="brand-name">Giovanni Vicentin</span>
+            <span className="brand-name">{displayName}</span>
           </a>
           <nav aria-label={t('navigation')} className="desktop-nav">
             {sections.map((section) => (
