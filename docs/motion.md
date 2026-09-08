@@ -4,7 +4,7 @@
 
 - `src/components/motion/experience-provider.tsx`: política de movimento compartilhada, `LazyMotion` com `domAnimation`, navegação por âncoras e ciclo de vida do Lenis. O layout e o conteúdo permanecem Server Components.
 - `src/lib/motion.ts`: duração, stagger, curvas e springs. Os tokens CSS equivalentes ficam em `src/app/[locale]/globals.css`.
-- `HeroEntrance`: entradas curtas com sobreposição. Eyebrow de 0 a 220 ms; partes do título começam em 80 e 135 ms, com duração de 560 ms, fade, blur de 6 px e subida de 8 px; descrição, ações e rodapé começam em 200, 260 e 320 ms, com duração de 320 ms. Tudo termina em até 695 ms após o início do efeito. Usa `revealEase`, que torna o conteúdo legível cedo e desacelera o final. O texto permanece nítido no HTML inicial; a entrada acontece uma vez por montagem elegível e é ignorada após 1,5 s de carregamento, em restauração de scroll ou quando há hash. Não há tela de carregamento.
+- `HeroEntrance`: entradas curtas com sobreposição. Eyebrow de 0 a 220 ms; partes do título começam em 80 e 135 ms, com duração de 560 ms, fade, blur de 6 px e subida de 8 px; descrição, ações e faixa de empresas começam em 200, 260 e 320 ms, com duração de 320 ms. Tudo termina em até 695 ms após o início do efeito. Usa `revealEase`, que torna o conteúdo legível cedo e desacelera o final. O texto permanece nítido no HTML inicial; a entrada acontece uma vez por montagem elegível e é ignorada após 1,5 s de carregamento, em restauração de scroll ou quando há hash. Não há tela de carregamento.
 - `Reveal`: entradas de 20 px por viewport, uma vez por montagem. HTML visível sem JavaScript; foco exibe imediatamente o conteúdo.
 - `Magnetic`: deslocamento limitado a 6 px, medido em um wrapper estável; no máximo uma leitura por frame. Clique, foco, cancelamento de ponteiro e movimento reduzido restauram a posição.
 - `ScrollPreview`: escala de 0,97 a 1 ligada ao progresso local do scroll; o hover da imagem usa uma camada separada.
@@ -97,3 +97,13 @@ A suíte verifica os keyframes, a sobreposição real entre título e apoio, o i
 ## Verificação final — 8 de setembro de 2026
 
 Os testes de portfólio verificam a ordem dos cards (Analisador Big O, Ebook em Áudio e Mindful Minutes) nos três idiomas, com Sorteia FC na lista complementar. A imagem `public/images/projects/mindful-minutes.png` é uma captura real de `https://mindful-minutes-zeta.vercel.app/en/practices`, em tema escuro, viewport de 1440×960 px, feita em 8 de setembro de 2026.
+
+## Posicionamento frontend e empresas — 8 de setembro de 2026
+
+A abertura passa a destacar frontend web, com backend como experiência complementar, nos três idiomas e nos metadados. As duas partes do h1 usam gradiente vertical de `#fafafa`, passando por `#d4d4d4`, até `#858585`. Sobre `#0a0a0a`, o contraste no estado nítido vai de 18,97:1 a 5,37:1. Esse gradiente substitui o descrito na revisão anterior, mantendo os fallbacks de texto e cores forçadas.
+
+`CompanyMarquee` apresenta Itaú Unibanco, Carrefour e Sam’s Club Brasil sob o rótulo de trajetória profissional. Cada ciclo ocupa toda a largura disponível e percorre essa distância em 40 segundos, com velocidade constante. A animação pausa ao receber hover e quando sai da viewport, sem exibir um controle adicional. Sem JavaScript ou com movimento reduzido, exibe os três logos em uma lista estática, sem duplicação acessível. Mudanças da preferência são aplicadas imediatamente. A altura permanece estável ao habilitar movimento no celular. Nenhuma dependência foi adicionada.
+
+Os SVGs de Carrefour e Sam’s Club foram extraídos dos cabeçalhos dos sites oficiais em 8 de setembro de 2026: https://www.carrefour.com.br e https://www.samsclub.com.br. O logo do Itaú já estava no repositório. Os arquivos preservam os desenhos das marcas; filtros CSS harmonizam a apresentação em tons neutros.
+
+A validação inclui build de produção, ESLint e 28 testes Playwright: três idiomas, larguras de 320–1440 px, auditoria Axe, teclado, preenchimento da largura, saída da viewport, preferência de movimento reduzido inicial e alterada em tempo real e conteúdo sem JavaScript. As capturas da abertura ficam em `test-results/*-hero-320.png` e `test-results/*-hero-1440.png`. As tabelas históricas de desempenho acima não medem esta nova faixa.
