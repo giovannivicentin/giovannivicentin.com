@@ -17,6 +17,7 @@ import {
   CommandItem,
   CommandList,
 } from './ui/command'
+import { rememberLanguage } from '@/lib/language'
 import { links, locales, projects, sections } from '@/lib/portfolio'
 import { useScrollController } from './motion/experience-provider'
 
@@ -204,9 +205,8 @@ export function CommandPalette() {
                     key={locale}
                     onSelect={() => {
                       scroll.cancel()
-                      router.replace(`/${locale}${window.location.hash}`, {
-                        scroll: false,
-                      })
+                      rememberLanguage(locale)
+                      router.refresh()
                       setOpen(false)
                     }}
                   >
