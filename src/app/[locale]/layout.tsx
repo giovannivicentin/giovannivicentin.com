@@ -26,18 +26,18 @@ const mono = Geist_Mono({
 
 const localeMetadata = {
   br: {
-    title: `${displayName} — Engenheiro de Software`,
-    description: `${displayName}: da interface ao backend, software para desafios reais. Engenheiro de software no Itaú Unibanco, com experiência no Carrefour e Sam’s Club Brasil.`,
+    title: `${displayName} — Engenheiro de Software · Frontend`,
+    description: `${displayName}: engenheiro de software com foco em frontend web, React e Next.js. No Itaú Unibanco, com experiência em backend, Carrefour e Sam’s Club Brasil.`,
     locale: 'pt_BR',
   },
   en: {
-    title: `${displayName} — Software Engineer`,
-    description: `${displayName}: from interface to backend, software for real challenges. Software engineer at Itaú Unibanco, with experience at Carrefour and Sam’s Club Brazil.`,
+    title: `${displayName} — Software Engineer · Frontend`,
+    description: `${displayName}: software engineer focused on web frontend, React, and Next.js. At Itaú Unibanco, with backend experience and a background at Carrefour and Sam’s Club Brazil.`,
     locale: 'en_US',
   },
   es: {
-    title: `${displayName} — Ingeniero de Software`,
-    description: `${displayName}: de la interfaz al backend, software para desafíos reales. Ingeniero de software en Itaú Unibanco, con experiencia en Carrefour y Sam’s Club Brasil.`,
+    title: `${displayName} — Ingeniero de Software · Frontend`,
+    description: `${displayName}: ingeniero de software enfocado en frontend web, React y Next.js. En Itaú Unibanco, con experiencia en backend, Carrefour y Sam’s Club Brasil.`,
     locale: 'es_ES',
   },
 } satisfies Record<

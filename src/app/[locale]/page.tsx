@@ -16,6 +16,7 @@ import { HeroEntrance } from '@/components/motion/hero-entrance'
 import { Magnetic } from '@/components/motion/magnetic'
 import { Reveal } from '@/components/motion/reveal'
 import { ScrollPreview } from '@/components/motion/scroll-preview'
+import { CompanyMarquee } from '@/components/company-marquee'
 import { displayName, experiences, links, projects } from '@/lib/portfolio'
 
 export default function Home() {
@@ -26,10 +27,12 @@ export default function Home() {
       <HeroEntrance>
         <div className="eyebrow" data-hero-reveal="before">
           <span className="status-dot" />
-          {t('role')}
+          {t('heroRole')}
         </div>
         <h1>
-          <span data-hero-title>{t('headline')}</span>{' '}
+          <span data-hero-title className="hero-title-gradient">
+            {t('headline')}
+          </span>{' '}
           <span data-hero-title className="hero-title-gradient">
             {t('headlineMuted')}
           </span>
@@ -55,7 +58,10 @@ export default function Home() {
             </Button>
           </Magnetic>
         </div>
-        <div className="hero-baseline" data-hero-reveal="after">
+        <div className="hero-proof" data-hero-reveal="after">
+          <CompanyMarquee label={t('companiesLabel')} />
+        </div>
+        <div className="hero-baseline">
           <span>{t('based')}</span>
           <span>
             React <span aria-hidden="true">/</span> Next.js{' '}
@@ -80,8 +86,17 @@ export default function Home() {
           {experiences.map((job) => (
             <Reveal as="article" key={job.id} className="experience-row">
               <div className="experience-meta">
-                <span className="company-mark" aria-hidden="true">
-                  {job.id === 'itau' ? 'i' : 'c'}
+                <span
+                  className="company-mark"
+                  data-company={job.id}
+                  aria-hidden="true"
+                >
+                  <Image
+                    src={job.logo}
+                    alt=""
+                    width={job.logoWidth}
+                    height={job.logoHeight}
+                  />
                 </span>
                 <h3>{job.company}</h3>
                 <p>{t('role')}</p>

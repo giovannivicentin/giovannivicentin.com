@@ -227,11 +227,27 @@
   align-items: center;
   gap: 12px;
 }
-.locale-select {
-  min-height: 44px;
-  font-size: 12px;
-  background: transparent;
-  width: 48px;
+.locale-trigger {
+  min-width: 78px;
+}
+.locale-trigger .mono {
+  color: currentColor;
+}
+.locale-trigger svg:last-child {
+  transition: transform var(--motion-fast) var(--ease-ui);
+}
+.locale-trigger[data-state='open'] svg:last-child {
+  transform: rotate(180deg);
+}
+.locale-menu {
+  min-width: 180px;
+}
+.locale-menu [role='menuitemradio'] {
+  min-height: 40px;
+  gap: 12px;
+}
+.locale-code {
+  margin-left: auto;
 }
 .command-trigger {
   display: flex;
@@ -299,7 +315,12 @@
 }
 @supports (background-clip: text) {
   .hero-title-gradient {
-    background: linear-gradient(110deg, #fafafa, #b8b8b8);
+    background: linear-gradient(
+      to bottom,
+      #fafafa 10%,
+      #d4d4d4 50%,
+      #858585 100%
+    );
     background-clip: text;
     color: transparent;
   }
@@ -329,13 +350,120 @@
   gap: 12px;
   margin-top: 32px;
 }
+.hero-proof {
+  margin-top: 32px;
+  width: 100%;
+}
+.company-marquee-heading {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+.company-marquee-viewport {
+  overflow: hidden;
+  margin-top: 8px;
+}
+.company-marquee-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+}
+.company-marquee-group {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  width: 100%;
+  flex: none;
+  gap: 24px;
+}
+.company-marquee-group[aria-hidden] {
+  display: none;
+}
+.company-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 56px;
+  min-width: 0;
+  color: #b8b8b8;
+  font-size: 13px;
+  font-weight: 500;
+}
+.company-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: grayscale(1);
+}
+.company-logo[data-company='carrefour'] img {
+  filter: grayscale(1) brightness(0) invert(0.72);
+}
+.company-logo[data-company='sams'] img {
+  width: 150px;
+  max-width: 100%;
+  filter: grayscale(1) brightness(0) invert(0.72);
+}
+@keyframes company-marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .company-marquee[data-motion='true'] .company-marquee-viewport {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 16px,
+      black calc(100% - 16px),
+      transparent
+    );
+  }
+  .company-marquee[data-motion='true'] .company-marquee-track {
+    animation: company-marquee 40s linear infinite;
+  }
+  .company-marquee[data-motion='true'] .company-marquee-group {
+    display: grid;
+    width: 100%;
+    gap: clamp(24px, 5vw, 72px);
+    padding-inline: clamp(12px, 2vw, 24px);
+  }
+  .company-marquee[data-paused='true'] .company-marquee-track,
+  .company-marquee:hover .company-marquee-track,
+  .company-marquee:focus-within .company-marquee-track {
+    animation-play-state: paused;
+  }
+}
+@media (max-width: 479px) {
+  .company-marquee-group {
+    gap: 12px;
+  }
+  .company-marquee .company-logo {
+    height: 76px;
+  }
+  .company-marquee[data-motion='true'] .company-logo span {
+    display: none;
+  }
+  .company-marquee[data-motion='false'] .company-logo {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    text-align: center;
+  }
+  .company-marquee[data-motion='false'] .company-logo img {
+    height: 32px;
+  }
+}
 .hero-baseline {
   display: flex;
   justify-content: space-between;
   gap: 16px;
   border-top: 1px solid var(--border);
   padding-top: 20px;
-  margin-top: 80px;
+  margin-top: 32px;
   font:
     11px/1.6 var(--font-geist-mono),
     monospace;
@@ -369,15 +497,21 @@
   border-top: 1px solid var(--border);
 }
 .company-mark {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  margin-bottom: 20px;
+}
+.company-mark img {
+  width: auto;
+  height: 34px;
+  max-width: 51px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0) invert(0.82);
+}
+.company-mark[data-company='itau'] img {
   width: 36px;
   height: 36px;
-  border: 1px solid #ffffff26;
-  border-radius: 8px;
-  font-size: 23px;
-  font-weight: 600;
-  margin-bottom: 20px;
 }
 .experience-meta h3 {
   font-size: 17px;
@@ -813,7 +947,7 @@
     font-size: 16px;
   }
   .hero-baseline {
-    margin-top: 56px;
+    margin-top: 24px;
     flex-direction: column;
     gap: 8px;
   }
