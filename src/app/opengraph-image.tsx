@@ -19,8 +19,8 @@ export default function Image() {
         fontFamily: 'sans-serif',
       }}
     >
-      <div style={{ display: 'flex', fontSize: 24, color: '#a3a3a3' }}>
-        {displayName} / {messages.Portfolio.role}
+      <div style={{ display: 'flex', fontSize: 21, color: '#a3a3a3' }}>
+        {displayName} / {messages.Portfolio.heroRole}
       </div>
       <div
         style={{
@@ -52,7 +52,7 @@ export default function Image() {
           justifyContent: 'space-between',
         }}
       >
-        <span>React / Next.js / Node.js</span>
+        <span>React / Next.js / TypeScript</span>
         <span>giovannivicentin.com</span>
       </div>
     </div>,

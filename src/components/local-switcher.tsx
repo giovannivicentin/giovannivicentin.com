@@ -1,34 +1,84 @@
 'use client'
+
+import { ChevronDown, Globe2 } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import { useTransition } from 'react'
+import { Button } from '@/components/ui/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import { locales } from '@/lib/portfolio'
 import { useScrollController } from './motion/experience-provider'
+
+const languageNames = {
+  br: 'Português',
+  en: 'English',
+  es: 'Español',
+} as const
+
+const languageCodes = {
+  br: 'PT',
+  en: 'EN',
+  es: 'ES',
+} as const
+
 export function LocalSwitcher() {
-  const locale = useLocale()
+  const locale = useLocale() as (typeof locales)[number]
   const t = useTranslations('Portfolio')
   const router = useRouter()
   const scroll = useScrollController()
   const [pending, startTransition] = useTransition()
+
+  function changeLocale(next: string) {
+    if (next === locale || !locales.includes(next as typeof locale)) return
+    scroll.cancel()
+    startTransition(() =>
+      router.replace(`/${next}${window.location.hash}`, { scroll: false }),
+    )
+  }
+
   return (
-    <select
-      className="locale-select"
-      value={locale}
-      aria-label={t('language')}
-      disabled={pending}
-      onChange={(event) => {
-        const next = event.target.value
-        scroll.cancel()
-        startTransition(() =>
-          router.replace(`/${next}${window.location.hash}`, { scroll: false }),
-        )
-      }}
-    >
-      {locales.map((value) => (
-        <option key={value} value={value}>
-          {value === 'br' ? 'PT' : value.toUpperCase()}
-        </option>
-      ))}
-    </select>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          className="locale-trigger"
+          aria-label={t('language')}
+          disabled={pending}
+        >
+          <Globe2 data-icon="inline-start" aria-hidden="true" />
+          <span className="mono">{languageCodes[locale]}</span>
+          <ChevronDown data-icon="inline-end" aria-hidden="true" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="locale-menu">
+        <DropdownMenuLabel>{t('language')}</DropdownMenuLabel>
+        <DropdownMenuGroup>
+          <DropdownMenuRadioGroup value={locale} onValueChange={changeLocale}>
+            {locales.map((value) => (
+              <DropdownMenuRadioItem
+                key={value}
+                value={value}
+                aria-label={languageNames[value]}
+              >
+                <span>{languageNames[value]}</span>
+                <span className="locale-code mono" aria-hidden="true">
+                  {languageCodes[value]}
+                </span>
+              </DropdownMenuRadioItem>
+            ))}
+          </DropdownMenuRadioGroup>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   )
 }
