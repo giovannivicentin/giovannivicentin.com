@@ -45,9 +45,9 @@
   },
   "Portfolio": {
     "role": "Ingeniero de Software",
-    "headline": "De la interfaz al backend.",
-    "headlineMuted": "Software para desafíos reales.",
-    "intro": "Soy {name}, ingeniero de software con experiencia en frontend y backend. Actualmente desarrollo aplicaciones e integraciones en Itaú Unibanco, tras haber trabajado en Carrefour y Sam’s Club Brasil.",
+    "headline": "Frontend para productos reales.",
+    "headlineMuted": "Cuidado en cada interacción.",
+    "intro": "Soy {name}, ingeniero de software enfocado en frontend web. Desarrollo interfaces con React, Next.js y TypeScript en Itaú Unibanco, con experiencia también en Carrefour y Sam’s Club Brasil. Mi experiencia en backend me ayuda a conectar esas interfaces con los servicios que las sostienen.",
     "experience": "Experiencia",
     "projects": "Proyectos",
     "about": "Sobre mí",
@@ -81,12 +81,12 @@
     "openProject": "Abrir proyecto",
     "repository": "Ver repositorio",
     "aboutTitle": "Cuidar la experiencia y lo que la hace posible.",
-    "aboutBody": "Mi trabajo conecta lo que las personas usan con lo que hace funcionar una aplicación. Desarrollo interfaces accesibles, integro servicios y mantengo aplicaciones en producción. Me gusta trabajar entre estas áreas para entender el problema y construir una solución coherente.",
+    "aboutBody": "Mi foco está en las interfaces: cómo las personas navegan, entienden y usan un producto. Trabajo en accesibilidad, integración de servicios y mantenimiento de aplicaciones en producción. La experiencia en backend complementa ese trabajo y me ayuda a entender el flujo de datos y las decisiones que llegan a la pantalla.",
     "frontend": "Interfaces",
     "backend": "APIs y datos",
     "tooling": "Herramientas",
     "contactTitle": "Hablemos de oportunidades.",
-    "contactBody": "Si buscas a alguien para trabajar entre frontend y backend, ponte en contacto. Podemos conversar sobre el equipo, sus desafíos técnicos y cómo encaja mi experiencia en la oportunidad.",
+    "contactBody": "Si tu equipo busca a alguien enfocado en frontend web y con experiencia en integraciones y backend, conversemos sobre los desafíos del producto y la oportunidad.",
     "copy": "Copiar email",
     "copied": "Email copiado",
     "copyError": "No se pudo copiar. Selecciona el email abajo.",
@@ -104,6 +104,8 @@
     "commandHint": "para navegar",
     "selectHint": "seleccionar",
     "closeHint": "cerrar",
-    "built": "Desarrollado por mí, de la interfaz al backend."
+    "built": "Desarrollado por mí, con atención a cada interacción.",
+    "heroRole": "Ingeniero de Software · Frontend web",
+    "companiesLabel": "Empresas de mi trayectoria"
   }
 }

@@ -45,9 +45,9 @@
   },
   "Portfolio": {
     "role": "Software Engineer",
-    "headline": "From interface to backend.",
-    "headlineMuted": "Software for real challenges.",
-    "intro": "I’m {name}, a software engineer working across frontend and backend. At Itaú Unibanco, I build applications and integrations, drawing on experience at Carrefour and Sam’s Club Brazil.",
+    "headline": "Frontend for real products.",
+    "headlineMuted": "Care in every interaction.",
+    "intro": "I’m {name}, a software engineer focused on web frontend. I build interfaces with React, Next.js, and TypeScript at Itaú Unibanco, with experience at Carrefour and Sam’s Club Brazil. My backend experience helps me connect those interfaces to the services behind them.",
     "experience": "Experience",
     "projects": "Projects",
     "about": "About",
@@ -81,12 +81,12 @@
     "openProject": "Open project",
     "repository": "View repository",
     "aboutTitle": "Care for the experience and what powers it.",
-    "aboutBody": "My work connects what people use with what makes an application work. I build accessible interfaces, integrate services, and maintain production applications. I like working across these areas to understand the problem and build a cohesive solution.",
+    "aboutBody": "My focus is on interfaces: how people navigate, understand, and use a product. I work on accessibility, service integration, and maintaining production applications. Backend experience complements that work, helping me understand data flows and the decisions that shape what appears on screen.",
     "frontend": "Interfaces",
     "backend": "APIs & data",
     "tooling": "Tools",
     "contactTitle": "Let’s talk about opportunities.",
-    "contactBody": "If you’re looking for someone to work across frontend and backend, get in touch. We can discuss your team, its technical challenges, and how my experience fits the opportunity.",
+    "contactBody": "If your team needs someone focused on web frontend with experience in integrations and backend development, let’s talk about your product challenges and the opportunity.",
     "copy": "Copy email",
     "copied": "Email copied",
     "copyError": "Could not copy. Select the email below.",
@@ -104,6 +104,8 @@
     "commandHint": "to navigate",
     "selectHint": "select",
     "closeHint": "close",
-    "built": "Built by me, from interface to backend."
+    "built": "Built by me, with care in every interaction.",
+    "heroRole": "Software Engineer · Web frontend",
+    "companiesLabel": "Companies I’ve worked with"
   }
 }
