@@ -363,3 +363,85 @@ test('keyboard focus completes every pending hero phase', async ({ page }) => {
     await expect(node).toHaveCSS('opacity', '1')
   }
 })
+
+test('company logos fill the strip, move gently and stop offscreen', async ({
+  page,
+}) => {
+  await page.goto('/en')
+  const strip = page.locator('.company-marquee')
+  const track = strip.locator('.company-marquee-track')
+  await expect(strip).toHaveAttribute('data-motion', 'true')
+  await expect(strip).toHaveAttribute('data-paused', 'false')
+  await expect(track).toHaveCSS('animation-play-state', 'running')
+  await expect
+    .poll(() =>
+      track.evaluate(
+        (node) => new DOMMatrixReadOnly(getComputedStyle(node).transform).m41,
+      ),
+    )
+    .toBeLessThan(-1)
+  await expect(strip.getByRole('button')).toHaveCount(0)
+  expect(
+    await strip.evaluate(
+      (node) =>
+        node.getBoundingClientRect().width === node.parentElement!.clientWidth,
+    ),
+  ).toBe(true)
+  await page.locator('#contact').scrollIntoViewIfNeeded()
+  await expect(strip).toHaveAttribute('data-paused', 'true')
+  await expect(track).toHaveCSS('animation-play-state', 'paused')
+})
+
+test('company logos remain readable with reduced motion and without JavaScript', async ({
+  browser,
+}) => {
+  for (const javaScriptEnabled of [true, false]) {
+    const context = await browser.newContext({
+      javaScriptEnabled,
+      reducedMotion: 'reduce',
+      viewport: { width: 320, height: 900 },
+    })
+    const page = await context.newPage()
+    await page.goto('http://127.0.0.1:3100/en')
+    const strip = page.locator('.company-marquee')
+    await strip.scrollIntoViewIfNeeded()
+    await expect(strip.locator('.company-marquee-track')).toHaveCSS(
+      'animation-name',
+      'none',
+    )
+    await expect(
+      strip.getByText('Itaú Unibanco', { exact: true }).first(),
+    ).toBeVisible()
+    await expect(
+      strip.getByText('Carrefour', { exact: true }).first(),
+    ).toBeVisible()
+    await expect(
+      strip.getByRole('img', { name: 'Sam’s Club Brasil' }),
+    ).toBeVisible()
+    await expect(strip.getByRole('button')).toHaveCount(0)
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+    ).toBe(true)
+    await context.close()
+  }
+})
+
+test('changing motion preference makes the logo strip static immediately', async ({
+  page,
+}) => {
+  await page.goto('/en')
+  const strip = page.locator('.company-marquee')
+  await expect(strip).toHaveAttribute('data-motion', 'true')
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await expect(strip).toHaveAttribute('data-motion', 'false')
+  await expect(strip.locator('.company-marquee-track')).toHaveCSS(
+    'animation-name',
+    'none',
+  )
+  await expect(
+    strip.locator('.company-marquee-group[aria-hidden]'),
+  ).toBeHidden()
+  await expect(strip.getByRole('button')).toHaveCount(0)
+})

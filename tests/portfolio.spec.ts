@@ -29,18 +29,17 @@ test('keyboard commands, search, section focus and Escape restoration', async ({
 
 test('locale switch and palette preserve section', async ({ page }) => {
   await page.goto('/br#projects')
-  await page
-    .getByRole('combobox', { name: 'Idioma', exact: true })
-    .selectOption('en')
+  await page.getByRole('button', { name: 'Idioma', exact: true }).click()
+  await page.getByRole('menuitemradio', { name: 'English' }).click()
   await expect(page).toHaveURL('/en#projects')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
-    'Software for real challenges.',
+    'Care in every interaction.',
   )
   await page.getByRole('button', { name: 'Commands', exact: true }).click()
   await page.getByRole('option', { name: 'Español', exact: true }).click()
   await expect(page).toHaveURL('/es#projects')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
-    'Software para desafíos reales.',
+    'Cuidado en cada interacción.',
   )
 })
 
@@ -202,7 +201,7 @@ test('essential links and content work without JavaScript', async ({
   const page = await context.newPage()
   await page.goto('http://127.0.0.1:3100/en')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
-    'Software for real challenges.',
+    'Care in every interaction.',
   )
   await expect(page.locator('a[href="#experience"]').first()).toBeVisible()
   await expect(
