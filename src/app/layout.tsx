@@ -1,4 +1,10 @@
 import { displayName } from '@/lib/portfolio'
+import {
+  siteUrl,
+  languageAlternates,
+  languageTags,
+  localePaths,
+} from '@/lib/site'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { ExperienceProvider } from '@/components/motion/experience-provider'
@@ -11,8 +17,6 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { ReactNode } from 'react'
 import './globals.css'
 import 'lenis/dist/lenis.css'
-
-const siteUrl = new URL('https://giovannivicentin.com')
 
 const geist = Geist({
   subsets: ['latin'],
@@ -27,18 +31,21 @@ const mono = Geist_Mono({
 
 const localeMetadata = {
   br: {
-    title: `${displayName} — Engenheiro de Software · Frontend`,
-    description: `${displayName}: engenheiro de software com foco em frontend web, React e Next.js. No Itaú Unibanco, com experiência em backend, Carrefour e Sam’s Club Brasil.`,
+    title: 'Giovanni Vicentin | Engenheiro de Software React e Next.js',
+    description:
+      'Engenheiro de software no Itaú Unibanco, especializado em React, Next.js e TypeScript. Conheça minhas entregas, projetos e experiência no Carrefour e Sam’s Club.',
     locale: 'pt_BR',
   },
   en: {
-    title: `${displayName} — Software Engineer · Frontend`,
-    description: `${displayName}: software engineer focused on web frontend, React, and Next.js. At Itaú Unibanco, with backend experience and a background at Carrefour and Sam’s Club Brazil.`,
+    title: 'Giovanni Vicentin | React & Next.js Software Engineer',
+    description:
+      'Software engineer at Itaú Unibanco specializing in React, Next.js, and TypeScript. Explore my projects and experience at Carrefour and Sam’s Club Brazil.',
     locale: 'en_US',
   },
   es: {
-    title: `${displayName} — Ingeniero de Software · Frontend`,
-    description: `${displayName}: ingeniero de software enfocado en frontend web, React y Next.js. En Itaú Unibanco, con experiencia en backend, Carrefour y Sam’s Club Brasil.`,
+    title: 'Giovanni Vicentin | Ingeniero de Software React y Next.js',
+    description:
+      'Ingeniero de software en Itaú Unibanco, especializado en React, Next.js y TypeScript. Explora mis proyectos y experiencia en Carrefour y Sam’s Club Brasil.',
     locale: 'es_ES',
   },
 } satisfies Record<
@@ -52,43 +59,21 @@ function isSupportedLocale(locale: string): locale is SupportedLocale {
   return locale in localeMetadata
 }
 
-const keywords = [
-  displayName,
-  'engenheiro de software Brasil',
-  'desenvolvedor de software Brasil',
-  'desenvolvedor full stack Brasil',
-  'desenvolvedor Next.js Brasil',
-  'desenvolvedor React Brasil',
-  'desenvolvedor TypeScript Brasil',
-  'engenheiro de software São Paulo',
-  'portfólio desenvolvedor',
-  'software engineer Brazil',
-  'Brazilian software engineer',
-  'Next.js',
-  'React',
-  'TypeScript',
-  'Node.js',
-  'Tailwind CSS',
-  'Shadcn UI',
-  'JavaScript',
-  'Python',
-  'web development',
-]
-
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale()
   const selectedLocale = isSupportedLocale(locale) ? locale : 'br'
   const selectedMetadata = localeMetadata[selectedLocale]
-  const canonicalPath = '/'
+  const canonicalPath = localePaths[selectedLocale]
 
   return {
     title: selectedMetadata.title,
     description: selectedMetadata.description,
     authors: { name: displayName, url: siteUrl },
     creator: displayName,
-    metadataBase: siteUrl,
+    metadataBase: new URL(siteUrl),
     alternates: {
       canonical: canonicalPath,
+      languages: languageAlternates,
     },
     openGraph: {
       type: 'website',
@@ -97,6 +82,9 @@ export async function generateMetadata(): Promise<Metadata> {
       description: selectedMetadata.description,
       siteName: displayName,
       locale: selectedMetadata.locale,
+      alternateLocale: Object.values(localeMetadata)
+        .filter((entry) => entry !== selectedMetadata)
+        .map((entry) => entry.locale),
       images: [
         {
           url: '/opengraph-image',
@@ -126,7 +114,6 @@ export async function generateMetadata(): Promise<Metadata> {
       images: ['/opengraph-image'],
     },
     category: 'Software Engineering',
-    keywords,
   }
 }
 
@@ -139,17 +126,11 @@ interface RootLayoutProps {
   children: ReactNode
 }
 
-const langMap: Record<string, string> = {
-  en: 'en-US',
-  br: 'pt-BR',
-  es: 'es-ES',
-}
-
 export default async function RootLayout({
   children,
 }: Readonly<RootLayoutProps>) {
   const locale = await getLocale()
-  const selectedLang = langMap[locale]
+  const selectedLang = languageTags[isSupportedLocale(locale) ? locale : 'br']
 
   return (
     <html lang={selectedLang} className="dark">
