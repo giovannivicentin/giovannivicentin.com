@@ -1,6 +1,12 @@
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-import { ArrowDown, ArrowUpRight, ArrowRight, Code2 } from 'lucide-react'
+import {
+  ArrowDown,
+  ArrowUpRight,
+  ArrowRight,
+  ChevronDown,
+  Code2,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -17,6 +23,7 @@ import { Magnetic } from '@/components/motion/magnetic'
 import { Reveal } from '@/components/motion/reveal'
 import { ScrollPreview } from '@/components/motion/scroll-preview'
 import { CompanyMarquee } from '@/components/company-marquee'
+import { StructuredData } from '@/components/structured-data'
 import { displayName, experiences, links, projects } from '@/lib/portfolio'
 
 export default function Home() {
@@ -24,6 +31,7 @@ export default function Home() {
   const p = useTranslations('ProjectSection')
   return (
     <main id="main" className="site-frame" tabIndex={-1}>
+      <StructuredData />
       <HeroEntrance>
         <div className="eyebrow" data-hero-reveal="before">
           <span className="status-dot" />
@@ -84,20 +92,39 @@ export default function Home() {
         </Reveal>
         <div className="experience-list">
           {experiences.map((job) => (
-            <Reveal as="article" key={job.id} className="experience-row">
+            <Reveal
+              as="article"
+              key={job.id}
+              className={`experience-row experience-${job.id}`}
+            >
               <div className="experience-meta">
-                <span
-                  className="company-mark"
-                  data-company={job.id}
-                  aria-hidden="true"
-                >
-                  <Image
-                    src={job.logo}
-                    alt=""
-                    width={job.logoWidth}
-                    height={job.logoHeight}
-                  />
-                </span>
+                <div className="experience-brand" aria-hidden="true">
+                  {'logo' in job ? (
+                    <span className="company-mark" data-company={job.id}>
+                      <Image
+                        src={job.logo}
+                        alt=""
+                        width={job.logoWidth}
+                        height={job.logoHeight}
+                      />
+                    </span>
+                  ) : (
+                    <span className="company-monogram">T.</span>
+                  )}
+                  {job.id === 'carrefour' && (
+                    <span
+                      className="company-mark company-mark-wordmark"
+                      data-company="sams"
+                    >
+                      <Image
+                        src="/images/icons/sams-club.svg"
+                        alt=""
+                        width={160}
+                        height={27}
+                      />
+                    </span>
+                  )}
+                </div>
                 <h3>{job.company}</h3>
                 <p>{t('role')}</p>
                 <span className="mono">
@@ -107,12 +134,44 @@ export default function Home() {
               </div>
               <div className="experience-detail">
                 <h4>{t(`${job.id}Title`)}</h4>
-                <p>{t(`${job.id}Context`)}</p>
-                <ul>
-                  {(t.raw(`${job.id}Points`) as string[]).map((point) => (
-                    <li key={point}>{point}</li>
+                <p className="experience-summary">{t(`${job.id}Summary`)}</p>
+                <dl className="experience-highlights">
+                  {['primary', 'secondary', 'tertiary'].map((highlight) => (
+                    <div key={highlight} className="experience-highlight">
+                      <dt>
+                        <span className="experience-value">
+                          {t(`${job.id}Highlights.${highlight}.value`)}
+                        </span>
+                        <span className="experience-label">
+                          {t(`${job.id}Highlights.${highlight}.label`)}
+                        </span>
+                      </dt>
+                      <dd>
+                        {t(`${job.id}Highlights.${highlight}.description`)}
+                      </dd>
+                    </div>
                   ))}
-                </ul>
+                </dl>
+                <details className="experience-more">
+                  <summary>
+                    <span className="experience-more-closed">
+                      {t('experienceMore')}
+                    </span>
+                    <span className="experience-more-open">
+                      {t('experienceLess')}
+                    </span>
+                    <ChevronDown size={16} aria-hidden="true" />
+                  </summary>
+                  <div className="experience-narrative">
+                    {['overview', 'delivery', 'impact'].map((paragraph) => (
+                      <p key={paragraph}>
+                        {t.rich(`${job.id}Paragraphs.${paragraph}`, {
+                          strong: (chunks) => <strong>{chunks}</strong>,
+                        })}
+                      </p>
+                    ))}
+                  </div>
+                </details>
                 <div className="stack-line">
                   {job.stack.map((tech) => (
                     <span key={tech}>{tech}</span>
@@ -121,14 +180,6 @@ export default function Home() {
               </div>
             </Reveal>
           ))}
-          <Reveal as="article" className="previous-role">
-            <div>
-              <span className="eyebrow">{t('previous')}</span>
-              <h3>Talst Contabilidade</h3>
-              <span className="mono">2022 — 2024</span>
-            </div>
-            <p>{t('talst')}</p>
-          </Reveal>
         </div>
       </section>
 
@@ -260,13 +311,18 @@ export default function Home() {
               />
               <figcaption>{displayName}</figcaption>
             </figure>
-            <p>{t('aboutBody')}</p>
+            <div className="about-copy">
+              <p>{t('aboutBody')}</p>
+              <p>{t('aboutApproach')}</p>
+              <p>{t('aboutEngineering')}</p>
+            </div>
           </div>
           <div id="skills" className="skill-list">
             {[
-              [t('frontend'), 'React · Next.js · TypeScript · Tailwind CSS'],
-              [t('backend'), 'Node.js · Go · GraphQL · SQL'],
-              [t('tooling'), 'Git · Docker · SDD · MCP'],
+              [t('frontend'), t('skillFrontend')],
+              [t('backend'), t('skillBackend')],
+              [t('infrastructure'), t('skillInfrastructure')],
+              [t('concepts'), t('skillConcepts')],
             ].map(([label, value]) => (
               <div key={label}>
                 <h3>{label}</h3>

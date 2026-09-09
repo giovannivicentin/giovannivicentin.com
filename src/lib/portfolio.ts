@@ -17,7 +17,17 @@ export const experiences = [
     logoWidth: 48,
     logoHeight: 48,
     period: '2026',
-    stack: ['React', 'Next.js', 'Go', 'WebView', 'SDD'],
+    stack: [
+      'React',
+      'Next.js',
+      'Node.js',
+      'Go',
+      'TypeScript',
+      'AI',
+      'WebView',
+      'SDD',
+      'MCP',
+    ],
   },
   {
     id: 'carrefour',
@@ -26,7 +36,22 @@ export const experiences = [
     logoWidth: 51,
     logoHeight: 34,
     period: '2024 — 2026',
-    stack: ['React', 'Node.js', 'GraphQL', 'VTEX IO'],
+    stack: [
+      'React',
+      'Node.js',
+      'GraphQL',
+      'Tailwind CSS',
+      'TypeScript',
+      'Sass',
+      'VTEX',
+      'Python',
+    ],
+  },
+  {
+    id: 'talst',
+    company: 'Talst Contabilidade e Controladoria',
+    period: '2022 — 2024',
+    stack: ['React', 'Node.js', 'NestJS', 'Python', 'APIs', 'RPA'],
   },
 ] as const
 export interface ProjectData {
