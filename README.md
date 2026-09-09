@@ -1,42 +1,43 @@
-# giovannivicentin.com
+# Giovanni Vicentin
 
-Giovanni Vicentin’s multilingual software engineering portfolio. Professional contributions at Itaú and Carrefour/Sam’s Club lead the page, followed by public projects, background, and direct contact.
+**Frontend for real products. Care in every interaction.**
 
-Built with Next.js App Router, React, TypeScript, Tailwind CSS 4, shadcn/Radix, cmdk, and next-intl. The interface uses a fixed monochrome dark theme, Geist fonts, a keyboard command palette, and reduced-motion-aware pointer lighting.
+My personal portfolio — a selection of professional experience, independent projects, and the work behind the interfaces I build.
 
-## Development
+[Visit the portfolio](https://www.giovannivicentin.com/en) · [LinkedIn](https://www.linkedin.com/in/giovannivicentin/) · [Email](mailto:giovannifvicentin@gmail.com)
+
+[![Giovanni Vicentin’s portfolio — desktop preview in English](docs/images/portfolio.png)](https://www.giovannivicentin.com/en)
+
+## About
+
+I’m a software engineer based in Brazil, focused on web frontend with React, Next.js, and TypeScript. My experience includes Itaú Unibanco, Carrefour, and Sam’s Club Brazil, alongside personal projects that turn ideas into useful web experiences.
+
+The site brings that work together in a quiet, monochrome interface, with Geist typography, subtle motion, and space for the content to lead.
+
+## The site
+
+- Available in English, Portuguese, and Spanish.
+- Responsive layouts for desktop and mobile.
+- Keyboard navigation and a command palette with `⌘ K` / `Ctrl K`.
+- Motion that respects reduced-motion preferences.
+- Direct access to my projects, résumé, and contact details.
+
+## Built with
+
+Next.js · React · TypeScript · Tailwind CSS · shadcn/ui · next-intl · Motion
+
+## Run locally
 
 ```sh
 npm install
 npm run dev
 ```
 
-All languages use `/`, without redirects or locale prefixes. The server reads the validated `NEXT_LOCALE` cookie, then the browser’s Accept-Language preference, with Portuguese as fallback. Both language controls persist the choice for one year and refresh server content while preserving the URL and section. Canonical metadata and sitemap use the single root URL; languages do not have separate indexable URLs. Legacy language paths return 404.
+Open [localhost:3000](http://localhost:3000).
 
-## Checks
+To build and run the production version:
 
 ```sh
-npm run lint:check
-npm run format:check
-npx tsc --noEmit
 npm run build
-npx playwright install chromium
-npm run test:e2e
+npm start
 ```
-
-Browser tests start the production build on port 3100. They cover keyboard commands, locale and hash preservation, clipboard success/failure, accessibility, responsive widths, and content without JavaScript. Screenshots are written to ignored `test-results/`.
-
-## Content and styling
-
-- `src/lib/portfolio.ts`: shared links, experience and project metadata.
-- `messages/{br,en,es}.json`: localized copy. Keep facts aligned across languages; publish only verified results.
-- `src/app/globals.css`: monochrome semantic tokens, typography, layout and motion. Tailwind 4 uses the CSS theme directly.
-- `public/resume/giovanni-vicentin-resume.pdf`: existing résumé URL.
-
-Cmd/Ctrl+K opens navigation and actions. Escape restores focus; selecting a section focuses its heading. Email can be copied or opened with the visitor’s mail application. The former `/api/send` endpoint and Resend integration have been removed; `RESEND_API_KEY` is no longer used.
-
-## Deployment
-
-Deploy with the Vercel Next.js preset, build command `npm run build`. Check all locale routes, résumé, sitemap, robots and Open Graph image in Preview before promoting to Production. Keep the previous deployment available for rollback. Analytics and Speed Insights remain enabled.
-
-Performance targets are goals, not measured claims: mobile Lighthouse Performance ≥95, LCP ≤2.5s, CLS ≤0.1, and field INP ≤200ms when sufficient traffic is available.
