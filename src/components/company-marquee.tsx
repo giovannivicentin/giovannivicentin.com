@@ -54,7 +54,6 @@ export function CompanyMarquee({ label }: { label: string }) {
               key={String(duplicate)}
               className="company-marquee-group"
               aria-hidden={duplicate || undefined}
-              inert={duplicate || undefined}
             >
               {companies.map((company) => (
                 <li

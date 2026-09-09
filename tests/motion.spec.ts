@@ -213,8 +213,8 @@ test('title uses a brief fade, blur and rise, settles, and does not replay', asy
     expect(lineAnimations).toHaveLength(3)
     for (const animation of lineAnimations) {
       expect(animation.timing).toMatchObject({
-        duration: 560,
-        delay: 80 + index * 55,
+        duration: 720,
+        delay: 120 + index * 90,
         easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
       })
     }
@@ -355,8 +355,8 @@ test('hero overlaps entrances and reveals actions within the first second', asyn
   }
   expect(state.supportTiming).toHaveLength(3)
   for (const timing of state.supportTiming) {
-    expect(timing.delay).toBeLessThanOrEqual(320)
-    expect(timing.end).toBeLessThanOrEqual(700)
+    expect(timing.delay).toBeLessThanOrEqual(500)
+    expect(timing.end).toBeLessThanOrEqual(950)
   }
   await expect(page.locator('.hero-actions')).toHaveCSS('opacity', '1')
   await expect(page.locator('.hero-baseline')).toHaveCSS('opacity', '1')
@@ -459,4 +459,43 @@ test('changing motion preference makes the logo strip static immediately', async
     strip.locator('.company-marquee-group[aria-hidden]'),
   ).toBeHidden()
   await expect(strip.getByRole('button')).toHaveCount(0)
+})
+
+test('scroll reveal fades in once without resetting visible opacity', async ({
+  page,
+}) => {
+  await page.goto('/')
+  await expect(page.locator('html')).toHaveClass(/lenis/)
+  const reveal = page.locator('#projects > .motion-reveal').first()
+  await expect(reveal).toHaveCSS('opacity', '0')
+  const samples = await reveal.evaluate(async (node) => {
+    node.scrollIntoView({ behavior: 'instant', block: 'center' })
+    const values: number[] = []
+    const start = performance.now()
+    await new Promise<void>((resolve) => {
+      const sample = () => {
+        values.push(Number(getComputedStyle(node).opacity))
+        if (performance.now() - start < 1100) requestAnimationFrame(sample)
+        else resolve()
+      }
+      requestAnimationFrame(sample)
+    })
+    return values
+  })
+  expect(samples.some((value) => value > 0 && value < 1)).toBe(true)
+  for (let i = 1; i < samples.length; i++) {
+    expect(samples[i]).toBeGreaterThanOrEqual(samples[i - 1] - 0.001)
+  }
+  expect(samples.at(-1)).toBe(1)
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }))
+  await reveal.scrollIntoViewIfNeeded()
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await page.emulateMedia({ reducedMotion: 'no-preference' })
+  await expect(reveal).toHaveCSS('opacity', '1')
+  expect(
+    await reveal.evaluate(
+      (node) =>
+        node.getAnimations().filter((a) => a.playState === 'running').length,
+    ),
+  ).toBe(0)
 })

@@ -107,3 +107,56 @@ A abertura passa a destacar frontend web, com backend como experiência compleme
 Os SVGs de Carrefour e Sam’s Club foram extraídos dos cabeçalhos dos sites oficiais em 8 de setembro de 2026: https://www.carrefour.com.br e https://www.samsclub.com.br. O logo do Itaú já estava no repositório. Os arquivos preservam os desenhos das marcas; filtros CSS harmonizam a apresentação em tons neutros.
 
 A validação inclui build de produção, ESLint e 28 testes Playwright: três idiomas, larguras de 320–1440 px, auditoria Axe, teclado, preenchimento da largura, saída da viewport, preferência de movimento reduzido inicial e alterada em tempo real e conteúdo sem JavaScript. As capturas da abertura ficam em `test-results/*-hero-320.png` e `test-results/*-hero-1440.png`. As tabelas históricas de desempenho acima não medem esta nova faixa.
+
+## Correção do reveal e timing suave — 8 de setembro de 2026
+
+A entrada inicial agora termina em até 950 ms: eyebrow com 320 ms; título com
+720 ms e inícios em 120/210 ms; descrição, ações e faixa com 450 ms e inícios
+em 320/410/500 ms. O stagger de 90 ms mantém a cascata com sobreposição.
+Esses valores substituem os timings rápidos documentados anteriormente.
+
+O reveal anterior combinava HTML visível (`initial={false}`) com keyframes
+`opacity: [0, 1]` disparados após 12% de interseção. Isso permitia ver o conteúdo,
+escondê-lo e vê-lo aparecer novamente. `once: true` não evita essa primeira
+regressão de opacidade. A hidratação também atualiza a preferência de movimento
+de false para true, alterando o alvo do efeito.
+
+Agora somente elementos abaixo da viewport são preparados antes da pintura,
+com CSS habilitado pelo cliente. O observer dispara na primeira interseção e é
+desconectado antes da animação. Uma ref impede repetição; cleanup conclui controles
+e desfaz preparação, inclusive no Strict Mode. Conteúdo já visível na hidratação,
+foco e conteúdo sem JavaScript permanecem legíveis. Não foi necessário desativar
+Strict Mode nem alterar a arquitetura de Server Components.
+
+Na experiência, o Itaú mantém sua moldura e o filtro `grayscale(1) brightness(1.8)`.
+Carrefour e Sam’s Club aparecem lado a lado sem borda nem fundo, com
+`brightness(0) invert(0.87)` para uniformizar o cinza claro independentemente das
+cores originais. Hover e foco preservam esses estilos. No carrossel de `#presentation`, o hover recupera as cores originais das
+imagens e as cores de marca nos nomes, inclusive nas cópias do loop. O nome do
+Sam’s Club faz parte do próprio SVG. Fora do hover, a faixa volta à escala de cinza.
+
+Validação desta correção: build de produção com Webpack, TypeScript, ESLint e
+20 testes Playwright de movimento/experiência passaram no Chrome. O novo teste
+amostra opacidade por frame, verifica progressão sem queda e ausência de nova
+animação após sair/voltar e alternar a preferência de movimento. O build padrão
+com Turbopack foi impedido pelo ambiente ao tentar abrir uma porta interna.
+
+## Detalhes da experiência — 9 de setembro de 2026
+
+O controle continua sendo um `details/summary` nativo. Ao abrir, os parágrafos
+entram com fade e deslocamento de 10 px, em 500 ms, com atrasos de 0/70/140 ms.
+Navegadores com `::details-content` e `interpolate-size` também animam a altura
+na abertura e no fechamento. Nos demais, a abertura nativa mantém o fade.
+Movimento reduzido desativa os efeitos; teclado e conteúdo sem JavaScript
+permanecem funcionais. O teste cobre sequência, toggles rápidos e mudança de
+preferência durante a animação.
+
+Na experiência de 2024–2026, Carrefour passou de 44 para 54 px de largura, e
+Sam’s Club de 112 para 136 px. A altura acompanha a proporção original dos SVGs.
+O Itaú mantém o tamanho anterior.
+
+O espaçamento superior da narrativa usa `padding-top`, incluído na altura
+animada de `::details-content`. A margem externa anterior só desaparecia quando
+`content-visibility` mudava para `hidden`, provocando um salto final de 16 px.
+O teste de regressão acompanha a altura e a posição do próximo bloco por frame
+durante o fechamento, em desktop e celular, nas três experiências.

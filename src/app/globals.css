@@ -386,26 +386,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  height: 56px;
+  gap: 14px;
+  height: 68px;
   min-width: 0;
   color: #b8b8b8;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  transition: color 220ms ease;
 }
 .company-logo img {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  flex: none;
   object-fit: contain;
-  filter: grayscale(1);
-}
-.company-logo[data-company='carrefour'] img {
-  filter: grayscale(1) brightness(0) invert(0.72);
+  filter: grayscale(1) brightness(1.8);
 }
 .company-logo[data-company='sams'] img {
   width: 150px;
   max-width: 100%;
-  filter: grayscale(1) brightness(0) invert(0.72);
+}
+/* Restore brand colors only in the presentation carousel, including its copies. */
+#presentation .company-marquee .company-logo img {
+  /* Normalize brand luminance so the orange Itaú logo matches the blue logos. */
+  filter: brightness(0) invert(0.6);
+  transition: filter 220ms ease;
+}
+@media (any-hover: hover) {
+  #presentation .company-marquee .company-logo:hover img {
+    filter: none;
+  }
+  #presentation .company-marquee .company-logo:hover {
+    color: var(--company-accent);
+  }
 }
 @keyframes company-marquee {
   to {
@@ -437,6 +451,18 @@
     animation-play-state: paused;
   }
 }
+@media (max-width: 767px) {
+  .company-marquee .company-logo {
+    flex-direction: column;
+    gap: 8px;
+    height: 88px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .company-marquee .company-logo img {
+    height: 36px;
+  }
+}
 @media (max-width: 479px) {
   .company-marquee-group {
     gap: 12px;
@@ -444,16 +470,11 @@
   .company-marquee .company-logo {
     height: 76px;
   }
-  .company-marquee[data-motion='true'] .company-logo span {
-    display: none;
-  }
-  .company-marquee[data-motion='false'] .company-logo {
-    flex-direction: column;
+  .company-marquee .company-logo {
     gap: 6px;
-    font-size: 11px;
-    text-align: center;
+    font-size: 12px;
   }
-  .company-marquee[data-motion='false'] .company-logo img {
+  .company-marquee .company-logo img {
     height: 32px;
   }
 }
@@ -491,27 +512,95 @@
 }
 .experience-row {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 48px;
-  padding-block: 36px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 2fr);
+  gap: 40px;
+  padding-block: 40px;
   border-top: 1px solid var(--border);
+  --company-accent: #b5b5b5;
+}
+.experience-itau,
+.company-logo[data-company='itau'] {
+  --company-accent: #ff9857;
+}
+.experience-carrefour,
+.company-logo[data-company='carrefour'],
+.company-logo[data-company='sams'] {
+  --company-accent: #8cbaff;
+}
+.experience-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 .company-mark {
   display: flex;
   align-items: center;
-  height: 36px;
-  margin-bottom: 20px;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  flex: none;
+  border: 1px solid color-mix(in srgb, var(--foreground) 14%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--foreground) 6%, var(--background));
+  transition:
+    background 220ms ease,
+    border-color 220ms ease;
 }
 .company-mark img {
   width: auto;
-  height: 34px;
-  max-width: 51px;
-  object-fit: contain;
-  filter: grayscale(1) brightness(0) invert(0.82);
-}
-.company-mark[data-company='itau'] img {
-  width: 36px;
   height: 36px;
+  max-width: 44px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.8);
+}
+.company-mark-wordmark {
+  width: 138px;
+}
+.company-mark-wordmark img {
+  width: 112px;
+  max-width: none;
+  height: auto;
+}
+/* Two brands share one unframed group; the Itaú mark keeps its existing tile. */
+.experience-carrefour .experience-brand {
+  gap: 20px;
+}
+.experience-carrefour .company-mark {
+  width: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.experience-carrefour .company-mark img {
+  /* Normalize the original blue/red luminance to Itaú's light neutral tone. */
+  filter: brightness(0) invert(0.87);
+}
+.experience-carrefour .company-mark[data-company='carrefour'] img {
+  width: 54px;
+  max-width: 54px;
+  height: auto;
+}
+.experience-carrefour .company-mark-wordmark img {
+  width: 136px;
+}
+.company-monogram {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--secondary);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.08em;
+  color: var(--muted-foreground);
+}
+/* Permanent grayscale: hover and keyboard focus preserve the same tones. */
+.company-mark[data-company='itau'] img {
+  width: 44px;
+  height: 44px;
 }
 .experience-meta h3 {
   font-size: 17px;
@@ -528,34 +617,155 @@
   color: #a3a3a3;
 }
 .experience-detail h4 {
-  font-size: 21px;
+  font-size: clamp(21px, 2vw, 25px);
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.35;
 }
-.experience-detail > p {
-  font-size: 14px;
-  color: #a3a3a3;
-  line-height: 1.6;
-  margin: 12px 0 20px;
+.experience-summary {
+  margin-top: 10px;
+  max-width: 58ch;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted-foreground);
 }
-.experience-detail ul {
+.experience-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-block: 28px;
+}
+.experience-highlight {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.experience-highlight dt {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
-.experience-detail li {
-  position: relative;
-  padding-left: 18px;
+.experience-value {
+  color: var(--company-accent);
+  font-size: clamp(27px, 3vw, 36px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+}
+.experience-label {
+  color: var(--foreground);
   font-size: 14px;
-  line-height: 1.7;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.experience-highlight dd {
+  margin-top: 8px;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.experience-more summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted-foreground);
+  font-size: 13px;
+  cursor: pointer;
+  list-style: none;
+  transition:
+    color 220ms ease,
+    border-color 220ms ease;
+}
+.experience-more summary::-webkit-details-marker {
+  display: none;
+}
+.experience-more summary:hover,
+.experience-more summary:focus-visible {
+  color: var(--foreground);
+}
+/* Native details stays keyboard-accessible and readable without JavaScript. */
+@media (prefers-reduced-motion: no-preference) {
+  .experience-more[open] .experience-narrative > p {
+    animation: experience-detail-enter 500ms var(--ease-reveal) both;
+  }
+  .experience-more[open] .experience-narrative > p:nth-child(2) {
+    animation-delay: 70ms;
+  }
+  .experience-more[open] .experience-narrative > p:nth-child(3) {
+    animation-delay: 140ms;
+  }
+  /* Smooth intrinsic height where supported; other browsers keep the fade. */
+  @supports (interpolate-size: allow-keywords) and selector(::details-content) {
+    .experience-more {
+      interpolate-size: allow-keywords;
+    }
+    .experience-more::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: clip;
+      transition:
+        block-size 500ms var(--ease-reveal),
+        opacity 300ms ease,
+        content-visibility 500ms allow-discrete;
+    }
+    .experience-more[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+  }
+}
+@keyframes experience-detail-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.footer-languages {
+  margin-top: 12px;
+}
+.experience-more summary:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.experience-more summary svg {
+  flex: none;
+  transition: transform 220ms ease;
+}
+.experience-more[open] summary svg {
+  transform: rotate(180deg);
+}
+.experience-more-open,
+.experience-more[open] .experience-more-closed {
+  display: none;
+}
+.experience-more[open] .experience-more-open {
+  display: inline;
+}
+.experience-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  /* Keep spacing inside the animated height. An outer margin survives until
+     content-visibility flips to hidden, causing a 16px jump when closing. */
+  padding-top: 16px;
+  max-width: 68ch;
+}
+.experience-narrative p {
+  font-size: 14px;
+  line-height: 1.8;
   color: #d4d4d4;
 }
-.experience-detail li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: #737373;
+.experience-narrative strong {
+  color: var(--foreground);
+  font-weight: 600;
 }
 .stack-line {
   display: flex;
@@ -565,23 +775,6 @@
   font-size: 10px;
   color: #a3a3a3;
   margin-top: 24px;
-}
-.previous-role {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 48px;
-  padding-top: 28px;
-  border-top: 1px solid var(--border);
-}
-.previous-role h3 {
-  font-size: 14px;
-  margin: 8px 0;
-}
-.previous-role > p {
-  color: #a3a3a3;
-  font-size: 14px;
-  line-height: 1.7;
-  align-self: center;
 }
 .project-grid {
   display: grid;
@@ -726,6 +919,11 @@
 .motion-reveal {
   min-width: 0;
 }
+/* Applied only below the fold after hydration; SSR remains readable. */
+.motion-reveal[data-reveal-pending] {
+  opacity: 0;
+  transform: translateY(20px);
+}
 .motion-reveal:focus-within,
 [data-hero-reveal]:focus-within {
   opacity: 1 !important;
@@ -785,7 +983,12 @@
   border-radius: 8px;
   border: 1px solid var(--border);
 }
-.about-person p {
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-copy p {
   font-size: 16px;
   line-height: 1.7;
   color: #d4d4d4;
@@ -951,13 +1154,12 @@
     flex-direction: column;
     gap: 8px;
   }
-  .experience-row,
-  .previous-role {
+  .experience-row {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  .company-mark {
-    display: none;
+  .experience-brand {
+    margin-bottom: 16px;
   }
   .experience-meta p {
     margin-bottom: 8px;
@@ -993,6 +1195,21 @@
   }
   .palette-content [cmdk-list] {
     max-height: min(300px, calc(100dvh - 260px));
+  }
+}
+@media (max-width: 479px) {
+  .experience-highlights {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-block: 24px;
+  }
+  .experience-highlight {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 16px;
+  }
+  .experience-highlight dd {
+    margin-top: 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -45,7 +45,7 @@ test('locale switch and palette preserve section', async ({ page }) => {
   await page.goto('/#projects')
   await page.getByRole('button', { name: 'Idioma', exact: true }).click()
   await page.getByRole('menuitemradio', { name: 'English' }).click()
-  await expect(page).toHaveURL('/#projects')
+  await expect(page).toHaveURL('/en#projects')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
     'Care in every interaction.',
   )
@@ -53,7 +53,7 @@ test('locale switch and palette preserve section', async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('lang', 'en-US')
   await page.getByRole('button', { name: 'Commands', exact: true }).click()
   await page.getByRole('option', { name: 'Español', exact: true }).click()
-  await expect(page).toHaveURL('/#projects')
+  await expect(page).toHaveURL('/es#projects')
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
     'Cuidado en cada interacción.',
   )
@@ -123,7 +123,7 @@ for (const locale of ['br', 'en', 'es']) {
     await expect(page.locator('.site-footer')).toContainText(
       'Giovanni Fernandes Vicentin',
     )
-    await expect(page).toHaveTitle(/Giovanni Fernandes Vicentin/)
+    await expect(page).toHaveTitle(/Giovanni Vicentin/)
     await expect(page.locator('meta[name="author"]')).toHaveAttribute(
       'content',
       'Giovanni Fernandes Vicentin',

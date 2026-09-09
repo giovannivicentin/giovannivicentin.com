@@ -18,6 +18,7 @@ import {
   CommandList,
 } from './ui/command'
 import { rememberLanguage } from '@/lib/language'
+import { localePaths } from '@/lib/site'
 import { links, locales, projects, sections } from '@/lib/portfolio'
 import { useScrollController } from './motion/experience-provider'
 
@@ -206,6 +207,11 @@ export function CommandPalette() {
                     onSelect={() => {
                       scroll.cancel()
                       rememberLanguage(locale)
+                      window.history.replaceState(
+                        window.history.state,
+                        '',
+                        `${localePaths[locale]}${location.search}${location.hash}`,
+                      )
                       router.refresh()
                       setOpen(false)
                     }}
