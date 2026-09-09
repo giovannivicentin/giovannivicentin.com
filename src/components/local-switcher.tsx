@@ -14,6 +14,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { rememberLanguage } from '@/lib/language'
 import { locales } from '@/lib/portfolio'
 import { useScrollController } from './motion/experience-provider'
 
@@ -39,9 +40,8 @@ export function LocalSwitcher() {
   function changeLocale(next: string) {
     if (next === locale || !locales.includes(next as typeof locale)) return
     scroll.cancel()
-    startTransition(() =>
-      router.replace(`/${next}${window.location.hash}`, { scroll: false }),
-    )
+    rememberLanguage(next as typeof locale)
+    startTransition(() => router.refresh())
   }
 
   return (

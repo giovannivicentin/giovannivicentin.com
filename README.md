@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Routes: `/br`, `/en`, `/es`. Portuguese is the fallback; the existing locale negotiation remains enabled. Share `/en` for international applications.
+All languages use `/`, without redirects or locale prefixes. The server reads the validated `NEXT_LOCALE` cookie, then the browser’s Accept-Language preference, with Portuguese as fallback. Both language controls persist the choice for one year and refresh server content while preserving the URL and section. Canonical metadata and sitemap use the single root URL; languages do not have separate indexable URLs. Legacy language paths return 404.
 
 ## Checks
 
@@ -30,7 +30,7 @@ Browser tests start the production build on port 3100. They cover keyboard comma
 
 - `src/lib/portfolio.ts`: shared links, experience and project metadata.
 - `messages/{br,en,es}.json`: localized copy. Keep facts aligned across languages; publish only verified results.
-- `src/app/[locale]/globals.css`: monochrome semantic tokens, typography, layout and motion. Tailwind 4 uses the CSS theme directly.
+- `src/app/globals.css`: monochrome semantic tokens, typography, layout and motion. Tailwind 4 uses the CSS theme directly.
 - `public/resume/giovanni-vicentin-resume.pdf`: existing résumé URL.
 
 Cmd/Ctrl+K opens navigation and actions. Escape restores focus; selecting a section focuses its heading. Email can be copied or opened with the visitor’s mail application. The former `/api/send` endpoint and Resend integration have been removed; `RESEND_API_KEY` is no longer used.

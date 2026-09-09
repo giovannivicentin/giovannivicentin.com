@@ -3,7 +3,7 @@
 ## Arquitetura
 
 - `src/components/motion/experience-provider.tsx`: política de movimento compartilhada, `LazyMotion` com `domAnimation`, navegação por âncoras e ciclo de vida do Lenis. O layout e o conteúdo permanecem Server Components.
-- `src/lib/motion.ts`: duração, stagger, curvas e springs. Os tokens CSS equivalentes ficam em `src/app/[locale]/globals.css`.
+- `src/lib/motion.ts`: duração, stagger, curvas e springs. Os tokens CSS equivalentes ficam em `src/app/globals.css`.
 - `HeroEntrance`: entradas curtas com sobreposição. Eyebrow de 0 a 220 ms; partes do título começam em 80 e 135 ms, com duração de 560 ms, fade, blur de 6 px e subida de 8 px; descrição, ações e faixa de empresas começam em 200, 260 e 320 ms, com duração de 320 ms. Tudo termina em até 695 ms após o início do efeito. Usa `revealEase`, que torna o conteúdo legível cedo e desacelera o final. O texto permanece nítido no HTML inicial; a entrada acontece uma vez por montagem elegível e é ignorada após 1,5 s de carregamento, em restauração de scroll ou quando há hash. Não há tela de carregamento.
 - `Reveal`: entradas de 20 px por viewport, uma vez por montagem. HTML visível sem JavaScript; foco exibe imediatamente o conteúdo.
 - `Magnetic`: deslocamento limitado a 6 px, medido em um wrapper estável; no máximo uma leitura por frame. Clique, foco, cancelamento de ponteiro e movimento reduzido restauram a posição.

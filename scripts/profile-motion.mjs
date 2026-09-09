@@ -37,7 +37,7 @@ try {
           )
         }).observe({ type: 'longtask', buffered: true })
       })
-      await page.goto(`${baseURL}/en`, { waitUntil: 'networkidle' })
+      await page.goto(`${baseURL}/`, { waitUntil: 'networkidle' })
       await page.evaluate(() => document.fonts.ready)
       const load = await page.evaluate(() => ({
         ...window.motionProfile,
