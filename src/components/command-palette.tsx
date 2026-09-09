@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import { Command as CommandIcon, X } from 'lucide-react'
@@ -22,6 +22,12 @@ import { localePaths } from '@/lib/site'
 import { links, locales, projects, sections } from '@/lib/portfolio'
 import { useScrollController } from './motion/experience-provider'
 
+// The platform is stable for the lifetime of the page.
+const subscribePlatform = () => () => {}
+const getPlatformModifier = () =>
+  /Mac|iPhone|iPad/.test(navigator.platform) ? '⌘' : 'Ctrl'
+const getServerModifier = () => null
+
 export function CommandPalette() {
   const t = useTranslations('Portfolio')
   const p = useTranslations('ProjectSection')
@@ -29,7 +35,11 @@ export function CommandPalette() {
   const scroll = useScrollController()
   const [open, setOpen] = useState(false)
   const [status, setStatus] = useState('')
-  const [modifier, setModifier] = useState('Ctrl')
+  const modifier = useSyncExternalStore(
+    subscribePlatform,
+    getPlatformModifier,
+    getServerModifier,
+  )
   const previousFocus = useRef<HTMLElement | null>(null)
   const destination = useRef<string | null>(null)
   const dialog = useRef<HTMLDivElement>(null)
@@ -41,7 +51,6 @@ export function CommandPalette() {
   }, [open, scroll])
 
   useEffect(() => {
-    setModifier(/Mac|iPhone|iPad/.test(navigator.platform) ? '⌘' : 'Ctrl')
     const keydown = (event: KeyboardEvent) => {
       if (
         !(event.metaKey || event.ctrlKey) ||
@@ -93,6 +102,7 @@ export function CommandPalette() {
     <>
       <button
         className="command-trigger"
+        data-ready={modifier !== null}
         aria-label={t('commands')}
         aria-haspopup="dialog"
         aria-expanded={open}
@@ -104,7 +114,9 @@ export function CommandPalette() {
       >
         <CommandIcon size={16} aria-hidden="true" />
         <span>{t('commands')}</span>
-        <kbd>{modifier} K</kbd>
+        <span className="command-shortcut">
+          <kbd>{modifier} K</kbd>
+        </span>
       </button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent

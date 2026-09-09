@@ -59,8 +59,8 @@ export function LocalSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button
           type="button"
-          variant="outline"
-          size="sm"
+          variant="subtle"
+          size="xs"
           className="locale-trigger"
           aria-label={t('language')}
           disabled={pending}
