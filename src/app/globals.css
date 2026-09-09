@@ -553,6 +553,7 @@
   max-width: 44px;
   object-fit: contain;
   filter: grayscale(1) brightness(1.8);
+  transition: filter 220ms ease;
 }
 .company-mark-wordmark {
   width: 138px;
@@ -597,10 +598,14 @@
   letter-spacing: -0.08em;
   color: var(--muted-foreground);
 }
-/* Permanent grayscale: hover and keyboard focus preserve the same tones. */
 .company-mark[data-company='itau'] img {
   width: 44px;
   height: 44px;
+}
+@media (hover: hover) and (pointer: fine) {
+  #experience .company-mark img:hover {
+    filter: none;
+  }
 }
 .experience-meta h3 {
   font-size: 17px;
@@ -829,7 +834,12 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   filter: grayscale(1);
-  transition: transform var(--motion-reveal) var(--ease-reveal);
+  transition:
+    transform var(--motion-reveal) var(--ease-reveal),
+    filter var(--motion-reveal) var(--ease-reveal);
+}
+.project-card:focus-within .project-preview img {
+  filter: grayscale(0);
 }
 .scroll-preview {
   position: relative;
@@ -839,6 +849,9 @@
   transform-origin: center;
 }
 @media (hover: hover) and (pointer: fine) {
+  .project-card:hover .project-preview img {
+    filter: grayscale(0);
+  }
   .project-preview:hover img {
     transform: scale(1.035);
   }
