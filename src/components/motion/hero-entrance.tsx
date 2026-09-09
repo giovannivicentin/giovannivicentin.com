@@ -27,7 +27,7 @@ export function HeroEntrance({ children }: { children: ReactNode }) {
     )
     const title =
       scope.current.querySelectorAll<HTMLElement>('[data-hero-title]')
-    // Overlap short entrances to establish reading order without making users wait.
+    // Overlap the longer entrances while preserving the staggered reading order.
     const beforeControls = animate(
       before,
       { opacity: [0, 1], y: [6, 0] },
