@@ -461,29 +461,23 @@
 }
 @media (max-width: 767px) {
   .company-marquee .company-logo {
-    flex-direction: column;
-    gap: 8px;
-    height: 88px;
-    font-size: 14px;
-    text-align: center;
+    height: 64px;
+  }
+  .company-marquee .company-logo > span {
+    display: none;
   }
   .company-marquee .company-logo img {
-    height: 36px;
+    width: auto;
+    height: 28px;
+  }
+  .company-marquee .company-logo[data-company='sams'] img {
+    width: 120px;
+    height: auto;
   }
 }
 @media (max-width: 479px) {
   .company-marquee-group {
     gap: 12px;
-  }
-  .company-marquee .company-logo {
-    height: 76px;
-  }
-  .company-marquee .company-logo {
-    gap: 6px;
-    font-size: 12px;
-  }
-  .company-marquee .company-logo img {
-    height: 32px;
   }
 }
 .hero-baseline {
