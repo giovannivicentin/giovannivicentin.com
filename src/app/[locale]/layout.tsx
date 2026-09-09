@@ -1,41 +1,43 @@
+import { displayName } from '@/lib/portfolio'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
-import { ThemeProvider } from '@/components/theme-provider'
-import { Toaster } from '@/components/ui/sonner'
+import { ExperienceProvider } from '@/components/motion/experience-provider'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { Inter } from 'next/font/google'
+import { Geist, Geist_Mono } from 'next/font/google'
 import { ReactNode } from 'react'
 import './globals.css'
+import 'lenis/dist/lenis.css'
 
 const siteUrl = new URL('https://giovannivicentin.com')
 
-const inter = Inter({
+const geist = Geist({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-geist-sans',
+})
+const mono = Geist_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-geist-mono',
 })
 
 const localeMetadata = {
   br: {
-    title: 'Giovanni Vicentin - Engenheiro de Software no Brasil',
-    description:
-      'Portfólio de Giovanni Vicentin, engenheiro de software brasileiro especializado em Next.js, React, TypeScript, Node.js e experiências web rápidas.',
+    title: `${displayName} — Engenheiro de Software · Frontend`,
+    description: `${displayName}: engenheiro de software com foco em frontend web, React e Next.js. No Itaú Unibanco, com experiência em backend, Carrefour e Sam’s Club Brasil.`,
     locale: 'pt_BR',
   },
   en: {
-    title: 'Giovanni Vicentin - Software Engineer',
-    description:
-      'Portfolio of Giovanni Vicentin, a Brazilian software engineer focused on Next.js, React, TypeScript, Node.js, and fast web experiences.',
+    title: `${displayName} — Software Engineer · Frontend`,
+    description: `${displayName}: software engineer focused on web frontend, React, and Next.js. At Itaú Unibanco, with backend experience and a background at Carrefour and Sam’s Club Brazil.`,
     locale: 'en_US',
   },
   es: {
-    title: 'Giovanni Vicentin - Ingeniero de Software',
-    description:
-      'Portafolio de Giovanni Vicentin, ingeniero de software brasileño especializado en Next.js, React, TypeScript, Node.js y experiencias web rápidas.',
+    title: `${displayName} — Ingeniero de Software · Frontend`,
+    description: `${displayName}: ingeniero de software enfocado en frontend web, React y Next.js. En Itaú Unibanco, con experiencia en backend, Carrefour y Sam’s Club Brasil.`,
     locale: 'es_ES',
   },
 } satisfies Record<
@@ -50,7 +52,7 @@ function isSupportedLocale(locale: string): locale is SupportedLocale {
 }
 
 const keywords = [
-  'Giovanni Vicentin',
+  displayName,
   'engenheiro de software Brasil',
   'desenvolvedor de software Brasil',
   'desenvolvedor full stack Brasil',
@@ -85,8 +87,8 @@ export async function generateMetadata({
   return {
     title: selectedMetadata.title,
     description: selectedMetadata.description,
-    authors: { name: 'Giovanni Vicentin', url: siteUrl },
-    creator: 'Giovanni Vicentin',
+    authors: { name: displayName, url: siteUrl },
+    creator: displayName,
     metadataBase: siteUrl,
     alternates: {
       canonical: canonicalPath,
@@ -102,11 +104,11 @@ export async function generateMetadata({
       url: canonicalPath,
       title: selectedMetadata.title,
       description: selectedMetadata.description,
-      siteName: 'Giovanni Vicentin',
+      siteName: displayName,
       locale: selectedMetadata.locale,
       images: [
         {
-          url: '/images/projects/portfolio.png',
+          url: '/opengraph-image',
           width: 1200,
           height: 630,
           alt: selectedMetadata.title,
@@ -130,7 +132,7 @@ export async function generateMetadata({
       creator: '@gibasvicentin',
       title: selectedMetadata.title,
       description: selectedMetadata.description,
-      images: ['/images/projects/portfolio.png'],
+      images: ['/opengraph-image'],
     },
     category: 'Software Engineering',
     keywords,
@@ -161,27 +163,17 @@ export default async function RootLayout({
   const selectedLang = langMap[locale]
 
   return (
-    <html lang={selectedLang} suppressHydrationWarning>
-      <body>
+    <html lang={selectedLang} className="dark">
+      <body className={`${geist.variable} ${mono.variable}`}>
         <NextIntlClientProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div
-              className={`${inter.variable} mx-auto flex min-h-screen flex-col font-sans`}
-            >
-              <Header />
-              <div className="mt-7 md:mt-18">{children}</div>
-              <Toaster />
-              <Footer />
-            </div>
-            <SpeedInsights />
-            <Analytics />
-          </ThemeProvider>
+          <ExperienceProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ExperienceProvider>
         </NextIntlClientProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )

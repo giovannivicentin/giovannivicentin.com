@@ -4,3 +4,8 @@ node_modules
 next-env.d.ts
 out
 package-lock.json
+
+.agents
+.codex
+test-results
+playwright-report

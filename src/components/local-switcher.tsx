@@ -1,64 +1,83 @@
 'use client'
 
+import { ChevronDown, Globe2 } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
+import { useRouter } from 'next/navigation'
+import { useTransition } from 'react'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Check, Globe } from 'lucide-react'
-import { useLocale } from 'next-intl'
-import { useRouter } from 'next/navigation'
-import { useTransition } from 'react'
+import { locales } from '@/lib/portfolio'
+import { useScrollController } from './motion/experience-provider'
+
+const languageNames = {
+  br: 'Português',
+  en: 'English',
+  es: 'Español',
+} as const
+
+const languageCodes = {
+  br: 'PT',
+  en: 'EN',
+  es: 'ES',
+} as const
 
 export function LocalSwitcher() {
-  const [isPending, startTransition] = useTransition()
+  const locale = useLocale() as (typeof locales)[number]
+  const t = useTranslations('Portfolio')
   const router = useRouter()
-  const localActive = useLocale()
+  const scroll = useScrollController()
+  const [pending, startTransition] = useTransition()
 
-  const onSelectChange = (nextLocale: string) => {
-    startTransition(() => {
-      router.replace(`/${nextLocale}`)
-    })
+  function changeLocale(next: string) {
+    if (next === locale || !locales.includes(next as typeof locale)) return
+    scroll.cancel()
+    startTransition(() =>
+      router.replace(`/${next}${window.location.hash}`, { scroll: false }),
+    )
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button disabled={isPending} variant="ghost" size="icon">
-          <Globe className="3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7 h-6 w-6 md:h-5 md:w-5" />
-          <label className="sr-only">Select a language</label>
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          className="locale-trigger"
+          aria-label={t('language')}
+          disabled={pending}
+        >
+          <Globe2 data-icon="inline-start" aria-hidden="true" />
+          <span className="mono">{languageCodes[locale]}</span>
+          <ChevronDown data-icon="inline-end" aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem
-          onClick={() => onSelectChange('en')}
-          className="flex items-center gap-2"
-        >
-          <span className="text-base font-medium">English</span>
-          {localActive === 'en' && (
-            <Check className="3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7 ml-auto h-4 w-4" />
-          )}
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => onSelectChange('es')}
-          className="flex items-center gap-2"
-        >
-          <span className="text-base font-medium">Español</span>
-          {localActive === 'es' && (
-            <Check className="3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7 ml-auto h-4 w-4" />
-          )}
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => onSelectChange('br')}
-          className="flex items-center gap-2"
-        >
-          <span className="text-base font-medium">Português</span>
-          {localActive === 'br' && (
-            <Check className="3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7 ml-auto h-4 w-4" />
-          )}
-        </DropdownMenuItem>
+      <DropdownMenuContent align="end" className="locale-menu">
+        <DropdownMenuLabel>{t('language')}</DropdownMenuLabel>
+        <DropdownMenuGroup>
+          <DropdownMenuRadioGroup value={locale} onValueChange={changeLocale}>
+            {locales.map((value) => (
+              <DropdownMenuRadioItem
+                key={value}
+                value={value}
+                aria-label={languageNames[value]}
+              >
+                <span>{languageNames[value]}</span>
+                <span className="locale-code mono" aria-hidden="true">
+                  {languageCodes[value]}
+                </span>
+              </DropdownMenuRadioItem>
+            ))}
+          </DropdownMenuRadioGroup>
+        </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   )

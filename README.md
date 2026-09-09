@@ -1,75 +1,42 @@
 # giovannivicentin.com
 
-### Welcome to the repository for my professional portfolio website, [giovannivicentin.com](https://giovannivicentin.com). This minimalist, sleek, and responsive portfolio showcases my work as a software engineer, featuring my projects, skills, and professional experiences.
+Giovanni Vicentin’s multilingual software engineering portfolio. Professional contributions at Itaú and Carrefour/Sam’s Club lead the page, followed by public projects, background, and direct contact.
 
-![Portfolio Preview](public/images/projects/portfolio.png)
+Built with Next.js App Router, React, TypeScript, Tailwind CSS 4, shadcn/Radix, cmdk, and next-intl. The interface uses a fixed monochrome dark theme, Geist fonts, a keyboard command palette, and reduced-motion-aware pointer lighting.
 
-## Features
+## Development
 
-- **Internationalization**: Available in English (default), Spanish, and Portuguese.
-- **Dark/Light Mode**: Theme toggle to switch between dark and light modes.
-- **Responsive Design**: Optimized for all devices.
-- **Projects Showcase**: Each project is presented with descriptions, and clicking on a project displays a video preview for a more interactive experience.
-- **Interactive Components**: Custom components using Radix UI and React Hook Form for a dynamic experience.
-- **Send Email in Footer:** Contact me directly via email in the footer.
+```sh
+npm install
+npm run dev
+```
 
-## Technologies Used
+Routes: `/br`, `/en`, `/es`. Portuguese is the fallback; the existing locale negotiation remains enabled. Share `/en` for international applications.
 
-The project is built with modern, performant web technologies:
+## Checks
 
-- **Framework**: [Next.js](https://nextjs.org/) (v14)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) with custom animations from `tailwindcss-animate`
-- **Forms**: [React Hook Form](https://react-hook-form.com/) for efficient form management
-- **Validation**: [Zod](https://zod.dev/) for schema-based form validation
-- **UI Components**: Radix UI with Shadcn for accessible and flexible components
-- **Internationalization**: [next-intl](https://next-intl.vercel.app/) for handling multiple languages
-- **Image Processing**: [Sharp](https://sharp.pixelplumbing.com/) for optimized images
-- **Analytics**: Vercel Analytics and Speed Insights for performance monitoring
+```sh
+npm run lint:check
+npm run format:check
+npx tsc --noEmit
+npm run build
+npx playwright install chromium
+npm run test:e2e
+```
 
-## Setup Instructions
+Browser tests start the production build on port 3100. They cover keyboard commands, locale and hash preservation, clipboard success/failure, accessibility, responsive widths, and content without JavaScript. Screenshots are written to ignored `test-results/`.
 
-1. **Clone the repository**:
+## Content and styling
 
-   ```bash
-   git clone https://github.com/giovannivicentin/giovannivicentin.com.git
-   cd giovannivicentin.com
-   ```
+- `src/lib/portfolio.ts`: shared links, experience and project metadata.
+- `messages/{br,en,es}.json`: localized copy. Keep facts aligned across languages; publish only verified results.
+- `src/app/[locale]/globals.css`: monochrome semantic tokens, typography, layout and motion. Tailwind 4 uses the CSS theme directly.
+- `public/resume/giovanni-vicentin-resume.pdf`: existing résumé URL.
 
-2. Install dependencies:
+Cmd/Ctrl+K opens navigation and actions. Escape restores focus; selecting a section focuses its heading. Email can be copied or opened with the visitor’s mail application. The former `/api/send` endpoint and Resend integration have been removed; `RESEND_API_KEY` is no longer used.
 
-   ```bash
-   npm install
-   ```
+## Deployment
 
-3. Run in development mode:
+Deploy with the Vercel Next.js preset, build command `npm run build`. Check all locale routes, résumé, sitemap, robots and Open Graph image in Preview before promoting to Production. Keep the previous deployment available for rollback. Analytics and Speed Insights remain enabled.
 
-   ```bash
-   npm run dev
-   ```
-
-4. Build for production:
-
-   ```bash
-   npm run build
-   ```
-
-5. Start the production server:
-   ```bash
-   npm start
-   ```
-
-### Scripts in package.json:
-
-- `npm run dev`: Starts the development server
-- `npm run build`: Builds the project for production
-- `npm run start`: Runs the production build
-- `npm run format`: Formats the project with Prettier
-- `npm run lint`: Runs ESLint with automatic fixing
-
-## License
-
-This project is licensed under the MIT License.
-
-## Contact
-
-If you have any questions or would like to connect, feel free to reach out via [LinkedIn](https://www.linkedin.com/in/giovannivicentin/).
+Performance targets are goals, not measured claims: mobile Lighthouse Performance ≥95, LCP ≤2.5s, CLS ≤0.1, and field INP ≤200ms when sufficient traffic is available.

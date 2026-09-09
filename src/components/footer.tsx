@@ -1,65 +1,26 @@
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from './ui/button'
-
+import { displayName, links } from '@/lib/portfolio'
 export function Footer() {
-  const currentYear = new Date().getFullYear()
-  const t = useTranslations('Footer')
-
+  const t = useTranslations('Portfolio')
   return (
-    <footer className="bg-muted text-muted-foreground px-4 py-6 text-center text-sm sm:px-6 md:px-12">
-      <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
-        <p className="text-primary 3xl:text-base 4xl:text-lg text-sm font-normal">
-          &copy; {currentYear} Giovanni Vicentin. {t('rightsReserved')}
-        </p>
-        <div className="flex items-center gap-2">
-          <Link
-            href="https://www.linkedin.com/in/giovannivicentin/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn Profile of Giovanni Vicentin"
-            tabIndex={-1}
-          >
-            <Button
-              variant="ghost"
-              size="icon"
-              className="bg-muted hover:bg-neutral-200 dark:hover:bg-neutral-700"
-            >
-              <Image
-                src="/images/icons/linkedin.svg"
-                height={20}
-                width={20}
-                alt={t('linkedinIcon')}
-                className="text-primary hover:text-muted-foreground 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7 h-5 w-5 dark:invert"
-              />
-              <span className="sr-only">{t('spanLinkedin')}</span>
-            </Button>
-          </Link>
-          <Link
-            href="https://github.com/giovannivicentin"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub Profile of Giovanni Vicentin"
-            tabIndex={-1}
-          >
-            <Button
-              variant="ghost"
-              size="icon"
-              className="bg-muted hover:bg-neutral-200 dark:hover:bg-neutral-700"
-            >
-              <Image
-                src="/images/icons/github.svg"
-                height={20}
-                width={20}
-                alt={t('githubIcon')}
-                className="text-primary hover:text-muted-foreground 3xl:h-6 3xl:w-6 4xl:h-7 4xl:w-7 h-5 w-5 dark:invert"
-              />
-              <span className="sr-only">{t('spanGithub')}</span>
-            </Button>
-          </Link>
-        </div>
+    <footer className="site-frame site-footer">
+      <div>
+        <span>
+          © {new Date().getFullYear()} {displayName}
+        </span>
+        <p>{t('built')}</p>
       </div>
+      <nav aria-label={t('career')}>
+        <a href={links.github} target="_blank" rel="noreferrer">
+          GitHub ↗
+        </a>
+        <a href={links.linkedin} target="_blank" rel="noreferrer">
+          LinkedIn ↗
+        </a>
+        <a href={links.resume} target="_blank" rel="noreferrer">
+          {t('resume')} ↗
+        </a>
+      </nav>
     </footer>
   )
 }
