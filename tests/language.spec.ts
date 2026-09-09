@@ -35,23 +35,28 @@ test('saved preference wins and invalid cookies fall back safely', async ({
   }
 })
 
-test('canonical URL and sitemap only advertise the root', async ({
+test('root canonical points to the negotiated indexable language', async ({
   page,
   request,
 }) => {
+  await page
+    .context()
+    .addCookies([
+      { name: 'NEXT_LOCALE', value: 'en', url: 'http://127.0.0.1:3100' },
+    ])
   await page.goto('/')
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     'href',
-    'https://giovannivicentin.com',
+    'https://www.giovannivicentin.com/en',
   )
-  await expect(page.locator('link[hreflang]')).toHaveCount(0)
+  await expect(page.locator('link[hreflang]')).toHaveCount(4)
   const sitemap = await request.get('/sitemap.xml')
   expect(await sitemap.text()).toContain(
-    '<loc>https://giovannivicentin.com</loc>',
+    '<loc>https://www.giovannivicentin.com/en</loc>',
   )
-  for (const locale of ['br', 'en', 'es']) {
+  for (const locale of ['pt', 'en', 'es']) {
     const response = await request.get(`/${locale}`, { maxRedirects: 0 })
-    expect(response.status()).toBe(404)
+    expect(response.status()).toBe(200)
     expect(response.headers().location).toBeUndefined()
   }
 })

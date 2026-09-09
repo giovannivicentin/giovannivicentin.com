@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { rememberLanguage } from '@/lib/language'
 import { locales } from '@/lib/portfolio'
+import { localePaths } from '@/lib/site'
 import { useScrollController } from './motion/experience-provider'
 
 const languageNames = {
@@ -41,7 +42,16 @@ export function LocalSwitcher() {
     if (next === locale || !locales.includes(next as typeof locale)) return
     scroll.cancel()
     rememberLanguage(next as typeof locale)
-    startTransition(() => router.refresh())
+    startTransition(() => {
+      // Update the URL without remounting the page or resetting its scroll.
+      window.history.replaceState(
+        window.history.state,
+        '',
+        `${localePaths[next as typeof locale]}${location.search}${location.hash}`,
+      )
+      // Refresh after the URL update so the shared layout uses the new locale.
+      router.refresh()
+    })
   }
 
   return (
