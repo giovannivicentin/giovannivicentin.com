@@ -23,7 +23,7 @@
     },
     "ebookToAudiobook": {
       "title": "Ebook to Audiobook",
-      "description": "Listen to your PDF and EPUB books in the browser.",
+      "description": "Listen to your PDF and EPUB books right in the browser.",
       "imgAlt": "Ebook to Audiobook interface for listening to books in the browser",
       "approach": "Local file processing and device speech synthesis, without sending books to a server."
     },
