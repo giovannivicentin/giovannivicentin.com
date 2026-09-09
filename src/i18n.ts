@@ -3,12 +3,16 @@ import { cookies, headers } from 'next/headers'
 import { locales, type Locale } from '@/lib/portfolio'
 
 export default getRequestConfig(async () => {
+  const requestHeaders = await headers()
+  const routed = requestHeaders.get('x-portfolio-locale')
   const saved = (await cookies()).get('NEXT_LOCALE')?.value
   let locale: Locale = 'br'
-  if (locales.includes(saved as Locale)) {
+  if (locales.includes(routed as Locale)) {
+    locale = routed as Locale
+  } else if (locales.includes(saved as Locale)) {
     locale = saved as Locale
   } else {
-    const preferences = ((await headers()).get('accept-language') ?? '')
+    const preferences = (requestHeaders.get('accept-language') ?? '')
       .split(',')
       .map((entry) => {
         const [tag, ...parameters] = entry.trim().toLowerCase().split(';')

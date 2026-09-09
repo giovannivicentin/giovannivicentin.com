@@ -59,32 +59,97 @@
     "skip": "Skip to content",
     "experienceTitle": "Engineering in production.",
     "experienceIntro": "I work across interfaces and backend systems in product teams. Here are some of my contributions to production applications.",
-    "itauTitle": "Bringing app workflows to WebView.",
-    "itauContext": "At Itaú Unibanco, I develop and support the app’s navigation hub, connecting the user experience to backend integrations.",
-    "itauPoints": [
-      "I rebuilt a frontend workflow in WebView that was previously maintained in Swift and Kotlin repositories.",
-      "I implemented local backend caching and contribute to the visual modernization of this experience.",
-      "I contribute to an internal tool for specification-driven development with AI agents, skills, and MCP."
-    ],
-    "carrefourTitle": "From member registration to recurring payments.",
-    "carrefourContext": "At Carrefour and Sam’s Club Brazil, I worked on interfaces and integrations for member registration and payment processes.",
-    "carrefourPoints": [
-      "I built the Sam’s Club member registration flow, from the interface to Node.js endpoints and backend integration on VTEX.",
-      "I implemented automation to support recurring payment processes.",
-      "I contributed to maintaining and improving React interfaces and APIs."
-    ],
-    "previous": "Earlier experience",
-    "talst": "At Talst Contabilidade, I built systems and automated processes with React, Node.js, NestJS, and Python, applying web development to the company’s day-to-day workflows.",
+    "itauTitle": "A new web foundation for the Itaú app.",
+    "experienceMore": "Explore this experience",
+    "experienceLess": "Collapse details",
+    "itauSummary": "How I replaced native repositories with a high-performance web foundation and structured the frontend for the 2027 relaunch.",
+    "itauHighlights": {
+      "primary": {
+        "value": "Itaú Hub",
+        "label": "App Modernization",
+        "description": "I replaced the navigation hub’s native architecture with a single web project built with React and Next.js, drastically accelerating app deployments and rollouts."
+      },
+      "secondary": {
+        "value": "+24%",
+        "label": "Loading Performance",
+        "description": "I implemented a local caching strategy to minimize backend calls, speed up loading across app journeys, and deliver smoother navigation."
+      },
+      "tertiary": {
+        "value": "New App",
+        "label": "App Relaunch Planned for 2027",
+        "description": "Development of the app’s new visual identity. I built a modern interface designed from the outset to support AI integrations and enhance the user experience."
+      }
+    },
+    "carrefourSummary": "Fullstack architecture and performance optimization to support more than 1 million new members and improve membership conversion.",
+    "carrefourHighlights": {
+      "primary": {
+        "value": "1.4M+ Members",
+        "label": "Acquisition at Scale",
+        "description": "I built the registration flow end to end, from the frontend to the BFF and backend. The architecture supported more than 1.4 million new members joining in 2024 and 2025."
+      },
+      "secondary": {
+        "value": "+26% Profit",
+        "label": "Membership Plus Launch",
+        "description": "I implemented the fullstack core of the club’s new membership tier, including acquisition, upgrade, and downgrade flows. This work contributed to a 26% increase in profit from membership fees."
+      },
+      "tertiary": {
+        "value": "+40% CWA",
+        "label": "Optimized Core Web Vitals",
+        "description": "I led the migration of the styling layer from styled-components to Sass. The change cut loading time by 1.8 seconds and increased the PageSpeed Insights score by 40%."
+      }
+    },
+    "talstSummary": "Digital transformation of critical processes: from RPA to high-performance integrations that scale operations without increasing headcount.",
+    "talstHighlights": {
+      "primary": {
+        "value": "80K+",
+        "label": "Tax documents delivered",
+        "description": "I improved the integration architecture, replacing RPA workflows with high-performance APIs. The solution processed 10 documents per second and enabled the delivery of more than 80,000 tax payment documents."
+      },
+      "secondary": {
+        "value": "+30%",
+        "label": "Profit margin",
+        "description": "I automated critical payroll and labor administration processes, enabling the team to serve new clients without increasing headcount. The efficiency gains contributed to a 30% increase in the department’s profit margin."
+      },
+      "tertiary": {
+        "value": "90%+",
+        "label": "Code coverage",
+        "description": "I implemented unit and automated test suites for the core tax document delivery system, achieving more than 90% code coverage. This foundation strengthened the reliability of critical deliveries and confidence in future system changes."
+      }
+    },
+    "itauParagraphs": {
+      "overview": "I built the web foundation of the Itaú app’s navigation hub from scratch, replacing <strong>two native repositories with a single project</strong> in React and Next.js. The architecture combines WebView, static site generation (SSG), and BFF integration, enabling greater release autonomy and faster feature delivery.",
+      "delivery": "I implemented local caching to reduce backend requests and improve loading times across app journeys, achieving a <strong>gain of 24% in loading performance</strong>. I also contribute to an entirely new app interface, with a relaunch planned for early 2027.",
+      "impact": "Alongside my work on the app, I was the first Itaú employee to use and validate an internal tool for specification-driven development with AI agents, skills, and MCP. This work helped assess the tool’s use in the bank’s development workflow."
+    },
+    "carrefourTitle": "Scale and Revenue at Sam’s Club",
+    "carrefourParagraphs": {
+      "overview": "I built the Sam’s Club member registration flow end to end, developing the frontend, BFF, and backend integrations that supported <strong>more than 1.4 million new users</strong> in 2024 and 2025. I also implemented Membership Plus, including interfaces and endpoints for purchases, upgrades, and downgrades, contributing to a <strong>26% increase in profit from membership fees</strong>.",
+      "delivery": "I connected architectural improvements to performance and conversion gains across the shopping experience. I migrated the styling layer from Styled-components to Sass, cutting load time by 1.8 seconds and increasing the Google PageSpeed Insights score by 40%. I also built an embedded checkout integrated with external payment gateways, eliminating redirects and contributing to a 20% increase in purchase completion rate.",
+      "impact": "I improved visibility into the customer journey through advanced Google Analytics tracking. Identifying bottlenecks guided improvements that helped reduce complaints by 10% and increase engagement by 15%. I also built a scalable API to manage account and payment data for more than 500,000 users, enabling new promotional campaigns and retention initiatives."
+    },
+    "talstTitle": "Tax Automation and Engineering",
+    "talstParagraphs": {
+      "overview": "I modernized tax document processing and delivery by replacing RPA workflows with API integrations. The new architecture processed 10 documents per second and enabled the delivery of more than 80,000 tax payment documents, using Base64 to encode the files. I also built an internal tax management portal with JWT authentication and digital certificates, integrated with government services to automate data retrieval and PDF downloads.",
+      "delivery": "In the payroll and labor administration department, I automated operational processes that enabled the client portfolio to grow without increasing headcount, contributing to a <strong>30% increase in the department’s profit margin</strong>. This work connected technical improvements to the business’s capacity to expand.",
+      "impact": "I strengthened the reliability of critical deliveries with unit and automated test suites for the core tax document delivery system, achieving <strong>more than 90% code coverage</strong>. I also mentored a junior developer from onboarding to technical autonomy in delivering complex RPA and API solutions, expanding the team’s delivery capacity."
+    },
     "projectsTitle": "Ideas turned into tools.",
-    "projectsIntro": "Projects I built to explore programming, reading, and mindfulness, alongside other web experiences. You can try each one and explore the source code.",
+    "projectsIntro": "Projects created to solve real-world challenges in engineering, accessibility, and well-being. End-to-end products with open-source code, ready for you to test and explore the architecture.",
     "otherProjects": "More projects",
     "openProject": "Open project",
     "repository": "View repository",
-    "aboutTitle": "Care for the experience and what powers it.",
-    "aboutBody": "My focus is on interfaces: how people navigate, understand, and use a product. I work on accessibility, service integration, and maintaining production applications. Backend experience complements that work, helping me understand data flows and the decisions that shape what appears on screen.",
-    "frontend": "Interfaces",
-    "backend": "APIs & data",
-    "tooling": "Tools",
+    "aboutTitle": "Attention to experience. Technology with purpose.",
+    "aboutBody": "I believe good software should, above all, make everyday life easier and improve people’s quality of life.",
+    "aboutApproach": "I work at the intersection of human impact and engineering. I develop modern interfaces with a deep focus on how customers navigate, understand, and feel when using a product.",
+    "aboutEngineering": "To support this vision, I also work on backend development and infrastructure. Understanding data flows and ensuring high performance are my tools for making technology work for people.",
+    "frontend": "Front-end & UI",
+    "backend": "Back-end & Integrations",
+    "infrastructure": "Infrastructure & Quality",
+    "concepts": "Concepts & Tools",
+    "skillFrontend": "React · Next.js · TypeScript · JavaScript · Tailwind CSS · SASS · HTML · CSS",
+    "skillBackend": "Node.js · Go · GraphQL · RESTful APIs · SQL · NoSQL · BFF Architecture",
+    "skillInfrastructure": "Docker · AWS · GCP · Vercel · Git · GitHub · CI/CD · Automated Testing (Jest/Vitest)",
+    "skillConcepts": "Accessibility (a11y) · Web Vitals/Performance · SDD · MCP · AI Agents",
     "contactTitle": "Let’s talk about opportunities.",
     "contactBody": "If your team needs someone focused on web frontend with experience in integrations and backend development, let’s talk about your product challenges and the opportunity.",
     "copy": "Copy email",

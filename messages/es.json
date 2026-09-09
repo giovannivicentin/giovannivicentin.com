@@ -59,32 +59,97 @@
     "skip": "Saltar al contenido",
     "experienceTitle": "Ingeniería en producción.",
     "experienceIntro": "Trabajo entre interfaces y backend en equipos de producto. Estas son algunas de mis contribuciones a aplicaciones en producción.",
-    "itauTitle": "Los flujos de la aplicación, ahora en WebView.",
-    "itauContext": "En Itaú Unibanco, desarrollo y doy soporte al hub de navegación de la aplicación, conectando la experiencia de uso con las integraciones de backend.",
-    "itauPoints": [
-      "Reconstruí en WebView un flujo de frontend que antes se mantenía en repositorios Swift y Kotlin.",
-      "Implementé caché local en el backend y participo en la modernización visual de esta experiencia.",
-      "Contribuyo a una herramienta interna de desarrollo guiado por especificaciones, con agentes de IA, skills y MCP."
-    ],
-    "carrefourTitle": "Del registro de socios a los pagos recurrentes.",
-    "carrefourContext": "En Carrefour y Sam’s Club Brasil, trabajé en interfaces e integraciones para el registro de socios y los procesos de pago.",
-    "carrefourPoints": [
-      "Desarrollé el registro de socios de Sam’s Club, desde la interfaz hasta los endpoints Node.js y la integración con el backend en VTEX.",
-      "Implementé automatizaciones para apoyar los procesos de pagos recurrentes.",
-      "Contribuí al mantenimiento y la evolución de interfaces React y APIs."
-    ],
-    "previous": "Experiencia anterior",
-    "talst": "En Talst Contabilidade, desarrollé sistemas y automaticé procesos con React, Node.js, NestJS y Python, aplicando el desarrollo web a las tareas diarias de la empresa.",
+    "itauTitle": "Una nueva base web para la aplicación de Itaú.",
+    "experienceMore": "Ver detalles de la experiencia",
+    "experienceLess": "Ocultar detalles",
+    "itauSummary": "Cómo sustituí repositorios nativos por una base web de alto rendimiento y estructuré el frontend para el relanzamiento de 2027.",
+    "itauHighlights": {
+      "primary": {
+        "value": "Hub Itaú",
+        "label": "Modernización App",
+        "description": "Sustituí la estructura nativa del hub de navegación por un único proyecto web en React y Next.js, acelerando drásticamente los despliegues y lanzamientos graduales de la aplicación."
+      },
+      "secondary": {
+        "value": "+24%",
+        "label": "Rendimiento de carga",
+        "description": "Implementé una estrategia de caché local para minimizar las llamadas al backend, acelerar la carga de los flujos de la aplicación y garantizar una navegación más fluida."
+      },
+      "tertiary": {
+        "value": "Nuevo App",
+        "label": "Relanzamiento de la aplicación para 2027",
+        "description": "Desarrollo de la nueva identidad visual de la aplicación. Estructuré una interfaz moderna, diseñada desde el inicio para admitir integraciones con IA y mejorar la experiencia del usuario."
+      }
+    },
+    "carrefourSummary": "Arquitectura fullstack y optimización del rendimiento para incorporar a más de 1 millón de nuevos socios y mejorar la conversión de suscripciones.",
+    "carrefourHighlights": {
+      "primary": {
+        "value": "+1,4M Socios",
+        "label": "Captación a Gran Escala",
+        "description": "Desarrollé el flujo de registro de principio a fin, desde el frontend hasta el BFF y el backend. La arquitectura permitió incorporar a más de 1,4 millones de nuevos socios entre 2024 y 2025."
+      },
+      "secondary": {
+        "value": "+26% de Beneficio",
+        "label": "Lanzamiento de Membership Plus",
+        "description": "Implementé el núcleo fullstack de la nueva modalidad del club, incluidos los flujos de captación y cambios a categorías superiores e inferiores. La entrega contribuyó a aumentar un 26% el beneficio de las cuotas anuales."
+      },
+      "tertiary": {
+        "value": "+40% CWA",
+        "label": "Core Web Vitals optimizados",
+        "description": "Lideré la migración de la capa de estilos de styled-components a Sass. El cambio redujo el tiempo de carga en 1,8 segundos y aumentó un 40% la puntuación de PageSpeed Insights."
+      }
+    },
+    "talstSummary": "Transformación digital de procesos críticos: de RPA a integraciones de alto rendimiento para escalar operaciones sin ampliar el equipo.",
+    "talstHighlights": {
+      "primary": {
+        "value": "+80 mil",
+        "label": "Documentos entregados",
+        "description": "Mejoré la arquitectura de integración, sustituyendo flujos basados en RPA por APIs de alto rendimiento. La solución alcanzó un procesamiento de 10 documentos por segundo y permitió entregar más de 80 mil documentos de pago de impuestos."
+      },
+      "secondary": {
+        "value": "+30%",
+        "label": "Margen de beneficio",
+        "description": "Automaticé procesos críticos del departamento laboral, permitiendo atender a nuevos clientes sin ampliar el equipo. La mejora de eficiencia contribuyó a aumentar un 30% el margen de beneficio del departamento."
+      },
+      "tertiary": {
+        "value": "90%+",
+        "label": "Cobertura de código",
+        "description": "Implementé suites de pruebas unitarias y automatizadas en el sistema central de envío de documentos fiscales, alcanzando más del 90% de cobertura de código. Esta base reforzó la fiabilidad de las entregas críticas y la confianza para seguir evolucionando el sistema."
+      }
+    },
+    "itauParagraphs": {
+      "overview": "Creé desde cero la base web del hub de navegación de la aplicación de Itaú, sustituyendo <strong>dos repositorios nativos por un único proyecto</strong> en React y Next.js. La arquitectura combina WebView, generación estática de páginas (SSG) e integración con BFF, con mayor autonomía para publicar actualizaciones y acelerar la entrega de funcionalidades.",
+      "delivery": "Implementé caché local para reducir las solicitudes a los backends y mejorar los tiempos de carga de los flujos, con una <strong>mejora del 24% en el rendimiento de carga</strong>. También contribuyo a una interfaz completamente nueva para la aplicación, cuyo relanzamiento está previsto para principios de 2027.",
+      "impact": "Además de las entregas en la aplicación, fui el primer empleado de Itaú en utilizar y validar una herramienta interna de desarrollo guiado por especificaciones, con agentes de IA, skills y MCP. Esta participación ayudó a evaluar el uso de la herramienta en el flujo de desarrollo del banco."
+    },
+    "carrefourTitle": "Escala e Ingresos en Sam’s Club",
+    "carrefourParagraphs": {
+      "overview": "Desarrollé de principio a fin el flujo de registro de socios de Sam’s Club, estructurando el frontend, el BFF y las integraciones con backend que permitieron incorporar <strong>más de 1,4 millones de nuevos usuarios</strong> en 2024 y 2025. También implementé la modalidad Membership Plus, incluidas las interfaces y los endpoints de compra y cambio de categoría, contribuyendo a un <strong>aumento del 26% en el beneficio de las cuotas anuales</strong>.",
+      "delivery": "En la experiencia de compra, conecté mejoras de arquitectura con resultados de rendimiento y conversión. Migré la capa de estilos de Styled-components a Sass, reduciendo el tiempo de carga en 1,8 segundos y aumentando la puntuación de Google PageSpeed Insights en un 40%. También desarrollé un checkout integrado con pasarelas de pago externas, eliminando redirecciones y contribuyendo a un crecimiento del 20% en la tasa de finalización de compras.",
+      "impact": "Amplié la visibilidad del recorrido del consumidor mediante seguimiento avanzado con Google Analytics. La identificación de cuellos de botella orientó mejoras que contribuyeron a reducir las reclamaciones en un 10% y aumentar la interacción en un 15%. Además, construí una API escalable para gestionar datos de cuentas y pagos de más de 500 mil usuarios, habilitando nuevas campañas promocionales e iniciativas de retención."
+    },
+    "talstTitle": "Automatización e Ingeniería Fiscal",
+    "talstParagraphs": {
+      "overview": "Modernicé el procesamiento y envío de documentos fiscales al sustituir flujos basados en RPA por integraciones mediante APIs. La nueva arquitectura alcanzó una tasa de procesamiento de 10 documentos por segundo y permitió entregar más de 80 mil documentos de pago de impuestos, utilizando Base64 para codificar los archivos. También desarrollé un portal interno de gestión tributaria con autenticación JWT y certificados digitales, integrado con servicios gubernamentales para automatizar la recuperación de datos y la descarga de documentos en PDF.",
+      "delivery": "En el departamento laboral, automaticé procesos operativos que permitieron ampliar la cartera de clientes sin aumentar el equipo, contribuyendo a un <strong>incremento del 30% en el margen de beneficio</strong> del departamento. El trabajo conectó la evolución técnica con la capacidad de expansión del negocio.",
+      "impact": "Reforcé la fiabilidad de las entregas críticas con suites de pruebas unitarias y automatizadas en el sistema central de envío de documentos fiscales, alcanzando <strong>más del 90% de cobertura de código</strong>. También mentoricé a un desarrollador júnior desde su incorporación hasta lograr autonomía técnica en la entrega de soluciones complejas de RPA y APIs, ampliando la capacidad de ejecución del equipo."
+    },
     "projectsTitle": "Ideas convertidas en herramientas.",
-    "projectsIntro": "Proyectos que desarrollé para explorar problemas de programación, lectura y atención plena, junto con otras experiencias web. Puedes probar cada uno y consultar el código.",
+    "projectsIntro": "Proyectos creados para resolver desafíos reales de ingeniería, accesibilidad y bienestar. Productos de principio a fin con código abierto, listos para probar y explorar su arquitectura.",
     "otherProjects": "Otros proyectos",
     "openProject": "Abrir proyecto",
     "repository": "Ver repositorio",
-    "aboutTitle": "Cuidar la experiencia y lo que la hace posible.",
-    "aboutBody": "Mi foco está en las interfaces: cómo las personas navegan, entienden y usan un producto. Trabajo en accesibilidad, integración de servicios y mantenimiento de aplicaciones en producción. La experiencia en backend complementa ese trabajo y me ayuda a entender el flujo de datos y las decisiones que llegan a la pantalla.",
-    "frontend": "Interfaces",
-    "backend": "APIs y datos",
-    "tooling": "Herramientas",
+    "aboutTitle": "Atención a la experiencia. Tecnología con propósito.",
+    "aboutBody": "Creo que el buen software debe, ante todo, facilitar la vida cotidiana y mejorar la calidad de vida de las personas.",
+    "aboutApproach": "Trabajo en el punto de encuentro entre el impacto humano y la ingeniería. Desarrollo interfaces modernas con un enfoque profundo en cómo los clientes navegan, entienden y se sienten al usar un producto.",
+    "aboutEngineering": "Para sostener esta visión, también trabajo en backend e infraestructura. Entender el flujo de datos y garantizar un alto rendimiento son mis herramientas para hacer que la tecnología trabaje a favor de las personas.",
+    "frontend": "Front-end & UI",
+    "backend": "Back-end e Integraciones",
+    "infrastructure": "Infraestructura y Calidad",
+    "concepts": "Conceptos y Herramientas",
+    "skillFrontend": "React · Next.js · TypeScript · JavaScript · Tailwind CSS · SASS · HTML · CSS",
+    "skillBackend": "Node.js · Go · GraphQL · RESTful APIs · SQL · NoSQL · Arquitectura BFF",
+    "skillInfrastructure": "Docker · AWS · GCP · Vercel · Git · GitHub · CI/CD · Pruebas Automatizadas (Jest/Vitest)",
+    "skillConcepts": "Accesibilidad (a11y) · Web Vitals/Rendimiento · SDD · MCP · AI Agents",
     "contactTitle": "Hablemos de oportunidades.",
     "contactBody": "Si tu equipo busca a alguien enfocado en frontend web y con experiencia en integraciones y backend, conversemos sobre los desafíos del producto y la oportunidad.",
     "copy": "Copiar email",
