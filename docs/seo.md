@@ -10,7 +10,8 @@ JSON-LD usam a mesma origem, definida em `src/lib/site.ts`.
 - `/en`: inglês.
 - `/es`: espanhol.
 - `/`: entrada original, que negocia idioma por cookie/Accept-Language e declara
-  como canônica a versão localizada correspondente. É o destino de `x-default`.
+  a própria raiz como canônica, independentemente do idioma. É o destino de
+  `x-default`; seu canonical não aponta para outra alternativa `hreflang`.
 
 As três URLs localizadas servem HTML traduzido mesmo sem JavaScript, ignorando
 preferências de idioma conflitantes. O proxy reusa a página existente, sem
