@@ -1,10 +1,6 @@
 import { displayName } from '@/lib/portfolio'
-import {
-  siteUrl,
-  languageAlternates,
-  languageTags,
-  localePaths,
-} from '@/lib/site'
+import { siteUrl, languageAlternates, languageTags } from '@/lib/site'
+import { canonicalUrl } from '@/lib/canonical'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { ExperienceProvider } from '@/components/motion/experience-provider'
@@ -63,7 +59,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale()
   const selectedLocale = isSupportedLocale(locale) ? locale : 'br'
   const selectedMetadata = localeMetadata[selectedLocale]
-  const canonicalPath = localePaths[selectedLocale]
+  const canonical = await canonicalUrl(selectedLocale)
 
   return {
     title: selectedMetadata.title,
@@ -72,12 +68,12 @@ export async function generateMetadata(): Promise<Metadata> {
     creator: displayName,
     metadataBase: new URL(siteUrl),
     alternates: {
-      canonical: canonicalPath,
+      canonical,
       languages: languageAlternates,
     },
     openGraph: {
       type: 'website',
-      url: canonicalPath,
+      url: canonical,
       title: selectedMetadata.title,
       description: selectedMetadata.description,
       siteName: displayName,

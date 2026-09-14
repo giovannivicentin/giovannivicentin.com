@@ -1,12 +1,13 @@
 import { getLocale, getTranslations } from 'next-intl/server'
 import { displayName, links, projects, type Locale } from '@/lib/portfolio'
-import { languageTags, localizedUrl, siteUrl } from '@/lib/site'
+import { languageTags, siteUrl } from '@/lib/site'
+import { canonicalUrl } from '@/lib/canonical'
 
 export async function StructuredData() {
   const locale = (await getLocale()) as Locale
   const t = await getTranslations('Portfolio')
   const p = await getTranslations('ProjectSection')
-  const url = localizedUrl(locale)
+  const url = await canonicalUrl(locale)
   const personId = `${siteUrl}/#person`
   // Only describe facts and projects present on the page; no invented ratings.
   const graph = {
