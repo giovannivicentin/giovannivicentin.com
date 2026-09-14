@@ -30,6 +30,7 @@ for (const variant of variants) {
     const context = await browser.newContext({
       javaScriptEnabled: false,
       locale: 'de-DE',
+      extraHTTPHeaders: { 'x-portfolio-pathname': '/' },
     })
     await context.addCookies([
       {

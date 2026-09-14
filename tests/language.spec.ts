@@ -35,21 +35,40 @@ test('saved preference wins and invalid cookies fall back safely', async ({
   }
 })
 
-test('root canonical points to the negotiated indexable language', async ({
+test('root canonical stays at x-default for every negotiated language', async ({
   page,
   request,
 }) => {
-  await page
-    .context()
-    .addCookies([
-      { name: 'NEXT_LOCALE', value: 'en', url: 'http://127.0.0.1:3100' },
-    ])
-  await page.goto('/')
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
-    'href',
-    'https://www.giovannivicentin.com/en',
-  )
-  await expect(page.locator('link[hreflang]')).toHaveCount(4)
+  for (const locale of ['br', 'en', 'es']) {
+    await page
+      .context()
+      .addCookies([
+        { name: 'NEXT_LOCALE', value: locale, url: 'http://127.0.0.1:3100' },
+      ])
+    await page.goto('/?utm_source=canonical-test')
+    const canonical = page.locator('link[rel="canonical"]')
+    await expect(canonical).toHaveAttribute(
+      'href',
+      'https://www.giovannivicentin.com',
+    )
+    await expect(page.locator('link[hreflang]')).toHaveCount(4)
+    await expect(page.locator('link[hreflang="x-default"]')).toHaveAttribute(
+      'href',
+      (await canonical.getAttribute('href'))!,
+    )
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+      'content',
+      'https://www.giovannivicentin.com',
+    )
+    const schema = JSON.parse(
+      (await page.locator('script[type="application/ld+json"]').textContent())!,
+    )
+    expect(
+      schema['@graph'].find(
+        (entry: { '@type': string }) => entry['@type'] === 'ProfilePage',
+      ).url,
+    ).toBe('https://www.giovannivicentin.com/')
+  }
   const sitemap = await request.get('/sitemap.xml')
   expect(await sitemap.text()).toContain(
     '<loc>https://www.giovannivicentin.com/en</loc>',
