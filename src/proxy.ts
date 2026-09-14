@@ -5,6 +5,7 @@ export function proxy(request: NextRequest) {
   // Locale URLs have deterministic content, independent of cookies or crawlers.
   // Never trust an incoming copy of our internal routing header.
   headers.delete('x-portfolio-locale')
+  headers.set('x-portfolio-pathname', request.nextUrl.pathname)
   const segment = request.nextUrl.pathname.split('/')[1]
   const locale =
     segment === 'pt'
