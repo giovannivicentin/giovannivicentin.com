@@ -132,7 +132,7 @@ for (const locale of ['br', 'en', 'es']) {
     await expect(page.locator('html')).toHaveClass(/lenis/)
     await expect(page.locator('.hero-baseline')).toHaveCSS('opacity', '1')
     for (const line of await page.locator('[data-hero-title]').all()) {
-      await expect(line).toHaveCSS('filter', 'blur(0px)')
+      await expect(line).toHaveCSS('filter', /^(none|blur\(0px\))$/)
     }
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])

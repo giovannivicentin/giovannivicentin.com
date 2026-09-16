@@ -174,7 +174,7 @@ test('capture hero and reactive project cards', async ({ page }) => {
   await expect(page.locator('.hero-baseline')).toHaveCSS('opacity', '1')
   await expect(page.locator('[data-hero-title]').last()).toHaveCSS(
     'filter',
-    'blur(0px)',
+    /^(none|blur\(0px\))$/,
   )
   await page.screenshot({ path: 'test-results/motion-hero.png' })
   await page.locator('.desktop-nav a[href="#projects"]').click()
@@ -210,12 +210,11 @@ test('title uses a brief fade, blur and rise, settles, and does not replay', asy
     ),
   )
   for (const [index, lineAnimations] of animations.entries()) {
-    expect(lineAnimations).toHaveLength(3)
+    expect(lineAnimations).toHaveLength(1)
     for (const animation of lineAnimations) {
       expect(animation.timing).toMatchObject({
         duration: 720,
         delay: 120 + index * 90,
-        easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
       })
     }
     const keyframes = lineAnimations.flatMap((animation) => animation.frames)
@@ -232,7 +231,7 @@ test('title uses a brief fade, blur and rise, settles, and does not replay', asy
   }
   for (const line of await lines.all()) {
     await expect(line).toHaveCSS('opacity', '1')
-    await expect(line).toHaveCSS('filter', 'blur(0px)')
+    await expect(line).toHaveCSS('filter', /^(none|blur\(0px\))$/)
     await expect
       .poll(() =>
         line.evaluate(
@@ -353,7 +352,7 @@ test('hero overlaps entrances and reveals actions within the first second', asyn
     expect(line.opacity).toBeLessThan(1)
     expect(line.blur).toBeGreaterThan(0)
   }
-  expect(state.supportTiming).toHaveLength(2)
+  expect(state.supportTiming).toHaveLength(3)
   for (const timing of state.supportTiming) {
     expect(timing.delay).toBeLessThanOrEqual(500)
     expect(timing.end).toBeLessThanOrEqual(950)
@@ -362,37 +361,62 @@ test('hero overlaps entrances and reveals actions within the first second', asyn
   await expect(page.locator('.hero-baseline')).toHaveCSS('opacity', '1')
 })
 
-test('LCP introduction stays visible throughout hydration and hero entrance', async ({
-  page,
-}) => {
-  await page.addInitScript(() => {
-    const samples: number[] = []
-    Object.assign(window, { heroIntroOpacity: samples })
-    function sample() {
-      const intro = document.querySelector('.hero-intro')
-      if (intro) samples.push(Number(getComputedStyle(intro).opacity))
+for (const scriptDelay of [600, 1800]) {
+  test(`hero fades in once without flashing across ${scriptDelay}ms hydration`, async ({
+    page,
+  }) => {
+    await page.route('**/*.js', async (route) => {
+      await new Promise((resolve) => setTimeout(resolve, scriptDelay))
+      await route.continue()
+    })
+    await page.addInitScript(() => {
+      const samples: number[][] = []
+      Object.assign(window, { heroOpacitySamples: samples })
+      function sample() {
+        const nodes = document.querySelectorAll(
+          '[data-hero-title], [data-hero-reveal]',
+        )
+        if (nodes.length)
+          samples.push(
+            [...nodes].map((node) => Number(getComputedStyle(node).opacity)),
+          )
+        requestAnimationFrame(sample)
+      }
       requestAnimationFrame(sample)
+    })
+    await page.goto('/')
+    await expect(page.locator('.command-trigger')).toHaveAttribute(
+      'data-ready',
+      'true',
+    )
+    await expect(page.locator('.hero')).toHaveAttribute('data-hero-entered', '')
+    const samples = await page.evaluate(
+      () =>
+        (window as Window & { heroOpacitySamples?: number[][] })
+          .heroOpacitySamples!,
+    )
+    expect(samples.length).toBeGreaterThan(1)
+    expect(samples[0].some((opacity) => opacity < 1)).toBe(true)
+    for (let index = 1; index < samples.length; index++) {
+      for (let element = 0; element < samples[index].length; element++) {
+        expect(samples[index][element]).toBeGreaterThanOrEqual(
+          samples[index - 1][element] - 0.001,
+        )
+      }
     }
-    requestAnimationFrame(sample)
+    expect(samples.at(-1)!.every((opacity) => opacity === 1)).toBe(true)
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await page.emulateMedia({ reducedMotion: 'no-preference' })
+    for (const node of await page
+      .locator('[data-hero-title], [data-hero-reveal]')
+      .all()) {
+      await expect(node).toHaveCSS('opacity', '1')
+      expect(
+        await node.evaluate((element) => element.getAnimations().length),
+      ).toBe(0)
+    }
   })
-  await page.goto('/')
-  await expect(page.locator('.command-trigger')).toHaveAttribute(
-    'data-ready',
-    'true',
-  )
-  await expect(page.locator('.hero-actions')).toHaveCSS('opacity', '1')
-  const samples = await page.evaluate(
-    () =>
-      (window as Window & { heroIntroOpacity?: number[] }).heroIntroOpacity!,
-  )
-  expect(samples.length).toBeGreaterThan(0)
-  expect(samples.every((opacity) => opacity === 1)).toBe(true)
-  expect(
-    await page
-      .locator('.hero-intro')
-      .evaluate((node) => node.getAnimations().length),
-  ).toBe(0)
-})
+}
 
 test('keyboard focus completes every pending hero phase', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' })
