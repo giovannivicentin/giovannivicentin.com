@@ -1,81 +1,47 @@
 'use client'
 
 import { useEffect, useRef, type ReactNode } from 'react'
-import { stagger, useAnimate } from 'motion/react'
-import { motionTiming } from '@/lib/motion'
-import { useMotionAllowed } from './experience-provider'
+import { motionQueries } from '@/lib/motion'
 
 export function HeroEntrance({ children }: { children: ReactNode }) {
-  const [scope, animate] = useAnimate<HTMLElement>()
-  const played = useRef(false)
-  const motionAllowed = useMotionAllowed()
+  const scope = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    if (!motionAllowed || played.current) {
-      return
-    }
-    played.current = true
-    // Never hide text the visitor has already started reading or a restored page.
-    if (performance.now() > 1500 || window.scrollY > 24 || location.hash) {
-      return
-    }
-    const before = scope.current.querySelectorAll<HTMLElement>(
-      '[data-hero-reveal="before"]',
-    )
-    const after = scope.current.querySelectorAll<HTMLElement>(
-      '[data-hero-reveal="after"]',
-    )
-    const title =
-      scope.current.querySelectorAll<HTMLElement>('[data-hero-title]')
-    // Overlap the longer entrances while preserving the staggered reading order.
-    const beforeControls = animate(
-      before,
-      { opacity: [0, 1], y: [6, 0] },
-      {
-        duration: motionTiming.heroBefore.duration,
-        ease: motionTiming.revealEase,
-      },
-    )
-    const titleControls = animate(
-      title,
-      {
-        opacity: [0, 1],
-        filter: ['blur(6px)', 'blur(0px)'],
-        transform: ['translateY(8px)', 'translateY(0px)'],
-      },
-      {
-        duration: motionTiming.heroTitle.duration,
-        ease: motionTiming.revealEase,
-        delay: stagger(motionTiming.heroTitle.stagger, {
-          startDelay: motionTiming.heroTitle.delay,
-        }),
-      },
-    )
-    const afterControls = animate(
-      after,
-      { opacity: [0, 1], y: [8, 0] },
-      {
-        duration: motionTiming.heroAfter.duration,
-        ease: motionTiming.revealEase,
-        delay: stagger(motionTiming.heroAfter.stagger, {
-          startDelay: motionTiming.heroAfter.delay,
-        }),
-      },
-    )
+    const element = scope.current!
+    const preference = matchMedia(motionQueries.allowed)
     const finish = () => {
-      // Complete through Motion so its next render also uses the final values.
-      // stop() can commit an intermediate blur after a direct DOM style reset.
-      beforeControls.complete()
-      titleControls.complete()
-      afterControls.complete()
+      element.setAttribute('data-hero-entered', '')
     }
-    const element = scope.current
+    const onPreferenceChange = () => {
+      if (!preference.matches) finish()
+    }
+    const onAnimationEnd = (event: AnimationEvent) => {
+      // The final phase consumes the entrance; preference changes cannot replay it.
+      if (
+        event.target instanceof Element &&
+        event.target.matches('.hero-proof')
+      ) {
+        finish()
+      }
+    }
+
+    // CSS starts at first paint. Hydration only cancels it when appropriate.
+    if (
+      !preference.matches ||
+      window.scrollY > 24 ||
+      location.hash ||
+      !element.querySelector('.hero-proof')?.getAnimations().length
+    )
+      finish()
     element.addEventListener('focusin', finish)
+    element.addEventListener('animationend', onAnimationEnd)
+    preference.addEventListener('change', onPreferenceChange)
     return () => {
       element.removeEventListener('focusin', finish)
-      finish()
+      element.removeEventListener('animationend', onAnimationEnd)
+      preference.removeEventListener('change', onPreferenceChange)
     }
-  }, [animate, motionAllowed, scope])
+  }, [])
 
   return (
     <section ref={scope} id="presentation" className="hero section-pad">
