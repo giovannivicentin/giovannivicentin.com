@@ -45,9 +45,8 @@ export default function Home() {
             {t('headlineMuted')}
           </span>
         </h1>
-        <p className="hero-intro" data-hero-reveal="after">
-          {t('intro', { name: displayName })}
-        </p>
+        {/* Keep the LCP paragraph visible throughout hydration and entrance effects. */}
+        <p className="hero-intro">{t('intro', { name: displayName })}</p>
         <div className="hero-actions" data-hero-reveal="after">
           <Magnetic>
             <Button asChild>
