@@ -317,8 +317,8 @@ test('hero overlaps entrances and reveals actions within the first second', asyn
 }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' })
   const overlap = await page.waitForFunction(() => {
-    const intro = document.querySelector('.hero-intro')!
-    const opacity = Number(getComputedStyle(intro).opacity)
+    const actions = document.querySelector('.hero-actions')!
+    const opacity = Number(getComputedStyle(actions).opacity)
     if (opacity <= 0 || opacity >= 0.95) return false
     return {
       before: Number(
@@ -353,13 +353,45 @@ test('hero overlaps entrances and reveals actions within the first second', asyn
     expect(line.opacity).toBeLessThan(1)
     expect(line.blur).toBeGreaterThan(0)
   }
-  expect(state.supportTiming).toHaveLength(3)
+  expect(state.supportTiming).toHaveLength(2)
   for (const timing of state.supportTiming) {
     expect(timing.delay).toBeLessThanOrEqual(500)
     expect(timing.end).toBeLessThanOrEqual(950)
   }
   await expect(page.locator('.hero-actions')).toHaveCSS('opacity', '1')
   await expect(page.locator('.hero-baseline')).toHaveCSS('opacity', '1')
+})
+
+test('LCP introduction stays visible throughout hydration and hero entrance', async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    const samples: number[] = []
+    Object.assign(window, { heroIntroOpacity: samples })
+    function sample() {
+      const intro = document.querySelector('.hero-intro')
+      if (intro) samples.push(Number(getComputedStyle(intro).opacity))
+      requestAnimationFrame(sample)
+    }
+    requestAnimationFrame(sample)
+  })
+  await page.goto('/')
+  await expect(page.locator('.command-trigger')).toHaveAttribute(
+    'data-ready',
+    'true',
+  )
+  await expect(page.locator('.hero-actions')).toHaveCSS('opacity', '1')
+  const samples = await page.evaluate(
+    () =>
+      (window as Window & { heroIntroOpacity?: number[] }).heroIntroOpacity!,
+  )
+  expect(samples.length).toBeGreaterThan(0)
+  expect(samples.every((opacity) => opacity === 1)).toBe(true)
+  expect(
+    await page
+      .locator('.hero-intro')
+      .evaluate((node) => node.getAnimations().length),
+  ).toBe(0)
 })
 
 test('keyboard focus completes every pending hero phase', async ({ page }) => {
@@ -425,10 +457,10 @@ test('company logos remain readable with reduced motion and without JavaScript',
       'none',
     )
     await expect(
-      strip.getByText('Itaú Unibanco', { exact: true }).first(),
+      strip.getByRole('img', { name: 'Itaú Unibanco', exact: true }),
     ).toBeVisible()
     await expect(
-      strip.getByText('Carrefour', { exact: true }).first(),
+      strip.getByRole('img', { name: 'Carrefour', exact: true }),
     ).toBeVisible()
     await expect(
       strip.getByRole('img', { name: 'Sam’s Club Brasil' }),
