@@ -126,7 +126,7 @@ test('presentation logos regain color on hover while experience stays grayscale'
     await page.mouse.move(0, 0)
     await expect(logo.locator('img')).toHaveCSS(
       'filter',
-      'grayscale(1) brightness(1.8)',
+      'brightness(0) invert(0.6)',
     )
     // A real pointer can enter a moving logo; skip Playwright's stability wait.
     await logo.hover({ force: true })
