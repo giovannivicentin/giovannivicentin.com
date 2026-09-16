@@ -1,5 +1,9 @@
 # Carregamento inicial — 14 de setembro de 2026
 
+> Atualização em 15/09: a descrição voltou à sequência de entrada. A animação
+> agora começa no CSS, na primeira pintura, sem esconder o conteúdo novamente
+> durante a hidratação. As medições abaixo pertencem à revisão de 14/09.
+
 O relatório publicado apontou a `.hero-intro` como LCP, com 2.540 ms de atraso
 na renderização. O parágrafo agora permanece visível desde o HTML inicial:
 não participa da sequência de opacidade iniciada após hidratação. O título e
