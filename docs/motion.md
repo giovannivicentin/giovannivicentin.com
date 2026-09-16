@@ -160,3 +160,24 @@ animada de `::details-content`. A margem externa anterior só desaparecia quando
 `content-visibility` mudava para `hidden`, provocando um salto final de 16 px.
 O teste de regressão acompanha a altura e a posição do próximo bloco por frame
 durante o fechamento, em desktop e celular, nas três experiências.
+
+## Entrada sem flash — 15 de setembro de 2026
+
+A entrada da hero passou de `useAnimate` em um efeito após hidratação para
+keyframes CSS aplicados desde a primeira pintura. `animation-fill-mode:
+backwards` mantém cada fase no estado inicial durante seu atraso. Título,
+descrição e ações entram na mesma sequência; a descrição não fica mais isolada
+no estado final enquanto o restante reaparece.
+
+Os tempos estão em `globals.css`: eyebrow 320 ms, título 720 ms com atrasos de
+120/210 ms e apoio 450 ms com atrasos de 320/410/500 ms. A entrada termina em
+950 ms a partir da aplicação do CSS, independentemente da hidratação. O cliente
+apenas conclui os efeitos em caso de foco, movimento reduzido, âncora ou scroll
+restaurado, sem iniciar animações. Uma marca de conclusão impede repetição ao
+alternar a preferência de movimento.
+
+A media query `scripting: enabled` mantém o conteúdo imediatamente visível sem
+JavaScript; navegadores sem suporte também recebem o estado final. Scripts
+atrasados não impedem a conclusão pelo CSS. Os testes amostram a opacidade de
+todos os elementos da entrada com scripts atrasados em 600 e 1.800 ms, garantindo
+que a opacidade nunca diminua durante o carregamento.

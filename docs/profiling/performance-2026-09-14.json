@@ -1,0 +1,174 @@
+{
+  "before": [
+    {
+      "device": "desktop",
+      "run": 1,
+      "lcp": 280,
+      "cls": 0,
+      "longTasks": [61, 63],
+      "jsBytes": 250564,
+      "jsDecodedBytes": 802412,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    },
+    {
+      "device": "desktop",
+      "run": 2,
+      "lcp": 92,
+      "cls": 0,
+      "longTasks": [54, 57],
+      "jsBytes": 250564,
+      "jsDecodedBytes": 802412,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    },
+    {
+      "device": "desktop",
+      "run": 3,
+      "lcp": 92,
+      "cls": 0,
+      "longTasks": [54, 54],
+      "jsBytes": 250564,
+      "jsDecodedBytes": 802412,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    },
+    {
+      "device": "mobile",
+      "run": 1,
+      "lcp": 96,
+      "cls": 0,
+      "longTasks": [54],
+      "jsBytes": 245113,
+      "jsDecodedBytes": 783709,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    },
+    {
+      "device": "mobile",
+      "run": 2,
+      "lcp": 88,
+      "cls": 0,
+      "longTasks": [54],
+      "jsBytes": 245113,
+      "jsDecodedBytes": 783709,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    },
+    {
+      "device": "mobile",
+      "run": 3,
+      "lcp": 84,
+      "cls": 0,
+      "longTasks": [54],
+      "jsBytes": 245113,
+      "jsDecodedBytes": 783709,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    }
+  ],
+  "after": [
+    {
+      "device": "desktop",
+      "run": 1,
+      "lcp": 272,
+      "cls": 0,
+      "longTasks": [71, 60],
+      "jsBytes": 243948,
+      "jsDecodedBytes": 777310,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    },
+    {
+      "device": "desktop",
+      "run": 2,
+      "lcp": 92,
+      "cls": 0,
+      "longTasks": [54, 54],
+      "jsBytes": 243948,
+      "jsDecodedBytes": 777310,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    },
+    {
+      "device": "desktop",
+      "run": 3,
+      "lcp": 92,
+      "cls": 0,
+      "longTasks": [53, 55],
+      "jsBytes": 243948,
+      "jsDecodedBytes": 777310,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    },
+    {
+      "device": "mobile",
+      "run": 1,
+      "lcp": 104,
+      "cls": 0,
+      "longTasks": [59],
+      "jsBytes": 238497,
+      "jsDecodedBytes": 758607,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    },
+    {
+      "device": "mobile",
+      "run": 2,
+      "lcp": 100,
+      "cls": 0,
+      "longTasks": [65],
+      "jsBytes": 238497,
+      "jsDecodedBytes": 758607,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    },
+    {
+      "device": "mobile",
+      "run": 3,
+      "lcp": 88,
+      "cls": 0,
+      "longTasks": [70],
+      "jsBytes": 238497,
+      "jsDecodedBytes": 758607,
+      "scrolling": {
+        "frames": 121,
+        "over34ms": 0,
+        "longestFrame": 17
+      }
+    }
+  ]
+}
